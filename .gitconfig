@@ -1,0 +1,9 @@
+[user]
+	name = ever.zet
+	email = ever.zet@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[apply]
+	whitespace = nowarn
