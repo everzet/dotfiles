@@ -89,7 +89,18 @@ set nobackup
 set noswapfile
 
 " Формат строки состояния
-set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P 
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " file name
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+set statusline+=%{&fileformat}]              " file format
+set statusline+=%=                           " right align
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+set statusline+=%b,0x%-8B\                   " current char
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+
 set laststatus=2
 
 set bs=2
@@ -102,6 +113,8 @@ set ffs=unix
 
 " Пробел в нормальном режиме перелистывает страницы
 nmap <Space> <PageDown>
+
+nmap t :NERDTree<cr>
 
 " CTRL-F для omni completion
 imap <C-F> <C-X><C-O>
@@ -133,20 +146,14 @@ nmap <F3> :copen<cr>
 vmap <F3> <esc>:copen<cr>
 imap <F3> <esc>:copen<cr>
 
-" F5 - просмотр списка буферов
-nmap <C-b> <Esc>:BufExplorer<cr>
-vmap <C-b> <esc>:BufExplorer<cr>
-imap <C-b> <esc><esc>:BufExplorer<cr>
+" просмотр списка буферов
+nmap <S-b> <Esc>:BufExplorer<cr>
 
-" F6 - предыдущий буфер
-map <F6> :bp<cr>
-vmap <F6> <esc>:bp<cr>i
-imap <F6> <esc>:bp<cr>i
+" предыдущий буфер
+nmap gT :bp<cr>
 
-" F7 - следующий буфер
-map <F7> :bn<cr>
-vmap <F7> <esc>:bn<cr>i
-imap <F7> <esc>:bn<cr>i
+" следующий буфер
+nmap gt :bn<cr>
 
 " F8 - список закладок
 map <F8> :MarksBrowser<cr>
