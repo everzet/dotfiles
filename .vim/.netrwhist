@@ -1,10 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/everzet/Sites/broomkus/btk1/plugins/sfDoctrineGuardPlugin/lib'
-let g:netrw_dirhist_2='/Users/everzet/Sites/broomkus'
-let g:netrw_dirhist_3='/Users/everzet/Sites/broomkus/btk1'
-let g:netrw_dirhist_4='/Users/everzet/Sites/zet/everzet2'
-let g:netrw_dirhist_5='/Users/everzet/Sites/broomkus/retail'
-let g:netrw_dirhist_6='/Users/everzet/Downloads/ay.by.css/Аукционы Беларуси - Ay.by. Беларусь. Минск_files'
-let g:netrw_dirhist_7='/Users/everzet/.vim/ftplugin'
-let g:netrw_dirhist_8='/Users/everzet/.vim'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/everzet/Devel/github/php/ActiveResource'
+let g:netrw_dirhist_2='/Users/everzet/Sites/dev/dev.by'

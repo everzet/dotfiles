@@ -1,6 +1,8 @@
 # aliases
 alias l='ls -lh'
 alias ll='ls -lha'
+alias s='cd ..'
+alias ss='cd ../..'
 alias sn='screen'
 alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 alias mysqld='sudo /opt/local/etc/LaunchDaemons/org.macports.mysql5/mysql5.wrapper'
@@ -8,6 +10,14 @@ alias mysqld='sudo /opt/local/etc/LaunchDaemons/org.macports.mysql5/mysql5.wrapp
 # macports
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+# ... and ignore same sucessive entries.
+export HISTCONTROL=ignoreboth
+
+# right mask
+umask a=rx,ug+w
 
 # defaults
 export EDITOR='mate -w'
