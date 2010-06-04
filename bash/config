@@ -7,4 +7,4 @@ set output-meta on
 set convert-meta off
 
 # user prompt
-PS1='\[\e[0;40;32m\u\e[0m@\e[0;40;36m\h\e[0m:\e[01;47;30m\] \w \e[0m \e[0,33m$(vcprompt)\e[0m\n⚡ '
+PS1='\[\e[0;40;32m\u\e[0m@\e[0;40;36m\h\e[0m:\e[01;47;30m\] \w \e[0m \e[0,33m$(vcprompt --format "%s:%b/%h")\e[0m\n⚡ '
