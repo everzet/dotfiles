@@ -1,12 +1,3 @@
-# aliases
-alias l='ls -lh'
-alias ll='ls -lha'
-alias s='cd ..'
-alias ss='cd ../..'
-alias sn='screen'
-alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
-alias mysqld='sudo /opt/local/etc/LaunchDaemons/org.macports.mysql5/mysql5.wrapper'
-
 # macports
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
@@ -16,10 +7,7 @@ export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
 
-# right mask
-umask a=rx,ug+w
-
-# defaults
+# editors
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'
 
@@ -33,12 +21,6 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM=xterm-color
+
+# enc
 export LANG=ru_RU.UTF-8
-
-set meta-flag on
-set input-meta on
-set output-meta on
-set convert-meta off
-
-# user prompt
-PS1='\[\033[0;40;32m\u\033[0m@\033[0;40;36m\h\033[0m: \033[01;47;30m\] ❝ \w ❞ \033[0m\n⚡ '

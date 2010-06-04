@@ -1,0 +1,10 @@
+# right mask
+umask a=rx,ug+w
+
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# user prompt
+PS1='\[\033[0;40;32m\u\033[0m@\033[0;40;36m\h\033[0m: \033[01;47;30m\] ❝ \w ❞ \033[0m\n⚡ '

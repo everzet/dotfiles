@@ -1,0 +1,7 @@
+alias l='ls -lh'
+alias ll='ls -lha'
+alias s='cd ..'
+alias ss='cd ../..'
+alias sn='screen'
+alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
+alias mysqld='sudo /opt/local/etc/LaunchDaemons/org.macports.mysql5/mysql5.wrapper'

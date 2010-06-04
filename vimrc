@@ -114,7 +114,8 @@ set ffs=unix
 " Пробел в нормальном режиме перелистывает страницы
 nmap <Space> <PageDown>
 
-nmap t :NERDTree<cr>
+" NERDTree по t в нормальном режиме
+nmap <C-t> :NERDTreeToggle<cr>
 
 " CTRL-F для omni completion
 imap <C-F> <C-X><C-O>
@@ -122,9 +123,6 @@ imap <C-F> <C-X><C-O>
 " C-c and C-v - Copy/Paste в "глобальный клипборд"
 vmap <C-C> "+yi
 imap <C-V> <esc>"+gPi
-
-" Заставляем shift-insert работать как в Xterm
-map <S-Insert> <MiddleMouse>
 
 " C-y - удаление текущей строки
 nmap <C-y> dd
@@ -135,11 +133,6 @@ imap <C-d> <esc>yypi
 
 " Поиск и замена слова под курсором
 nmap ; :%s/\<<c-r>=expand("<cword>")<cr>\>/
-
-" F2 - быстрое сохранение
-nmap <F2> :w<cr>
-vmap <F2> <esc>:w<cr>i
-imap <F2> <esc>:w<cr>i
 
 " F3 - просмотр ошибок
 nmap <F3> :copen<cr>
@@ -155,25 +148,10 @@ nmap gT :bp<cr>
 " следующий буфер
 nmap gt :bn<cr>
 
-" F8 - список закладок
-map <F8> :MarksBrowser<cr>
-vmap <F8> <esc>:MarksBrowser<cr>
-imap <F8> <esc>:MarksBrowser<cr>
-
-" F9 - "make" команда
-map <F9> :make<cr>
-vmap <F9> <esc>:make<cr>i
-imap <F9> <esc>:make<cr>i
-
-" F10 - удалить буфер
-map <F10> :bd<cr>
-vmap <F10> <esc>:bd<cr>
-imap <F10> <esc>:bd<cr>
-
 " F11 - показать окно Taglist
-map <F11> :TlistToggle<cr>
-vmap <F11> <esc>:TlistToggle<cr>
-imap <F11> <esc>:TlistToggle<cr>
+map <C-l> :TlistToggle<cr>
+vmap <C-l> <esc>:TlistToggle<cr>
+imap <C-l> <esc>:TlistToggle<cr>
 
 " F12 - обозреватель файлов
 map <F12> :Ex<cr>
@@ -197,10 +175,6 @@ imap [ []<LEFT>
 " Аналогично и для {
 imap {<CR> {<CR>}<Esc>O
 
-" С-q - выход из Vim 
-map <C-Q> <Esc>:qa<cr>
-map <C-l> <Esc>:TlistToggle<cr>
-
 " Слова откуда будем завершать
 set complete=""
 " Из текущего буфера
@@ -215,7 +189,8 @@ set complete+=t
 " Включаем filetype плугин. Настройки, специфичные для определынных файлов мы разнесём по разным местам
 filetype plugin on
 au BufRead,BufNewFile *.phps    set filetype=php
-au BufRead,BufNewFile *.thtml    set filetype=php
+au BufRead,BufNewFile *.inc     set filetype=php
+au BufRead,BufNewFile *.phtml   set filetype=php
 
 " NERDTree
 let NERDTreeWinSize=50
@@ -227,6 +202,8 @@ let g:SessionMgr_DefaultName = "mysession"
 
 " Настройки для Tlist (показвать только текущий файл в окне навигации по  коду)
 let g:Tlist_Show_One_File = 1
+let Tlist_WinWidth = 40
+let tlist_php_settings = 'php;c:class;d:constant;f:function'
 
 set completeopt-=preview
 set completeopt+=longest
@@ -246,25 +223,27 @@ set makeprg=php\ -l\ %
 " Формат вывода ошибок PHP
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-let g:pdv_cfg_Uses = 1
-
 " Включаем фолдинг для блоков классов/функций
-let php_folding = 1
-
-" Не использовать короткие теги PHP для поиска PHP блоков
-let php_noShortTags = 1
-
-" Подстветка SQL внутри PHP строк
-let php_sql_query=1
-
-" Подстветка HTML внутри PHP строк
-let php_htmlInStrings=1 
-
-" Подстветка базовых функций PHP
-let php_baselib = 1
+autocmd FileType php let php_folding=1
+autocmd FileType php let php_sql_query=1
+autocmd FileType php let php_htmlInStrings=1
+autocmd FileType php let php_baselib = 1
 
 " OmniComplete
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+" PDV
+source ~/.vim/php-doc.vim
+inoremap <C-P> :call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+let g:pdv_cfg_Uses = 1
+
+" Ruler
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%101v.\+/
+
