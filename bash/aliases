@@ -3,6 +3,8 @@ alias ll='ls -lha'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cdd='cd -'
+alias cp='cp -v'
+alias mv='mv -v'
 
 function take {
   mkdir $1
