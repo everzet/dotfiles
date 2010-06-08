@@ -3,8 +3,11 @@ alias ll='ls -lha'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cdd='cd -'
+
 alias cp='cp -v'
 alias mv='mv -v'
+alias ln='ln -v'
+alias rm='rm -v'
 
 function take {
   mkdir $1
@@ -32,6 +35,3 @@ alias gd='git diff'
 function gg {
   git commit -avm "$*"
 }
-
-alias tu='top -o cpu'
-alias tm='top -o vsize'
