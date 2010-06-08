@@ -1,7 +1,0 @@
-#!/bin/sh
-
-ln -nfs ~/bin/dotfiles/bash_profile .bash_profile
-ln -nfs ~/bin/dotfiles/bashrc .bashrc
-ln -nfs ~/bin/dotfiles/gitconfig .gitconfig
-ln -nfs ~/bin/dotfiles/vim .vim
-ln -nfs ~/bin/dotfiles/vimrc .vimrc
