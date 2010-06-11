@@ -1,0 +1,24 @@
+[user]
+	name = ever.zet
+	email = ever.zet@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[apply]
+	whitespace = nowarn
+[difftool "Kaleidoscope"]
+	cmd = "ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\""
+[difftool "diffmerge"]
+	cmd = "diffmerge \"$LOCAL\" \"$REMOTE\""
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
+	trustexitcode = false
+[merge]
+	tool = diffmerge
+[alias]
+	unstage = reset HEAD
