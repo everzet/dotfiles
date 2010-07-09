@@ -14,6 +14,7 @@ function take {
   cd $1
 }
 
+alias pu='phpunit --colors'
 alias sc='symfony cc'
 alias dba='symfony doctrine:build --all --and-load --no-confirmation'
 alias spa='symfony plugin:publish-assets'
