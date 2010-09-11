@@ -1,5 +1,5 @@
 # macports
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/usr/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -8,8 +8,8 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 # editors
-export EDITOR='mate -w'
-export GIT_EDITOR='mate -wl1'
+export EDITOR='vim'
+export GIT_EDITOR='mvim -f'
 
 # bash-completion
 export USER_BASH_COMPLETION_DIR=~/.bash_completion.d
