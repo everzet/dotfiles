@@ -1,0 +1,33 @@
+[submodule "vim/bundle/jade.vim"]
+	path = vim/bundle/jade.vim
+	url = http://github.com/vim-scripts/jade.vim.git
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = http://github.com/bronson/vim-bufexplorer.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = http://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = http://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/git"]
+	path = vim/bundle/git
+	url = http://github.com/tpope/vim-git.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/pastie"]
+	path = vim/bundle/pastie
+	url = http://github.com/tpope/vim-pastie.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = http://github.com/nowk/vim-taglist.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/ragtag"]
+	path = vim/bundle/ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git

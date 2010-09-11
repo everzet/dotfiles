@@ -7,11 +7,11 @@
 	status = auto
 [apply]
 	whitespace = nowarn
-[diff]
-	tool = Kaleidoscope
+[alias]
+	unstage = reset HEAD
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
-[alias]
-	unstage = reset HEAD
+[diff]
+	tool = Kaleidoscope

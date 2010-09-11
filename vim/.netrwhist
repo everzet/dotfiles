@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/everzet/Sites/dev/sf.dev.by'
+let g:netrw_dirhist_2='/Users/everzet/bin/dotfiles/vim'
+let g:netrw_dirhist_3='/Users/everzet/Sites/dev/sf.dev.by'
+let g:netrw_dirhist_4='/Users/everzet/bin/dotfiles/vim'
