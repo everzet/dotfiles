@@ -1,6 +1,9 @@
 " Pathogen
 silent! call pathogen#runtime_append_all_bundles()
 
+" SHell
+set shell=/bin/bash\ -l
+
 " Включаем несовместимость настроек с Vi (ибо Vi нам и не понадобится).
 se nocompatible
 
@@ -8,7 +11,7 @@ se nocompatible
 colo wombat 
 
 if has("gui_running")
-    se lines=60 columns=180
+    se lines=65 columns=180
     colo BusyBee
 endif
 
@@ -129,8 +132,12 @@ vmap <C-C> "+yi
 imap <C-V> <esc>"+gPi
 
 " Настройки для BufExplorer
-nmap <leader>b :BufExplorer<cr>
 let g:bufExplorerShowRelativePath=1
+nmap <S-b> :BufExplorer<cr>
+
+if has("gui_running")
+  map <D-t> <Plug>PeepOpen
+end
 
 " предыдущий/следующий буфер
 nmap gT :bp<cr>
@@ -149,7 +156,7 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 
 " Редко когда надо [ без пары =)
 imap [ []<LEFT>
-"
+
 " Аналогично и для {
 imap {<CR> {<CR>}<Esc>O
 
@@ -160,6 +167,7 @@ au BufRead,BufNewFile *.phps      se filetype=php
 au BufRead,BufNewFile *.thtml     se filetype=php
 
 " 2 таба для symfony1 и jade
-au BufRead,BufNewFile *.class.php     selocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.jade          selocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.class.php     setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.jade          setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.yml           setlocal tabstop=2 shiftwidth=2 softtabstop=2
 

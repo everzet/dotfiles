@@ -31,3 +31,15 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/less"]
+	path = vim/bundle/less
+	url = http://github.com/itspriddle/vim-lesscss.git
+[submodule "vim/bundle/rooter"]
+	path = vim/bundle/rooter
+	url = http://github.com/airblade/vim-rooter.git
+[submodule "vim/bundle/phpfolding"]
+	path = vim/bundle/phpfolding
+	url = http://github.com/shemerey/vim-phpfolding.git
+[submodule "vim/bundle/ZenCoding"]
+	path = vim/bundle/ZenCoding
+	url = http://github.com/vim-scripts/ZenCoding.vim.git
