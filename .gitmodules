@@ -43,3 +43,6 @@
 [submodule "vim/bundle/ZenCoding"]
 	path = vim/bundle/ZenCoding
 	url = http://github.com/vim-scripts/ZenCoding.vim.git
+[submodule "vim/bundle/cucumber"]
+	path = vim/bundle/cucumber
+	url = http://github.com/tpope/vim-cucumber.git
