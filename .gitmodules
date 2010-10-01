@@ -46,3 +46,6 @@
 [submodule "vim/bundle/cucumber"]
 	path = vim/bundle/cucumber
 	url = http://github.com/tpope/vim-cucumber.git
+[submodule "vim/bundle/pdv"]
+	path = vim/bundle/pdv
+	url = http://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
