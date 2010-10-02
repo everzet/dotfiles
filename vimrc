@@ -56,9 +56,11 @@ se wildmenu                                                         " tab comple
 se wildmode=list:longest
 
 se wrap
+se linebreak
 se textwidth=120
 se colorcolumn=120
 se formatoptions=qrn1
+"se formatoptions+=tca
 hi colorcolumn guibg=#2d2d2d  
 
 " STATUSLINE
@@ -82,9 +84,11 @@ se ffs=unix
 
 se backspace=indent,eol,start
 se lazyredraw                                                       " don't refresh screen on macros work
+se formatprg=par                                                    " use PAR as prg formatter (gq)
 
 inoremap jj <Esc>
 
+let mapleader=","
 nnoremap <leader>w <C-w>v<C-w>l                                     " split vertical & move to it
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]                                              " reselect pasted text
@@ -92,7 +96,9 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>                    " strip trai
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>                  " edit vim file
 nmap <leader>l :set list!<CR>
-set listchars=tab:▸\ ,eol:¬
+nmap <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
+
+se listchars=tab:▸\ ,eol:¬
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -140,23 +146,27 @@ menu Encoding.koi8-r :e ++enc=koi8-r<CR>
 menu Encoding.windows-1251 :e ++enc=cp1251<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 
-imap [ []<LEFT>
+imap ( ()<Esc>i
+imap [ []<Esc>i
 imap {<CR> {<CR>}<Esc>O
 
 filetype on
 filetype plugin on
 filetype indent on
 
-au FocusLost * :wa
+if has("au")
+    au FocusLost * :wa
+    au BufWritePost .vimrc source $MYVIMRC
 
-au FileType helpfile                setlocal nonumber
-au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
+    au FileType helpfile                setlocal nonumber
+    au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
 
-au BufRead,BufNewFile *.phps        setlocal filetype=php
-au BufRead,BufNewFile *.thtml       setlocal filetype=php
+    au BufRead,BufNewFile *.phps        setlocal filetype=php
+    au BufRead,BufNewFile *.thtml       setlocal filetype=php
 
-au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.yml         setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.yml         setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
+endif
 
