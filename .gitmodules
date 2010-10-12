@@ -49,3 +49,6 @@
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
 	url = http://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
