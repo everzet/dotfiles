@@ -51,7 +51,7 @@ se scrolloff=3
 
 se enc=utf8
 
-se wcm=<Tab> 
+se wcm=<Tab>
 se wildmenu                                                         " tab completion in files
 se wildmode=list:longest
 
@@ -61,7 +61,7 @@ se textwidth=120
 se colorcolumn=120
 se formatoptions=qrn1
 "se formatoptions+=tca
-hi colorcolumn guibg=#2d2d2d  
+hi colorcolumn guibg=#2d2d2d
 
 " STATUSLINE
 se statusline=                                                      " clear the statusline for when vimrc is reloaded
@@ -131,9 +131,9 @@ nmap <D-r> :BufExplorer<cr>
 nnoremap / /\v
 vnoremap / /\v
 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
 
 if has("gui_running")
   map <D-t> <Plug>PeepOpen
@@ -146,7 +146,6 @@ menu Encoding.koi8-r :e ++enc=koi8-r<CR>
 menu Encoding.windows-1251 :e ++enc=cp1251<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 
-imap ( ()<Esc>i
 imap [ []<Esc>i
 imap {<CR> {<CR>}<Esc>O
 
@@ -154,19 +153,17 @@ filetype on
 filetype plugin on
 filetype indent on
 
-if has("au")
-    au FocusLost * :wa
-    au BufWritePost .vimrc source $MYVIMRC
+au FocusLost * :wa
+au BufWritePost .vimrc source $MYVIMRC
 
-    au FileType helpfile                setlocal nonumber
-    au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
+au FileType helpfile                setlocal nonumber
+au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
 
-    au BufRead,BufNewFile *.phps        setlocal filetype=php
-    au BufRead,BufNewFile *.thtml       setlocal filetype=php
+au BufRead,BufNewFile *.phps        setlocal filetype=php
+au BufRead,BufNewFile *.thtml       setlocal filetype=php
 
-    au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.yml         setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
-endif
+au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.yml         setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
