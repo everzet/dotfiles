@@ -86,17 +86,18 @@ se backspace=indent,eol,start
 se lazyredraw                                                       " don't refresh screen on macros work
 se formatprg=par                                                    " use PAR as prg formatter (gq)
 
-inoremap jj <Esc>
+inoremap jj <esc>
 
 let mapleader=","
 nnoremap <leader>w <C-w>v<C-w>l                                     " split vertical & move to it
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 nnoremap <leader>v V`]                                              " reselect pasted text
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>                    " strip trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>                    " strip trailing whitespace
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>                  " edit vim file
-nmap <leader>l :set list!<CR>
+nmap <leader>l :set list!<cr>
 nmap <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
+nmap <leader>t :NERDTreeToggle<cr>
 
 se listchars=tab:▸\ ,eol:¬
 
@@ -125,15 +126,19 @@ se showtabline=0
 let g:bufExplorerShowRelativePath=1
 nmap <D-r> :BufExplorer<cr>
 
+let NERDTreeHighlightCursorline=1
+let NERDTreeWinPos='right'
+let NERDTreeWinSize=60
+
 "nmap <D-S-{> :bp<cr>
 "nmap <D-S-}> :bn<cr>
 
 nnoremap / /\v
 vnoremap / /\v
 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+inoremap <C-P> <esc>:call PhpDocSingle()<cr>i
+nnoremap <C-P> :call PhpDocSingle()<cr>
+vnoremap <C-P> :call PhpDocRange()<cr>
 
 if has("gui_running")
   map <D-t> <Plug>PeepOpen
@@ -142,12 +147,12 @@ end
 vmap < <gv
 vmap > >gv
 
-menu Encoding.koi8-r :e ++enc=koi8-r<CR>
-menu Encoding.windows-1251 :e ++enc=cp1251<CR>
-menu Encoding.utf-8 :e ++enc=utf8 <CR>
+menu Encoding.koi8-r :e ++enc=koi8-r<cr>
+menu Encoding.windows-1251 :e ++enc=cp1251<cr>
+menu Encoding.utf-8 :e ++enc=utf8 <cr>
 
-imap [ []<Esc>i
-imap {<CR> {<CR>}<Esc>O
+imap [ []<esc>i
+imap {<cr> {<cr>}<esc>O
 
 filetype on
 filetype plugin on
