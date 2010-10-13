@@ -12,7 +12,7 @@ se nu                                                               " line numbe
 se vb                                                               " visual bell
 
 syntax on
-colo desert
+colo wombat
 
 " EDITOR
 se iskeyword=@,48-57,_,192-255                                      " russian symbols support
