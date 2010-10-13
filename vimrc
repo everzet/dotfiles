@@ -12,18 +12,7 @@ se nu                                                               " line numbe
 se vb                                                               " visual bell
 
 syntax on
-colo wombat
-
-" GUI
-if has("gui_running")
-    se lines=65 columns=200
-    se go-=r                                                        " no right scroll
-    se go-=L                                                        " no left scroll
-    se go-=T                                                        " no toolbar
-    se guifont=ProFontX:h9
-    se cursorline
-    colo mustang
-endif
+colo desert
 
 " EDITOR
 se iskeyword=@,48-57,_,192-255                                      " russian symbols support
@@ -61,7 +50,6 @@ se textwidth=120
 se colorcolumn=120
 se formatoptions=qrn1
 "se formatoptions+=tca
-hi colorcolumn guibg=#2d2d2d
 
 " STATUSLINE
 se statusline=                                                      " clear the statusline for when vimrc is reloaded
@@ -139,10 +127,6 @@ vnoremap / /\v
 inoremap <C-P> <esc>:call PhpDocSingle()<cr>i
 nnoremap <C-P> :call PhpDocSingle()<cr>
 vnoremap <C-P> :call PhpDocRange()<cr>
-
-if has("gui_running")
-  map <D-t> <Plug>PeepOpen
-end
 
 vmap < <gv
 vmap > >gv
