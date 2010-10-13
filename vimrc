@@ -1,5 +1,6 @@
 " GLOBAL
 silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
 
 se nocompatible                                                     " no VI
 se hidden                                                           " don't close hided buffers
@@ -83,6 +84,13 @@ nnoremap <leader>v V`]                                              " reselect p
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>                    " strip trailing whitespace
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>                  " edit vim file
+
+nmap <leader><up> [e
+nmap <leader><down> ]e
+
+vmap <leader><up> [egv
+vmap <leader><down> ]egv
+
 nmap <leader>l :set list!<cr>
 nmap <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
 nmap <leader>t :NERDTreeToggle<cr>
@@ -135,7 +143,6 @@ menu Encoding.koi8-r :e ++enc=koi8-r<cr>
 menu Encoding.windows-1251 :e ++enc=cp1251<cr>
 menu Encoding.utf-8 :e ++enc=utf8 <cr>
 
-imap [ []<esc>i
 imap {<cr> {<cr>}<esc>O
 
 filetype on
