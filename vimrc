@@ -126,8 +126,8 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos='right'
 let NERDTreeWinSize=60
 
-"nmap <D-S-{> :bp<cr>
-"nmap <D-S-}> :bn<cr>
+nmap gb :bp<cr>
+nmap gB :bn<cr>
 
 nnoremap / /\v
 vnoremap / /\v
