@@ -157,6 +157,7 @@ au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
 
 au BufRead,BufNewFile *.phps        setlocal filetype=php
 au BufRead,BufNewFile *.thtml       setlocal filetype=php
+au BufRead,BufNewFile *.twig        setlocal filetype=jinja
 
 au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
