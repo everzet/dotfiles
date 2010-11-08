@@ -1,57 +1,54 @@
 [submodule "vim/bundle/jade.vim"]
 	path = vim/bundle/jade.vim
-	url = http://github.com/vim-scripts/jade.vim.git
-[submodule "vim/bundle/bufexplorer"]
-	path = vim/bundle/bufexplorer
-	url = http://github.com/bronson/vim-bufexplorer.git
+	url = https://github.com/vim-scripts/jade.vim.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
-	url = http://github.com/mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
-	url = http://github.com/tpope/vim-markdown.git
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
-	url = http://github.com/tpope/vim-git.git
+	url = https://github.com/tpope/vim-git.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/pastie"]
 	path = vim/bundle/pastie
-	url = http://github.com/tpope/vim-pastie.git
+	url = https://github.com/tpope/vim-pastie.git
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
-	url = http://github.com/nowk/vim-taglist.git
+	url = https://github.com/nowk/vim-taglist.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
-	url = http://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
-	url = http://github.com/tpope/vim-ragtag.git
+	url = https://github.com/tpope/vim-ragtag.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
-	url = http://github.com/scrooloose/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
-	url = http://github.com/itspriddle/vim-lesscss.git
+	url = https://github.com/itspriddle/vim-lesscss.git
 [submodule "vim/bundle/rooter"]
 	path = vim/bundle/rooter
-	url = http://github.com/airblade/vim-rooter.git
+	url = https://github.com/airblade/vim-rooter.git
 [submodule "vim/bundle/phpfolding"]
 	path = vim/bundle/phpfolding
-	url = http://github.com/shemerey/vim-phpfolding.git
+	url = https://github.com/shemerey/vim-phpfolding.git
 [submodule "vim/bundle/ZenCoding"]
 	path = vim/bundle/ZenCoding
-	url = http://github.com/vim-scripts/ZenCoding.vim.git
+	url = https://github.com/vim-scripts/ZenCoding.vim.git
 [submodule "vim/bundle/cucumber"]
 	path = vim/bundle/cucumber
-	url = http://github.com/tpope/vim-cucumber.git
+	url = https://github.com/tpope/vim-cucumber.git
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
-	url = http://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = http://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/unimpared"]
 	path = vim/bundle/unimpared
-	url = http://github.com/tpope/vim-unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired.git
