@@ -52,3 +52,6 @@
 [submodule "vim/bundle/unimpared"]
 	path = vim/bundle/unimpared
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = https://github.com/edsono/vim-bufexplorer.git
