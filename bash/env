@@ -13,8 +13,8 @@ export GIT_EDITOR='mvim -f'
 
 # bash-completion
 export USER_BASH_COMPLETION_DIR=~/.bash_completion.d
-if [ -f /opt/local/etc/bash_completion ]; then
-  . /opt/local/etc/bash_completion
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
 fi
 
 # console colors
