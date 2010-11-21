@@ -8,8 +8,10 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 # editors
-export EDITOR='vim'
-export GIT_EDITOR='mvim -f'
+export EDITOR='mate'
+export GIT_EDITOR='mate -w'
+# export EDITOR='vim'
+# export GIT_EDITOR='mvim -f'
 
 # bash-completion
 export USER_BASH_COMPLETION_DIR=~/.bash_completion.d
