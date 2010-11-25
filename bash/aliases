@@ -9,9 +9,13 @@ alias mv='mv -v'
 alias ln='ln -v'
 alias rm='rm -v'
 
+function manview {
+    man -t $1 | open -f -a /Applications/Preview.app
+}
+
 function take {
-  mkdir $1
-  cd $1
+    mkdir $1
+    cd $1
 }
 
 alias pu='phpunit --colors'
@@ -43,5 +47,5 @@ alias gl='git log --oneline'
 alias glg='git log --oneline --graph'
 
 function gg {
-  git commit -avm "$*"
+    git commit -avm "$*"
 }
