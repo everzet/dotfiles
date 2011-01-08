@@ -1,0 +1,37 @@
+autoload -U compinit
+autoload -U predict-on
+autoload -U colors && colors
+autoload -U zcalc zed
+
+compinit zmodload zsh/complist
+zstyle ':completion:*' menu yes select
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+
+setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS AUTO_CD BSD_ECHO PROMPT_SUBST
+
+zle -N predict-on
+zle -N predict-off
+
+bindkey "^X^Z" predict-on   # C-x C-z
+bindkey "^Z" predict-off    # C-z
+
+bindkey '^[[3~' delete-char
+bindkey '^E' expand-cmd-path
+
+_force_rehash() {
+    (( CURRENT == 1 )) && rehash return 1
+}
+zstyle ':completion:::::' completer _force_rehash _complete
+
+if [ -e $HOME/.ssh/known_hosts ] ; then
+    hosts=(${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*})
+    zstyle ':completion:*:hosts' hosts $hosts
+fi
+
+PROMPT='%{$fg[green]%}%{$bg[black]%}%n%{$reset_color%}@%{$fg[cyan]%}%{$bg[black]%}%m%{$reset_color%}:%{$fg[black]%}%{$bg[white]%} %d %{$reset_color%}%{$fg[white]%}%{$bg[black]%}$(vcprompt -f " %s:%b/%h ")%{$reset_color%}$(print "\n✎ ")'
