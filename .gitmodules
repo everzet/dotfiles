@@ -15,7 +15,7 @@
 	url = https://github.com/tpope/vim-pastie.git
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
-	url = https://github.com/nowk/vim-taglist.git
+	url = https://github.com/mexpolk/vim-taglist.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
@@ -34,9 +34,6 @@
 [submodule "vim/bundle/phpfolding"]
 	path = vim/bundle/phpfolding
 	url = https://github.com/shemerey/vim-phpfolding.git
-[submodule "vim/bundle/ZenCoding"]
-	path = vim/bundle/ZenCoding
-	url = https://github.com/vim-scripts/ZenCoding.vim.git
 [submodule "vim/bundle/cucumber"]
 	path = vim/bundle/cucumber
 	url = https://github.com/tpope/vim-cucumber.git
