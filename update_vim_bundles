@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+for bundle in vim/bundle/*; do
+    if [ -d $bundle/.git ]; then
+        cd $bundle
+        git reset --hard
+        git clean -f
+        git pull origin master
+        cd ../../..
+    fi
+done;
