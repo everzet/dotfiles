@@ -20,13 +20,12 @@ zle -N predict-off
 
 bindkey "^X^Z" predict-on   # C-x C-z
 bindkey "^Z" predict-off    # C-z
-
-bindkey '^[[3~' delete-char
-bindkey '^E' expand-cmd-path
+bindkey "^F" forward-word
+bindkey "^B" backward-word
 
 if [ -e $HOME/.ssh/known_hosts ] ; then
     hosts=(${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*})
     zstyle ':completion:*:hosts' hosts $hosts
 fi
 
-PROMPT='$(if (($? == 0)); then print "%{$fg[green]%}"; else print "%{$fg[red]%}"; fi)• %{$reset_color%}%{$fg[green]%}%{$bg[black]%}%n%{$reset_color%}@%{$fg[cyan]%}%{$bg[black]%}%m%{$reset_color%}:%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$fg[white]%}%{$bg[black]%}$(vcprompt -f " %s:%b/%h ")%{$reset_color%}$(print "\n✎ ")'
+PROMPT='%{$fg[green]%}%{$bg[black]%}%n%{$reset_color%}@%{$fg[cyan]%}%{$bg[black]%}%m%{$reset_color%}:%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$fg[white]%}%{$bg[black]%}$(vcprompt -f " %s:%b/%h ")%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "\n⚡ ")%{$reset_color%}'
