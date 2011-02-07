@@ -8,10 +8,10 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 # editors
-export EDITOR='mate'
-export GIT_EDITOR='mate -w'
-# export EDITOR='vim'
-# export GIT_EDITOR='mvim -f'
+# export EDITOR='mate'
+# export GIT_EDITOR='mate -w'
+export EDITOR='vim'
+export GIT_EDITOR='mvim -f'
 
 # console colors
 export CLICOLOR=1
