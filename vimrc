@@ -78,7 +78,6 @@ se formatprg=par                                                    " use PAR as
 inoremap jj <esc>
 
 let mapleader=","
-nnoremap <leader>w <C-w>v<C-w>l                                     " split vertical & move to it
 nnoremap <leader>a :Ack 
 nnoremap <leader>v V`]                                              " reselect pasted text
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>                    " strip trailing whitespace
@@ -94,6 +93,17 @@ vmap <leader><down> ]egv
 nmap <leader>l :set list!<cr>
 nmap <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
 nmap <leader>t :NERDTreeToggle<cr>
+
+" windows
+nmap <leader>we <C-w>v<C-w>l                                    " split verticaly & move to it
+nmap <leader>ws <C-w>s<C-w>j                                    " split horizontally & move to it
+nmap <leader>wa :on<cr>
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap gt :bn<cr>
+nmap gT :bp<cr>
 
 se listchars=tab:▸\ ,eol:¬
 
