@@ -14,10 +14,25 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 
 setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS AUTO_CD BSD_ECHO PROMPT_SUBST
+HISTSIZE=100
+SAVEHIST=100
+HISTFILE=~/.zsh/history
+setopt append_history
+setopt inc_append_history
+setopt extended_history
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt hist_ignore_space
+setopt hist_no_store
+setopt hist_no_functions
+setopt no_hist_beep
+setopt hist_save_no_dups
 
 zle -N predict-on
 zle -N predict-off
 
+bindkey "^R" history-incremental-search-backward
 bindkey "^X^Z" predict-on   # C-x C-z
 bindkey "^Z" predict-off    # C-z
 bindkey "^F" forward-word
@@ -30,4 +45,4 @@ if [ -e $HOME/.ssh/known_hosts ] ; then
     zstyle ':completion:*:hosts' hosts $hosts
 fi
 
-PROMPT='%{$fg[green]%}%{$bg[black]%}%n%{$reset_color%}@%{$fg[cyan]%}%{$bg[black]%}%m%{$reset_color%}:%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$fg[white]%}%{$bg[black]%}$(vcprompt -f " %s:%{$fg[green]%}%b%{$fg[white]%}/%{$fg[cyan]%}%h%{$fg[white]%} %{$reset_color%} %{$fg[red]%}%u%{$fg[green]%}%m")%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "\n⚡ ")%{$reset_color%}'
+PROMPT='%{$fg[green]%}%{$bg[black]%}%n%{$reset_color%}@%{$fg[cyan]%}%{$bg[black]%}%m%{$reset_color%}:%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$fg[white]%}%{$bg[black]%}$(vcprompt -f " %s:%{$fg[green]%}%b%{$fg[white]%}/%{$fg[cyan]%}%h%{$fg[white]%} %{$reset_color%}")%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "\n⚡ ")%{$reset_color%}'
