@@ -1,4 +1,4 @@
-se lines=63 columns=200
+se lines=68 columns=212
 se go-=r                                                        " no right scroll
 se go-=L                                                        " no left scroll
 se go-=T                                                        " no toolbar
