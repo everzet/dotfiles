@@ -48,7 +48,7 @@ se wildmode=list:longest
 se wrap
 se linebreak
 se textwidth=120
-se colorcolumn=120
+se colorcolumn=102
 se formatoptions=qrn1
 "se formatoptions+=tca
 
@@ -159,7 +159,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-au FocusLost * :wa
+au FocusLost silent! :wa
 au BufWritePost .vimrc source $MYVIMRC
 
 au FileType helpfile                setlocal nonumber
