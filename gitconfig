@@ -15,3 +15,5 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+[core]
+	quotepath = false
