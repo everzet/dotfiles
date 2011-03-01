@@ -8,6 +8,8 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias ln='ln -v'
 alias rm='rm -v'
+alias vi='vim'
+alias mvi='mvim'
 
 function manview {
     man -t $1 | open -f -a /Applications/Preview.app
