@@ -104,6 +104,8 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap gt :bn<cr>
 nmap gT :bp<cr>
+nmap <leader>= :Tab /=<cr>
+nmap <leader><leader> :Tab /,<cr>
 
 se listchars=tab:▸\ ,eol:¬
 
