@@ -45,11 +45,11 @@ se wcm=<Tab>
 se wildmenu                                                         " tab completion in files
 se wildmode=list:longest
 
-se wrap
-se linebreak
-se textwidth=120
+se wrap linebreak nolist
+se textwidth=100
 se colorcolumn=102
 se formatoptions=qrn1
+"se formatprg=par                                                    " use PAR as prg formatter (gq)
 "se formatoptions+=tca
 
 " STATUSLINE
@@ -73,12 +73,11 @@ se ffs=unix
 
 se backspace=indent,eol,start
 se lazyredraw                                                       " don't refresh screen on macros work
-se formatprg=par                                                    " use PAR as prg formatter (gq)
 
 inoremap jj <esc>
 
 let mapleader=","
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 nnoremap <leader>v V`]                                              " reselect pasted text
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>                    " strip trailing whitespace
 nnoremap <leader><space> :noh<cr>
@@ -106,6 +105,7 @@ nmap gt :bn<cr>
 nmap gT :bp<cr>
 nmap <leader>= :Tab /=<cr>
 nmap <leader><leader> :Tab /,<cr>
+nmap <leader>c :%s/\s*$//g<cr><leader><space>
 
 se listchars=tab:▸\ ,eol:¬
 
