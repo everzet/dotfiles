@@ -13,7 +13,8 @@ se nu                                                               " line numbe
 se vb                                                               " visual bell
 
 syntax on
-colo wombat
+set background=dark
+colo ir_black
 
 " EDITOR
 se iskeyword=@,48-57,_,192-255                                      " russian symbols support
@@ -72,7 +73,7 @@ se ff=unix
 se ffs=unix
 
 se backspace=indent,eol,start
-se lazyredraw                                                       " don't refresh screen on macros work
+"se lazyredraw                                                       " don't refresh screen on macros work
 
 inoremap jj <esc>
 
@@ -92,6 +93,8 @@ vmap <leader><down> ]egv
 nmap <leader>l :set list!<cr>
 nmap <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
 nmap <leader>t :NERDTreeToggle<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
 
 " windows
 nmap <leader>we <C-w>v<C-w>l                                    " split verticaly & move to it
@@ -105,7 +108,7 @@ nmap gt :bn<cr>
 nmap gT :bp<cr>
 nmap <leader>= :Tab /=<cr>
 nmap <leader><leader> :Tab /,<cr>
-nmap <leader>c :%s/\s*$//g<cr><leader><space>
+nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
 se listchars=tab:▸\ ,eol:¬
 
@@ -151,7 +154,6 @@ vnoremap <C-P> :call PhpDocRange()<cr>
 vmap < <gv
 vmap > >gv
 
-menu Encoding.koi8-r :e ++enc=koi8-r<cr>
 menu Encoding.windows-1251 :e ++enc=cp1251<cr>
 menu Encoding.utf-8 :e ++enc=utf8 <cr>
 
@@ -161,18 +163,33 @@ filetype on
 filetype plugin on
 filetype indent on
 
-au FocusLost silent! :wa
-au BufWritePost .vimrc source $MYVIMRC
+if has('autocmd')
+    au FocusLost silent! :wa
+    au BufWritePost .vimrc source $MYVIMRC
 
-au FileType helpfile                setlocal nonumber
-au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
+    au FileType helpfile                setlocal nonumber
+    au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
 
-au BufRead,BufNewFile *.phps        setlocal filetype=php
-au BufRead,BufNewFile *.thtml       setlocal filetype=php
-au BufRead,BufNewFile *.twig        setlocal filetype=jinja
+    au BufRead,BufNewFile *.phps        setlocal filetype=php
+    au BufRead,BufNewFile *.thtml       setlocal filetype=php
+    au BufRead,BufNewFile *.twig        setlocal filetype=jinja
+    au BufRead,BufNewFile *.html.twig   setlocal filetype=html
 
-au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.yml         setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.yml         setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
+endif
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
