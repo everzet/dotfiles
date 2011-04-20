@@ -13,8 +13,7 @@ se nu                                                               " line numbe
 se vb                                                               " visual bell
 
 syntax on
-set background=dark
-colo ir_black
+colo mustang
 
 " EDITOR
 se iskeyword=@,48-57,_,192-255                                      " russian symbols support
