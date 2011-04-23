@@ -78,7 +78,6 @@ inoremap jj <esc>
 
 let mapleader=","
 nnoremap <leader>a :Ack 
-nnoremap <leader>v V`]
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 nmap <leader><up> [e
@@ -89,6 +88,7 @@ vmap <leader><down> ]egv
 
 nmap <leader>l :set list!<cr>
 nmap <leader>ep :e <C-R>=expand("%:p:h")."/"<cr>
+nmap <leader>sp :vs.<cr>
 nmap <leader>t :NERDTreeToggle<cr>
 
 nmap <leader>ga     :Gwrite<cr>
