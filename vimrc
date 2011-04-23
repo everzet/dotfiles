@@ -1,6 +1,6 @@
 " GLOBAL
 silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+"silent! call pathogen#helptags()
 
 se nocompatible                                                     " no VI
 se hidden                                                           " don't close hided buffers
@@ -30,8 +30,8 @@ se smartindent
 se smarttab
 
 se incsearch
-se hlsearch                                                         " don't hl previous search results
-se showmatch                                                        " show search matches
+se hlsearch
+se showmatch
 se ignorecase
 se smartcase
 se gdefault
@@ -42,7 +42,7 @@ se scrolloff=3
 se enc=utf8
 
 se wcm=<Tab>
-se wildmenu                                                         " tab completion in files
+se wildmenu
 se wildmode=list:longest
 
 se wrap linebreak nolist
@@ -77,11 +77,9 @@ se backspace=indent,eol,start
 inoremap jj <esc>
 
 let mapleader=","
-nnoremap <leader>a :Ack
-nnoremap <leader>v V`]                                              " reselect pasted text
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>                    " strip trailing whitespace
-nnoremap <leader><space> :noh<cr>
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>                  " edit vim file
+nnoremap <leader>a :Ack 
+nnoremap <leader>v V`]
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 nmap <leader><up> [e
 nmap <leader><down> ]e
@@ -90,25 +88,31 @@ vmap <leader><up> [egv
 vmap <leader><down> ]egv
 
 nmap <leader>l :set list!<cr>
-nmap <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
+nmap <leader>ep :e <C-R>=expand("%:p:h")."/"<cr>
 nmap <leader>t :NERDTreeToggle<cr>
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>gc :Gcommit<cr>
+
+nmap <leader>ga     :Gwrite<cr>
+nmap <leader>gmo    :Gmove<cr>
+nmap <leader>gre    :Gremove<cr>
+nmap <leader>gs     :Gstatus<cr>
+nmap <leader>gc     :Gcommit<cr>
 
 " windows
-nmap <leader>we <C-w>v<C-w>l                                    " split verticaly & move to it
-nmap <leader>ws <C-w>s<C-w>j                                    " split horizontally & move to it
-nmap <leader>wa :on<cr>
+nmap <leader>we <C-w>v<C-w>l
+nmap <leader>ws <C-w>s<C-w>j
+nmap <leader>wo :on<cr>
+nmap <leader>bo :BufOnly<cr>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-nmap gt :bn<cr>
-nmap gT :bp<cr>
 nmap <leader>= :Tab /=<cr>
 nmap <leader><leader> :Tab /,<cr>
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
+nmap gb :bp<cr>
+nmap gB :bn<cr>
 
+nnoremap <leader><space> :noh<cr>
 se listchars=tab:▸\ ,eol:¬
 
 nnoremap <up> <nop>
@@ -139,9 +143,6 @@ nmap <D-r> :BufExplorer<cr>
 let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos='right'
 let NERDTreeWinSize=60
-
-nmap gb :bp<cr>
-nmap gB :bn<cr>
 
 nnoremap / /\v
 vnoremap / /\v
