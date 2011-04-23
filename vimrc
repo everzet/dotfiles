@@ -88,7 +88,7 @@ vmap <leader><down> ]egv
 
 nmap <leader>l :set list!<cr>
 nmap <leader>ep :e <C-R>=expand("%:p:h")."/"<cr>
-nmap <leader>sp :vs.<cr>
+nmap <leader>sp :Vex<cr><C-w>=
 nmap <leader>t :NERDTreeToggle<cr>
 
 nmap <leader>ga     :Gwrite<cr>
