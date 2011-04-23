@@ -49,3 +49,6 @@
 [submodule "vim/bundle/BufOnly"]
 	path = vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim.git
+[submodule "vim/bundle/buftabs"]
+	path = vim/bundle/buftabs
+	url = https://github.com/vim-scripts/buftabs.git

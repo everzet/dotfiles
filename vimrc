@@ -70,17 +70,24 @@ se formatoptions=qrn1
 " STATUSLINE
 se statusline=                               " clear the statusline for when vimrc is reloaded
 se statusline+=%2*[%n%H%M%R%W]%*\            " buffer number
-se statusline+=%f\                           " file name
+"se statusline+=%f\                           " file name
+se statusline+=%{buftabs#statusline()}
 se statusline+=%h%m%r%w                      " flags
 se statusline+=[%{strlen(&ft)?&ft:'none'},   " filetype
 se statusline+=%{strlen(&fenc)?&fenc:&enc},  " encoding
 se statusline+=%{&fileformat}]               " file format
 se statusline+=%{GitBranchInfoString()}      " git info
+
 se statusline+=%=                            " right align
 se statusline+=%b,0x%-8B\                    " current char
 se statusline+=%-14.(%l,%c%V%)\ %<%P         " offset
 
 se laststatus=2
+
+let g:buftabs_marker_start="@"
+let g:buftabs_marker_end=" "
+let g:buftabs_separator="."
+let g:buftabs_marker_modified="*"
 
 se bs=2
 se ff=unix
@@ -131,8 +138,8 @@ nmap <C-l> <C-w>l
 " buffers
 nmap <D-r> :BufExplorer<cr>
 nmap <leader>bo :BufOnly<cr>
-nmap gb :bp<cr>
-nmap gB :bn<cr>
+nmap <D-[> :bp<cr>
+nmap <D-]> :bn<cr>
 
 " spacing
 nmap <leader>= :Tab /=<cr>
@@ -157,6 +164,8 @@ vnoremap <tab> %
 
 " PLUGINS
 let g:bufExplorerShowRelativePath=1
+let g:buftabs_only_basename=1
+let g:buftabs_in_statusline=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos='right'
 let NERDTreeWinSize=60
