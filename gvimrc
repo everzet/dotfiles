@@ -4,6 +4,6 @@ se go-=L                                                        " no left scroll
 se go-=T                                                        " no toolbar
 se guifont=ProFontX:h9
 se cursorline
-se showtabline=1                                                " always show tabs
+se showtabline=1                                                " show tabs only if needed
 
 map <D-t> <Plug>PeepOpen
