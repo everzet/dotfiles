@@ -70,8 +70,7 @@ se formatoptions=qrn1
 " STATUSLINE
 se statusline=                               " clear the statusline for when vimrc is reloaded
 se statusline+=%2*[%n%H%M%R%W]%*\            " buffer number
-"se statusline+=%f\                           " file name
-se statusline+=%{buftabs#statusline()}
+se statusline+=%f\                           " file name
 se statusline+=%h%m%r%w                      " flags
 se statusline+=[%{strlen(&ft)?&ft:'none'},   " filetype
 se statusline+=%{strlen(&fenc)?&fenc:&enc},  " encoding
@@ -83,11 +82,6 @@ se statusline+=%b,0x%-8B\                    " current char
 se statusline+=%-14.(%l,%c%V%)\ %<%P         " offset
 
 se laststatus=2
-
-let g:buftabs_marker_start="@"
-let g:buftabs_marker_end=" "
-let g:buftabs_separator="."
-let g:buftabs_marker_modified="*"
 
 se bs=2
 se ff=unix
@@ -164,8 +158,6 @@ vnoremap <tab> %
 
 " PLUGINS
 let g:bufExplorerShowRelativePath=1
-let g:buftabs_only_basename=1
-let g:buftabs_in_statusline=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos='right'
 let NERDTreeWinSize=60
