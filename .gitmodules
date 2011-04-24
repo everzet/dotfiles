@@ -55,3 +55,6 @@
 [submodule "vim/bundle/phpfolding"]
 	path = vim/bundle/phpfolding
 	url = https://github.com/everzet/phpfolding.vim.git
+[submodule "vim/bundle/git-branch-info"]
+	path = vim/bundle/git-branch-info
+	url = https://github.com/taq/vim-git-branch-info.git
