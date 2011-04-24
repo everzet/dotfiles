@@ -120,6 +120,8 @@ nmap <leader>gc     :Gcommit<cr>
 " windows
 nmap <leader>we <C-w>v<C-w>l
 nmap <leader>ws <C-w>s<C-w>j
+nmap <leader>wq <C-w>v<C-w>h
+nmap <leader>w2 <C-w>s<C-w>k
 nmap <leader>wo :on<cr>
 nmap <leader>w= <C-w>=
 nmap <leader>w0 <C-w>\|
@@ -192,6 +194,8 @@ if has('autocmd')
     au BufRead,BufNewFile *.thtml       setlocal filetype=php
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=html
+
+    au BufWrite *.php :call <SID>StripTrailingWhitespaces()
 
     au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
