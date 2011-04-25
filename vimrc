@@ -138,8 +138,13 @@ nmap <D-[> :bp<cr>
 nmap <D-]> :bn<cr>
 
 " spacing
-nmap <leader>= :Tab /=<cr>
-nmap <leader><leader> :Tab /,<cr>
+nmap <leader><tab><tab> :Tab /
+vmap <leader><tab> :Tab /
+nmap <leader><tab>= :Tab /=<cr>
+vmap <leader><tab>= :Tab /=<cr>
+nmap <leader><tab>: :Tab /:\zs<cr>
+vmap <leader><tab>: :Tab /:\zs<cr>
+
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
 " disable arrow keys
