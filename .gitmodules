@@ -46,12 +46,6 @@
 [submodule "vim/bundle/BufOnly"]
 	path = vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
-[submodule "vim/snippets"]
-	path = vim/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
 [submodule "vim/bundle/phpfolding"]
 	path = vim/bundle/phpfolding
 	url = https://github.com/everzet/phpfolding.vim.git
