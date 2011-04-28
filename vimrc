@@ -42,6 +42,7 @@ se showmatch
 se ignorecase
 se smartcase
 se gdefault
+se cursorline
 
 se scrolljump=3
 se scrolloff=3
