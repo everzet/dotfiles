@@ -112,11 +112,12 @@ nmap <leader>sp :vsp <C-R>=expand("%:p:h")."/"<cr>
 nmap <leader>se :Vex<cr><C-w>=
 
 " fugitive
-nmap <leader>ga     :Gwrite<cr>
-nmap <leader>gmo    :Gmove<cr>
-nmap <leader>gre    :Gremove<cr>
 nmap <leader>gs     :Gstatus<cr>
+nmap <leader>gd     :Gdiff<cr>
+nmap <leader>ga     :Gwrite<cr>
 nmap <leader>gc     :Gcommit<cr>
+nmap <leader>gre    :Gremove<cr>
+nmap <leader>gmo    :Gmove<cr>
 
 " windows
 nmap <leader>we <C-w>v<C-w>l

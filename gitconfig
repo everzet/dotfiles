@@ -17,3 +17,5 @@
 	tool = Kaleidoscope
 [core]
 	quotepath = false
+[interactive]
+	singlekey = true
