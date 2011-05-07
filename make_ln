@@ -3,6 +3,7 @@
 ln -nfs ~/bin/dotfiles/bash_profile ~/.bash_profile
 ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
 ln -nfs ~/bin/dotfiles/zshrc ~/.zshrc
+ln -nfs ~/bin/dotfiles/jslintrc ~/.jslintrc
 
 ln -nfs ~/bin/dotfiles/npmrc ~/.npmrc
 ln -nfs ~/bin/dotfiles/vim ~/.vim
