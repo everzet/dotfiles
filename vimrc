@@ -72,15 +72,13 @@ se formatoptions=qrn1
 se statusline=                               " clear the statusline for when vimrc is reloaded
 se statusline+=%2*[%n%H%M%R%W]%*\            " buffer number
 se statusline+=%f\                           " file name
-se statusline+=%h%m%r%w                      " flags
-se statusline+=[%{strlen(&ft)?&ft:'none'},   " filetype
-se statusline+=%{strlen(&fenc)?&fenc:&enc},  " encoding
-se statusline+=%{&fileformat}]               " file format
-se statusline+=%{GitBranchInfoString()}      " git info
-
 se statusline+=%=                            " right align
-se statusline+=%b,0x%-8B\                    " current char
-se statusline+=%-14.(%l,%c%V%)\ %<%P         " offset
+se statusline+=%P\ \  
+se statusline+=%-10.(%l.%c%V%)\              " offset
+se statusline+=%{fugitive#statusline()}\     " git
+se statusline+=\(%{strlen(&ft)?&ft:'none'}\  " filetype
+se statusline+=%{strlen(&fenc)?&fenc:&enc}\  " encoding
+se statusline+=%{&fileformat}\)              " file format
 
 se laststatus=2
 
@@ -204,7 +202,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=html
 
-    au BufWrite *.php :call <SID>StripTrailingWhitespaces()
+    au BufWrite *.php,*.js,*.yml,*.feature :call <SID>StripTrailingWhitespaces()
 
     au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
