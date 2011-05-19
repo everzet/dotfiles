@@ -1,14 +1,16 @@
 [user]
-	name = everzet
+	name  = everzet
 	email = ever.zet@gmail.com
 [color]
 	branch = auto
-	diff = auto
+	diff   = auto
 	status = auto
 [apply]
 	whitespace = nowarn
 [alias]
 	unstage = reset HEAD
+[web]
+    browser = open
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
