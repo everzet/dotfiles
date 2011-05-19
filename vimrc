@@ -210,7 +210,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.yml         setlocal tabstop=4 shiftwidth=4 softtabstop=4
     au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.js          setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    au BufRead,BufNewFile *.js          setlocal tabstop=4 shiftwidth=4 softtabstop=4
 endif
 
 function! <SID>StripTrailingWhitespaces()
