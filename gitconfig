@@ -19,5 +19,6 @@
 	tool = Kaleidoscope
 [core]
 	quotepath = false
+	excludesfile = /Users/everzet/.gitignore_global
 [interactive]
 	singlekey = true
