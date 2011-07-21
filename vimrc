@@ -202,7 +202,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=html
 
-    au BufWrite *.php,*.js,*.yml,*.feature :call <SID>StripTrailingWhitespaces()
+    au BufWrite *.php,*.js,*.feature :call <SID>StripTrailingWhitespaces()
 
     au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
