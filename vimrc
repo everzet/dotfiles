@@ -31,7 +31,6 @@ se showmode
 se mousehide
 se ttyfast
 
-se foldmethod=indent
 se autoindent
 se smartindent
 se smarttab
@@ -95,7 +94,7 @@ se listchars=tab:▸\ ,eol:¬
 nnoremap <leader>a :Ack 
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader><space> :noh<cr>
-nmap <leader>t :NERDTreeToggle<cr>
+nmap <leader>; :NERDTreeToggle<cr>
 nmap <leader>l :set list!<cr>
 
 " lines moving
@@ -194,8 +193,9 @@ if has('autocmd')
     au FocusLost silent! :wa
     au BufWritePost .vimrc source $MYVIMRC
 
+    au VimEnter * :if argc() is 0 | NERDTree | endif
+
     au FileType helpfile                setlocal nonumber
-    au Syntax   php,ruby,js             setlocal foldmethod=syntax foldlevel=1
 
     au BufRead,BufNewFile *.phps        setlocal filetype=php
     au BufRead,BufNewFile *.thtml       setlocal filetype=php
