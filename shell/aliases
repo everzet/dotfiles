@@ -8,7 +8,7 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias ln='ln -v'
 alias rm='rm -v'
-alias vi='vim'
+alias v='vim'
 alias m='mvim'
 
 function manview {
