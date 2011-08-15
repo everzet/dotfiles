@@ -34,6 +34,7 @@ se ttyfast
 se autoindent
 se smartindent
 se smarttab
+se nofoldenable
 
 se incsearch
 se hlsearch
@@ -191,11 +192,11 @@ filetype plugin on
 filetype indent on
 
 if has('autocmd')
-    au FocusLost silent! :wa
-    au BufWritePost .vimrc source $MYVIMRC
-
     au VimEnter * :if argc() is 0 | NERDTree | endif
+    au BufWinEnter *     set foldlevel=999999 
+    au FocusLost silent! :wa
 
+    au BufWritePost .vimrc source $MYVIMRC
     au FileType helpfile                setlocal nonumber
 
     au BufRead,BufNewFile *.phps        setlocal filetype=php
