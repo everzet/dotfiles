@@ -13,9 +13,6 @@
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
 	url = https://github.com/itspriddle/vim-lesscss.git
@@ -43,12 +40,6 @@
 [submodule "vim/bundle/BufOnly"]
 	path = vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim.git
-[submodule "vim/bundle/phpfolding"]
-	path = vim/bundle/phpfolding
-	url = https://github.com/everzet/phpfolding.vim.git
-[submodule "vim/bundle/stylus"]
-	path = vim/bundle/stylus
-	url = https://github.com/wavded/vim-stylus.git
 [submodule "vim/bundle/jslint"]
 	path = vim/bundle/jslint
 	url = https://github.com/hallettj/jslint.vim.git
