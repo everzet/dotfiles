@@ -112,6 +112,7 @@ nmap <leader>se :Vex<cr><C-w>=
 nmap <leader>gs     :Gstatus<cr>
 nmap <leader>gd     :Gdiff<cr>
 nmap <leader>ga     :Gwrite<cr>
+nmap <leader>gh     :Gbrowse!<cr>
 nmap <leader>gc     :Gcommit<cr>
 nmap <leader>gre    :Gremove<cr>
 nmap <leader>gmo    :Gmove<cr>
