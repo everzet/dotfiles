@@ -171,6 +171,9 @@ let g:bufExplorerShowRelativePath=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos='right'
 let NERDTreeWinSize=60
+let g:EasyMotion_leader_key='m'
+hi EasyMotionTarget guifg=#b1d631 guibg=#202020 ctermfg=green ctermbg=none
+hi EasyMotionShade  guifg=#444444 guibg=#202020 ctermfg=darkgrey ctermbg=none
 
 nnoremap / /\v
 vnoremap / /\v
