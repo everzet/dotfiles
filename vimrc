@@ -202,7 +202,6 @@ if has('autocmd')
     au BufWritePost .vimrc source $MYVIMRC
     au FileType helpfile                setlocal nonumber
 
-    au BufRead,BufNewFile *             set      relativenumber
     au BufRead,BufNewFile *.phps        setlocal filetype=php
     au BufRead,BufNewFile *.thtml       setlocal filetype=php
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja

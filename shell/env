@@ -16,6 +16,7 @@ export GIT_EDITOR='vim'
 
 export JS_CMD="node"
 export NODE_PATH="/usr/local/lib/node_modules"
+export PHP_PEAR_PHP_BIN="/usr/local/bin/php"
 
 # console colors
 export CLICOLOR=1
