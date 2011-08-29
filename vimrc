@@ -206,6 +206,8 @@ if has('autocmd')
     au BufRead,BufNewFile *.thtml       setlocal filetype=php
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=html
+    au BufRead,BufNewFile *.ejs         setlocal filetype=html
+    au BufRead,BufNewFile *.json        setlocal filetype=javascript
 
     au BufWrite *.php,*.js,*.feature :call <SID>StripTrailingWhitespaces()
 
@@ -214,6 +216,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.yml         setlocal tabstop=4 shiftwidth=4 softtabstop=4
     au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.js          setlocal tabstop=4 shiftwidth=4 softtabstop=4
+    au BufRead,BufNewFile *.js          :JSLintToggle
 endif
 
 function! <SID>StripTrailingWhitespaces()
