@@ -175,6 +175,11 @@ let g:EasyMotion_leader_key='m'
 hi EasyMotionTarget guifg=#b1d631 guibg=#202020 ctermfg=green ctermbg=none
 hi EasyMotionShade  guifg=#444444 guibg=#202020 ctermfg=darkgrey ctermbg=none
 
+let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
+let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
+let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
+let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
+
 nnoremap / /\v
 vnoremap / /\v
 
@@ -204,8 +209,8 @@ if has('autocmd')
 
     au BufRead,BufNewFile *.phps        setlocal filetype=php
     au BufRead,BufNewFile *.thtml       setlocal filetype=php
-    au BufRead,BufNewFile *.twig        setlocal filetype=jinja
-    au BufRead,BufNewFile *.html.twig   setlocal filetype=html
+    au BufRead,BufNewFile *.twig        setlocal filetype=django
+    au BufRead,BufNewFile *.html.twig   setlocal filetype=htmldjango
     au BufRead,BufNewFile *.ejs         setlocal filetype=html
     au BufRead,BufNewFile *.json        setlocal filetype=javascript
 
