@@ -1,5 +1,5 @@
 [user]
-	name  = everzet
+	name = everzet
 	email = ever.zet@gmail.com
 [color]
 	branch = auto
@@ -22,3 +22,9 @@
 	excludesfile = /Users/everzet/.gitignore_global
 [interactive]
 	singlekey = true
+[difftool "sourcetree"]
+	cmd = /Applications/Kaleidoscope.app/Contents/MacOS/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
