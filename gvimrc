@@ -4,8 +4,6 @@ se go-=L                                                        " no left scroll
 se go-=T                                                        " no toolbar
 se showtabline=1                                                " show tabs only if needed
 
-map <D-t> <Plug>PeepOpen
-
 function! DefFont()
     se guifont=ProFontX:h9
 endfunction

@@ -138,6 +138,10 @@ nmap <leader>bo :BufOnly<cr>
 nmap <D-[> :bp<cr>
 nmap <D-]> :bn<cr>
 
+" command-t
+map <D-t> :CommandT<cr>
+let g:CommandTMaxHeight=30
+
 " spacing
 nmap <leader><tab><tab> :Tab /
 vmap <leader><tab> :Tab /
