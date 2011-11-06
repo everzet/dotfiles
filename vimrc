@@ -140,6 +140,7 @@ nmap <D-]> :bn<cr>
 
 " command-t
 map <D-t> :CommandT<cr>
+map <leader>t :CommandT<cr>
 let g:CommandTMaxHeight=30
 
 " spacing
