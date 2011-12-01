@@ -49,6 +49,7 @@ alias gc='git commit -v'
 
 alias gb='git branch -v'
 alias gco='git checkout'
+alias gcb='git checkout -b'
 
 alias gs='git diff --stat'
 alias gd='git diff'
