@@ -7,7 +7,7 @@ se fuopt=maxvert,maxhorz
 se fu
 
 function! DefFont()
-    se guifont=Inconsolata:h13
+    se guifont=ProFontX:h9
 endfunction
 
 function! BigFont()
