@@ -25,3 +25,4 @@ Thumbs.db
 *.o
 *.so
 tags
+_autoload.php
