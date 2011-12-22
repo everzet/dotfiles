@@ -32,6 +32,7 @@ se mousehide
 se ttyfast
 
 se autoindent
+se copyindent
 se smartindent
 se smarttab
 se nofoldenable
@@ -170,6 +171,8 @@ nnoremap k gk
 
 nnoremap <tab> %
 vnoremap <tab> %
+
+cmap w!! w !sudo tee % >/dev/null
 
 " PLUGINS
 let g:bufExplorerShowRelativePath=1

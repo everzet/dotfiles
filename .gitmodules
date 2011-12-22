@@ -13,12 +13,6 @@
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/less"]
-	path = vim/bundle/less
-	url = https://github.com/itspriddle/vim-lesscss.git
-[submodule "vim/bundle/rooter"]
-	path = vim/bundle/rooter
-	url = https://github.com/airblade/vim-rooter.git
 [submodule "vim/bundle/cucumber"]
 	path = vim/bundle/cucumber
 	url = https://github.com/tpope/vim-cucumber.git
