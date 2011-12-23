@@ -1,0 +1,9 @@
+snippet cls
+	<?php
+
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+
+	class ${2:`Filename('', 'myClass')`}
+	{
+	    ${3}
+	}
