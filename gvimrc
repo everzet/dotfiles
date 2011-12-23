@@ -7,11 +7,11 @@ se fuopt=maxvert,maxhorz
 se fu
 
 function! DefFont()
-    se guifont=ProFontX:h9
+    se guifont=ProFontX:h12
 endfunction
 
 function! BigFont()
-    se guifont=Monaco:h16
+    se guifont=Menlo:h18
 endfunction
 
 if has("gui_macvim")
