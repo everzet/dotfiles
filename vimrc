@@ -186,6 +186,9 @@ let g:EasyMotion_leader_key='m'
 hi EasyMotionTarget guifg=#b1d631 guibg=#202020 ctermfg=green ctermbg=none
 hi EasyMotionShade  guifg=#444444 guibg=#202020 ctermfg=darkgrey ctermbg=none
 
+let g:syntastic_enable_signs=0
+let g:syntastic_phpcs_conf="--standard=Symfony2"
+
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
 let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
 let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"

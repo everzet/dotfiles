@@ -55,3 +55,6 @@
 [submodule "vim/bundle/php-namespace"]
 	path = vim/bundle/php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
