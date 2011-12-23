@@ -154,6 +154,9 @@ vmap <leader><tab>: :Tab /:\zs<cr>
 nmap <leader><tab>> :Tab /=><cr>
 vmap <leader><tab>> :Tab /=><cr>
 
+" php
+map <leader>u :call PhpInsertUse()<cr>
+
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
 " disable arrow keys
