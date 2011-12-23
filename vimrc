@@ -93,10 +93,8 @@ inoremap jj <esc>
 let mapleader=","
 
 se listchars=tab:▸\ ,eol:¬
-nnoremap <leader>a :Ack 
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader><space> :noh<cr>
-nmap <leader>; :NERDTreeToggle<cr>
 nmap <leader>l :set list!<cr>
 
 " lines moving
@@ -138,12 +136,16 @@ nmap <leader>bo :BufOnly<cr>
 nmap <D-[> :bp<cr>
 nmap <D-]> :bn<cr>
 
-" command-t
+" Ack
+nnoremap <leader>a :Ack 
+
+" CommandT
 map <D-t> :CommandT<cr>
 map <leader>t :CommandT<cr>
 let g:CommandTMaxHeight=30
+let g:LustyJugglerShowKeys = 'a'
 
-" spacing
+" Tabular
 nmap <leader><tab><tab> :Tab /
 vmap <leader><tab> :Tab /
 nmap <leader><tab>= :Tab /=<cr>
@@ -152,11 +154,6 @@ nmap <leader><tab>: :Tab /:\zs<cr>
 vmap <leader><tab>: :Tab /:\zs<cr>
 nmap <leader><tab>> :Tab /=><cr>
 vmap <leader><tab>> :Tab /=><cr>
-
-" php
-map <leader>u :call PhpInsertUse()<cr>
-
-nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
 " disable arrow keys
 nnoremap <up> <nop>
@@ -176,36 +173,45 @@ vnoremap <tab> %
 
 cmap w!! w !sudo tee % >/dev/null
 
-" PLUGINS
-let NERDTreeHighlightCursorline=1
-let NERDTreeWinPos='right'
-let NERDTreeWinSize=60
+" extra search
+nnoremap / /\v
+vnoremap / /\v
+
+" move selected block
+vmap < <gv
+vmap > >gv
+
+" autoinsert curlys
+imap {<cr> {<cr>}<esc>O
+
+" PhpInsertUse
+map <leader>u :call PhpInsertUse()<cr>
+
+" EasyMotion
 let g:EasyMotion_leader_key='m'
-hi EasyMotionTarget guifg=#b1d631 guibg=#202020 ctermfg=green ctermbg=none
-hi EasyMotionShade  guifg=#444444 guibg=#202020 ctermfg=darkgrey ctermbg=none
 
-let g:syntastic_enable_signs=0
-let g:syntastic_phpcs_conf="--standard=Symfony2"
+" PHPDoc
+nnoremap <C-P> :call PhpDocSingle()<cr>
+vnoremap <C-P> :call PhpDocRange()<cr>
 
+" Surround
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
 let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
 let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 
-nnoremap / /\v
-vnoremap / /\v
+" Syntastic options
+let g:syntastic_enable_signs=0
+let g:syntastic_phpcs_conf="--standard=Symfony2"
 
-inoremap <C-P> <esc>:call PhpDocSingle()<cr>i
-nnoremap <C-P> :call PhpDocSingle()<cr>
-vnoremap <C-P> :call PhpDocRange()<cr>
+" NERDTree
+let NERDTreeHighlightCursorline=1
+let NERDTreeWinPos='right'
+let NERDTreeWinSize=60
+nmap <leader>; :NERDTreeToggle<cr>
 
-vmap < <gv
-vmap > >gv
-
-menu Encoding.windows-1251 :e ++enc=cp1251<cr>
-menu Encoding.utf-8 :e ++enc=utf8 <cr>
-
-imap {<cr> {<cr>}<esc>O
+" my functions
+nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
 filetype on
 filetype plugin on
@@ -219,20 +225,20 @@ if has('autocmd')
     au FileType helpfile                setlocal nonumber
 
     au BufRead,BufNewFile *.phps        setlocal filetype=php
-    au BufRead,BufNewFile *.thtml       setlocal filetype=php
     au BufRead,BufNewFile *.twig        setlocal filetype=django
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmldjango
     au BufRead,BufNewFile *.ejs         setlocal filetype=html
     au BufRead,BufNewFile *.json        setlocal filetype=javascript
 
-    au BufWrite *.php,*.js,*.feature :call <SID>StripTrailingWhitespaces()
+    au BufWrite *.php,*.js,*.feature,*.json :call <SID>StripTrailingWhitespaces()
 
     au BufRead,BufNewFile *.class.php   setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.yml         setlocal tabstop=4 shiftwidth=4 softtabstop=4
     au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.js          setlocal tabstop=4 shiftwidth=4 softtabstop=4
-    au BufRead,BufNewFile *.js          :JSLintToggle
+
+    au BufRead,BufNewFile,BufWrite *.js          :JSLintToggle
 endif
 
 function! <SID>StripTrailingWhitespaces()
@@ -246,4 +252,3 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
