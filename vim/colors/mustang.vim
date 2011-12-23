@@ -50,7 +50,7 @@ hi Keyword		guifg=#ff9800 gui=none ctermfg=208
 hi Constant 	guifg=#ff9800 gui=none  ctermfg=208
 hi Number		guifg=#ff9800 gui=none ctermfg=208
 hi Special		guifg=#ff9800 gui=none ctermfg=208
-hi PreProc 		guifg=#e2e2e5 gui=none ctermfg=253
+hi PreProc		guifg=#faf4c6 gui=none ctermfg=230
 hi Todo         guifg=#000000 guibg=#e6ea50 gui=italic
 
 " Code-specific colors
