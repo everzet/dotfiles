@@ -50,9 +50,16 @@ hi Keyword		guifg=#ff9800 gui=none ctermfg=208
 hi Constant 	guifg=#ff9800 gui=none  ctermfg=208
 hi Number		guifg=#ff9800 gui=none ctermfg=208
 hi Special		guifg=#ff9800 gui=none ctermfg=208
-hi PreProc 		guifg=#faf4c6 gui=none ctermfg=230
+hi PreProc 		guifg=#e2e2e5 gui=none ctermfg=253
 hi Todo         guifg=#000000 guibg=#e6ea50 gui=italic
 
 " Code-specific colors
 hi pythonOperator guifg=#7e8aa2 gui=none ctermfg=103
+
+" Plugins
+hi EasyMotionTarget guifg=#b1d631 guibg=#202020 ctermfg=green ctermbg=none
+hi EasyMotionShade  guifg=#444444 guibg=#202020 ctermfg=darkgrey ctermbg=none
+hi LustySelected	guifg=#ff9800 gui=none ctermfg=208
+hi LustyDir         guifg=#b1d631 gui=none ctermfg=148
+hi Question		    guifg=#ff9800 gui=none ctermfg=208
 
