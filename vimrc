@@ -134,7 +134,6 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " buffers
-nmap <D-r> :BufExplorer<cr>
 nmap <leader>bo :BufOnly<cr>
 nmap <D-[> :bp<cr>
 nmap <D-]> :bn<cr>
@@ -178,7 +177,6 @@ vnoremap <tab> %
 cmap w!! w !sudo tee % >/dev/null
 
 " PLUGINS
-let g:bufExplorerShowRelativePath=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos='right'
 let NERDTreeWinSize=60
@@ -214,7 +212,6 @@ filetype plugin on
 filetype indent on
 
 if has('autocmd')
-    au VimEnter * :if argc() is 0 | NERDTree | endif
     au BufWinEnter *     set foldlevel=999999 
     au FocusLost silent! :wa
 
