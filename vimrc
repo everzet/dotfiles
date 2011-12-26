@@ -207,12 +207,6 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 let g:syntastic_enable_signs=0
 let g:syntastic_phpcs_conf="--standard=Symfony2"
 
-" NERDTree
-let NERDTreeHighlightCursorline=1
-let NERDTreeWinPos='right'
-let NERDTreeWinSize=60
-nmap <leader>; :NERDTreeToggle<cr>
-
 " my functions
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
