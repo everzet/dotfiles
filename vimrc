@@ -62,7 +62,7 @@ se wildmode=list:longest
 
 se wrap linebreak nolist
 se textwidth=100
-se colorcolumn=102
+se colorcolumn=101
 se formatoptions=qrn1
 
 " use PAR as prg formatter (gq)
@@ -105,8 +105,11 @@ vmap <S-down> ]egv
 
 " paths opening
 nmap <leader>ep :e <C-R>=expand("%:p:h")."/"<cr>
-nmap <leader>sp :vsp <C-R>=expand("%:p:h")."/"<cr>
+nmap <leader>es :vsp <C-R>=expand("%:p:h")."/"<cr>
 nmap <leader>se :Vex<cr><C-w>=
+
+nmap <leader>mk :!mkdir <c-r>=expand("%:p:h")."/"<cr>
+nmap <leader>rm :!rm -rf <c-r>=expand("%:p:h")."/"<cr>
 
 " fugitive
 nmap <leader>gs     :Gstatus<cr>
