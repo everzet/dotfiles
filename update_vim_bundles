@@ -1,12 +1,10 @@
 #!/usr/bin/env sh
 
 for bundle in vim/bundle/*; do
-    if [ -d $bundle/.git ]; then
-        echo "\nUPDATING $bundle"
-        cd $bundle
-        git reset --hard
-        git clean -f
-        git pull origin master
-        cd ../../..
-    fi
+    echo "\nUPDATING $bundle"
+    cd $bundle
+    git reset --hard
+    git clean -f
+    git pull origin master
+    cd ../../..
 done;
