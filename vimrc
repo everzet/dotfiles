@@ -62,7 +62,7 @@ se wildmode=list:longest
 
 se wrap linebreak nolist
 se textwidth=100
-se colorcolumn=101
+se colorcolumn=100
 se formatoptions=qrn1
 
 " use PAR as prg formatter (gq)
@@ -70,16 +70,17 @@ se formatoptions=qrn1
 "se formatoptions+=tca
 
 " STATUSLINE
-se statusline=                               " clear the statusline for when vimrc is reloaded
-se statusline+=%2*[%n%H%M%R%W]%*\            " buffer number
-se statusline+=%f\                           " file name
-se statusline+=%=                            " right align
-se statusline+=%P\ \  
-se statusline+=%-10.(%l.%c%V%)\              " offset
-se statusline+=%{fugitive#statusline()}\     " git
-se statusline+=\(%{strlen(&ft)?&ft:'none'}\  " filetype
-se statusline+=%{strlen(&fenc)?&fenc:&enc}\  " encoding
-se statusline+=%{&fileformat}\)              " file format
+se stl=                               " clear the statusline for when vimrc is reloaded
+se stl+=%2*[%n%H%M%R%W]%*\            " buffer number
+se stl+=%f\                           " file name
+se stl+=%=                            " right align
+se stl+=%P\ \  
+se stl+=%-10.(%l.%c%V%)\              " offset
+se stl+=%{fugitive#statusline()}\     " git
+se stl+=\(%{strlen(&ft)?&ft:'none'}\  " filetype
+se stl+=%{strlen(&fenc)?&fenc:&enc}\  " encoding
+se stl+=%{&fileformat}\)              " file format
+se stl+=\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
 
 se laststatus=2
 
@@ -206,6 +207,8 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 " Syntastic options
 let g:syntastic_enable_signs=0
 let g:syntastic_phpcs_conf="--standard=Symfony2"
+let g:syntastic_javascript_checker="jslint"
+let g:syntastic_json_checker="jsonlint"
 
 " my functions
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
