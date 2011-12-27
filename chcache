@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sudo chmod +a "_www allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs
+sudo chmod +a "everzet allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs
+
+echo "app/cache & app/logs been properly chmod'ed"
