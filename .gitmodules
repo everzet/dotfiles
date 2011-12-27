@@ -28,9 +28,6 @@
 [submodule "vim/bundle/BufOnly"]
 	path = vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim.git
-[submodule "vim/bundle/jslint"]
-	path = vim/bundle/jslint
-	url = https://github.com/hallettj/jslint.vim.git
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
