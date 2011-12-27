@@ -198,10 +198,10 @@ nnoremap <C-P> :call PhpDocSingle()<cr>
 vnoremap <C-P> :call PhpDocRange()<cr>
 
 " Surround
-let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
-let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
-let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
-let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
+let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1 %}\r{% endblock %}"
+let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1 %}\r{% endif %}"
+let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\ 1%}\r{% endwith %}"
+let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 
 " Syntastic options
 let g:syntastic_enable_signs=0
