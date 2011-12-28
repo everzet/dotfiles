@@ -1,9 +1,69 @@
 snippet cls
 	<?php
-
-	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
-
+	
+	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\', 'g'), '^\\\', '', '')`;
+	
+	/**
+	 * ${1:`Filename('', 'myClass')`}.
+	 */
 	class ${2:`Filename('', 'myClass')`}
-	{
-	    ${3}
+	{${3}
 	}
+snippet ent
+	<?php
+	
+	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\', 'g'), '^\\\', '', '')`;
+	
+	use Doctrine\ORM\Mapping as ORM;
+	
+	/**
+	 * ${1:`Filename('', 'myClass')`}.
+	 *
+	 * @ORM\Entity
+	 * @ORM\Table(name="${2:`substitute(substitute(Filename('', 'myClass'), '\v^(.)', '\l\1', ''), '\v(\u)', '_\l\1', 'g')`}")
+	 */
+	class ${3:`Filename('', 'myClass')`}
+	{${4}
+	}
+snippet eid
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	${1:private} $id;
+	
+	/**
+	 * Returns object id. 
+	 * 
+	 * @return integer
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}${2}
+snippet ecol
+	/**
+	 * @ORM\Column(type="${1:string}"${2})
+	 */
+	${3:private} $${4:col};
+	
+	/**
+	 * Sets $4.
+	 * 
+	 * @param mixed
+	 */
+	public function set${5:$4}($$4)
+	{
+		$this->$4 = $$4;
+	}
+	
+	/**
+	 * Returns $4.
+	 * 
+	 * @return mixed
+	 */
+	public function get$5()
+	{
+		return $this->$4;
+	}${6}
