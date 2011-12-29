@@ -21,7 +21,7 @@ end
 
 def run_tags(dir, run_in_background = false)
   if File.executable?(CTAGS) and File.writable?(dir)
-    cmd = "ctags -R --PHP-kinds=+cf --exclude=app -f TAGS #{dir}"
+    cmd = "ctags -R --PHP-kinds=+cf --exclude=app -f TAGS #{dir} &> /dev/null"
     cmd << '&' if run_in_background
     system cmd
   else
