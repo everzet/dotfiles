@@ -96,7 +96,7 @@ let mapleader=","
 se listchars=tab:▸\ ,eol:¬
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader><space> :noh<cr>
-nmap <leader>l :set list!<cr>
+nmap <leader>ll :set list!<cr>
 
 " lines moving
 nmap <S-up> [e
@@ -237,6 +237,8 @@ if has('autocmd')
     au BufRead,BufNewFile *.yml         setlocal tabstop=4 shiftwidth=4 softtabstop=4
     au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
     au BufRead,BufNewFile *.js          setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
+    au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 endif
 
 function! <SID>StripTrailingWhitespaces()
@@ -249,4 +251,10 @@ function! <SID>StripTrailingWhitespaces()
     " Clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
+endfunction
+
+function! <SID>MkdirsIfNotExists(directory)
+    if(!isdirectory(a:directory))
+        call system('mkdir -p '.shellescape(a:directory))
+    endif
 endfunction
