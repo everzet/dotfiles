@@ -45,4 +45,4 @@ if [ -e $HOME/.ssh/known_hosts ] ; then
     zstyle ':completion:*:hosts' hosts $hosts
 fi
 
-PROMPT='%{$fg[green]%}%{$bg[black]%}%n%{$reset_color%}@%{$fg[cyan]%}%{$bg[black]%}%m%{$reset_color%}:%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$fg[white]%}%{$bg[black]%}$(vcprompt -f " %s:%{$fg[green]%}%b%{$fg[white]%}/%{$fg[cyan]%}%h%{$fg[white]%} %{$reset_color%}")%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "\n⚡ ")%{$reset_color%}'
+PROMPT='%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$bg[black]%}$(~/bin/dotfiles/git_cwd_info)%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "\n⚡ ")%{$reset_color%}'
