@@ -1,1 +1,1 @@
-:set prompt "[32;1mghci[34;1m>[0m "
+:set prompt "[32;1mHi[37;1m>[0m "
