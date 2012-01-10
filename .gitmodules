@@ -40,9 +40,6 @@
 [submodule "vim/bundle/js"]
 	path = vim/bundle/js
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "vim/bundle/php-namespace"]
 	path = vim/bundle/php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
@@ -52,3 +49,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git

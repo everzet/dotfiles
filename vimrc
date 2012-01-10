@@ -143,10 +143,13 @@ nmap <D-]> :bn<cr>
 " Ack
 nnoremap <leader>a :Ack 
 
-" CommandT
-map <D-t> :CommandT<cr>
-map <leader>t :CommandT<cr>
-let g:CommandTMaxHeight=30
+" ctrlp
+map <D-t> :CtrlP<cr>
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_max_height = 15
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs
+
+" Lusty
 let g:LustyJugglerShowKeys = 'a'
 
 " Tabular
