@@ -145,6 +145,7 @@ nnoremap <leader>a :Ack
 
 " ctrlp
 map <D-t> :CtrlP<cr>
+map <D-r> :CtrlPBuffer<cr>
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_max_height = 15
 let g:ctrlp_open_multi = '1v'
