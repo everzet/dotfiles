@@ -13,5 +13,3 @@ ln -nfs ~/bin/dotfiles/gitconfig ~/.gitconfig
 ln -nfs ~/bin/dotfiles/ghci ~/.ghci
 ln -nfs ~/bin/dotfiles/gitags /usr/local/bin/gitags
 ln -nfs ~/bin/dotfiles/chcache /usr/local/bin/chcache
-
-cp ~/bin/dotfiles/fonts/* ~/Library/Fonts/
