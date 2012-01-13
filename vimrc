@@ -24,7 +24,7 @@ se iskeyword=@,48-57,_,192-255
 " commands line height
 se ch=1
 " show last cmd
-se showcmd
+"se nosc
 " don't show mod
 se nosmd
 " hide mouse
@@ -201,8 +201,8 @@ let g:syntastic_enable_signs=0
 let g:syntastic_phpcs_conf="--standard=Symfony2"
 let g:syntastic_javascript_checker="jslint"
 let g:syntastic_json_checker="jsonlint"
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['ruby', 'php', 'js', 'json', 'xml', 'html', 'css'],
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['php', 'js', 'json', 'xml', 'html', 'css'],
                            \ 'passive_filetypes': [] }
 
 " my functions
