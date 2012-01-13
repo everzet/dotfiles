@@ -6,6 +6,9 @@ se showtabline=1                                                " show tabs only
 se fuopt=maxvert,maxhorz
 se fu
 
+"powerline
+let g:Powerline_symbols = 'fancy'
+
 function! DefFont()
     se guifont=ProFontX:h12
 endfunction

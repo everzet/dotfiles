@@ -69,19 +69,6 @@ se formatoptions=qrn1
 "se formatprg=par
 "se formatoptions+=tca
 
-" STATUSLINE
-se stl=                               " clear the statusline for when vimrc is reloaded
-se stl+=%2*[%n%H%M%R%W]%*\            " buffer number
-se stl+=%f\                           " file name
-se stl+=%=                            " right align
-se stl+=%P\ \  
-se stl+=%-10.(%l.%c%V%)\              " offset
-se stl+=%{fugitive#statusline()}\     " git
-se stl+=\(%{strlen(&ft)?&ft:'none'}\  " filetype
-se stl+=%{strlen(&fenc)?&fenc:&enc}\  " encoding
-se stl+=%{&fileformat}\)              " file format
-se stl+=\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
-
 se laststatus=2
 
 se bs=2
