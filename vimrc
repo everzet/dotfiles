@@ -161,6 +161,9 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" yankring
+let g:yankring_replace_n_pkey = '<c-n>'
+
 nnoremap j gj
 nnoremap k gk
 
