@@ -136,7 +136,7 @@ let g:ctrlp_map = '<d-t>'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_max_height = 15
 let g:ctrlp_open_multi = '1v'
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,.DS_Store
 
 " Lusty
 let g:LustyJugglerShowKeys = 'a'
