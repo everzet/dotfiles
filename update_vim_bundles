@@ -5,6 +5,6 @@ for bundle in vim/bundle/*; do
     cd $bundle
     git reset --hard
     git clean -f
-    git pull origin master
+    git pull origin HEAD
     cd ../../..
 done;
