@@ -163,6 +163,8 @@ inoremap <right> <nop>
 
 " yankring
 let g:yankring_replace_n_pkey = '<c-n>'
+let g:yankring_history_file = '.yankring_history'
+nmap <leader>y :YRShow<cr>
 
 nnoremap j gj
 nnoremap k gk
