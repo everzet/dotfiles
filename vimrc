@@ -200,13 +200,13 @@ let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\ 1%}\r{% endwith %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 
 " Syntastic options
-let g:syntastic_enable_signs=0
-let g:syntastic_phpcs_conf="--standard=Symfony2"
-let g:syntastic_javascript_checker="jslint"
-let g:syntastic_json_checker="jsonlint"
-let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['php', 'js', 'json', 'xml', 'html', 'css'],
-                           \ 'passive_filetypes': [] }
+"let g:syntastic_enable_signs=0
+"let g:syntastic_phpcs_conf="--standard=Symfony2"
+"let g:syntastic_javascript_checker="jslint"
+"let g:syntastic_json_checker="jsonlint"
+"let g:syntastic_mode_map = { 'mode': 'passive',
+"                           \ 'active_filetypes': ['php', 'js', 'json', 'xml', 'html', 'css'],
+"                           \ 'passive_filetypes': [] }
 
 " my functions
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
