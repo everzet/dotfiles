@@ -1,5 +1,5 @@
 # macports
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/php/latest/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # don't put duplicate lines in the history. See bash(1) for more options
