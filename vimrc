@@ -210,6 +210,9 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 "                           \ 'active_filetypes': ['php', 'js', 'json', 'xml', 'html', 'css'],
 "                           \ 'passive_filetypes': [] }
 
+" behat/cucumber
+let feature_filetype='behat'
+
 " my functions
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
 
