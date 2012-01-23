@@ -76,6 +76,8 @@ se ff=unix
 se ffs=unix
 se backspace=indent,eol,start
 
+call Pl#Theme#RemoveSegment('fileformat')
+
 inoremap jj <esc>
 
 let mapleader=","
