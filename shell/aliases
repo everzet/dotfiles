@@ -57,8 +57,8 @@ alias gdc='git diff --cached'
 alias gt='git difftool'
 alias gtc='git difftool --cached'
 
-alias gl='git log --oneline'
-alias glg='git log --oneline --graph'
+alias gl='git log --oneline --graph'
+alias glp='git log --oneline --graph --patch'
 
 function gg {
     git commit -avm "$*"
