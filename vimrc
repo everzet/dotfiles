@@ -217,6 +217,7 @@ let feature_filetype='behat'
 
 " my functions
 nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
+nmap <leader>mv :Rename %:p:h<tab>
 
 filetype on
 filetype plugin on
@@ -256,6 +257,18 @@ function! <SID>StripTrailingWhitespaces()
     " Clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
+endfunction
+
+command! -nargs=1 -complete=file Rename call <SID>Rename(<q-args>)
+function! <SID>Rename(newfile)
+    let l:newfile = a:newfile
+    let l:oldfile = expand('%:p')
+
+    exe 'saveas! '.l:newfile
+    call system('rm '.shellescape(l:oldfile))
+
+    let l:lastbuf = bufnr(l:oldfile)
+    exe 'bd! '.l:lastbuf
 endfunction
 
 function! <SID>MkdirsIfNotExists(directory)
