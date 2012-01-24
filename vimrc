@@ -60,7 +60,7 @@ se wcm=<Tab>
 se wildmenu
 se wildmode=list:longest
 
-se wrap linebreak nolist
+se wrap linebreak
 se textwidth=100
 se colorcolumn=100
 se formatoptions=qrn1
@@ -80,12 +80,14 @@ call Pl#Theme#RemoveSegment('fileformat')
 
 inoremap jj <esc>
 
+nnoremap ; :
 let mapleader=","
 
-se listchars=tab:▸\ ,eol:¬
+se listchars=tab:▸\ ,trail:□,eol:¬
+se nolist
+nmap <leader>ll :set list!<cr>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader><space> :noh<cr>
-nmap <leader>ll :set list!<cr>
 
 " lines moving
 nmap <S-up> [e
