@@ -25,8 +25,8 @@ endif
 " General colors
 hi Cursor       guifg=#000000 guibg=#b1d631 gui=none ctermbg=148
 hi Normal       guifg=#e2e2e5 guibg=#202020 gui=none ctermfg=253 ctermbg=NONE
-hi SpecialKey   guifg=#303030 gui=none ctermfg=236
-hi NonText      guifg=#303030 gui=none ctermfg=236
+hi SpecialKey   guifg=#444444 guibg=#303030 gui=none ctermfg=238 ctermbg=236
+hi NonText      guifg=#444444 guibg=#303030 gui=none ctermfg=238 ctermbg=236
 hi LineNr       guifg=#444444 guibg=#262626 gui=none ctermfg=238 ctermbg=233
 hi SignColumn   guifg=#444444 guibg=#262626 gui=none ctermfg=238 ctermbg=236
 hi StatusLine   guifg=#d3d3d5 guibg=#444444 gui=italic ctermfg=253 ctermbg=238 cterm=italic
