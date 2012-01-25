@@ -165,6 +165,16 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" disable shift-movement
+nmap <S-h> <nop>
+nmap <S-j> <nop>
+nmap <S-k> <nop>
+nmap <S-l> <nop>
+vmap <S-h> <nop>
+vmap <S-j> <nop>
+vmap <S-k> <nop>
+vmap <S-l> <nop>
+
 " yankring
 let g:yankring_replace_n_pkey = '<c-n>'
 let g:yankring_history_file = '.yankring_history'
