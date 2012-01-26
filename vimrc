@@ -166,10 +166,6 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " disable shift-movement
-nmap <S-h> <nop>
-nmap <S-j> <nop>
-nmap <S-k> <nop>
-nmap <S-l> <nop>
 vmap <S-h> <nop>
 vmap <S-j> <nop>
 vmap <S-k> <nop>
