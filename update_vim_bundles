@@ -8,3 +8,6 @@ for bundle in vim/bundle/*; do
     git pull origin HEAD
     cd ../../..
 done;
+
+cd vim/bundle/command-t
+git apply ../../dt_colorcol_linenum.patch

@@ -135,12 +135,18 @@ nmap <D-]> :bn<cr>
 nnoremap <leader>a :Ack 
 
 " ctrlp
-map <D-r> :CtrlPBuffer<cr>
-let g:ctrlp_map = '<d-t>'
+map <c-r> :CtrlPBuffer<cr>
+let g:ctrlp_map = '<c-t>'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_max_height = 15
 let g:ctrlp_open_multi = '1v'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,.DS_Store
+
+" command-t
+map <d-t> :CommandT<cr>
+map <d-r> :CommandTBuffer<cr>
+let g:CommandTMatchWindowReverse = 1
+let g:CommandTMaxHeight = 15
 
 " Lusty
 let g:LustyJugglerShowKeys = 'a'

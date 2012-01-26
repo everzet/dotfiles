@@ -1,0 +1,13 @@
+diff --git a/ruby/command-t/match_window.rb b/ruby/command-t/match_window.rb
+index 2d9bd4b..bd15abf 100644
+--- a/ruby/command-t/match_window.rb
++++ b/ruby/command-t/match_window.rb
+@@ -77,6 +77,8 @@ module CommandT
+           'setlocal nocursorline',      # don't highlight line cursor is on
+           'setlocal nospell',           # spell-checking off
+           'setlocal nobuflisted',       # don't show up in the buffer list
++          'setlocal colorcolumn=0',     # don't show colorcolumn
++          'setlocal norelativenumber',  # don't show up line numbers
+           'setlocal textwidth=0'        # don't hard-wrap (break long lines)
+         ].each { |command| ::VIM::command command }
+ 
