@@ -135,12 +135,12 @@ nmap <D-]> :bn<cr>
 nnoremap <leader>a :Ack 
 
 " ctrlp
-map <c-r> :CtrlPBuffer<cr>
-let g:ctrlp_map = '<c-t>'
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_max_height = 15
-let g:ctrlp_open_multi = '1v'
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,.DS_Store
+"map <c-r> :CtrlPBuffer<cr>
+"let g:ctrlp_map = '<c-t>'
+"let g:ctrlp_working_path_mode = 2
+"let g:ctrlp_max_height = 15
+"let g:ctrlp_open_multi = '1v'
+"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,.DS_Store
 
 " command-t
 map <d-t> :CommandT<cr>
