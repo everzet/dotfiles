@@ -127,6 +127,7 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+nmap <C-x> <C-w>x
 
 " buffers
 nmap <leader>bo :BufOnly<cr>
@@ -143,7 +144,7 @@ nnoremap <leader>a :Ack
 "let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_max_height = 15
 "let g:ctrlp_open_multi = '1v'
-"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,.DS_Store
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,.DS_Store
 
 " command-t
 map <d-t> :CommandT<cr>
@@ -208,7 +209,7 @@ imap {<cr> {<cr>}<esc>O
 map <leader>u :call PhpInsertUse()<cr>
 
 " EasyMotion
-let g:EasyMotion_leader_key='m'
+let g:EasyMotion_leader_key='t'
 
 " PHPDoc
 nnoremap <C-P> :call PhpDocSingle()<cr>
