@@ -80,7 +80,7 @@ call Pl#Theme#RemoveSegment('fileformat')
 
 inoremap jj <esc>
 
-nnoremap ; :
+nnoremap <cr> :
 let mapleader=","
 
 se listchars=tab:▸\ ,trail:□,eol:¬
@@ -121,6 +121,8 @@ nmap <leader>wo :on<cr>
 nmap <leader>w= <C-w>=
 nmap <leader>w0 <C-w>\|
 nmap <leader>w- <C-w>_
+
+" move between windows
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -128,6 +130,7 @@ nmap <C-l> <C-w>l
 
 " buffers
 nmap <leader>bo :BufOnly<cr>
+nmap <leader>bc :bd<cr>
 nmap <D-[> :bp<cr>
 nmap <D-]> :bn<cr>
 
