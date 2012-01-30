@@ -149,7 +149,7 @@ let g:CommandTMatchWindowReverse = 1
 let g:CommandTMaxHeight = 15
 
 " Lusty
-let g:LustyJugglerShowKeys = 'a'
+let g:LustyJugglerShowKeys = '1'
 
 " Tabular
 nmap <leader><tab><tab> :Tab /
