@@ -67,3 +67,23 @@ snippet ecol
 	{
 		return $this->$4;
 	}${6}
+snippet setget
+	/**
+	 * Sets ${1:User}.
+	 * 
+	 * @param ${4:$3}$${2:user}
+	 */
+	public function set$1(${3:User }$$2)
+	{
+		$this->$2 = $$2;
+	}
+	
+	/**
+	 * Returns $1.
+	 * 
+	 * @return $4
+	 */
+	public function get$1()
+	{
+		return $this->$2;
+	}${4}
