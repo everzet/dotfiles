@@ -9,6 +9,19 @@ snippet cls
 	class ${2:`Filename('', 'myClass')`}
 	{${3}
 	}
+snippet ctrl
+	<?php
+
+	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\', 'g'), '^\\\', '', '')`;
+
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+	/**
+	 * ${1:`Filename('', 'myClass')`}.
+	 */
+	class ${2:`Filename('', 'myClass')`} extends Controller
+	{${3}
+	}
 snippet ent
 	<?php
 	
