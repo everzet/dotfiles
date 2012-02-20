@@ -177,8 +177,6 @@ nmap <C-x> <C-w>x
 "
 nmap <leader>bo :BufOnly<cr>
 nmap <leader>bc :bd<cr>
-nmap <D-[>      :bp<cr>
-nmap <D-]>      :bn<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
