@@ -274,6 +274,7 @@ nnoremap <leader>a :Ack
 "
 map <d-t> :CommandT<cr>
 map <d-r> :CommandTBuffer<cr>
+map <s-t> :CommandTFlush<cr> 
 let g:CommandTMatchWindowReverse = 1
 let g:CommandTMaxHeight = 15
 
