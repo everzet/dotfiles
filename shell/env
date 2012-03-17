@@ -11,8 +11,8 @@ export HISTCONTROL=ignoreboth
 # export EDITOR='mate'
 # export GIT_EDITOR='mate -w'
 # export GIT_EDITOR='mvim -f'
-export EDITOR='vim'
-export GIT_EDITOR='vim'
+export EDITOR='/usr/local/bin/vim'
+export GIT_EDITOR='/usr/local/bin/vim'
 
 export JS_CMD="node"
 export NODE_PATH="/usr/local/lib/node_modules"
