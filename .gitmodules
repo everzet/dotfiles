@@ -61,3 +61,6 @@
 [submodule "vim/bundle/scss"]
 	path = vim/bundle/scss
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vim/bundle/htmljinja"]
+	path = vim/bundle/htmljinja
+	url = https://github.com/estin/htmljinja.git

@@ -413,8 +413,8 @@ if has('autocmd')
     "  FILE TYPES
     "
     au BufRead,BufNewFile *.phps        setlocal filetype=php
-    au BufRead,BufNewFile *.twig        setlocal filetype=django
-    au BufRead,BufNewFile *.html.twig   setlocal filetype=htmldjango
+    au BufRead,BufNewFile *.twig        setlocal filetype=jinja
+    au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
     au BufRead,BufNewFile *.ejs         setlocal filetype=html
     au BufRead,BufNewFile *.json        setlocal filetype=javascript
 
