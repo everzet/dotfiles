@@ -9,6 +9,19 @@ snippet cls
 	class ${2:`Filename('', 'myClass')`}
 	{${3}
 	}
+snippet unit
+	<?php
+	
+	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\', 'g'), '^\\\', '', '')`;
+
+	use `substitute(substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\', 'g'), '^\\\', '', ''), '\vTests?\\\', '', 'g').'\\'.substitute(Filename('', 'myClass'), 'Test$', '', '')`;
+	
+	/**
+	 * ${1:`Filename('', 'myClass')`}.
+	 */
+	class ${2:`Filename('', 'myClass')`} extends \PHPUnit_Framework_TestCase
+	{${3}
+	}
 snippet ctrl
 	<?php
 
@@ -17,7 +30,7 @@ snippet ctrl
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 	/**
-	 * ${1:`Filename('', 'myClass')`}.
+	 * ${1:`substitute(Filename('', 'myClass'), 'Controller$', '', '').' controller'`}.
 	 */
 	class ${2:`Filename('', 'myClass')`} extends Controller
 	{${3}
