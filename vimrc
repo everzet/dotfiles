@@ -118,7 +118,7 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 "  GENERAL OVERRIDINGS
 "
 inoremap jj     <esc>
-nnoremap <cr>   :
+nnoremap \      :
 let mapleader = ","
 
 "
