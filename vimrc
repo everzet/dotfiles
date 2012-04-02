@@ -108,13 +108,6 @@ se formatoptions=qrn1
 "|
 """"""""""""""""""""""""""""""""""""""""
 "
-"  EDIT CONFIG
-"
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  GENERAL OVERRIDINGS
 "
 inoremap jj     <esc>
@@ -322,9 +315,9 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 "
 "  PHP
 "
-map <leader>u :call PhpInsertUse()<cr>
-nmap <c-p>    :call PhpDocSingle()<cr>
-nmap <c-p>    :call PhpDocRange()<cr>
+"map <leader>u :call PhpInsertUse()<cr>
+"nmap <c-p>    :call PhpDocSingle()<cr>
+"nmap <c-p>    :call PhpDocRange()<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
