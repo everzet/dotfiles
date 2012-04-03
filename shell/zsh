@@ -37,7 +37,7 @@ bindkey "^X^Z" predict-on   # C-x C-z
 bindkey "^Z" predict-off    # C-z
 bindkey "^F" forward-word
 bindkey "^B" backward-word
-bindkey "^A" beginning-of-line
+bindkey "^W" beginning-of-line
 bindkey "^E" end-of-line
 
 if [ -e $HOME/.ssh/known_hosts ] ; then
