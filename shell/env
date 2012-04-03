@@ -2,6 +2,8 @@
 export PATH=/usr/local/bin:/usr/local/php5/bin:/usr/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator ]]
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
@@ -13,6 +15,7 @@ export HISTCONTROL=ignoreboth
 # export GIT_EDITOR='mvim -f'
 export EDITOR='/usr/local/bin/vim'
 export GIT_EDITOR='/usr/local/bin/vim'
+export SHELL='/bin/zsh'
 
 export JS_CMD="node"
 export NODE_PATH="/usr/local/lib/node_modules"

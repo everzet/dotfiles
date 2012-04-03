@@ -258,6 +258,7 @@ nnoremap <leader>a :Ack
 "
 "  COMMAND-T
 "
+map <c-t> :CommandT<cr>
 map <d-t> :CommandT<cr>
 map <d-r> :CommandTBuffer<cr>
 map <s-t> :CommandTFlush<cr> 
