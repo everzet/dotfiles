@@ -13,7 +13,7 @@ silent! call pathogen#runtime_append_all_bundles()
 "  HIGHLIGHTING
 "
 syntax on
-colo mustang
+colo mustango
 se cursorline
 se listchars=tab:▸\ ,trail:□,eol:¬
 
