@@ -108,6 +108,12 @@ se formatoptions=qrn1
 "|
 """"""""""""""""""""""""""""""""""""""""
 "
+"  COPY-PASTE
+"
+set clipboard=unnamed
+
+"
+"
 "  GENERAL OVERRIDINGS
 "
 inoremap jj     <esc>
