@@ -24,8 +24,8 @@ hi ColorColumn      guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NO
 hi MatchParen       guifg=#000000 ctermfg=16   guibg=#FFFFFF ctermbg=231  gui=NONE cterm=NONE
 hi Pmenu            guifg=#FFFFFF ctermfg=231  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi PmenuSel         guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
-hi Normal           guifg=#E2E2E5 ctermfg=254  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
 hi Cursor           guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
+hi Normal           guifg=#E2E2E5 ctermfg=254  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
 hi SpecialKey       guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi NonText          guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi LineNr           guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
@@ -51,8 +51,8 @@ hi Number           guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NO
 hi Special          guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc          guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi pythonOperator   guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi EasyMotionTarget guifg=#B1D631 ctermfg=149  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
-hi EasyMotionShade  guifg=#444444 ctermfg=238  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
+hi EasyMotionTarget guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi EasyMotionShade  guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustySelected    guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustyDir         guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Question         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
