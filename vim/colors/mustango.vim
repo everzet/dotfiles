@@ -36,7 +36,7 @@ hi VertSplit        guifg=#444444 ctermfg=238  guibg=#444444 ctermbg=238  gui=NO
 hi Folded           guifg=#A0A8B0 ctermfg=248  guibg=#384048 ctermbg=238  gui=NONE cterm=NONE
 hi Title            guifg=#F6F3E8 ctermfg=255  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Visual           guifg=#FAF4C6 ctermfg=230  guibg=#3C414C ctermbg=238  gui=NONE cterm=NONE
-hi Search           guifg=NONE    ctermfg=NONE guibg=#FF9800 ctermbg=208  gui=NONE cterm=NONE
+hi Search           guifg=#000000 ctermfg=16   guibg=#FF9800 ctermbg=208  gui=NONE cterm=NONE
 hi Comment          guifg=#808080 ctermfg=244  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
 hi Todo             guifg=#000000 ctermfg=16   guibg=#E6EA50 ctermbg=185  gui=ITALIC cterm=NONE
 hi Boolean          guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE

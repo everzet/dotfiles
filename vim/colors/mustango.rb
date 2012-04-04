@@ -24,7 +24,7 @@ vim_colors "mustango" do
     Folded       "a0a8b0", "384048"
     Title        "f6f3e8", "NONE"
     Visual       "faf4c6", "3c414c"
-    Search       "NONE",   "ff9800"
+    Search       "000000", "ff9800"
 
     Comment      "808080", "NONE",   :gui => "italic"
     Todo         "000000", "e6ea50", :gui => "italic"
