@@ -21,26 +21,8 @@ function take {
 }
 
 alias pu='phpunit --colors'
-alias sc='symfony cc'
-alias dba='symfony doctrine:build --all --and-load --no-confirmation'
-alias spa='symfony plugin:publish-assets'
-alias srf='symfony app:routes frontend'
-alias srb='symfony app:routes backend'
 
-alias mongostart="sudo mongod -f /opt/local/etc/mongodb/mongod.conf"
-mongostop_func () {
-
-#  local mongopid=`ps -o pid,command -ax | grep mongod | awk '!/awk/ && !/grep/{print $1}'`;
-#  just find a simpler way
-    local mongopid=`less /opt/local/var/db/mongodb_data/mongod.lock`;
-    if [[ $mongopid =~ [[:digit:]] ]]; then
-        sudo kill -15 $mongopid;
-        echo mongod process $mongopid terminated;
-    else
-        echo mongo process $mongopid not exist;
-    fi
-}
-alias mongostop="mongostop_func"
+alias git='hub'
 
 alias g='git status -s'
 alias ga='git add'
