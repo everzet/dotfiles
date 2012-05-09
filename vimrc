@@ -111,6 +111,8 @@ se formatoptions=qrn1
 "  COPY-PASTE
 "
 set clipboard=unnamed
+nmap <leader>p "0p
+vmap <leader>p "0p
 
 "
 "
@@ -322,9 +324,9 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 "
 "  PHP
 "
-"map <leader>u :call PhpInsertUse()<cr>
-"nmap <c-p>    :call PhpDocSingle()<cr>
-"nmap <c-p>    :call PhpDocRange()<cr>
+map <leader>u :call PhpInsertUse()<cr>
+"nmap <c-p>   :call PhpDocSingle()<cr>
+"nmap <c-p>   :call PhpDocRange()<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
