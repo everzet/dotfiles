@@ -407,7 +407,7 @@ if has('autocmd')
     "
     "  FILE TYPES
     "
-    au BufRead,BufNewFile *.phps        setlocal filetype=php
+    au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
     au BufRead,BufNewFile *.ejs         setlocal filetype=html
