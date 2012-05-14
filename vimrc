@@ -229,6 +229,7 @@ vnoremap / /\v
 "  POWERLINE
 "
 call Pl#Theme#RemoveSegment('fileformat')
+let g:Powerline_stl_path_style = 'short'
 
 "
 """"""""""""""""""""""""""""""""""""""""
