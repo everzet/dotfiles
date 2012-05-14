@@ -246,6 +246,13 @@ nmap <leader>gmo    :Gmove<cr>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  TAGBAR
+"
+nmap <leader>t :TagbarToggle<cr> 
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  ACK
 "
 nnoremap <leader>a :Ack 
