@@ -248,7 +248,7 @@ nmap <leader>gmo    :Gmove<cr>
 "
 "  TAGBAR
 "
-nmap <leader>t :TagbarToggle<cr> 
+nmap <leader>b :TagbarToggle<cr> 
 
 "
 """"""""""""""""""""""""""""""""""""""""
