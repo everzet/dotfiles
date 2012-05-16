@@ -76,7 +76,7 @@ se tabstop=4
 se shiftwidth=4
 se expandtab
 se softtabstop=4
-se showtabline=0
+se showtabline=1
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -151,6 +151,15 @@ nmap <leader>se :Vex<cr><c-w>=
 nmap <leader>mk :!mkdir <c-r>=expand("%:p:h")."/"<cr>
 nmap <leader>rm :!rm -rf <c-r>=expand("%:p:h")."/"<cr>
 cmap w!!        w !sudo tee % >/dev/null
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  TABS MANAGEMENT
+"
+nmap <leader>df :tab split<cr>
+nmap <leader>dd :tabclose<cr>
+nmap <leader>do :tabonly<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""

@@ -40,6 +40,10 @@ vim_colors "mustango" do
     Special      "ff9800", "NONE"
     PreProc      "faf4c6", "NONE"
 
+    TabLine      "cccccc", "3f3f3f"
+    TabLineSel   "c7c7c7", "6b6b6b"
+    TabLineFill  "NONE",   "3f3f3f"
+
     pythonOperator   "7e8aa2", "NONE"
     EasyMotionTarget "b1d631", "NONE"
     EasyMotionShade  "444444", "NONE"
