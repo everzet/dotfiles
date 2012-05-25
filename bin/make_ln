@@ -1,17 +1,21 @@
 #!/bin/sh
 
-ln -nfs ~/bin/dotfiles/bash_profile ~/.bash_profile
-ln -nfs ~/bin/dotfiles/bashrc ~/.bashrc
-ln -nfs ~/bin/dotfiles/zshrc ~/.zshrc
-ln -nfs ~/bin/dotfiles/tmux.conf ~/.tmux.conf
-ln -nfs ~/bin/dotfiles/jslintrc ~/.jslintrc
-ln -nfs ~/bin/dotfiles/git/ignore_global ~/.gitignore_global
-ln -nfs ~/bin/dotfiles/npmrc ~/.npmrc
 ln -nfs ~/bin/dotfiles/vim ~/.vim
-ln -nfs ~/bin/dotfiles/vimrc ~/.vimrc
-ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
+ln -nfs ~/bin/dotfiles/vim/vimrc ~/.vimrc
+ln -nfs ~/bin/dotfiles/vim/gvimrc ~/.gvimrc
+ln -nfs ~/bin/dotfiles/rc/zshrc ~/.zshrc
+ln -nfs ~/bin/dotfiles/rc/bashrc ~/.bashrc
+ln -nfs ~/bin/dotfiles/rc/bash_profile ~/.bash_profile
+ln -nfs ~/bin/dotfiles/rc/tmux.conf ~/.tmux.conf
+ln -nfs ~/bin/dotfiles/rc/npmrc ~/.npmrc
+ln -nfs ~/bin/dotfiles/rc/jslintrc ~/.jslintrc
+ln -nfs ~/bin/dotfiles/rc/ghci ~/.ghci
+
 ln -nfs ~/bin/dotfiles/git/config ~/.gitconfig
-ln -nfs ~/bin/dotfiles/ghci ~/.ghci
+ln -nfs ~/bin/dotfiles/git/ignore_global ~/.gitignore_global
+
 ln -nfs ~/bin/dotfiles/scripts/gtags /usr/local/bin/gtags
 ln -nfs ~/bin/dotfiles/scripts/chcache /usr/local/bin/chcache
 ln -nfs ~/bin/dotfiles/scripts/battery /usr/local/bin/battery
+
+ln -nfs ~/bin/dotfiles/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
