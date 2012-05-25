@@ -270,6 +270,14 @@ nnoremap <leader>a :Ack
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  EASYTAGS
+"
+set tags=tags;
+let g:easytags_dynamic_files = 2
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  CTRLP
 "
 "map <c-r> :CtrlPBuffer<cr>

@@ -12,6 +12,6 @@ ln -nfs ~/bin/dotfiles/vimrc ~/.vimrc
 ln -nfs ~/bin/dotfiles/gvimrc ~/.gvimrc
 ln -nfs ~/bin/dotfiles/gitconfig ~/.gitconfig
 ln -nfs ~/bin/dotfiles/ghci ~/.ghci
-ln -nfs ~/bin/dotfiles/gitags /usr/local/bin/gitags
+ln -nfs ~/bin/dotfiles/gctags /usr/local/bin/gctags
 ln -nfs ~/bin/dotfiles/chcache /usr/local/bin/chcache
 ln -nfs ~/bin/dotfiles/battery /usr/local/bin/battery
