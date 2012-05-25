@@ -1,2 +1,0 @@
-#!/bin/sh
-ctags -R --fields=+l --PHP-kinds=+cf --exclude=app -f tags

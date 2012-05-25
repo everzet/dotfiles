@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-for bundle in vim/bundle/*; do
+for bundle in ../vim/bundle/*; do
     echo "\nUPDATING $bundle"
     cd $bundle
     git reset --hard
