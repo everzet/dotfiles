@@ -110,6 +110,7 @@ se formatoptions=qrn1
 "
 "  COPY-PASTE
 "
+set pastetoggle=<F1>
 set clipboard=unnamed
 nmap ,p "0p
 vmap ,p "0p
