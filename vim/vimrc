@@ -110,7 +110,7 @@ se formatoptions=qrn1
 "
 "  COPY-PASTE
 "
-set pastetoggle=<F1>
+map <F1> <esc>:se paste!<cr>
 set clipboard=unnamed
 nmap ,p "0p
 vmap ,p "0p
