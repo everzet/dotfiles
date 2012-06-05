@@ -110,10 +110,11 @@ se formatoptions=qrn1
 "
 "  COPY-PASTE
 "
-map <F1> <esc>:se paste!<cr>
 set clipboard=unnamed
-nmap ,p "0p
-vmap ,p "0p
+nmap <leader>p :se paste<cr>p:se nopaste<cr>
+vmap <leader>p :se paste<cr>p:se nopaste<cr>
+nmap <leader>P :se paste<cr>P:se nopaste<cr>
+vmap <leader>P :se paste<cr>P:se nopaste<cr>
 
 "
 "
@@ -352,7 +353,6 @@ map <leader>u :call PhpInsertUse()<cr>
 "  PHP CS FIXER
 "
 let g:php_cs_fixer_path = "~/git/php-cs-fixer.phar"
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
