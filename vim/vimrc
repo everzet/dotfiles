@@ -111,10 +111,6 @@ se formatoptions=qrn1
 "  COPY-PASTE
 "
 set clipboard=unnamed
-nmap <leader>p :se paste<cr>p:se nopaste<cr>
-vmap <leader>p :se paste<cr>p:se nopaste<cr>
-nmap <leader>P :se paste<cr>P:se nopaste<cr>
-vmap <leader>P :se paste<cr>P:se nopaste<cr>
 
 "
 "
