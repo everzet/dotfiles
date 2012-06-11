@@ -236,6 +236,7 @@ vnoremap / /\v
 "  POWERLINE
 "
 call Pl#Theme#RemoveSegment('fileformat')
+call Pl#Theme#RemoveSegment('fileencoding')
 let g:Powerline_stl_path_style = 'filename'
 
 "
