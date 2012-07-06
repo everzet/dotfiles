@@ -25,4 +25,5 @@ Thumbs.db
 *.o
 *.so
 tags
+vendor.tags
 _autoload.php

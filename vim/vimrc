@@ -58,6 +58,7 @@ se showmatch
 se ignorecase
 se smartcase
 se gdefault
+se tags+=vendor.tags
 
 "
 """"""""""""""""""""""""""""""""""""""""
