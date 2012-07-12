@@ -272,23 +272,23 @@ nnoremap <leader>a :Ack
 "
 "  CTRLP
 "
-"map <c-r> :CtrlPBuffer<cr>
-"let g:ctrlp_map = '<c-t>'
-"let g:ctrlp_working_path_mode = 2
-"let g:ctrlp_max_height = 15
-"let g:ctrlp_open_multi = '1v'
+map <c-p> :CtrlPMRU<cr>
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_max_height = 15
+let g:ctrlp_open_multi = '1v'
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  COMMAND-T
 "
-map <c-t> :CommandT<cr>
-map <d-t> :CommandT<cr>
-map <d-r> :CommandTBuffer<cr>
-map <s-t> :CommandTFlush<cr> 
-let g:CommandTMatchWindowReverse = 1
-let g:CommandTMaxHeight = 15
+"map <c-t> :CommandT<cr>
+"map <d-t> :CommandT<cr>
+"map <d-r> :CommandTBuffer<cr>
+"map <s-t> :CommandTFlush<cr> 
+"let g:CommandTMatchWindowReverse = 1
+"let g:CommandTMaxHeight = 15
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -434,6 +434,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
+    au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
     au BufRead,BufNewFile *.ejs         setlocal filetype=html
     au BufRead,BufNewFile *.json        setlocal filetype=javascript
 
