@@ -2,10 +2,9 @@
 "
 "  BUNDLES (PATHOGEN)
 "
-"     `call pathogen#helptags()` to
-"     regenerate docs
+"    `:Helptags` to regenerate docs
 "
-silent! call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 "
 """"""""""""""""""""""""""""""""""""""""
