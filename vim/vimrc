@@ -238,6 +238,7 @@ vnoremap / /\v
 call Pl#Theme#RemoveSegment('fileformat')
 call Pl#Theme#RemoveSegment('fileencoding')
 let g:Powerline_stl_path_style = 'filename'
+let g:Powerline_symbols = 'fancy'
 
 "
 """"""""""""""""""""""""""""""""""""""""
