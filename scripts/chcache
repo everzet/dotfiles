@@ -10,7 +10,12 @@ chcache () {
     echo "- $1 has been properly chmod'ed for $USER and $APACHE_USER"
 }
 
-if [ -d app/cache ];   then chcache "app/cache app/logs"; fi
-if [ -d cache ];       then chcache "cache logs"; fi
+# symfony 1.4
+if [ -d cache ];       then chcache "cache"; fi
+if [ -d logs ];        then chcache "logs"; fi
+
+# Symfony2
+if [ -d app/cache ];   then chcache "app/cache"; fi
+if [ -d app/logs ];    then chcache "app/logs"; fi
 if [ -d web/uploads ]; then chcache "web/uploads"; fi
 if [ -d web/media ];   then chcache "web/media"; fi
