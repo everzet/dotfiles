@@ -1,30 +1,38 @@
 [user]
-	name = everzet
-	email = ever.zet@gmail.com
+  name = everzet
+  email = ever.zet@gmail.com
+
+[url "git://github.com/"]
+  insteadOf = gh:
+[url "git@github.com:"]
+  insteadOf = wgh:
+
 [color]
-	branch = auto
-	diff   = auto
-	status = auto
+  branch = auto
+  diff   = auto
+  status = auto
+
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
+
 [alias]
-	unstage = reset HEAD
+  unstage = reset HEAD
+
 [web]
-    browser = open
+  browser = open
+
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+
 [difftool]
-	prompt = false
+  prompt = false
+
 [diff]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
+
 [core]
-	quotepath = false
-	excludesfile = /Users/everzet/.gitignore_global
+  quotepath = false
+  excludesfile = /Users/everzet/.gitignore_global
+
 [interactive]
-	singlekey = true
-[difftool "sourcetree"]
-	cmd = /Applications/Kaleidoscope.app/Contents/MacOS/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  singlekey = true
