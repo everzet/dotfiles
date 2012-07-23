@@ -8,7 +8,7 @@ then
     sudo chmod +a "$USER allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs
     sudo chmod +a "$APACHE_USER allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs
 
-    echo "app/cache & app/logs been properly chmod'ed for $USER and $APACHE_USER"
+    echo "- app/cache & app/logs has been properly chmod'ed for $USER and $APACHE_USER"
 fi
 
 if [ -d cache ]
@@ -16,5 +16,13 @@ then
     sudo chmod +a "$USER allow delete,write,append,file_inherit,directory_inherit" cache logs
     sudo chmod +a "$APACHE_USER allow delete,write,append,file_inherit,directory_inherit" cache logs
 
-    echo "cache & logs been properly chmod'ed for $USER and $APACHE_USER"
+    echo "- cache & logs has been properly chmod'ed for $USER and $APACHE_USER"
+fi
+
+if [ -d web/uploads ]
+then
+    sudo chmod +a "$USER allow delete,write,append,file_inherit,directory_inherit" web/uploads
+    sudo chmod +a "$APACHE_USER allow delete,write,append,file_inherit,directory_inherit" web/uploads
+
+    echo "- web/uploads has been properly chmod'ed for $USER and $APACHE_USER"
 fi
