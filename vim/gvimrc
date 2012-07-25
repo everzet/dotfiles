@@ -10,7 +10,7 @@ se fuopt=maxvert,maxhorz  " maximize
 se fu
 
 function! DefFont()
-    se guifont=ProFontX:h12
+    se guifont=ProFontX\ for\ PowerLine:h12
 endfunction
 
 function! BigFont()
