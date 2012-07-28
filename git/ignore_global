@@ -1,5 +1,6 @@
 .rsync_cache
 *~
+Guardfile
 *.swp
 .idea
 .DS_Store?
