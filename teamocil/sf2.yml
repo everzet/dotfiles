@@ -1,0 +1,25 @@
+session:
+    name: <%= File.basename(Dir.getwd) %>
+    windows:
+        - 
+            name: editor
+            root: <%= Dir.getwd %>
+            splits:
+                - { cmd: vim }
+        - 
+            name: shell
+            root: <%= Dir.getwd %>
+            filters:
+                before: clear
+            splits:
+                -
+                    cmd:
+                        - tmux select-window -t editor
+                        - git pull
+                        - bin/console ca:c
+                    focus: true
+                -
+                    cmd:
+                        - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
+                        - guard
+                    height: 10

@@ -19,3 +19,5 @@ ln -nfs ~/bin/dotfiles/scripts/chcache /usr/local/bin/chcache
 ln -nfs ~/bin/dotfiles/scripts/battery /usr/local/bin/battery
 
 ln -nfs ~/bin/dotfiles/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
+
+ln -nfs ~/bin/dotfiles/teamocil ~/.teamocil
