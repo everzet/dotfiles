@@ -9,14 +9,11 @@ zstyle ':completion:*' menu yes select
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
-export SAVEHIST=1000
-
 setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS AUTO_CD BSD_ECHO PROMPT_SUBST
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history
+HIST_IGNORE_SPACE=1
 setopt append_history
 setopt inc_append_history
 setopt extended_history
