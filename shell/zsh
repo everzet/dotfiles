@@ -13,7 +13,6 @@ setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS 
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history
-HIST_IGNORE_SPACE=1
 setopt append_history
 setopt inc_append_history
 setopt extended_history

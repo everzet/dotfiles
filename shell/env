@@ -1,32 +1,22 @@
-# macports
+# paths
 export PATH=~/bin:/usr/local/bin:/usr/local/php5/bin:/usr/local/share/python3:/usr/local/sbin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH
-
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator ]]
-
-# don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
-# ... and ignore same sucessive entries.
-export HISTCONTROL=ignoreboth
 
 # editors
-# export EDITOR='mate'
-# export GIT_EDITOR='mate -w'
-# export GIT_EDITOR='mvim -f'
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 
+# modules
 export JS_CMD="node"
 export NODE_PATH="/usr/local/lib/node_modules"
 export PHP_PEAR_PHP_BIN="/usr/local/php5/bin/php"
 
-# console colors
+# term colors
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 export TERM='xterm-256color'
 
-# enc
+# encoding
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
