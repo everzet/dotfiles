@@ -1,0 +1,12 @@
+function manview {
+    man -t $1 | open -f -a /Applications/Preview.app
+}
+
+function take {
+    mkdir -p $1
+    cd $1
+}
+
+function gg {
+    git commit -avm "$*"
+}
