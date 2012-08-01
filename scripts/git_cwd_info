@@ -24,7 +24,7 @@ end
 
 def git_parse_branch
   path = File.dirname(__FILE__)
-  @git_parse_branch ||= `#{path}/current_branch`.chomp
+  @git_parse_branch ||= `#{path}/git_current_branch`.chomp
 end
 
 def git_head_commit_id

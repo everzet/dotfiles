@@ -1,26 +1,29 @@
 #!/bin/sh
 
-ln -nfs ~/bin/dotfiles/vim          ~/.vim
-ln -nfs ~/bin/dotfiles/vim/vimrc    ~/.vimrc
-ln -nfs ~/bin/dotfiles/vim/gvimrc   ~/.gvimrc
+ln -nfs ~/bin/dotfiles/vim        ~/.vim
+ln -nfs ~/bin/dotfiles/vim/vimrc  ~/.vimrc
+ln -nfs ~/bin/dotfiles/vim/gvimrc ~/.gvimrc
 
-ln -nfs ~/bin/dotfiles/rc/zshrc     ~/.zshrc
-ln -nfs ~/bin/dotfiles/rc/tmux.conf ~/.tmux.conf
-ln -nfs ~/bin/dotfiles/rc/npmrc     ~/.npmrc
-ln -nfs ~/bin/dotfiles/rc/jslintrc  ~/.jslintrc
-ln -nfs ~/bin/dotfiles/rc/ghci      ~/.ghci
-
-ln -nfs ~/bin/dotfiles/git/config        ~/.gitconfig
-ln -nfs ~/bin/dotfiles/git/ignore_global ~/.gitignore_global
-
-ln -nfs ~/bin/dotfiles/teamocil ~/.teamocil
+ln -nfs ~/bin/dotfiles/rc/zshrc            ~/.zshrc
+ln -nfs ~/bin/dotfiles/rc/tmux.conf        ~/.tmux.conf
+ln -nfs ~/bin/dotfiles/rc/npmrc            ~/.npmrc
+ln -nfs ~/bin/dotfiles/rc/jslintrc         ~/.jslintrc
+ln -nfs ~/bin/dotfiles/rc/ghci             ~/.ghci
+ln -nfs ~/bin/dotfiles/rc/gitconfig        ~/.gitconfig
+ln -nfs ~/bin/dotfiles/rc/gitignore_global ~/.gitignore_global
+ln -nfs ~/bin/dotfiles/rc/teamocil         ~/.teamocil
 
 if [ -d /usr/local/bin ]; then
-    ln -nfs ~/bin/dotfiles/scripts/gtags   /usr/local/bin/gtags
-    ln -nfs ~/bin/dotfiles/scripts/chcache /usr/local/bin/chcache
-    ln -nfs ~/bin/dotfiles/scripts/battery /usr/local/bin/battery
+    ln -nfs ~/bin/dotfiles/scripts/chcache            /usr/local/bin/chcache
+    ln -nfs ~/bin/dotfiles/scripts/battery            /usr/local/bin/battery
+    ln -nfs ~/bin/dotfiles/scripts/git_cwd_info       /usr/local/bin/git_cwd_info
+    ln -nfs ~/bin/dotfiles/scripts/git_current_branch /usr/local/bin/git_current_branch
 fi
 
 if [ -d /usr/local/php5 ]; then
     ln -nfs ~/bin/dotfiles/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
+fi
+
+if [ -d /etc/apache2/users ]; then
+    sudo ln -nfs ~/bin/dotfiles/apache/autohosts.conf /etc/apache2/users/autohosts.conf
 fi
