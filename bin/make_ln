@@ -1,16 +1,14 @@
 #!/bin/sh
 
-ln -nfs ~/bin/dotfiles/vim        ~/.vim
-ln -nfs ~/bin/dotfiles/vim/vimrc  ~/.vimrc
-ln -nfs ~/bin/dotfiles/vim/gvimrc ~/.gvimrc
+ln -nfs ~/bin/dotfiles/vim          ~/.vim
+ln -nfs ~/bin/dotfiles/vim/vimrc    ~/.vimrc
+ln -nfs ~/bin/dotfiles/vim/gvimrc   ~/.gvimrc
 
-ln -nfs ~/bin/dotfiles/rc/zshrc        ~/.zshrc
-ln -nfs ~/bin/dotfiles/rc/bashrc       ~/.bashrc
-ln -nfs ~/bin/dotfiles/rc/bash_profile ~/.bash_profile
-ln -nfs ~/bin/dotfiles/rc/tmux.conf    ~/.tmux.conf
-ln -nfs ~/bin/dotfiles/rc/npmrc        ~/.npmrc
-ln -nfs ~/bin/dotfiles/rc/jslintrc     ~/.jslintrc
-ln -nfs ~/bin/dotfiles/rc/ghci         ~/.ghci
+ln -nfs ~/bin/dotfiles/rc/zshrc     ~/.zshrc
+ln -nfs ~/bin/dotfiles/rc/tmux.conf ~/.tmux.conf
+ln -nfs ~/bin/dotfiles/rc/npmrc     ~/.npmrc
+ln -nfs ~/bin/dotfiles/rc/jslintrc  ~/.jslintrc
+ln -nfs ~/bin/dotfiles/rc/ghci      ~/.ghci
 
 ln -nfs ~/bin/dotfiles/git/config        ~/.gitconfig
 ln -nfs ~/bin/dotfiles/git/ignore_global ~/.gitignore_global
