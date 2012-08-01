@@ -11,7 +11,7 @@ alias rm='rm -v'
 alias v='vim'
 alias m='mvim'
 alias p='teamocil --here'
-alias 'export TEAMOCIL=1'=' export TEAMOCIL=1'
+alias export=' export'
 
 function manview {
     man -t $1 | open -f -a /Applications/Preview.app
