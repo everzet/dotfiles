@@ -20,9 +20,8 @@ alias ga='git add'
 alias gu='git reset HEAD --'
 alias gc='git commit -v'
 
-alias gb='git branch -v'
+alias gb='git checkout -b'
 alias gco='git checkout'
-alias gcb='git checkout -b'
 
 alias gs='git diff --stat'
 alias gd='git diff'
