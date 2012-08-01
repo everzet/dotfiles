@@ -15,7 +15,6 @@ session:
                 -
                     cmd:
                         - tmux select-window -t editor
-                        - git pull
                         - bin/console ca:c
                     focus: true
                 -
