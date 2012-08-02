@@ -19,6 +19,15 @@ session:
                     focus: true
                 -
                     cmd:
+                        - tail -f app/logs/dev.log
+                    width: 50
+                -
+                    cmd:
+                        - 'if [ ! -f app/logs/test.log ]; then touch app/logs/test.log ; fi'
+                        - tail -f app/logs/test.log
+                    height: 55
+                -
+                    cmd:
                         - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
                         - guard
-                    height: 10
+                    height: 20
