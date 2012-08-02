@@ -19,6 +19,7 @@ session:
                     focus: true
                 -
                     cmd:
+                        - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
                         - tail -f app/logs/dev.log
                     width: 50
                 -
