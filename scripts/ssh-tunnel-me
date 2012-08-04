@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -nvNT -R 2222:localhost:22 $1

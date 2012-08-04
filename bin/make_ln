@@ -18,6 +18,7 @@ if [ -d /usr/local/bin ]; then
     ln -nfs ~/bin/dotfiles/scripts/battery            /usr/local/bin/battery
     ln -nfs ~/bin/dotfiles/scripts/git_cwd_info       /usr/local/bin/git_cwd_info
     ln -nfs ~/bin/dotfiles/scripts/git_current_branch /usr/local/bin/git_current_branch
+    ln -nfs ~/bin/dotfiles/scripts/ssh-tunnel-me      /usr/local/bin/ssh-tunnel-me
 fi
 
 if [ -d /usr/local/php5 ]; then
