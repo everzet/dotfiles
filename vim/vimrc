@@ -173,6 +173,8 @@ nmap <leader>wo :on<cr>
 nmap <leader>w= <C-w>=
 nmap <leader>w0 <C-w>\|
 nmap <leader>w- <C-w>_
+nmap <leader>wk <C-w>K
+nmap <leader>wh <C-w>H
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
