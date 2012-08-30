@@ -21,7 +21,7 @@ endif
 hi CursorLine       guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi CursorColumn     guifg=NONE    ctermfg=NONE guibg=#2D2D2D ctermbg=236  gui=NONE cterm=NONE
 hi ColorColumn      guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi MatchParen       guifg=NONE    ctermfg=NONE guibg=#000000 ctermbg=16   gui=UNDERLINE cterm=UNDERLINE
+hi MatchParen       guifg=NONE    ctermfg=NONE guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi Pmenu            guifg=#FFFFFF ctermfg=231  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi PmenuSel         guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
 hi Cursor           guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
@@ -50,9 +50,9 @@ hi Constant         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NO
 hi Number           guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Special          guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc          guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi TabLine          guifg=#CCCCCC ctermfg=252  guibg=#3F3F3F ctermbg=238  gui=NONE cterm=NONE
+hi TabLine          guifg=#CCCCCC ctermfg=252  guibg=#3F3F3F ctermbg=237  gui=NONE cterm=NONE
 hi TabLineSel       guifg=#C7C7C7 ctermfg=251  guibg=#6B6B6B ctermbg=242  gui=NONE cterm=NONE
-hi TabLineFill      guifg=NONE    ctermfg=NONE guibg=#3F3F3F ctermbg=238  gui=NONE cterm=NONE
+hi TabLineFill      guifg=NONE    ctermfg=NONE guibg=#3F3F3F ctermbg=237  gui=NONE cterm=NONE
 hi pythonOperator   guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionTarget guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionShade  guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
