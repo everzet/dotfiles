@@ -8,7 +8,7 @@ vim_colors "mustango" do
     CursorLine   "NONE",   "262626"
     CursorColumn "NONE",   "2d2d2d"
     ColorColumn  "NONE",   "262626"
-    MatchParen   "000000", "ffffff"
+    MatchParen   "NONE",   "000000", :gui => "underline", :cterm => "underline"
     Pmenu        "ffffff", "444444"
     PmenuSel     "000000", "b1d631"
 

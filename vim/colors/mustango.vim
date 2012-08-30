@@ -21,7 +21,7 @@ endif
 hi CursorLine       guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi CursorColumn     guifg=NONE    ctermfg=NONE guibg=#2D2D2D ctermbg=236  gui=NONE cterm=NONE
 hi ColorColumn      guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi MatchParen       guifg=#000000 ctermfg=16   guibg=#FFFFFF ctermbg=231  gui=NONE cterm=NONE
+hi MatchParen       guifg=NONE    ctermfg=NONE guibg=#000000 ctermbg=16   gui=UNDERLINE cterm=UNDERLINE
 hi Pmenu            guifg=#FFFFFF ctermfg=231  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi PmenuSel         guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
 hi Cursor           guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
