@@ -6,6 +6,7 @@ vim_colors "mustango" do
     background :dark
 
     CursorLine   "NONE",   "262626"
+    CursorLineNr "444444", "262626"
     CursorColumn "NONE",   "2d2d2d"
     ColorColumn  "NONE",   "262626"
     MatchParen   "NONE",   "444444"
@@ -44,7 +45,7 @@ vim_colors "mustango" do
     TabLineSel   "c7c7c7", "6b6b6b"
     TabLineFill  "NONE",   "3f3f3f"
 
-    pythonOperator   "7e8aa2", "NONE"
+    PythonOperator   "7e8aa2", "NONE"
     EasyMotionTarget "b1d631", "NONE"
     EasyMotionShade  "444444", "NONE"
     LustySelected    "ff9800", "NONE"
