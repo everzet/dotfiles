@@ -272,14 +272,14 @@ nmap <leader>gmo    :Gmove<cr>
 "
 "  TAGBAR
 "
-nmap <leader>bb :TagbarToggle<cr> 
+nmap <leader>bb :TagbarToggle<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  ACK
 "
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -300,7 +300,7 @@ let g:ctrlp_custom_ignore = 'vendor$'
 "map <c-t> :CommandT<cr>
 "map <d-t> :CommandT<cr>
 "map <d-r> :CommandTBuffer<cr>
-"map <s-t> :CommandTFlush<cr> 
+"map <s-t> :CommandTFlush<cr>
 "let g:CommandTMatchWindowReverse = 1
 "let g:CommandTMaxHeight = 15
 
@@ -348,6 +348,16 @@ let g:EasyMotion_leader_key='t'
 let g:surround_{char2nr("t")} = "{% block\1 \r..*\r &\1 %}\r{% endblock %}"
 let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1 %}\r{% endif %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  SYNTASTIC
+"
+map <leader>cs :SyntasticToggleMode<cr>
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -436,7 +446,7 @@ filetype plugin on
 filetype indent on
 
 if has('autocmd')
-    au BufWinEnter *     set foldlevel=999999 
+    au BufWinEnter *     set foldlevel=999999
     au FocusLost silent! :wa
     au FileType helpfile setlocal nonumber
 
