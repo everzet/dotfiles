@@ -354,9 +354,11 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\ 1%}\r{% endfor %}"
 "
 "  SYNTASTIC
 "
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['php', 'ruby', 'python'],
-                           \ 'passive_filetypes': ['css', 'scss'] }
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+
+map <leader>cs :SyntasticToggleMode<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
