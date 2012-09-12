@@ -458,6 +458,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
     au BufRead,BufNewFile *.php         imap <buffer> § $
     au BufRead,BufNewFile *.php         imap <buffer> ± ->
+    au BufRead,BufNewFile *.php         imap <buffer> §§ $this->
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
     au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
