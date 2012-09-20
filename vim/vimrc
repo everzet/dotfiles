@@ -450,6 +450,7 @@ if has('autocmd')
     au BufWinEnter *     set foldlevel=999999
     au FocusLost silent! :wa
     au FileType helpfile setlocal nonumber
+    au CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
 
     """"""""""""""""""""""""""""""""""""""""
     "

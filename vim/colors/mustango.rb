@@ -51,4 +51,6 @@ vim_colors "mustango" do
     LustySelected    "ff9800", "NONE"
     LustyDir         "b1d631", "NONE"
     Question         "ff9800", "NONE"
+
+    IncSearch        "NONE",   "NONE", :gui => "underline", :cterm => "underline"
 end

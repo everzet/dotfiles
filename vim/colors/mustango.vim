@@ -60,4 +60,5 @@ hi EasyMotionShade  guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NO
 hi LustySelected    guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustyDir         guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Question         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi IncSearch        guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE gui=UNDERLINE cterm=UNDERLINE
 
