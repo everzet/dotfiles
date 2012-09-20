@@ -51,10 +51,9 @@ hi Constant         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NO
 hi Number           guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Special          guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc          guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi TabLine          guifg=#CCCCCC ctermfg=252  guibg=#3F3F3F ctermbg=238  gui=NONE cterm=NONE
+hi TabLine          guifg=#CCCCCC ctermfg=252  guibg=#3F3F3F ctermbg=237  gui=NONE cterm=NONE
 hi TabLineSel       guifg=#C7C7C7 ctermfg=251  guibg=#6B6B6B ctermbg=242  gui=NONE cterm=NONE
-hi TabLineFill      guifg=NONE    ctermfg=NONE guibg=#3F3F3F ctermbg=238  gui=NONE cterm=NONE
-hi IncSearch        guifg=NONE    ctermfg=NONE guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
+hi TabLineFill      guifg=NONE    ctermfg=NONE guibg=#3F3F3F ctermbg=237  gui=NONE cterm=NONE
 hi PythonOperator   guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionTarget guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionShade  guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
