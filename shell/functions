@@ -10,3 +10,7 @@ function take {
 function gg {
     git commit -avm "$*"
 }
+
+function tp {
+    tmux new-session "teamocil $1"
+}
