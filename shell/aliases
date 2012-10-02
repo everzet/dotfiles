@@ -11,7 +11,7 @@ alias rm='rm -v'
 alias v='vim'
 alias m='mvim'
 alias p='teamocil --here'
-alias pat='tmux at -t'
+alias tt='tmux at -t'
 alias export=' export'
 
 alias pu='phpunit --colors'
