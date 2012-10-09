@@ -364,6 +364,15 @@ map <leader>cs :SyntasticCheck<cr>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  VIMUX
+"
+map <leader>re :VimuxPromptCommand<cr>
+map <Leader>rl :VimuxRunLastCommand<cr>
+map <Leader>rc :VimuxCloseRunner<cr>
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  PHP
 "
 map <leader>u :call PhpInsertUse()<cr>
