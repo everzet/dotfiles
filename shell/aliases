@@ -19,11 +19,12 @@ alias pu='phpunit --colors'
 
 alias g='git status -s'
 alias ga='git add'
-alias gu='git reset HEAD --'
 alias gc='git commit -v'
+alias gu='git reset HEAD --'
 
-alias gb='git checkout -b'
+alias gb='git branch'
 alias gco='git checkout'
+alias gcb='git checkout -b'
 
 alias gs='git diff --stat'
 alias gd='git diff'

@@ -1,38 +1,45 @@
 [user]
-  name = everzet
-  email = ever.zet@gmail.com
+    name = everzet
+    email = ever.zet@gmail.com
 
 [url "git://github.com/"]
-  insteadOf = gh:
+    insteadOf = gh:
+
 [url "git@github.com:"]
-  insteadOf = wgh:
+    insteadOf = wgh:
 
 [color]
-  branch = auto
-  diff   = auto
-  status = auto
+    branch = auto
+    diff   = auto
+    status = auto
 
 [apply]
-  whitespace = nowarn
+    whitespace = nowarn
 
 [alias]
-  unstage = reset HEAD
+    s  = status -s
+    a  = add
+    c  = commit -v
+    u  = reset HEAD
+    b  = branch
+    co = checkout
+    cb = checkout -b
 
 [web]
-  browser = open
+    browser = open
 
 [difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 
 [difftool]
-  prompt = false
+    prompt = false
 
 [diff]
-  tool = Kaleidoscope
+    tool = Kaleidoscope
 
 [core]
-  quotepath = false
-  excludesfile = /Users/everzet/.gitignore_global
+    quotepath = false
+    excludesfile = /Users/everzet/.gitignore_global
 
 [interactive]
-  singlekey = true
+    singlekey = true
