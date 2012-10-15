@@ -58,9 +58,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/taskpaper"]
-	path = vim/bundle/taskpaper
-	url = https://github.com/davidoc/taskpaper.vim.git
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
