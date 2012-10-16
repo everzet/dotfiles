@@ -12,7 +12,7 @@ alias v='vim'
 alias m='mvim'
 alias p='teamocil --here'
 alias tls='tmux list-sessions'
-alias tat='tmux at -t'
+alias ta='tmux at -t'
 alias export=' export'
 
 alias pu='phpunit --colors'
