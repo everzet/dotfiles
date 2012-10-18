@@ -28,6 +28,7 @@ se ffs=unix
 se nocompatible
 se hidden
 se nobackup
+se noswapfile
 se dir=/tmp,/var/tmp
 se autoread
 se nu
@@ -366,9 +367,9 @@ map <leader>cs :SyntasticCheck<cr>
 "
 "  VIMUX
 "
-map <leader>re :VimuxPromptCommand<cr>
-map <Leader>rl :VimuxRunLastCommand<cr>
-map <Leader>rc :VimuxCloseRunner<cr>
+map <leader>vr :VimuxPromptCommand<cr>
+map <Leader>vl :VimuxRunLastCommand<cr>
+map <Leader>vc :VimuxCloseRunner<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
