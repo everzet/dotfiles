@@ -14,6 +14,7 @@ alias p='teamocil --here'
 alias tls='tmux list-sessions'
 alias ta='tmux at -t'
 alias export=' export'
+alias c='pygmentize -O style=monokai -f console256 -g'
 
 alias pu='phpunit --colors'
 
