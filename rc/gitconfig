@@ -3,7 +3,7 @@
     email = ever.zet@gmail.com
 
 [push]
-	default = simple
+	default = current
 
 [url "git://github.com/"]
     insteadOf = gh:
