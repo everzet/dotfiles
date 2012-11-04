@@ -286,6 +286,13 @@ nnoremap <leader>a :Ack
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  NEOCOMPLCACHE
+"
+let g:neocomplcache_enable_at_startup = 1
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  CTRLP
 "
 let g:ctrlp_map = '<c-t>'
