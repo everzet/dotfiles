@@ -27,6 +27,7 @@ hi Pmenu            guifg=#FFFFFF ctermfg=231  guibg=#444444 ctermbg=238  gui=NO
 hi PmenuSel         guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
 hi Cursor           guifg=#000000 ctermfg=16   guibg=#B1D631 ctermbg=149  gui=NONE cterm=NONE
 hi Normal           guifg=#E2E2E5 ctermfg=254  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
+hi Conceal          guifg=#E2E2E5 ctermfg=254  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
 hi SpecialKey       guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi NonText          guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi LineNr           guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE

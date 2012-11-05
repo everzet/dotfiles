@@ -15,6 +15,7 @@ vim_colors "mustango" do
 
     Cursor       "000000", "b1d631"
     Normal       "e2e2e5", "202020"
+    Conceal      "e2e2e5", "202020"
     SpecialKey   "444444", "303030"
     NonText      "444444", "303030"
     LineNr       "444444", "262626"
