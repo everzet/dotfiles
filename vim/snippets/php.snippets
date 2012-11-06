@@ -9,10 +9,24 @@ snippet cls
 	class ${2:`Filename('', 'myClass')`}
 	{${3}
 	}
+snippet intr
+	<?php
+	
+	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\', 'g'), '^\\\', '', '')`;
+	
+	/**
+	 * ${1:`Filename('', 'myInterface')`}.
+	 */
+	interface ${2:`Filename('', 'myInterface')`}
+	{${3}
+	}
 snippet it
 	function it_${1:should_do_something}()
-	{
-		${2:// TODO: describe}
+	{${2:}
+	}
+snippet its
+	function its_${1:someMethod_should_do_something}()
+	{${2:}
 	}
 snippet unit
 	<?php
