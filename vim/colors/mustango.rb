@@ -57,4 +57,6 @@ vim_colors "mustango" do
 	DiffText         "ffffff", "006161"
 	DiffChange       "NONE",   "NONE"
 	DiffDelete	     "ffffff", "610006"
+
+    phpspecExampleSubject "faf4c6", "NONE",   :gui => "bold",   :cterm => "bold"
 end

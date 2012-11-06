@@ -4,8 +4,6 @@ endif
 
 syntax match phpspecExampleName / \(its\|it\)_[^(]*/ contained containedin=phpRegion
 syntax match phpspecExampleSubject / \(its_[^_]*\|it\)/ contained containedin=phpspecExampleName
-syntax match phpspecDelimiter "_" conceal cchar=  contained containedin=phpspecExampleName,phpspecExampleSubject
-
-hi phpspecExampleSubject guifg=#FAF4C6 ctermfg=230 guibg=NONE ctermbg=NONE gui=BOLD cterm=BOLD
+syntax match phpspecExampleDelimiter "_" conceal cchar=  contained containedin=phpspecExampleName,phpspecExampleSubject
 
 setlocal conceallevel=2
