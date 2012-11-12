@@ -22,9 +22,6 @@
 [submodule "vim/bundle/BufOnly"]
 	path = vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
@@ -82,3 +79,6 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
+[submodule "vim/bundle/neosnippet"]
+	path = vim/bundle/neosnippet
+	url = https://github.com/Shougo/neosnippet.git
