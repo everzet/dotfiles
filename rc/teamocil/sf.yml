@@ -15,7 +15,7 @@ session:
                 -
                     cmd:
                         - tmux select-window -t editor
-                        - bin/console ca:c
+                        - g
                     focus: true
                 -
                     cmd:
