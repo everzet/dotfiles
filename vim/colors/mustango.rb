@@ -53,10 +53,10 @@ vim_colors "mustango" do
     LustyDir         "b1d631", "NONE"
     Question         "ff9800", "NONE"
 
-	DiffAdd          "ffffff", "01610b"
-	DiffText         "ffffff", "006161"
-	DiffChange       "NONE",   "NONE"
-	DiffDelete	     "ffffff", "610006"
+    DiffAdd          "ffffff", "01610b"
+    DiffText         "ffffff", "006161"
+    DiffChange       "NONE",   "NONE"
+    DiffDelete       "ffffff", "610006"
 
     phpspecExampleSubject "faf4c6", "NONE",   :gui => "bold",   :cterm => "bold"
 end
