@@ -3,7 +3,7 @@
     email = ever.zet@gmail.com
 
 [push]
-	default = current
+    default = current
 
 [url "git://github.com/"]
     insteadOf = gh:
@@ -32,7 +32,7 @@
     browser = open
 
 [difftool "Kaleidoscope"]
-    cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
 [difftool]
     prompt = false
@@ -46,3 +46,12 @@
 
 [interactive]
     singlekey = true
+
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+
+[mergetool]
+    prompt = false
+
+[merge]
+    tool = Kaleidoscope
