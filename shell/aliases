@@ -30,6 +30,7 @@ alias gcb='git checkout -b'
 alias gs='git diff --stat'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gm='git mergetool'
 alias gt='git difftool'
 alias gtc='git difftool --cached'
 
