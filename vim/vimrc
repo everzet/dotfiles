@@ -262,13 +262,12 @@ let g:Powerline_mode_n  = ' N '
 "
 "  FUGITIVE
 "
-nmap <leader>gs     :Gstatus<cr>
-nmap <leader>gd     :Gdiff<cr>
-nmap <leader>ga     :Gwrite<cr>
-nmap <leader>gh     :Gbrowse!<cr>
-nmap <leader>gc     :Gcommit<cr>
-nmap <leader>gre    :Gremove<cr>
-nmap <leader>gmo    :Gmove<cr>
+nmap <leader>gs  :Gstatus<cr>
+nmap <leader>ga  :Gwrite<cr>
+nmap <leader>gh  :Gbrowse!<cr>
+nmap <leader>gc  :Gcommit --verbose<cr>
+nmap <leader>grm :Gremove<cr>
+nmap <leader>gmv :Gmove<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -310,7 +309,7 @@ let g:ctrlp_map = '<c-t>'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_max_height = 15
 let g:ctrlp_open_multi = '1v'
-let g:ctrlp_custom_ignore = 'vendor$'
+let g:ctrlp_custom_ignore = '(vendor|\.git|\.hg)$'
 
 "
 """"""""""""""""""""""""""""""""""""""""
