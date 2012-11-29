@@ -1,9 +1,16 @@
 [user]
-	name = everzet
+    name = everzet
     email = ever.zet@gmail.com
 
 [push]
     default = current
+
+[core]
+    quotepath = false
+    excludesfile = /Users/everzet/.gitignore_global
+
+[interactive]
+    singlekey = true
 
 [url "git://github.com/"]
     insteadOf = gh:
@@ -24,9 +31,18 @@
     a  = add
     c  = commit -v
     u  = reset HEAD
+
     b  = branch
+    bn = checkout -b
     co = checkout
-    cb = checkout -b
+
+    d  = difftool
+    dc = difftool --cached
+    ds = diff --stat
+    m  = mergetool
+
+    l  = log --oneline --graph
+    lp = log --oneline --graph --patch
 
 [web]
     browser = open
@@ -39,13 +55,6 @@
 
 [diff]
     tool = Kaleidoscope
-
-[core]
-    quotepath = false
-    excludesfile = /Users/everzet/.gitignore_global
-
-[interactive]
-    singlekey = true
 
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
