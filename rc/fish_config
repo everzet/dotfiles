@@ -1,0 +1,85 @@
+# paths
+set -x PATH /usr/local/sbin $PATH
+set -x PATH /usr/local/share/python3 $PATH
+set -x PATH /usr/local/php5/bin $PATH
+set -x PATH /usr/local/bin $PATH
+set -x PATH ~/bin $PATH
+
+# editors
+set -x EDITOR 'vim'
+set -x GIT_EDITOR 'vim'
+
+# modules
+set -x JS_CMD "node"
+set -x NODE_PATH "/usr/local/lib/node_modules"
+set -x PHP_PEAR_PHP_BIN "/usr/local/php5/bin/php"
+
+# encoding
+set -x LANG en_US.UTF-8
+set -x LC_CTYPE en_US.UTF-8
+
+# behat
+set -x MINK_EXTENSION_PARAMS 'show_auto=true&show_cmd=open -g %s'
+
+# functions
+function take
+  mkdir -p $argv[1]
+  cd $argv[1]
+end
+
+function l; ls -lh $argv; end
+function ll; ls -lha $argv; end
+function c-; cd -; end
+
+function cp; cp -v $argv; end
+function mv; mv -v $argv; end
+function ln; ln -v $argv; end
+function rm; rm -v $argv; end
+
+function c; pygmentize -O style=monokai -f console256 -g $argv; end
+
+function v; vim $argv; end
+function m; mvim $argv; end
+
+function p; teamocil --here $argv; end
+function tls; tmux list-sessions $argv; end
+function ta; tmux at -t $argv; end
+function tp; tmux new-session "teamocil $argv[1]"; end
+
+function g;  git s $argv; end
+function ga; git a $argv; end
+function gc; git c $argv; end
+function gd; git d $argv; end
+function gl; git l $argv; end
+
+function pu; phpunit --colors $argv; end
+
+# prompt
+function fish_prompt
+  set previous_status $status
+
+  set_color -b white black
+  echo -n '' (prompt_pwd) ''
+  set_color normal
+
+  set_color -b black white
+  echo -n '⮀'
+  set_color normal
+
+  set_color -b black
+  echo -n (git_cwd_info)
+  set_color normal
+
+  set_color black
+  echo -n '⮀'
+  set_color normal
+
+  echo ''
+  if test $previous_status -gt 0
+    set_color red
+  else
+    set_color green
+  end
+  echo -n '■ '
+  set_color normal
+end

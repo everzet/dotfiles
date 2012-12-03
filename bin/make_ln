@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p ~/.config/fish
+
 ln -nfs ~/bin/dotfiles/vim        ~/.vim
 ln -nfs ~/bin/dotfiles/vim/vimrc  ~/.vimrc
 ln -nfs ~/bin/dotfiles/vim/gvimrc ~/.gvimrc
@@ -12,6 +14,8 @@ ln -nfs ~/bin/dotfiles/rc/ghci             ~/.ghci
 ln -nfs ~/bin/dotfiles/rc/gitconfig        ~/.gitconfig
 ln -nfs ~/bin/dotfiles/rc/gitignore_global ~/.gitignore_global
 ln -nfs ~/bin/dotfiles/rc/teamocil         ~/.teamocil
+ln -nfs ~/bin/dotfiles/rc/fish_config      ~/.config/fish/config.fish
+ln -nfs ~/bin/dotfiles/rc/fishd_config     ~/.config/fish/fishd.everbook.local
 
 if [ -d /usr/local/bin ]; then
     ln -nfs ~/bin/dotfiles/scripts/chcache            /usr/local/bin/chcache
