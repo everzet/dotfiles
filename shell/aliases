@@ -18,9 +18,4 @@ alias tls='tmux list-sessions'
 alias ta='tmux at -t'
 
 alias g='git s'
-alias ga='git a'
-alias gc='git c'
-alias gd='git d'
-alias gl='git l'
-
 alias pu='phpunit --colors'
