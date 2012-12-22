@@ -1,0 +1,19 @@
+session:
+    name: <%= File.basename(Dir.getwd) %>
+    windows:
+        - 
+            name: editor
+            root: <%= Dir.getwd %>
+            splits:
+                - { cmd: vim }
+        - 
+            name: shell
+            root: <%= Dir.getwd %>
+            filters:
+                before: clear
+            splits:
+                -
+                    cmd:
+                        - tmux select-window -t editor
+                        - clear
+                    focus: true
