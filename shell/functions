@@ -7,10 +7,20 @@ function take {
     cd $1
 }
 
-function gg {
-    git commit -avm "$*"
-}
-
 function tp {
     tmux new-session "teamocil $1"
+}
+
+function p {
+    if [[ -a composer.json && -d web ]]; then
+        tmux new-session "teamocil sf";
+    fi
+
+    if [[ -a composer.json && ! -d web ]]; then
+        tmux new-session "teamocil php";
+    fi
+
+    if [[ ! -a composer.json && ! -d web ]]; then
+        tmux new-session "teamocil generic";
+    fi
 }
