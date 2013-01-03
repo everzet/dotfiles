@@ -30,6 +30,7 @@
     s  = status -s
     a  = add
     c  = commit -v
+    ca = commit -av
     u  = reset HEAD
 
     b  = branch
