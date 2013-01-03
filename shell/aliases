@@ -14,5 +14,6 @@ alias v='vim'
 alias tls='tmux list-sessions'
 alias ta='tmux at -t'
 
+alias git='hub'
 alias g='git s'
 alias pu='phpunit --colors'
