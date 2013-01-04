@@ -1,5 +1,5 @@
 # paths
-export PATH=~/bin:/usr/local/bin:/usr/local/php5/bin:/usr/local/share/python3:/usr/local/Cellar/go/1.0.3/bin:/usr/local/sbin:$PATH
+export PATH=./bin:~/bin:/usr/local/bin:/usr/local/php5/bin:/usr/local/share/python3:/usr/local/Cellar/go/1.0.3/bin:/usr/local/sbin:$PATH
 
 # editors
 export EDITOR='vim'

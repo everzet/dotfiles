@@ -16,4 +16,7 @@ alias ta='tmux at -t'
 
 alias git='hub'
 alias g='git s'
+
 alias pu='phpunit --colors'
+alias sfc='app/console'
+alias sfct='app/console -e=test'
