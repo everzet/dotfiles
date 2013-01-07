@@ -352,6 +352,7 @@ vmap <leader><tab>> :Tab /=><cr>
 "
 let g:yankring_history_file = '.yankring_history'
 nmap <leader>y :YRShow<cr>
+vmap <leader>y :YRShow<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
