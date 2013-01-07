@@ -112,7 +112,9 @@ se formatoptions=qrn1
 "
 "  COPY-PASTE
 "
-set clipboard=unnamed
+"set clipboard=unnamed
+"
+" Use "+p (in N) or <c-r>+ (in I)
 
 "
 """"""""""""""""""""""""""""""""""""""""
