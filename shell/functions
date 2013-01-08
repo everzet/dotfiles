@@ -24,3 +24,8 @@ function p {
         tmux new-session "teamocil generic";
     fi
 }
+
+function sfa {
+    app/console -e=dev  $*
+    app/console -e=test $*
+}
