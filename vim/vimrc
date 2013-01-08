@@ -290,7 +290,7 @@ nmap <leader>bb :TagbarToggle<cr>
 "
 "  ACK
 "
-nnoremap <leader>a :Ack
+nmap <expr><leader>a ":Ack "
 
 "
 """"""""""""""""""""""""""""""""""""""""
