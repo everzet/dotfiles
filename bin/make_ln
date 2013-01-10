@@ -17,6 +17,8 @@ ln -nfs ~/bin/dotfiles/rc/teamocil         ~/.teamocil
 ln -nfs ~/bin/dotfiles/rc/fish_config      ~/.config/fish/config.fish
 ln -nfs ~/bin/dotfiles/rc/fishd_config     ~/.config/fish/fishd.everbook.local
 
+sudo ln -nfs ~/bin/dotfiles/rc/resolver/dev /etc/resolver/dev
+
 if [ -d /usr/local/php5 ]; then
     ln -nfs ~/bin/dotfiles/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
 fi
