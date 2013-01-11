@@ -1,28 +1,32 @@
 #!/bin/sh
 
+DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
 mkdir -p ~/.config/fish
 
-ln -nfs ~/bin/dotfiles/vim        ~/.vim
-ln -nfs ~/bin/dotfiles/vim/vimrc  ~/.vimrc
-ln -nfs ~/bin/dotfiles/vim/gvimrc ~/.gvimrc
+ln -nfs $DOTDIR/shell ~/.shell
 
-ln -nfs ~/bin/dotfiles/rc/zshrc            ~/.zshrc
-ln -nfs ~/bin/dotfiles/rc/tmux.conf        ~/.tmux.conf
-ln -nfs ~/bin/dotfiles/rc/npmrc            ~/.npmrc
-ln -nfs ~/bin/dotfiles/rc/jslintrc         ~/.jslintrc
-ln -nfs ~/bin/dotfiles/rc/ghci             ~/.ghci
-ln -nfs ~/bin/dotfiles/rc/gitconfig        ~/.gitconfig
-ln -nfs ~/bin/dotfiles/rc/gitignore_global ~/.gitignore_global
-ln -nfs ~/bin/dotfiles/rc/teamocil         ~/.teamocil
-ln -nfs ~/bin/dotfiles/rc/fish_config      ~/.config/fish/config.fish
-ln -nfs ~/bin/dotfiles/rc/fishd_config     ~/.config/fish/fishd.everbook.local
+ln -nfs $DOTDIR/vim        ~/.vim
+ln -nfs $DOTDIR/vim/vimrc  ~/.vimrc
+ln -nfs $DOTDIR/vim/gvimrc ~/.gvimrc
 
-sudo ln -nfs ~/bin/dotfiles/rc/resolver/dev /etc/resolver/dev
+ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
+ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf
+ln -nfs $DOTDIR/rc/npmrc            ~/.npmrc
+ln -nfs $DOTDIR/rc/jslintrc         ~/.jslintrc
+ln -nfs $DOTDIR/rc/ghci             ~/.ghci
+ln -nfs $DOTDIR/rc/gitconfig        ~/.gitconfig
+ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
+ln -nfs $DOTDIR/rc/teamocil         ~/.teamocil
+ln -nfs $DOTDIR/rc/fish_config      ~/.config/fish/config.fish
+ln -nfs $DOTDIR/rc/fishd_config     ~/.config/fish/fishd.everbook.local
+
+sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
 
 if [ -d /usr/local/php5 ]; then
-    ln -nfs ~/bin/dotfiles/rc/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
+    ln -nfs $DOTDIR/rc/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
 fi
 
 if [ -d /etc/apache2/users ]; then
-    sudo ln -nfs ~/bin/dotfiles/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
+    sudo ln -nfs $DOTDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
 fi

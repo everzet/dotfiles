@@ -1,5 +1,5 @@
-. ~/bin/dotfiles/shell/env
-. ~/bin/dotfiles/shell/config
-. ~/bin/dotfiles/shell/aliases
-. ~/bin/dotfiles/shell/zsh
-. ~/bin/dotfiles/shell/functions
+. ~/.shell/env
+. ~/.shell/config
+. ~/.shell/aliases
+. ~/.shell/zsh
+. ~/.shell/functions

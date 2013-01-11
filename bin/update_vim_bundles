@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-for bundle in ~/bin/dotfiles/vim/bundle/*; do
+VIMDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../vim" && pwd )"
+
+for bundle in $VIMDIR/bundle/*; do
     echo "\nUPDATING $bundle"
     cd $bundle
     git reset --hard
