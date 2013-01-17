@@ -34,9 +34,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/behat"]
 	path = vim/bundle/behat
 	url = https://github.com/veloce/vim-behat.git
