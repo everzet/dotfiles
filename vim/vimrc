@@ -250,7 +250,7 @@ nnoremap * *N
 "
 "  POWERLINE
 "
-python from powerline.ext.vim import source_plugin; source_plugin()
+python from powerline.bindings.vim import source_plugin; source_plugin()
 
 "
 """"""""""""""""""""""""""""""""""""""""
