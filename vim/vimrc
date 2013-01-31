@@ -98,8 +98,8 @@ se wrap linebreak
 se textwidth=100
 se colorcolumn=100
 se formatoptions=qrn1
-se formatprg=par
-se formatoptions+=tca
+"se formatprg=par
+"se formatoptions+=tca
 
 
 "
