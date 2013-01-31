@@ -98,9 +98,8 @@ se wrap linebreak
 se textwidth=100
 se colorcolumn=100
 se formatoptions=qrn1
-"se formatprg=par
-"se formatoptions+=tca
-
+se formatprg=par
+se formatoptions+=tca
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -378,8 +377,6 @@ map <Leader>vc :VimuxCloseRunner<cr>
 "  PHP
 "
 map <leader>u :call PhpInsertUse()<cr>
-"nmap <c-p>   :call PhpDocSingle()<cr>
-"nmap <c-p>   :call PhpDocRange()<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
