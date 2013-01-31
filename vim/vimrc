@@ -310,18 +310,6 @@ let g:ctrlp_custom_ignore = '\v[\/](vendor|\.git|\.hg)$'
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  COMMAND-T
-"
-"map <c-t> :CommandT<cr>
-"map <d-t> :CommandT<cr>
-"map <d-r> :CommandTBuffer<cr>
-"map <s-t> :CommandTFlush<cr>
-"let g:CommandTMatchWindowReverse = 1
-"let g:CommandTMaxHeight = 15
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  LUSTY
 "
 let g:LustyJugglerShowKeys = '1'
