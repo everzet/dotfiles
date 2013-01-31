@@ -58,9 +58,6 @@
 [submodule "vim/bundle/commaobject"]
 	path = vim/bundle/commaobject
 	url = https://github.com/austintaylor/vim-commaobject.git
-[submodule "vim/bundle/php-cs-fixer"]
-	path = vim/bundle/php-cs-fixer
-	url = https://github.com/stephpy/vim-php-cs-fixer.git
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
