@@ -9,6 +9,7 @@ ln -nfs $DOTDIR/shell ~/.shell
 ln -nfs $DOTDIR/vim        ~/.vim
 ln -nfs $DOTDIR/vim/vimrc  ~/.vimrc
 ln -nfs $DOTDIR/vim/gvimrc ~/.gvimrc
+ln -nfs $DOTDIR/powerline  ~/.powerline
 
 ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf

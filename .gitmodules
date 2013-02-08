@@ -82,3 +82,6 @@
 [submodule "vim/bundle/movar"]
 	path = vim/bundle/movar
 	url = https://github.com/robmiller/vim-movar.git
+[submodule "powerline"]
+	path = powerline
+	url = git@github.com:Lokaltog/powerline.git

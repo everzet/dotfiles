@@ -250,7 +250,7 @@ nnoremap * *N
 "
 "  POWERLINE
 "
-set rtp+=/Users/everzet/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set rtp+=~/.powerline/powerline/bindings/vim
 
 "
 """"""""""""""""""""""""""""""""""""""""
