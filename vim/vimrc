@@ -440,6 +440,15 @@ filetype on
 filetype plugin on
 filetype indent on
 
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=500
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
 if has('autocmd')
     au BufWinEnter *     set foldlevel=999999
     au FocusLost silent! :wa
