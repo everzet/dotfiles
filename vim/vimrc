@@ -467,6 +467,7 @@ if has('autocmd')
     au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
     au BufRead,BufNewFile *.ejs         setlocal filetype=html
     au BufRead,BufNewFile *.json        setlocal filetype=javascript
+    au BufRead,BufNewFile *.pp          setlocal filetype=ruby
 
     """"""""""""""""""""""""""""""""""""""""
     "
