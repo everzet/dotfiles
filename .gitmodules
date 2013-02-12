@@ -85,3 +85,6 @@
 [submodule "powerline"]
 	path = powerline
 	url = git@github.com:Lokaltog/powerline.git
+[submodule "vim/bundle/vdebug"]
+	path = vim/bundle/vdebug
+	url = git@github.com:joonty/vdebug.git

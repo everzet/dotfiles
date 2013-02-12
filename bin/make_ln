@@ -24,7 +24,7 @@ ln -nfs $DOTDIR/rc/powerline        ~/.config/powerline
 sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
 
 if [ -d /usr/local/php5 ]; then
-    ln -nfs $DOTDIR/rc/php/99-everzet.ini /usr/local/php5/php.d/99-everzet.ini
+    ln -nfs $DOTDIR/rc/php/*.ini /usr/local/php5/php.d/
 fi
 
 if [ -d /etc/apache2/users ]; then
