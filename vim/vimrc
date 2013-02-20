@@ -121,9 +121,9 @@ se formatoptions=qrn1
 "
 "  GENERAL OVERRIDINGS
 "
+let mapleader = ","
 inoremap jj     <esc>
 nmap <leader>;  :
-let mapleader = ","
 
 "
 """"""""""""""""""""""""""""""""""""""""
