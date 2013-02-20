@@ -29,7 +29,8 @@
 			},
 			{
 				"name": "file_name",
-				"draw_divider": false
+				"draw_divider": false,
+				"after": " "
 			},
 			{
 				"name": "file_vcs_status",
@@ -37,8 +38,7 @@
 			},
 			{
 				"name": "modified_indicator",
-				"args": { "text": "+" },
-				"before": " "
+				"args": { "text": "+" }
 			},
 			{
 				"type": "string",
