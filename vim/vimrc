@@ -121,9 +121,8 @@ se formatoptions=qrn1
 "
 "  GENERAL OVERRIDINGS
 "
-inoremap jj        <esc>
-nnoremap \         :
-nnoremap <leader>; :
+inoremap jj     <esc>
+nmap <leader>;  :
 let mapleader = ","
 
 "
