@@ -32,6 +32,9 @@ hi SpecialKey            guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  g
 hi NonText               guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi LineNr                guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi SignColumn            guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi lineAdded             guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi lineModified          guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi lineRemoved           guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi StatusLine            guifg=#D3D3D5 ctermfg=188  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi StatusLineNC          guifg=#939393 ctermfg=246  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi VertSplit             guifg=#444444 ctermfg=238  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE

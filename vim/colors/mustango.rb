@@ -20,6 +20,10 @@ vim_colors "mustango" do
     NonText      "444444", "303030"
     LineNr       "444444", "262626"
     SignColumn   "444444", "262626"
+    lineAdded    "009900", "262626"
+    lineModified "bbbb00", "262626"
+    lineRemoved  "ff2222", "262626"
+
     StatusLine   "d3d3d5", "444444"
     StatusLineNC "939393", "444444"
     VertSplit    "444444", "444444"

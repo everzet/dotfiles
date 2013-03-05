@@ -43,7 +43,6 @@ se copyindent
 se smartindent
 se smarttab
 se nolist
-se nofoldenable
 se backspace=indent,eol,start
 se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,.DS_Store
 
@@ -263,6 +262,14 @@ nmap <leader>gh  :Gbrowse!<cr>
 nmap <leader>gc  :Gcommit --verbose<cr>
 nmap <leader>grm :Gremove<cr>
 nmap <leader>gmv :Gmove<cr>
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  GITGUTTER
+"
+let g:gitgutter_enabled = 1
+let g:gitgutter_highlights = 0
 
 "
 """"""""""""""""""""""""""""""""""""""""
