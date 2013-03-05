@@ -54,3 +54,14 @@ snippet eid "Doctrine2 Entity ID" !b
  */
 ${1:private} $id;
 endsnippet
+
+snippet fun "New function (method)" !b
+${1:public} function ${2:setName}($3)
+{
+    $4
+}
+endsnippet
+
+snippet clo "New closure" !b
+function($1)${2: use($3)} {$4}
+endsnippet
