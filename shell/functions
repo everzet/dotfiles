@@ -8,20 +8,20 @@ function take {
 }
 
 function tp {
-    tmux new-session "teamocil $1"
+    tmux new-session -d \; send-keys -t :1 "teamocil --here $1" C-m \; attach
 }
 
 function p {
     if [[ -a composer.json && -d web ]]; then
-        tmux new-session "teamocil sf";
+        tp sf
     fi
 
     if [[ -a composer.json && ! -d web ]]; then
-        tmux new-session "teamocil php";
+        tp php
     fi
 
     if [[ ! -a composer.json && ! -d web ]]; then
-        tmux new-session "teamocil generic";
+        tp generic
     fi
 }
 
