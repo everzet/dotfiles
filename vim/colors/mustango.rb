@@ -54,6 +54,7 @@ vim_colors "mustango" do
 
     PythonOperator "7e8aa2", "NONE"
     Question       "ff9800", "NONE"
+    SpellBad       "ff2222", "NONE", :cterm => "italic"
 
     # PLUGINS
 
@@ -61,6 +62,11 @@ vim_colors "mustango" do
     EasyMotionShade  "444444", "NONE"
     LustySelected    "ff9800", "NONE"
     LustyDir         "b1d631", "NONE"
+
+    SyntasticErrorSign   "ff2222", "262626"
+    SyntasticWarningSign "bbbb00", "262626"
+    SyntasticErrorLine   "e2e2e5", "ff2222"
+    SyntasticWarningLine "e2e2e5", "bbbb00"
 
     GitGutterAdd          "009900", "262626"
     GitGutterChange       "bbbb00", "262626"
