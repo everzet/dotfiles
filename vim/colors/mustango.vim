@@ -32,9 +32,6 @@ hi SpecialKey            guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  g
 hi NonText               guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi LineNr                guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi SignColumn            guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi lineAdded             guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi lineModified          guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi lineRemoved           guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi StatusLine            guifg=#D3D3D5 ctermfg=188  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi StatusLineNC          guifg=#939393 ctermfg=246  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi VertSplit             guifg=#444444 ctermfg=238  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
@@ -58,15 +55,19 @@ hi PreProc               guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE g
 hi TabLine               guifg=#CCCCCC ctermfg=252  guibg=#3F3F3F ctermbg=238  gui=NONE cterm=NONE
 hi TabLineSel            guifg=#C7C7C7 ctermfg=251  guibg=#6B6B6B ctermbg=242  gui=NONE cterm=NONE
 hi TabLineFill           guifg=NONE    ctermfg=NONE guibg=#3F3F3F ctermbg=238  gui=NONE cterm=NONE
-hi PythonOperator        guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi EasyMotionTarget      guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi EasyMotionShade       guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi LustyDir              guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi Question              guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi DiffAdd               guifg=#FFFFFF ctermfg=231  guibg=#01610B ctermbg=22   gui=NONE cterm=NONE
 hi DiffText              guifg=#FFFFFF ctermfg=231  guibg=#006161 ctermbg=23   gui=NONE cterm=NONE
 hi DiffChange            guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi DiffDelete            guifg=#FFFFFF ctermfg=231  guibg=#610006 ctermbg=52   gui=NONE cterm=NONE
+hi PythonOperator        guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi Question              guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi EasyMotionTarget      guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi EasyMotionShade       guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi LustyDir              guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi GitGutterAdd          guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi GitGutterChange       guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi GitGutterDelete       guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi GitGutterChangeDelete guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi phpspecExampleSubject guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
 
