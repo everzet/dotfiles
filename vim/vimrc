@@ -283,7 +283,7 @@ nmap <leader>bb :TagbarToggle<cr>
 "
 "  ACK
 "
-nmap <expr><leader>a ":Ack "
+nmap <expr><leader>a ":Ack! "
 
 "
 """"""""""""""""""""""""""""""""""""""""
