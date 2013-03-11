@@ -13,22 +13,22 @@ session:
                 before: clear
             splits:
                 -
-                    cmd:
-                        - tmux select-window -t editor
-                        - g
-                    focus: true
+                    cmd: g
                 -
                     cmd:
-                        - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
-                        - tail -f app/logs/dev.log
-                    width: 50
-                -
-                    cmd:
-                        - 'if [ ! -f app/logs/test.log ]; then touch app/logs/test.log ; fi'
-                        - tail -f app/logs/test.log
-                    height: 55
+                        - watch git l
+                    width: 40
                 -
                     cmd:
                         - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
                         - guard
-                    height: 20
+                    height: 10
+        -
+            name: console
+            root: <%= Dir.getwd %>
+            splits:
+                -
+                    cmd:
+                        - tmux select-window -t editor
+                        - clear
+                        - app/console -s

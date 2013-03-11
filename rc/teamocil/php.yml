@@ -16,7 +16,12 @@ session:
                     cmd:
                         - tmux select-window -t editor
                         - clear
+                        - g
                     focus: true
+                -
+                    cmd:
+                        - watch git l
+                    width: 40
                 -
                     cmd:
                         - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
