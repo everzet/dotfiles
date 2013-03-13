@@ -121,8 +121,8 @@ se formatoptions=qrn1
 "  GENERAL OVERRIDINGS
 "
 let mapleader = ","
-inoremap jj     <esc>
-nmap <leader>;  :
+inoremap jj <esc>
+nnoremap Y y$
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -136,8 +136,8 @@ nmap <leader>d :call SearchDash()<cr>
 "
 "  HIGHLIGHTING MAPPINGS
 "
-nmap <leader>ll :set list!<cr>
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader>ll :set list!<cr>
+nnoremap <silent> <leader><space> :nohlsearch<CR>
 
 "
 """"""""""""""""""""""""""""""""""""""""
