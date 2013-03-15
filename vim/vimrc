@@ -373,6 +373,7 @@ map <Leader>vc :VimuxCloseRunner<cr>
 "  PHP
 "
 map <leader>u :call PhpInsertUse()<cr>
+map <leader>e :call PhpExpandClass()<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
