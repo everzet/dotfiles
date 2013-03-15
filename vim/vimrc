@@ -274,13 +274,6 @@ let g:gitgutter_highlights = 0
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  TAGBAR
-"
-nmap <leader>bb :TagbarToggle<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  ACK
 "
 nmap <expr><leader>a ":Ack! "
