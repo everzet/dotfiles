@@ -88,3 +88,9 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/bundle/dash"]
+	path = vim/bundle/dash
+	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/funcoo"]
+	path = vim/bundle/funcoo
+	url = https://github.com/rizzatti/funcoo.vim.git
