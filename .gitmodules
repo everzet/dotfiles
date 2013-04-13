@@ -94,3 +94,6 @@
 [submodule "vim/bundle/funcoo"]
 	path = vim/bundle/funcoo
 	url = https://github.com/rizzatti/funcoo.vim.git
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
