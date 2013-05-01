@@ -21,21 +21,21 @@ se listchars=tab:▸\ ,trail:□,eol:¬
 "
 "  ENVIRONMENT
 "
-se enc=utf8
-se bs=2
-se ff=unix
-se ffs=unix
+se encoding=utf8
+se backspace=2
+se fileformat=unix
+se fileformats=unix
 se nocompatible
 se hidden
 se nobackup
 se noswapfile
 se dir=/tmp,/var/tmp
 se autoread
-se nu
-se vb
+se number
+se visualbell
 se ch=1
 se laststatus=2
-se nosmd
+se noshowmode
 se mousehide
 se ttyfast
 se autoindent
@@ -83,23 +83,24 @@ se expandtab
 "
 "  AUTOCOMPLETION
 "
-se wcm=<Tab>
+se wildcharm=<tab>
 se wildmenu
-se wildmode=list:longest
-imap <c-l> <c-x><c-l>
+se wildmode=full
+se path=**
+inoremap <c-l> <c-x><c-l>
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  WRAPPING
 "
-se wrap linebreak
+se wrap
+se linebreak
 se textwidth=100
 se colorcolumn=100
 se formatoptions=qrn1
 "se formatprg=par
 "se formatoptions+=tca
-
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -129,7 +130,7 @@ nnoremap Y y$
 "
 "  DASH
 "
-nmap <leader>d :Dash<cr>
+nnoremap <leader>d :Dash<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -137,67 +138,67 @@ nmap <leader>d :Dash<cr>
 "  HIGHLIGHTING MAPPINGS
 "
 nnoremap <leader>ll :set list!<cr>
-nnoremap <silent> <leader><space> :nohlsearch<CR>
+nnoremap <silent> <leader><space> :nohlsearch<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  LINES MOVEMENT
 "
-nmap <S-up>   [e
-nmap <S-down> ]e
-vmap <S-up>   [egv
-vmap <S-down> ]egv
+nnoremap <s-up>   [e
+nnoremap <s-down> ]e
+vnoremap <s-up>   [egv
+vnoremap <s-down> ]egv
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  FS NAVIGATION
 "
-nmap <leader>ep :e <c-r>=expand("%:p:h")."/"<cr>
-nmap <leader>es :vsp <c-r>=expand("%:p:h")."/"<cr>
-nmap <leader>se :Vex<cr><c-w>=
-nmap <leader>mk :!mkdir <c-r>=expand("%:p:h")."/"<cr>
-nmap <leader>rm :!rm -rf <c-r>=expand("%:p:h")."/"<cr>
-cmap w!!        w !sudo tee % >/dev/null
+nnoremap <leader>ep :e <c-r>=expand("%:p:h")."/"<cr>
+nnoremap <leader>es :vsp <c-r>=expand("%:p:h")."/"<cr>
+nnoremap <leader>se :Vex<cr><c-w>=
+nnoremap <leader>mk :!mkdir <c-r>=expand("%:p:h")."/"<cr>
+nnoremap <leader>rm :!rm -rf <c-r>=expand("%:p:h")."/"<cr>
+cnoremap w!!        w !sudo tee % >/dev/null
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  TABS MANAGEMENT
 "
-nmap <leader>df :tab split<cr>
-nmap <leader>dd :tabclose<cr>
-nmap <leader>do :tabonly<cr>
+nnoremap <leader>df :tab split<cr>
+nnoremap <leader>dd :tabclose<cr>
+nnoremap <leader>do :tabonly<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  WINDOWS MANAGEMENT
 "
-nmap <leader>we <C-w>v<C-w>l
-nmap <leader>ws <C-w>s<C-w>j
-nmap <leader>wq <C-w>v<C-w>h
-nmap <leader>w2 <C-w>s<C-w>k
-nmap <leader>wo :on<cr>
-nmap <leader>w= <C-w>=
-nmap <leader>w0 <C-w>\|
-nmap <leader>w- <C-w>_
-nmap <leader>wk <C-w>K
-nmap <leader>wh <C-w>H
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-nmap <C-x> <C-w>x
+nnoremap <leader>we <c-w>v<c-w>l
+nnoremap <leader>ws <c-w>s<c-w>j
+nnoremap <leader>wq <c-w>v<c-w>h
+nnoremap <leader>w2 <c-w>s<c-w>k
+nnoremap <leader>wo :on<cr>
+nnoremap <leader>w= <c-w>=
+nnoremap <leader>w0 <c-w>\|
+nnoremap <leader>w- <c-w>_
+nnoremap <leader>wk <c-w>K
+nnoremap <leader>wh <c-w>H
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-x> <c-w>x
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  BUFFERS MANAGEMENT
 "
-nmap <leader>bo :BufOnly<cr>
-nmap <leader>bc :bd<cr>
+nnoremap <leader>bo :BufOnly<cr>
+nnoremap <leader>bc :bd<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -224,10 +225,10 @@ inoremap <up>    <nop>
 inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
-vnoremap <S-h>   <nop>
-vnoremap <S-j>   <nop>
-vnoremap <S-k>   <nop>
-vnoremap <S-l>   <nop>
+vnoremap <s-h>   <nop>
+vnoremap <s-j>   <nop>
+vnoremap <s-k>   <nop>
+vnoremap <s-l>   <nop>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -256,12 +257,12 @@ set rtp+=~/.powerline/powerline/bindings/vim
 "
 "  FUGITIVE
 "
-nmap <leader>gs  :Gstatus<cr>
-nmap <leader>ga  :Gwrite<cr>
-nmap <leader>gh  :Gbrowse!<cr>
-nmap <leader>gc  :Gcommit --verbose<cr>
-nmap <leader>grm :Gremove<cr>
-nmap <leader>gmv :Gmove<cr>
+nnoremap <leader>gs  :Gstatus<cr>
+nnoremap <leader>ga  :Gwrite<cr>
+nnoremap <leader>gh  :Gbrowse!<cr>
+nnoremap <leader>gc  :Gcommit --verbose<cr>
+nnoremap <leader>grm :Gremove<cr>
+nnoremap <leader>gmv :Gmove<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -276,7 +277,7 @@ let g:gitgutter_highlights = 0
 "
 "  ACK
 "
-nmap <expr><leader>a ":Ack! "
+nnoremap <expr><leader>a ":Ack! "
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -325,14 +326,14 @@ let g:LustyJugglerShowKeys = '1'
 "
 "  TABULAR
 "
-nmap <leader><tab><tab> :Tab /
-vmap <leader><tab> :Tab /
-nmap <leader><tab>= :Tab /=<cr>
-vmap <leader><tab>= :Tab /=<cr>
-nmap <leader><tab>: :Tab /:\zs<cr>
-vmap <leader><tab>: :Tab /:\zs<cr>
-nmap <leader><tab>> :Tab /=><cr>
-vmap <leader><tab>> :Tab /=><cr>
+nnoremap <leader><tab><tab> :Tab /
+nnoremap <leader><tab>= :Tab /=<cr>
+nnoremap <leader><tab>: :Tab /:\zs<cr>
+nnoremap <leader><tab>> :Tab /=><cr>
+vnoremap <leader><tab> :Tab /
+vnoremap <leader><tab>= :Tab /=<cr>
+vnoremap <leader><tab>: :Tab /:\zs<cr>
+vnoremap <leader><tab>> :Tab /=><cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -340,7 +341,7 @@ vmap <leader><tab>> :Tab /=><cr>
 "  YANKRING
 "
 let g:yankring_history_file = '.yankring_history'
-nmap <leader>y :YRShow<cr>
+nnoremap <leader>y :YRShow<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -363,17 +364,17 @@ let g:syntastic_mode_map = { 'mode': 'active',
 "
 "  VIMUX
 "
-map <leader>vr :VimuxPromptCommand<cr>
-map <Leader>vl :VimuxRunLastCommand<cr>
-map <Leader>vc :VimuxCloseRunner<cr>
+nnoremap <leader>vr :VimuxPromptCommand<cr>
+nnoremap <leader>vl :VimuxRunLastCommand<cr>
+nnoremap <leader>vc :VimuxCloseRunner<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  PHP
 "
-map <leader>u :call PhpInsertUse()<cr>
-map <leader>e :call PhpExpandClass()<cr>
+nnoremap <leader>u :call PhpInsertUse()<cr>
+nnoremap <leader>e :call PhpExpandClass()<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -393,8 +394,8 @@ let feature_filetype='behat'
 "
 "  STRIP TRAILING SPACES
 "
-nmap <silent> <leader>c :call <SID>StripTrailingWhitespaces()<cr>
-function! <SID>StripTrailingWhitespaces()
+nnoremap <silent> <leader>c :call <sid>StripTrailingWhitespaces()<cr>
+function! <sid>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -411,9 +412,9 @@ endfunction
 "
 "  RENAME CURRENT BUFFER FILE
 "
-nmap <leader>mv :Rename %:p:h<tab>
-command! -nargs=1 -complete=file Rename call <SID>Rename(<q-args>)
-function! <SID>Rename(newfile)
+nnoremap <leader>mv :Rename %:p:h<tab>
+command! -nargs=1 -complete=file Rename call <sid>Rename(<q-args>)
+function! <sid>Rename(newfile)
     let l:newfile = a:newfile
     let l:oldfile = expand('%:p')
 
@@ -429,7 +430,7 @@ endfunction
 "
 "  CREATE DIRECTORY FOR CURRENT BUFFER
 "
-function! <SID>MkdirsIfNotExists(directory)
+function! <sid>MkdirsIfNotExists(directory)
     if(!isdirectory(a:directory))
         call system('mkdir -p '.shellescape(a:directory))
     endif
@@ -464,9 +465,9 @@ if has('autocmd')
     "  FILE TYPES
     "
     au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
-    au BufRead,BufNewFile *.php         imap <buffer> § $
-    au BufRead,BufNewFile *.php         imap <buffer> ± ->
-    au BufRead,BufNewFile *.php         imap <buffer> §§ $this->
+    au BufRead,BufNewFile *.php         inoremap <buffer> § $
+    au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
+    au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
     au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
@@ -492,6 +493,6 @@ if has('autocmd')
     "
     "  COMMANDS
     "
-    au BufWrite *.php,*.js,*.feature,*.json :call <SID>StripTrailingWhitespaces()
-    au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
+    au BufWrite *.php,*.js,*.feature,*.json :call <sid>StripTrailingWhitespaces()
+    au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
 endif

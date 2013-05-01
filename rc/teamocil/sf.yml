@@ -18,11 +18,11 @@ session:
                     cmd:
                         - watch git l
                     width: 40
-#               -
-#                   cmd:
-#                       - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
-#                       - guard
-#                   height: 10
+                -
+                    cmd:
+                        - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
+                        - guard
+                    height: 10
         -
             name: console
             root: <%= Dir.getwd %>
