@@ -31,9 +31,6 @@
 [submodule "vim/bundle/php-namespace"]
 	path = vim/bundle/php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "vim/bundle/behat"]
 	path = vim/bundle/behat
 	url = https://github.com/veloce/vim-behat.git
