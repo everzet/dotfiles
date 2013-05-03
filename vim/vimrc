@@ -45,6 +45,7 @@ se smarttab
 se nolist
 se backspace=indent,eol,start
 se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,.DS_Store
+se path=**
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -86,7 +87,6 @@ se expandtab
 se wildcharm=<tab>
 se wildmenu
 se wildmode=full
-se path=**
 inoremap <c-l> <c-x><c-l>
 
 "
@@ -122,7 +122,9 @@ se formatoptions=qrn1
 "  GENERAL OVERRIDINGS
 "
 let mapleader = ","
-inoremap jj <esc>
+let maplocalleader = "\\"
+inoremap jk <esc>
+inoremap <esc> <nop>
 nnoremap Y y$
 
 "
@@ -456,43 +458,42 @@ if ! has('gui_running')
 endif
 
 if has('autocmd')
-    au BufWinEnter *     set foldlevel=999999
-    au FocusLost silent! :wa
-    au FileType helpfile setlocal nonumber
+    augroup GeneralConfig
+        autocmd!
+        au BufWinEnter *     set foldlevel=999999
+        au FocusLost silent! :wa
+        au FileType helpfile setlocal nonumber
+    augroup END
 
-    """"""""""""""""""""""""""""""""""""""""
-    "
-    "  FILE TYPES
-    "
-    au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
-    au BufRead,BufNewFile *.php         inoremap <buffer> § $
-    au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
-    au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
-    au BufRead,BufNewFile *.twig        setlocal filetype=jinja
-    au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
-    au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
-    au BufRead,BufNewFile *.ejs         setlocal filetype=html
-    au BufRead,BufNewFile *.json        setlocal filetype=javascript
-    au BufRead,BufNewFile *.pp          setlocal filetype=ruby
+    augroup FileTypes
+        autocmd!
+        au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$ iskeyword-=_
+        au BufRead,BufNewFile *.php         inoremap <buffer> § $
+        au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
+        au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
+        au BufRead,BufNewFile *.twig        setlocal filetype=jinja
+        au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
+        au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
+        au BufRead,BufNewFile *.ejs         setlocal filetype=html
+        au BufRead,BufNewFile *.json        setlocal filetype=javascript
+        au BufRead,BufNewFile *.pp          setlocal filetype=ruby
+    augroup END
 
-    """"""""""""""""""""""""""""""""""""""""
-    "
-    "  TABS
-    "
-    au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.css         setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.scss        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.less        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.ruby        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.js          setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.coffee      setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    augroup TabsConfig
+        autocmd!
+        au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.css         setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.scss        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.less        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.ruby        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.js          setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.coffee      setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    augroup END
 
-    """"""""""""""""""""""""""""""""""""""""
-
-    "
-    "  COMMANDS
-    "
-    au BufWrite *.php,*.js,*.feature,*.json :call <sid>StripTrailingWhitespaces()
-    au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+    augroup Commands
+        autocmd!
+        au BufWrite *.php,*.js,*.feature,*.json :call <sid>StripTrailingWhitespaces()
+        au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+    augroup END
 endif
