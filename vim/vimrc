@@ -50,6 +50,14 @@ se path=**
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  FOLDING
+"
+se foldmethod=syntax
+se foldlevel=1
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  SEARCH
 "
 se incsearch
@@ -375,6 +383,9 @@ nnoremap <leader>vc :VimuxCloseRunner<cr>
 "
 "  PHP
 "
+let g:php_folding=1
+let php_noShortTags = 1
+
 nnoremap <leader>u :call PhpInsertUse()<cr>
 nnoremap <leader>e :call PhpExpandClass()<cr>
 
@@ -460,7 +471,6 @@ endif
 if has('autocmd')
     augroup GeneralConfig
         autocmd!
-        au BufWinEnter *     set foldlevel=999999
         au FocusLost silent! :wa
         au FileType helpfile setlocal nonumber
     augroup END
