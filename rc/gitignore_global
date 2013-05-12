@@ -1,4 +1,5 @@
 .rsync_cache
+.vagrant
 *~
 Guardfile
 *.swp
