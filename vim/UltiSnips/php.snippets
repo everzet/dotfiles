@@ -1,3 +1,19 @@
+snippet it "Spec example" !b
+function it_${1:does_something}($2)
+{$0
+}
+endsnippet
+
+snippet its "Spec detail example" !b
+function its_${1:detail_does_something}($2)
+{$0
+}
+endsnippet
+
+snippet arg "Argument token" !b
+Argument::${1:type}(${2:'ReflectionClass'})$0
+endsnippet
+
 snippet if "If condition" !b
 if (${1:/* condition */}) {
     ${0:${VISUAL:\/\/ code...}}
