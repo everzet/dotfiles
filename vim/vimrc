@@ -477,7 +477,7 @@ if has('autocmd')
 
     augroup FileTypes
         autocmd!
-        au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$ iskeyword-=_
+        au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
         au BufRead,BufNewFile *.php         inoremap <buffer> § $
         au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
         au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
