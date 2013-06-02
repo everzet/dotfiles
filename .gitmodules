@@ -64,9 +64,6 @@
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = https://github.com/benmills/vimux.git
-[submodule "vim/bundle/neocomplcache"]
-	path = vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.git
 [submodule "vim/bundle/go"]
 	path = vim/bundle/go
 	url = https://github.com/fsouza/go.vim.git
@@ -94,3 +91,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/everzet/lusty.git
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = https://github.com/rodjek/vim-puppet.git
