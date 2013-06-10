@@ -353,9 +353,9 @@ let g:EasyMotion_leader_key='t'
 "
 "  SYNTASTIC
 "
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['html', 'twig', 'css', 'scss'] }
+                           \ 'passive_filetypes': ['html', 'twig', 'css', 'scss', ''] }
 
 "
 """"""""""""""""""""""""""""""""""""""""
