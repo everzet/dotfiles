@@ -351,15 +351,6 @@ let g:EasyMotion_leader_key='t'
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  SYNTASTIC
-"
-let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['html', 'twig', 'css', 'scss', ''] }
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  VIMUX
 "
 nnoremap <leader>vr :VimuxPromptCommand<cr>
