@@ -258,9 +258,10 @@ nnoremap * *N
 "|
 """"""""""""""""""""""""""""""""""""""""
 "
-"  POWERLINE
+"  AIRLINE
 "
-set rtp+=~/.powerline/powerline/bindings/vim
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -273,14 +274,6 @@ nnoremap <leader>gh  :Gbrowse!<cr>
 nnoremap <leader>gc  :Gcommit --verbose<cr>
 nnoremap <leader>grm :Gremove<cr>
 nnoremap <leader>gmv :Gmove<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  GITGUTTER
-"
-let g:gitgutter_enabled = 1
-let g:gitgutter_highlights = 0
 
 "
 """"""""""""""""""""""""""""""""""""""""
