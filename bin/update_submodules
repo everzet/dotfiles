@@ -2,12 +2,6 @@
 
 VIMDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../vim" && pwd )"
 
-echo "\nUPDATING powerline"
-cd $VIMDIR/../powerline
-git reset --hard
-git clean -f
-git pull origin HEAD
-
 for bundle in $VIMDIR/bundle/*; do
     echo "\nUPDATING $bundle"
     cd $bundle
