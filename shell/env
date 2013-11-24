@@ -1,6 +1,7 @@
 # paths
 export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/Cellar/go/1.0.3/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/opt/go/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
