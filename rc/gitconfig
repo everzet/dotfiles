@@ -8,6 +8,7 @@
 [core]
     quotepath = false
     excludesfile = /Users/everzet/.gitignore_global
+    pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
 
 [interactive]
     singlekey = true
