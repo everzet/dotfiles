@@ -6,6 +6,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/bin/dotfiles/scripts:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
 
