@@ -348,7 +348,7 @@ let g:EasyMotion_leader_key='t'
 "
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['html', 'twig', 'css', 'scss', ''] }
+                           \ 'passive_filetypes': ['php', 'html', 'twig', 'css', 'scss', ''] }
 
 "
 """"""""""""""""""""""""""""""""""""""""
