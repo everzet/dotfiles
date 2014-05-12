@@ -55,9 +55,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/php-complete"]
-	path = vim/bundle/php-complete
-	url = https://github.com/EvanDotPro/phpcomplete.vim.git
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = https://github.com/benmills/vimux.git
