@@ -406,7 +406,7 @@ endfunction
 "
 "  RENAME CURRENT BUFFER FILE
 "
-nnoremap <leader>mv :Rename %:p:h<tab>
+nnoremap <leader>mv :Rename <c-r>=expand("%:p:h")<cr>
 command! -nargs=1 -complete=file Rename call <sid>Rename(<q-args>)
 function! <sid>Rename(newfile)
     let l:newfile = a:newfile
