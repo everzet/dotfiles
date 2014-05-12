@@ -61,9 +61,6 @@
 [submodule "vim/bundle/movar"]
 	path = vim/bundle/movar
 	url = https://github.com/robmiller/vim-movar.git
-[submodule "vim/bundle/vdebug"]
-	path = vim/bundle/vdebug
-	url = git@github.com:joonty/vdebug.git
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
