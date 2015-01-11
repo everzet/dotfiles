@@ -85,3 +85,6 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim
+[submodule "vim/bundle/rust"]
+	path = vim/bundle/rust
+	url = https://github.com/wting/rust.vim.git
