@@ -329,14 +329,6 @@ vnoremap <leader><tab>> :Tab /=><cr>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  YANKRING
-"
-let g:yankring_history_file = '.yankring_history'
-nnoremap <leader>y :YRShow<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  EASYMOTION
 "
 let g:EasyMotion_leader_key='t'
