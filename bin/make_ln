@@ -18,7 +18,6 @@ ln -nfs $DOTDIR/rc/jslintrc         ~/.jslintrc
 ln -nfs $DOTDIR/rc/ghci             ~/.ghci
 ln -nfs $DOTDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
-ln -nfs $DOTDIR/rc/teamocil         ~/.teamocil
 
 if [ -d /etc/resolver ]; then
     sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 function manview {
     man -t $1 | open -f -a /Applications/Preview.app
 }
@@ -7,22 +9,32 @@ function take {
     cd $1
 }
 
-function tp {
-    tmux new-session -d \; send-keys -t :1 "teamocil --here $1" C-m \; attach
+function pinit {
+    NAME=${PWD##*/}
+    DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+    if [[ ! -a "$DOTDIR/rc/teamocil/$1.tpl.yml" ]]; then
+        echo "Template '$DOTDIR/rc/teamocil/$1.tpl.yml' is not found!"
+
+        return 1
+    fi
+
+    cp "$DOTDIR/rc/teamocil/$1.tpl.yml" "$PWD/.teamocil.yml"
+    sed -i '' -e "s|\${path}|$PWD|" -e "s|\${name}|$NAME|" "$PWD/.teamocil.yml"
+}
+
+function pedit {
+    teamocil --edit --layout "$PWD/.teamocil.yml"
 }
 
 function p {
-    if [[ -a composer.json && -d web ]]; then
-        tp sf
+    if [[ ! -a "$PWD/.teamocil.yml" ]]; then
+        echo "Project layout is not initialised, run 'pinit'!"
+
+        return 1
     fi
 
-    if [[ -a composer.json && ! -d web ]]; then
-        tp php
-    fi
-
-    if [[ ! -a composer.json && ! -d web ]]; then
-        tp generic
-    fi
+    tmux new-session -d \; send-keys -t :1 "teamocil --here --layout $PWD/.teamocil.yml" C-m \; attach
 }
 
 function sfa {
