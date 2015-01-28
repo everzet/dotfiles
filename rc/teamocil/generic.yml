@@ -1,0 +1,16 @@
+name: ${name}
+windows:
+    - name: editor
+      root: ${path}
+      panes:
+          - vim
+    - name: shell
+      root: ${path}
+      layout: 3f63,211x65,0,0{140x65,0,0,1,70x65,141,0,2}
+      panes:
+          - commands:
+              - tmux select-window -t editor
+              - clear
+            focus: true
+          - commands:
+              - watch git l

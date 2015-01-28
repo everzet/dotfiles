@@ -1,5 +1,3 @@
-#!/bin/sh
-
 function manview {
     man -t $1 | open -f -a /Applications/Preview.app
 }
@@ -7,37 +5,4 @@ function manview {
 function take {
     mkdir -p $1
     cd $1
-}
-
-function pinit {
-    NAME=${PWD##*/}
-    DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-    if [[ ! -a "$DOTDIR/rc/teamocil/$1.tpl.yml" ]]; then
-        echo "Template '$DOTDIR/rc/teamocil/$1.tpl.yml' is not found!"
-
-        return 1
-    fi
-
-    cp "$DOTDIR/rc/teamocil/$1.tpl.yml" "$PWD/.teamocil.yml"
-    sed -i '' -e "s|\${path}|$PWD|" -e "s|\${name}|$NAME|" "$PWD/.teamocil.yml"
-}
-
-function pedit {
-    teamocil --edit --layout "$PWD/.teamocil.yml"
-}
-
-function p {
-    if [[ ! -a "$PWD/.teamocil.yml" ]]; then
-        echo "Project layout is not initialised, run 'pinit'!"
-
-        return 1
-    fi
-
-    tmux new-session -d \; send-keys -t :1 "teamocil --here --layout $PWD/.teamocil.yml" C-m \; attach
-}
-
-function sfa {
-    app/console -e=dev  $*
-    app/console -e=test $*
 }

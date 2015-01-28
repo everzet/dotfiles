@@ -1,0 +1,36 @@
+function pinit {
+    TEMPLATE=$1
+    NAME=${PWD##*/}
+    DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+    if [[ ! -a "$DOTDIR/rc/teamocil/$TEMPLATE.yml" ]]; then
+        TEMPLATE="generic"
+    fi
+
+    cp "$DOTDIR/rc/teamocil/$TEMPLATE.yml" "$PWD/.teamocil.yml"
+    sed -i '' -e "s|\${path}|$PWD|" -e "s|\${name}|$NAME|" "$PWD/.teamocil.yml"
+}
+
+function pedit {
+    LAYOUT="$PWD/.teamocil.yml"
+
+    if [[ ! -a $LAYOUT ]]; then
+        echo "Teamocil layout file is not found, run 'pinit'!"
+
+        return 1
+    fi
+
+    teamocil --edit --layout $LAYOUT
+}
+
+function p {
+    LAYOUT="$PWD/.teamocil.yml"
+
+    if [[ ! -a $LAYOUT ]]; then
+        echo "Teamocil layout file is not found, run 'pinit'!"
+
+        return 1
+    fi
+
+    tmux new-session -d \; send-keys -t :1 "teamocil --here --layout $LAYOUT" C-m \; attach
+}

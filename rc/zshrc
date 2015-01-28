@@ -3,3 +3,4 @@
 . ~/.shell/aliases
 . ~/.shell/zsh
 . ~/.shell/functions
+. ~/.shell/teamocil
