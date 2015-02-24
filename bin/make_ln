@@ -15,7 +15,6 @@ ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf
 ln -nfs $DOTDIR/rc/npmrc            ~/.npmrc
 ln -nfs $DOTDIR/rc/jslintrc         ~/.jslintrc
-ln -nfs $DOTDIR/rc/ghci             ~/.ghci
 ln -nfs $DOTDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
 
