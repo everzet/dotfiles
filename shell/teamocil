@@ -1,14 +1,13 @@
 function pinit {
     TEMPLATE=$1
     LAYOUT="$PWD/.teamocil.yml"
-    DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     NAME=${PWD##*/}
 
-    if [[ ! -a "$DOTDIR/rc/teamocil/$TEMPLATE.yml" ]]; then
+    if [[ ! -a "$HOME/.teamocil/$TEMPLATE.yml" ]]; then
         TEMPLATE="generic"
     fi
 
-    cp "$DOTDIR/rc/teamocil/$TEMPLATE.yml" "$LAYOUT"
+    cp "$HOME/.teamocil/$TEMPLATE.yml" "$LAYOUT"
     sed -i '' -e "s|\${path}|$PWD|" -e "s|\${name}|$NAME|" "$LAYOUT"
 }
 

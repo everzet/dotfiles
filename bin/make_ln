@@ -1,31 +1,33 @@
 #!/bin/sh
 
-DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+SCRIPTPATH=$0:A
+DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 
 mkdir -p ~/.config
 
-ln -nfs $DOTDIR/shell ~/.shell
+ln -nfs $DOTFILESDIR/shell ~/.shell
 
-ln -nfs $DOTDIR/vim        ~/.vim
-ln -nfs $DOTDIR/vim/vimrc  ~/.vimrc
-ln -nfs $DOTDIR/vim/gvimrc ~/.gvimrc
+ln -nfs $DOTFILESDIR/vim        ~/.vim
+ln -nfs $DOTFILESDIR/vim/vimrc  ~/.vimrc
+ln -nfs $DOTFILESDIR/vim/gvimrc ~/.gvimrc
 
-ln -nfs $DOTDIR/rc/ideavimrc        ~/.ideavimrc
-ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
-ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf
-ln -nfs $DOTDIR/rc/npmrc            ~/.npmrc
-ln -nfs $DOTDIR/rc/jslintrc         ~/.jslintrc
-ln -nfs $DOTDIR/rc/gitconfig        ~/.gitconfig
-ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
+ln -nfs $DOTFILESDIR/rc/ideavimrc        ~/.ideavimrc
+ln -nfs $DOTFILESDIR/rc/teamocil         ~/.teamocil
+ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
+ln -nfs $DOTFILESDIR/rc/tmux.conf        ~/.tmux.conf
+ln -nfs $DOTFILESDIR/rc/npmrc            ~/.npmrc
+ln -nfs $DOTFILESDIR/rc/jslintrc         ~/.jslintrc
+ln -nfs $DOTFILESDIR/rc/gitconfig        ~/.gitconfig
+ln -nfs $DOTFILESDIR/rc/gitignore_global ~/.gitignore_global
 
 if [ -d /etc/resolver ]; then
-    sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
+    sudo ln -nfs $DOTFILESDIR/rc/resolver/dev /etc/resolver/dev
 fi
 
 if [ -d /usr/local/php5 ]; then
-    sudo ln -nfs $DOTDIR/rc/php/*.ini /usr/local/php5/php.d/
+    sudo ln -nfs $DOTFILESDIR/rc/php/*.ini /usr/local/php5/php.d/
 fi
 
 if [ -d /etc/apache2/users ]; then
-    sudo ln -nfs $DOTDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
+    sudo ln -nfs $DOTFILESDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
 fi
