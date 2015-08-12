@@ -9,6 +9,7 @@ Guardfile
 ehthumbs.db
 Icon?
 Thumbs.db
+*.iml
 *.log
 *.sql
 *.sqlite
