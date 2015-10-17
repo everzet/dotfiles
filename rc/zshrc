@@ -4,3 +4,4 @@
 . ~/.shell/zsh
 . ~/.shell/functions
 . ~/.shell/teamocil
+clear
