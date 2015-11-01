@@ -88,3 +88,6 @@
 [submodule "vim/bundle/elixir"]
 	path = vim/bundle/elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/bundle/diminactive"]
+	path = vim/bundle/diminactive
+	url = https://github.com/blueyed/vim-diminactive.git
