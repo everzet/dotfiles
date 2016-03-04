@@ -471,6 +471,7 @@ if has('autocmd')
         au BufRead,BufNewFile *.less        setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.ruby        setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.js          setlocal tabstop=2 shiftwidth=2 softtabstop=2
+        au BufRead,BufNewFile *.json        setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.coffee      setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
     augroup END
