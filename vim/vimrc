@@ -277,6 +277,7 @@ nnoremap <leader>gh  :Gbrowse!<cr>
 nnoremap <leader>gc  :Gcommit --verbose<cr>
 nnoremap <leader>grm :Gremove<cr>
 nnoremap <leader>gmv :Gmove<cr>
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -341,9 +342,7 @@ let g:EasyMotion_leader_key='t'
 "
 "  SYNTASTIC
 "
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['html', 'twig', 'css', 'scss', 'php'] }
+let g:syntastic_javascript_checkers = ['standard']
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -433,24 +432,21 @@ filetype on
 filetype plugin on
 filetype indent on
 
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
+augroup vimrc_autocmd
+    if ! has('gui_running')
+        set ttimeoutlen=10
         au InsertEnter * set timeoutlen=500
         au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
+    endif
 
-if has('autocmd')
-    augroup GeneralConfig
+    if has('autocmd')
         autocmd!
+
+        " General
         au FocusLost silent! :wa
         au FileType helpfile setlocal nonumber
-    augroup END
 
-    augroup FileTypes
-        autocmd!
+        " File types
         au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
         au BufRead,BufNewFile *.php         inoremap <buffer> § $
         au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
@@ -461,10 +457,8 @@ if has('autocmd')
         au BufRead,BufNewFile *.ejs         setlocal filetype=html
         au BufRead,BufNewFile *.json        setlocal filetype=javascript
         au BufRead,BufNewFile *.pp          setlocal filetype=ruby
-    augroup END
 
-    augroup TabsConfig
-        autocmd!
+        " Tabs
         au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.css         setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.scss        setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -474,11 +468,9 @@ if has('autocmd')
         au BufRead,BufNewFile *.json        setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.coffee      setlocal tabstop=2 shiftwidth=2 softtabstop=2
         au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    augroup END
 
-    augroup Commands
-        autocmd!
+        " Other
         au BufWrite *.php,*.js,*.feature,*.json :call <sid>StripTrailingWhitespaces()
         au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
-    augroup END
-endif
+    endif
+augroup END
