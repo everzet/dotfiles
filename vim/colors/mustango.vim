@@ -66,10 +66,12 @@ hi EasyMotionTarget      guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE g
 hi EasyMotionShade       guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustyDir              guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi SyntasticErrorSign    guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi SyntasticWarningSign  guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi SyntasticErrorLine    guifg=#E2E2E5 ctermfg=254  guibg=#FF2222 ctermbg=196  gui=NONE cterm=NONE
-hi SyntasticWarningLine  guifg=#E2E2E5 ctermfg=254  guibg=#BBBB00 ctermbg=142  gui=NONE cterm=NONE
+hi SyntasticErrorSign    guifg=#D52116 ctermfg=160  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi SyntasticWarningSign  guifg=#FF9800 ctermfg=208  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi SyntasticErrorLine    guifg=#262626 ctermfg=235  guibg=#D52116 ctermbg=160  gui=BOLD cterm=BOLD
+hi SyntasticWarningLine  guifg=#262626 ctermfg=235  guibg=#FF9800 ctermbg=208  gui=BOLD cterm=BOLD
+hi SyntasticError        guifg=#262626 ctermfg=235  guibg=#FFFFFF ctermbg=231  gui=NONE cterm=NONE
+hi SyntasticWarning      guifg=#262626 ctermfg=235  guibg=#FFFFFF ctermbg=231  gui=NONE cterm=NONE
 hi GitGutterAdd          guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi GitGutterChange       guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi GitGutterDelete       guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE

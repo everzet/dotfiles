@@ -63,10 +63,12 @@ vim_colors "mustango" do
     LustySelected    "ff9800", "NONE"
     LustyDir         "b1d631", "NONE"
 
-    SyntasticErrorSign   "ff2222", "262626"
-    SyntasticWarningSign "bbbb00", "262626"
-    SyntasticErrorLine   "e2e2e5", "ff2222"
-    SyntasticWarningLine "e2e2e5", "bbbb00"
+    SyntasticErrorSign   "d52116", "262626"
+    SyntasticWarningSign "ff9800", "262626"
+    SyntasticErrorLine   "262626", "d52116",  :gui => "bold",   :cterm => "bold"
+    SyntasticWarningLine "262626", "ff9800",  :gui => "bold",   :cterm => "bold"
+    SyntasticError       "262626", "ffffff"
+    SyntasticWarning     "262626", "ffffff"
 
     GitGutterAdd          "009900", "262626"
     GitGutterChange       "bbbb00", "262626"
