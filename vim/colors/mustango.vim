@@ -43,13 +43,13 @@ hi Comment               guifg=#808080 ctermfg=244  guibg=NONE    ctermbg=NONE g
 hi Todo                  guifg=#000000 ctermfg=16   guibg=#E6EA50 ctermbg=185  gui=ITALIC cterm=NONE
 hi Boolean               guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi String                guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
-hi Identifier            guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi Identifier            guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Function              guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
 hi Type                  guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Statement             guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Keyword               guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Constant              guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi Number                guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi Number                guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Special               guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc               guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi TabLine               guifg=#CCCCCC ctermfg=252  guibg=#3F3F3F ctermbg=237  gui=NONE cterm=NONE
