@@ -378,24 +378,6 @@ let feature_filetype='behat'
 "|
 """"""""""""""""""""""""""""""""""""""""
 "
-"  STRIP TRAILING SPACES
-"
-nnoremap <silent> <leader>c :call <sid>StripTrailingWhitespaces()<cr>
-function! <sid>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  RENAME CURRENT BUFFER FILE
 "
 function! RenameFile()
@@ -456,19 +438,7 @@ augroup vimrc_autocmd
         au BufRead,BufNewFile *.json        setlocal filetype=javascript
         au BufRead,BufNewFile *.pp          setlocal filetype=ruby
 
-        " Tabs
-        au BufRead,BufNewFile *.feature     setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.css         setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.scss        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.less        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.ruby        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.js          setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.json        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.coffee      setlocal tabstop=2 shiftwidth=2 softtabstop=2
-        au BufRead,BufNewFile *.jade        setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-        " Other
-        au BufWrite *.php,*.js,*.feature,*.json :call <sid>StripTrailingWhitespaces()
+        " Autocalls
         au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
     endif
 augroup END
