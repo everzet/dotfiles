@@ -31,6 +31,3 @@ export LC_CTYPE=en_US.UTF-8
 
 # behat
 export MINK_EXTENSION_PARAMS='show_auto=true&show_cmd=open -g %s'
-
-# docker
-eval "$(docker-machine env dev)"

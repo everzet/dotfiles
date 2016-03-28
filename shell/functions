@@ -6,7 +6,3 @@ function take {
     mkdir -p $1
     cd $1
 }
-
-function redocker {
-    eval "$(docker-machine env dev)"
-}
