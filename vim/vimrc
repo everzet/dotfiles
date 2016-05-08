@@ -80,17 +80,6 @@ se scrolloff=3
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  TABS
-"
-se tabstop=4
-se shiftwidth=4
-se softtabstop=4
-se showtabline=1
-se expandtab
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  AUTOCOMPLETION
 "
 "se wildcharm=<tab>
