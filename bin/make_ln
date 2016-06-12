@@ -23,6 +23,8 @@ ln -nfs $DOTFILESDIR/rc/editorconfig     ~/.editorconfig
 ln -nfs $DOTFILESDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTFILESDIR/rc/gitignore_global ~/.gitignore_global
 
+tic $DOTFILESDIR/rc/screen-256color.ti
+
 if [ -d /etc/resolver ]; then
     sudo ln -nfs $DOTFILESDIR/rc/resolver/dev /etc/resolver/dev
 fi
