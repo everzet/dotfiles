@@ -8,6 +8,8 @@ mkdir -p ~/.config
 ln -nfs $DOTFILESDIR/shell ~/.shell
 
 ln -nfs $DOTFILESDIR/vim        ~/.vim
+ln -nfs $DOTFILESDIR/vim        ~/.config/nvim
+ln -nfs $DOTFILESDIR/vim/vimrc  ~/.config/init.vim
 ln -nfs $DOTFILESDIR/vim/vimrc  ~/.vimrc
 ln -nfs $DOTFILESDIR/vim/gvimrc ~/.gvimrc
 
