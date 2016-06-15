@@ -54,7 +54,7 @@ vim_colors "mustango" do
 
     PythonOperator "7e8aa2", "NONE"
     Question       "ff9800", "NONE"
-    SpellBad       "ff2222", "NONE", :cterm => "italic"
+    SpellBad       "ff2222", "NONE",  :gui => "italic", :cterm => "italic"
 
     # PLUGINS
 

@@ -61,7 +61,7 @@ hi DiffChange            guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE g
 hi DiffDelete            guifg=#FFFFFF ctermfg=231  guibg=#610006 ctermbg=52   gui=NONE cterm=NONE
 hi PythonOperator        guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Question              guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi SpellBad              guifg=#FF2222 ctermfg=196  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
+hi SpellBad              guifg=#FF2222 ctermfg=196  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=ITALIC
 hi EasyMotionTarget      guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionShade       guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
