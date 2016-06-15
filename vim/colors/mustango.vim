@@ -39,10 +39,10 @@ hi Folded                guifg=#A0A8B0 ctermfg=248  guibg=#384048 ctermbg=238  g
 hi Title                 guifg=#F6F3E8 ctermfg=255  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Visual                guifg=#FAF4C6 ctermfg=230  guibg=#3C414C ctermbg=238  gui=NONE cterm=NONE
 hi Search                guifg=#000000 ctermfg=16   guibg=#FF9800 ctermbg=208  gui=NONE cterm=NONE
-hi Comment               guifg=#808080 ctermfg=244  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
-hi Todo                  guifg=#000000 ctermfg=16   guibg=#E6EA50 ctermbg=185  gui=ITALIC cterm=NONE
+hi Comment               guifg=#808080 ctermfg=244  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=ITALIC
+hi Todo                  guifg=#000000 ctermfg=16   guibg=#E6EA50 ctermbg=185  gui=ITALIC cterm=ITALIC
 hi Boolean               guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi String                guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
+hi String                guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=ITALIC
 hi Identifier            guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Function              guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
 hi Type                  guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
