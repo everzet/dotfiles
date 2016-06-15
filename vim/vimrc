@@ -82,23 +82,12 @@ se scrolloff=3
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  TABS
-"
-se tabstop=4
-se shiftwidth=4
-se softtabstop=4
-se showtabline=1
-se expandtab
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  AUTOCOMPLETION
 "
-"se wildcharm=<tab>
-"se wildmenu
-"se wildmode=full
-"inoremap <c-l> <c-x><c-l>
+se wildcharm=<tab>
+se wildmenu
+se wildmode=full
+inoremap <c-l> <c-x><c-l>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -305,16 +294,9 @@ let g:ctrlp_map = '<c-t>'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_max_height = 15
 let g:ctrlp_open_multi = '1v'
-let g:ctrlp_custom_ignore = '\v[\/](vendor|node_modules|\.git|\.hg)$'
+let g:ctrlp_custom_ignore = '\v[\/](vendor|_build|deps|node_modules|\.git|\.hg)$'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  LUSTY
-"
-let g:LustyJugglerShowKeys = '1'
 
 "
 """"""""""""""""""""""""""""""""""""""""

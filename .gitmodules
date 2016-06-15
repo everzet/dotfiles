@@ -49,9 +49,6 @@
 [submodule "vim/bundle/movar"]
 	path = vim/bundle/movar
 	url = https://github.com/robmiller/vim-movar.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
 [submodule "vim/bundle/funcoo"]
 	path = vim/bundle/funcoo
 	url = https://github.com/rizzatti/funcoo.vim.git
@@ -61,9 +58,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim
