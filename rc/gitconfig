@@ -38,9 +38,10 @@
     bn = checkout -b
     co = checkout
 
-    d  = difftool
-    dc = difftool --cached
+    d  = diff
     ds = diff --stat
+    dt = difftool
+    dc = difftool --cached
     m  = mergetool
 
     l = log --oneline --graph
@@ -59,6 +60,7 @@
 
 [diff]
     tool = Kaleidoscope
+    compactionHeuristic = true
 
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
