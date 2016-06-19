@@ -13,25 +13,15 @@ ln -nfs $DOTFILESDIR/vim/vimrc ~/.vimrc
 ln -nfs $DOTFILESDIR/vim/gvimrc ~/.gvimrc
 
 ln -nfs $DOTFILESDIR/rc/ideavimrc        ~/.ideavimrc
-ln -nfs $DOTFILESDIR/rc/teamocil         ~/.teamocil
 ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/tmux.conf        ~/.tmux.conf
 ln -nfs $DOTFILESDIR/rc/npmrc            ~/.npmrc
-ln -nfs $DOTFILESDIR/rc/jslintrc         ~/.jslintrc
 ln -nfs $DOTFILESDIR/rc/editorconfig     ~/.editorconfig
 ln -nfs $DOTFILESDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTFILESDIR/rc/gitignore_global ~/.gitignore_global
 
 tic $DOTFILESDIR/rc/screen-256color.ti
 
-if [ -d /etc/resolver ]; then
-    sudo ln -nfs $DOTFILESDIR/rc/resolver/dev /etc/resolver/dev
-fi
-
 if [ -d /usr/local/php5 ]; then
     sudo ln -nfs $DOTFILESDIR/rc/php/*.ini /usr/local/php5/php.d/
-fi
-
-if [ -d /etc/apache2/users ]; then
-    sudo ln -nfs $DOTFILESDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
 fi
