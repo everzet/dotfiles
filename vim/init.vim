@@ -1,10 +1,30 @@
 """"""""""""""""""""""""""""""""""""""""
 "
-"  BUNDLES (PATHOGEN)
+"  PLUGINS
 "
-"    `:Helptags` to regenerate docs
-"
-call pathogen#infect()
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'bling/vim-airline'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'austintaylor/vim-commaobject'
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'robmiller/vim-movar'
+Plug 'kana/vim-smartinput'
+Plug 'othree/yajs.vim'
+Plug 'neomake/neomake'
+Plug 'airblade/vim-gitgutter'
+Plug 'benmills/vimux'
+
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
+call plug#end()
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -315,10 +335,18 @@ let g:EasyMotion_leader_key='t'
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  SYNTASTIC
+"  NEOMAKE
 "
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_php_checkers = ['php', 'phpmd']
+let g:neomake_elixir_mix_maker = {
+      \ 'exe' : 'mix',
+      \ 'args': ['compile', '--warnings-as-errors'],
+      \ 'cwd': getcwd(),
+      \ 'errorformat':
+        \ '** %s %f:%l: %m,' .
+        \ '%f:%l: warning: %m'
+      \ }
+
+let g:neomake_elixir_enabled_makers = ['mix']
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -403,6 +431,7 @@ augroup vimrc_autocmd
         " General
         au FocusLost silent! :wa
         au FileType helpfile setlocal nonumber
+        au BufWritePost,BufEnter * Neomake
 
         " File types
         au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$

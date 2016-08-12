@@ -1,10 +1,30 @@
 """"""""""""""""""""""""""""""""""""""""
 "
-"  BUNDLES (PATHOGEN)
+"  PLUGINS
 "
-"    `:Helptags` to regenerate docs
-"
-call pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+Plug 'bling/vim-airline'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'austintaylor/vim-commaobject'
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'robmiller/vim-movar'
+Plug 'kana/vim-smartinput'
+Plug 'othree/yajs.vim'
+Plug 'neomake/neomake'
+Plug 'airblade/vim-gitgutter'
+Plug 'benmills/vimux'
+
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
+call plug#end()
 
 "
 """"""""""""""""""""""""""""""""""""""""
