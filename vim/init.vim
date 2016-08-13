@@ -22,11 +22,11 @@ Plug 'janko-m/vim-test'
 Plug 'Konfekt/FastFold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 
 function! DoRemote(arg)
   UpdateRemotePlugins
