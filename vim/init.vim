@@ -14,13 +14,13 @@ Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
 Plug 'robmiller/vim-movar'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
 Plug 'Konfekt/FastFold'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
@@ -294,16 +294,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  CTRLP
+"  FZF
 "
-let g:ctrlp_map = '<c-t>'
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_max_height = 15
-let g:ctrlp_open_multi = '1v'
-let g:ctrlp_custom_ignore = '\v[\/](vendor|_build|deps|node_modules|\.git|\.hg)$'
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_use_caching = 0
+nnoremap <c-t> :FZF<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
