@@ -5,24 +5,32 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'bling/vim-airline'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'godlygeek/tabular'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'austintaylor/vim-commaobject'
-Plug 'kien/ctrlp.vim'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'robmiller/vim-movar'
 Plug 'kana/vim-smartinput'
-Plug 'othree/yajs.vim'
+Plug 'austintaylor/vim-commaobject'
+Plug 'robmiller/vim-movar'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
+Plug 'godlygeek/tabular'
 Plug 'benmills/vimux'
+Plug 'janko-m/vim-test'
+Plug 'Konfekt/FastFold'
 
+Plug 'editorconfig/editorconfig-vim'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 call plug#end()
 
@@ -97,6 +105,8 @@ se scrolloff=3
 se wildcharm=<tab>
 se wildmode=full
 inoremap <c-l> <c-x><c-l>
+let g:deoplete#enable_at_startup = 1
+let g:alchemist_tag_stack_map = '<C-Q>'
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -284,23 +294,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  ACK
-"
-nnoremap <expr><leader>a ":Ack! "
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  UltiSnips
-"
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsListSnippets = '<c-tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  CTRLP
 "
 let g:ctrlp_map = '<c-t>'
@@ -310,6 +303,7 @@ let g:ctrlp_open_multi = '1v'
 let g:ctrlp_custom_ignore = '\v[\/](vendor|_build|deps|node_modules|\.git|\.hg)$'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_use_caching = 0
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -360,21 +354,13 @@ nnoremap <leader>vc :VimuxCloseRunner<cr>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  PHP
+"  TESTS
 "
-let g:php_folding=1
-let php_noShortTags = 1
-
-nnoremap <leader>u :call PhpInsertUse()<cr>
-nnoremap <leader>e :call PhpExpandClass()<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  BEHAT
-"
-let feature_filetype='behat'
-
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
