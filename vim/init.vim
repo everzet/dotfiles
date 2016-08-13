@@ -22,6 +22,7 @@ Plug 'janko-m/vim-test'
 Plug 'Konfekt/FastFold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
@@ -354,6 +355,14 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ta :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  ELM
+"
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
