@@ -413,27 +413,25 @@ augroup vimrc_autocmd
         au InsertLeave * set timeoutlen=1000
     endif
 
-    if has('autocmd')
-        autocmd!
+    autocmd!
 
-        " General
-        au FocusLost silent! :wa
-        au FileType helpfile setlocal nonumber
-        au BufWritePost,BufEnter * Neomake
+    " General
+    au FocusLost silent! :wa
+    au FileType helpfile setlocal nonumber
 
-        " File types
-        au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
-        au BufRead,BufNewFile *.php         inoremap <buffer> § $
-        au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
-        au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
-        au BufRead,BufNewFile *.twig        setlocal filetype=jinja
-        au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
-        au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
-        au BufRead,BufNewFile *.ejs         setlocal filetype=html
-        au BufRead,BufNewFile *.json        setlocal filetype=javascript
-        au BufRead,BufNewFile *.pp          setlocal filetype=ruby
+    " File types
+    au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
+    au BufRead,BufNewFile *.php         inoremap <buffer> § $
+    au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
+    au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
+    au BufRead,BufNewFile *.twig        setlocal filetype=jinja
+    au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
+    au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
+    au BufRead,BufNewFile *.ejs         setlocal filetype=html
+    au BufRead,BufNewFile *.json        setlocal filetype=javascript
+    au BufRead,BufNewFile *.pp          setlocal filetype=ruby
 
-        " Autocalls
-        au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
-    endif
+    " Autocalls
+    au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+    au BufWritePost,BufEnter * Neomake
 augroup END
