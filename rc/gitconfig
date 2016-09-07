@@ -1,6 +1,7 @@
 [user]
     name = everzet
     email = ever.zet@gmail.com
+    signingkey = AB6E234A
 
 [push]
     default = current
@@ -71,3 +72,6 @@
 
 [merge]
     tool = Kaleidoscope
+
+[commit]
+    gpgsign = true
