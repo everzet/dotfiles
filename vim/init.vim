@@ -325,6 +325,20 @@ let g:EasyMotion_leader_key='t'
 "
 "  NEOMAKE
 "
+function! NeomakeCredoErrorType(entry)
+    if a:entry.type ==# 'W'
+        let a:entry.type = 'W'
+    else
+        let a:entry.type = 'I'
+    endif
+endfunction
+let g:neomake_elixir_credo_maker = {
+    \ 'exe': 'mix',
+    \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
+    \ 'errorformat': '[%t] %. %f:%l:%c %m',
+    \ 'postprocess': function('NeomakeCredoErrorType')
+    \ }
+
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 "

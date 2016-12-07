@@ -65,6 +65,7 @@ vim_colors "mustango" do
 
     NeomakeErrorSign   "d52116", "262626"
     NeomakeWarningSign "ff9800", "262626"
+    NeomakeInfoSign    "b1d631", "262626"
     NeomakeError       "e2e2e5", "d52116"
     NeomakeWarning     "e2e2e5", "ff9800"
 

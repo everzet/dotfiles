@@ -68,6 +68,7 @@ hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE g
 hi LustyDir              guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi NeomakeErrorSign      guifg=#D52116 ctermfg=160  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi NeomakeWarningSign    guifg=#FF9800 ctermfg=208  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi NeomakeInfoSign       guifg=#B1D631 ctermfg=149  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi NeomakeError          guifg=#E2E2E5 ctermfg=254  guibg=#D52116 ctermbg=160  gui=NONE cterm=NONE
 hi NeomakeWarning        guifg=#E2E2E5 ctermfg=254  guibg=#FF9800 ctermbg=208  gui=NONE cterm=NONE
 hi GitGutterAdd          guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
