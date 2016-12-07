@@ -325,7 +325,7 @@ let g:EasyMotion_leader_key='t'
 "
 "  NEOMAKE
 "
-let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 "
 """"""""""""""""""""""""""""""""""""""""
