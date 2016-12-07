@@ -63,12 +63,10 @@ vim_colors "mustango" do
     LustySelected    "ff9800", "NONE"
     LustyDir         "b1d631", "NONE"
 
-    SyntasticErrorSign   "d52116", "262626"
-    SyntasticWarningSign "ff9800", "262626"
-    SyntasticErrorLine   "262626", "d52116",  :gui => "bold",   :cterm => "bold"
-    SyntasticWarningLine "262626", "ff9800",  :gui => "bold",   :cterm => "bold"
-    SyntasticError       "262626", "ffffff"
-    SyntasticWarning     "262626", "ffffff"
+    NeomakeErrorSign   "d52116", "262626"
+    NeomakeWarningSign "ff9800", "262626"
+    NeomakeError       "e2e2e5", "d52116"
+    NeomakeWarning     "e2e2e5", "ff9800"
 
     GitGutterAdd          "009900", "262626"
     GitGutterChange       "bbbb00", "262626"
