@@ -11,7 +11,7 @@ trim_trailing_whitespace = true
 [*.{py,yml,feature,ruby,js,json,coffee}]
 indent_size = 2
 
-[*.{php,css,scss,less}]
+[*.{php,css,scss,less,elm}]
 indent_size = 4
 
 [Makefile]
