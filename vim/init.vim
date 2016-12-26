@@ -12,25 +12,23 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
-Plug 'robmiller/vim-movar'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
-Plug 'Konfekt/FastFold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
 
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
+
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 call plug#end()
@@ -364,8 +362,16 @@ nmap <silent> <leader>tg :TestVisit<CR>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  Polyglot
+"
+let g:polyglot_disabled = ['elm']
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  ELM
 "
+let g:polyglot_disabled = ['css']
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
 
