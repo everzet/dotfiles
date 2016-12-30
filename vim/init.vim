@@ -371,7 +371,7 @@ let g:polyglot_disabled = ['elm']
 "
 "  ELM
 "
-let g:elm_format_autosave = 1
+let g:elm_format_autosave = 0
 let g:elm_setup_keybindings = 0
 
 "
@@ -444,4 +444,5 @@ augroup vimrc_autocmd
     " Autocalls
     au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
     au BufWritePost,BufEnter * Neomake
+    au BufWritePost,BufEnter *.elm ElmFormat
 augroup END
