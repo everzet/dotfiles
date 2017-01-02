@@ -444,5 +444,5 @@ augroup vimrc_autocmd
     " Autocalls
     au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
     au BufWritePost,BufEnter * Neomake
-    au BufWritePost,BufEnter *.elm ElmFormat
+    au BufWritePost *.elm ElmFormat
 augroup END
