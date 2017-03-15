@@ -275,7 +275,7 @@ nnoremap * *N
 "  AIRLINE
 "
 let g:airline_theme='wombatish'
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 
 "
 """"""""""""""""""""""""""""""""""""""""
