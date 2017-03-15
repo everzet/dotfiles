@@ -18,7 +18,7 @@ ln -nfs $DOTFILESDIR/rc/editorconfig     ~/.editorconfig
 ln -nfs $DOTFILESDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTFILESDIR/rc/gitignore_global ~/.gitignore_global
 
-tic $DOTFILESDIR/rc/xterm-256color-italic.terminfo
+tic $DOTFILESDIR/rc/screen-256color.terminfo
 
 if [ -d /usr/local/php5 ]; then
     sudo ln -nfs $DOTFILESDIR/rc/php/*.ini /usr/local/php5/php.d/
