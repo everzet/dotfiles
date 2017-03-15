@@ -6,7 +6,7 @@ vim_colors "mustango" do
     background :dark
 
     CursorLine   "NONE",   "262626"
-    CursorLineNr "444444", "262626"
+    CursorLineNr "808080", "262626", :gui => "bold",  :cterm => "bold"
     CursorColumn "NONE",   "2d2d2d"
     ColorColumn  "NONE",   "262626"
     MatchParen   "NONE",   "444444"
@@ -18,7 +18,7 @@ vim_colors "mustango" do
     Conceal      "e2e2e5", "202020"
     SpecialKey   "444444", "303030"
     NonText      "444444", "303030"
-    LineNr       "444444", "262626"
+    LineNr       "444444", "262626", :gui => "bold",  :cterm => "bold"
     SignColumn   "444444", "262626"
 
     StatusLine   "d3d3d5", "444444"
@@ -32,7 +32,7 @@ vim_colors "mustango" do
     Comment      "808080", "NONE",   :gui => "italic", :cterm => "italic"
     Todo         "000000", "e6ea50", :gui => "italic", :cterm => "italic"
     Boolean      "ff9800", "NONE"
-    String       "b1d631", "NONE",   :gui => "italic", :cterm => "italic"
+    String       "b1d631", "NONE"
     Identifier   "7e8aa2", "NONE"
     Function     "faf4c6", "NONE",   :gui => "bold",   :cterm => "bold"
     Type         "7e8aa2", "NONE"
@@ -73,6 +73,4 @@ vim_colors "mustango" do
     GitGutterChange       "bbbb00", "262626"
     GitGutterDelete       "ff2222", "262626"
     GitGutterChangeDelete "bbbb00", "262626"
-
-    phpspecExampleSubject "faf4c6", "NONE",   :gui => "bold",   :cterm => "bold"
 end

@@ -19,7 +19,7 @@ if has("gui_running")
 endif
 
 hi CursorLine            guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi CursorLineNr          guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi CursorLineNr          guifg=#808080 ctermfg=244  guibg=#262626 ctermbg=235  gui=BOLD cterm=BOLD
 hi CursorColumn          guifg=NONE    ctermfg=NONE guibg=#2D2D2D ctermbg=236  gui=NONE cterm=NONE
 hi ColorColumn           guifg=NONE    ctermfg=NONE guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi MatchParen            guifg=NONE    ctermfg=NONE guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
@@ -30,7 +30,7 @@ hi Normal                guifg=#E2E2E5 ctermfg=254  guibg=#202020 ctermbg=234  g
 hi Conceal               guifg=#E2E2E5 ctermfg=254  guibg=#202020 ctermbg=234  gui=NONE cterm=NONE
 hi SpecialKey            guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi NonText               guifg=#444444 ctermfg=238  guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
-hi LineNr                guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
+hi LineNr                guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=BOLD cterm=BOLD
 hi SignColumn            guifg=#444444 ctermfg=238  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi StatusLine            guifg=#D3D3D5 ctermfg=188  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
 hi StatusLineNC          guifg=#939393 ctermfg=246  guibg=#444444 ctermbg=238  gui=NONE cterm=NONE
@@ -39,10 +39,10 @@ hi Folded                guifg=#A0A8B0 ctermfg=248  guibg=#384048 ctermbg=238  g
 hi Title                 guifg=#F6F3E8 ctermfg=255  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Visual                guifg=#FAF4C6 ctermfg=230  guibg=#3C414C ctermbg=238  gui=NONE cterm=NONE
 hi Search                guifg=#000000 ctermfg=16   guibg=#FF9800 ctermbg=208  gui=NONE cterm=NONE
-hi Comment               guifg=#808080 ctermfg=244  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
-hi Todo                  guifg=#000000 ctermfg=16   guibg=#E6EA50 ctermbg=185  gui=ITALIC cterm=NONE
+hi Comment               guifg=#808080 ctermfg=244  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=ITALIC
+hi Todo                  guifg=#000000 ctermfg=16   guibg=#E6EA50 ctermbg=185  gui=ITALIC cterm=ITALIC
 hi Boolean               guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi String                guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
+hi String                guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Identifier            guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Function              guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
 hi Type                  guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
@@ -61,7 +61,7 @@ hi DiffChange            guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE g
 hi DiffDelete            guifg=#FFFFFF ctermfg=231  guibg=#610006 ctermbg=52   gui=NONE cterm=NONE
 hi PythonOperator        guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Question              guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi SpellBad              guifg=#FF2222 ctermfg=196  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
+hi SpellBad              guifg=#FF2222 ctermfg=196  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=ITALIC
 hi EasyMotionTarget      guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionShade       guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
@@ -75,5 +75,4 @@ hi GitGutterAdd          guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  g
 hi GitGutterChange       guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi GitGutterDelete       guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
 hi GitGutterChangeDelete guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi phpspecExampleSubject guifg=#FAF4C6 ctermfg=230  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
 
