@@ -114,8 +114,8 @@ let g:alchemist_tag_stack_map = '<C-Q>'
 "
 se wrap
 se linebreak
-se textwidth=100
-se colorcolumn=100
+se textwidth=80
+se colorcolumn=80
 "se formatprg=par
 "se formatoptions+=tca
 
