@@ -30,6 +30,8 @@ function! DoRemote(arg)
 endfunction
 
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -105,7 +107,19 @@ se wildcharm=<tab>
 se wildmode=full
 inoremap <c-l> <c-x><c-l>
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
+inoremap <silent><expr><c-space> deoplete#mappings#manual_complete()
 let g:alchemist_tag_stack_map = '<C-Q>'
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  SNIPPETS
+"
+inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "
 """"""""""""""""""""""""""""""""""""""""
