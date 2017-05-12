@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
+Plug 'tommcdo/vim-exchange'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'sheerun/vim-polyglot'
