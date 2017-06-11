@@ -12,11 +12,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
-Plug 'Lokaltog/vim-easymotion'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
-Plug 'benmills/vimux'
+Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 Plug 'tommcdo/vim-exchange'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -329,13 +328,6 @@ vnoremap <leader><tab>> :Tab /=><cr>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  EASYMOTION
-"
-let g:EasyMotion_leader_key='t'
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  NEOMAKE
 "
 function! NeomakeCredoErrorType(entry)
@@ -357,18 +349,20 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  VIMUX
+"  NEOTERM
 "
-nnoremap <leader>vr :VimuxPromptCommand<cr>
-nnoremap <leader>vl :VimuxRunLastCommand<cr>
-nnoremap <leader>vc :VimuxCloseRunner<cr>
+let g:neoterm_position = 'horizontal'
+let g:neoterm_size = 15
+let g:neoterm_automap_keys = ',tt'
+nmap <silent> <leader>tc :TcloseAll<CR>
 
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  TESTS
 "
-nmap <silent> <leader>tt :TestNearest<CR>
+let test#strategy = "neoterm"
+nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ta :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
