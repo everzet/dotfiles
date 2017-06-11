@@ -18,6 +18,8 @@ Plug 'godlygeek/tabular'
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 Plug 'tommcdo/vim-exchange'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'sheerun/vim-polyglot'
@@ -30,8 +32,6 @@ function! DoRemote(arg)
 endfunction
 
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 call plug#end()
 
