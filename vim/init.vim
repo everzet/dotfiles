@@ -361,7 +361,6 @@ nmap <silent> <leader>tc :TcloseAll<CR>
 "
 "  TESTS
 "
-let test#strategy = "neoterm"
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ta :TestSuite<CR>
