@@ -8,7 +8,7 @@ end_of_line = lf
 indent_style = space
 trim_trailing_whitespace = true
 
-[*.{py,yml,feature,ruby,js,json,coffee}]
+[*.{py,yml,feature,ruby,js,jsx,ts,tsx,json,coffee,vue}]
 indent_size = 2
 
 [*.{php,css,scss,less,elm}]
