@@ -74,14 +74,6 @@ se path=**
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  FOLDING
-"
-se foldmethod=syntax
-se foldlevel=1
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  SEARCH
 "
 se showmatch
@@ -303,6 +295,13 @@ nnoremap <leader>gc  :Gcommit --verbose<cr>
 nnoremap <leader>grm :Gremove<cr>
 nnoremap <leader>gmv :Gmove<cr>
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  SYNTAX HIGHLIGHTERS CONFIG
+"
+let g:vue_disable_pre_processors=1
 
 "
 """"""""""""""""""""""""""""""""""""""""
