@@ -10,6 +10,10 @@ ln -nfs $DOTFILESDIR/shell ~/.shell
 ln -nfs $DOTFILESDIR/vim ~/.vim
 ln -nfs $DOTFILESDIR/vim ~/.config/nvim
 
+ln -nfs $DOTFILESDIR/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -nfs $DOTFILESDIR/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -nfs $DOTFILESDIR/vscode/snippets/ ~/Library/Application\ Support/Code/User/snippets
+
 ln -nfs $DOTFILESDIR/rc/ideavimrc        ~/.ideavimrc
 ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/iex.exs          ~/.iex.exs
