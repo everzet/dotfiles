@@ -1,0 +1,56 @@
+{
+    "editor.fontFamily": "Operator Mono Lig, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80
+    ],
+    "terminal.integrated.fontFamily": "Operator Mono, Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 12,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.leader": ",",
+    "vim.useCtrlKeys": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before": ["<leader>", "w", "e"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditor"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "b", "c"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "b", "o"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.closeOtherEditors"
+                }
+            ]
+        }
+    ],
+    "workbench.colorTheme": "One Monokai",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": false,
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "seti"
+}
