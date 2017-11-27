@@ -52,5 +52,6 @@
     "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
-    "workbench.iconTheme": "seti"
+    "workbench.iconTheme": "seti",
+    "workbench.startupEditor": "newUntitledFile"
 }
