@@ -6,9 +6,10 @@ root = true
 charset = utf-8
 end_of_line = lf
 indent_style = space
+insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{py,yml,feature,ruby,js,jsx,ts,tsx,json,coffee,vue}]
+[*.{py,yml,feature,ruby,js,jsx,ts,tsx,json,coffee,vue,ex,exs}]
 indent_size = 2
 
 [*.{php,css,scss,less,elm}]
