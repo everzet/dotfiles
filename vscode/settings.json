@@ -6,8 +6,16 @@
     "editor.rulers": [
         80
     ],
+    "editor.acceptSuggestionOnCommitCharacter": false,
     "terminal.integrated.fontFamily": "Operator Mono, Consolas, 'Courier New', monospace",
     "terminal.integrated.fontSize": 12,
+    "vim.easymotionMarkerFontFamily": "Operator Mono, Consolas, 'Courier New', monospace",
+    "vim.easymotionMarkerFontSize": "14",
+    "vim.easymotionMarkerHeight": 21,
+    "vim.easymotionMarkerYOffset": 0,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.easymotion": true,
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.leader": ",",
@@ -19,6 +27,15 @@
         }
     ],
     "vim.otherModesKeyBindings": [
+        {
+            "before":["<leader>", "<space>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        },
         {
             "before": ["<leader>", "w", "e"],
             "after": [],
@@ -52,5 +69,7 @@
     "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
 }
