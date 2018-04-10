@@ -3,6 +3,7 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.renderWhitespace": "boundary",
+    "editor.formatOnSave": true,
     "editor.rulers": [
         80
     ],
