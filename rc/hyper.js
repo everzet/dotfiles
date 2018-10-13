@@ -8,7 +8,7 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: 'Operator Mono Lig',
+    fontFamily: 'Dank Mono',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(299,299,299,0.3)',
@@ -27,17 +27,6 @@ module.exports = {
 
     // border color (window, tabs)
     borderColor: '#252525',
-
-    // custom css to embed in the main window
-    css: `
-    `,
-
-    // custom css to embed in the terminal window
-    termCSS: `
-      x-row > span {
-        line-height: 1.2em;
-      }
-    `,
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
@@ -110,10 +99,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    `hyperlinks`,    
-    `hyper-statusline`,
-    `hyperterm-safepaste`,
-    `hyperterm-cursor`,
+    `hyper-solarized-light`
   ],
 
   // in development, you can create a directory under
