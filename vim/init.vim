@@ -11,14 +11,13 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
 Plug 'neomake/neomake'
-Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'tommcdo/vim-exchange'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'prettier/vim-prettier', { 'for': 'javascript', 'do': 'yarn install'}
@@ -109,22 +108,6 @@ se wrap
 se linebreak
 se textwidth=80
 se colorcolumn=80
-"se formatprg=par
-"se formatoptions+=tca
-
-"
-"+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"|
-"|  > CUSTOM MAPPINGS
-"|
-"|
-""""""""""""""""""""""""""""""""""""""""
-"
-"  COPY-PASTE
-"
-"set clipboard=unnamed
-"
-" Use "+p (in N) or <c-r>+ (in I)
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -140,13 +123,6 @@ nnoremap Y y$
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  DASH
-"
-nnoremap <leader>d :Dash<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  HIGHLIGHTING MAPPINGS
 "
 nnoremap <leader>ll :set list!<cr>
@@ -157,6 +133,8 @@ nnoremap <silent> <leader><space> :nohlsearch<cr>
 "
 "  LINES MOVEMENT
 "
+nnoremap <s-j> 10j
+nnoremap <s-k> 10k
 nnoremap <s-up>   [e
 nnoremap <s-down> ]e
 vnoremap <s-up>   [egv
@@ -287,13 +265,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  SYNTAX HIGHLIGHTERS CONFIG
-"
-let g:vue_disable_pre_processors=1
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  FZF
 "
 nnoremap <c-t> :FZF<cr>
@@ -353,13 +324,6 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ta :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  Polyglot
-"
-let g:polyglot_disabled = ['elm']
 
 "
 """"""""""""""""""""""""""""""""""""""""
