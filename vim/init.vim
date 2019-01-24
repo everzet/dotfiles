@@ -307,27 +307,6 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  NEOTERM
-"
-let g:neoterm_position = 'horizontal'
-let g:neoterm_size = 15
-let g:neoterm_automap_keys = ',tt'
-nmap <silent> <leader>tc :TcloseAll<CR>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  TESTS
-"
-nmap <silent> <leader>tn :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ta :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tg :TestVisit<CR>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  ELM
 "
 let g:elm_format_autosave = 0
@@ -372,6 +351,19 @@ function! <sid>MkdirsIfNotExists(directory)
         call system('mkdir -p '.shellescape(a:directory))
     endif
 endfunction
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  CREATE TEST BINDING
+"
+function! BindTerminalCommand()
+    let cmd = input('Command: ')
+    if cmd != ''
+        exec ':nmap <leader>t :split \| te ' . cmd . ' <cr>:startinsert<cr>'
+    endif
+endfunction
+nmap <leader>tb :call BindTerminalCommand()<cr>
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
