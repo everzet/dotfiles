@@ -5,26 +5,23 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'bling/vim-airline'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
-Plug 'janko-m/vim-test'
 Plug 'tommcdo/vim-exchange'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
+
+Plug 'sheerun/vim-polyglot'
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'prettier/vim-prettier', { 'for': 'javascript', 'do': 'yarn install'}
 
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -102,16 +99,6 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
 inoremap <silent><expr><c-space> deoplete#mappings#manual_complete()
 let g:alchemist_tag_stack_map = '<C-Q>'
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  SNIPPETS
-"
-inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -282,6 +269,7 @@ nnoremap * *N
 "
 let g:airline_theme='wombatish'
 let g:airline_powerline_fonts=0
+let g:airline#extensions#tabline#enabled=1
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -382,6 +370,14 @@ let g:elm_format_autosave = 0
 let g:elm_setup_keybindings = 0
 
 "
+""""""""""""""""""""""""""""""""""""""""
+"
+"  Prettier
+"
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+
+"
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "|
 "|  > CUSTOM FUNCTIONS
@@ -452,4 +448,5 @@ augroup vimrc_autocmd
     au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
     au BufWritePost,BufEnter * Neomake
     au BufWritePost *.elm ElmFormat
+    au BufWritePre *.js,*.jsx PrettierAsync
 augroup END
