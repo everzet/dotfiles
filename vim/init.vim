@@ -66,6 +66,7 @@ se mousehide
 se copyindent
 se smartindent
 se nolist
+se stal=2
 se backspace=indent,eol,start
 se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,.DS_Store
 se path=**
