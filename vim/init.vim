@@ -21,6 +21,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'prettier/vim-prettier', { 'for': 'javascript', 'do': 'yarn install'}
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -106,8 +107,8 @@ let g:alchemist_tag_stack_map = '<C-Q>'
 "
 se wrap
 se linebreak
-se textwidth=80
-se colorcolumn=80
+se textwidth=98
+se colorcolumn=98
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -133,8 +134,8 @@ nnoremap <silent> <leader><space> :nohlsearch<cr>
 "
 "  LINES MOVEMENT
 "
-nnoremap <s-j> 10j
-nnoremap <s-k> 10k
+nnoremap ∆        10j
+nnoremap ˚        10k
 nnoremap <s-up>   [e
 nnoremap <s-down> ]e
 vnoremap <s-up>   [egv
@@ -311,6 +312,13 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 "
 let g:elm_format_autosave = 0
 let g:elm_setup_keybindings = 0
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  RUST
+"
+let g:rustfmt_autosave = 1
 
 "
 """"""""""""""""""""""""""""""""""""""""
