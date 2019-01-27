@@ -1,5 +1,5 @@
-""""""""""""""""""""""""""""""""""""""""
-"
+""""""""""""""""""""""""""""""""""""
+
 "  PLUGINS
 "
 call plug#begin('~/.config/nvim/plugged')
@@ -17,10 +17,17 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'prettier/vim-prettier', { 'for': 'javascript', 'do': 'yarn install'}
+
+Plug 'prettier/vim-prettier', {
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'],
+    \ 'do': 'yarn install' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
+
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 function! DoRemote(arg)
@@ -54,8 +61,8 @@ se hidden
 se nobackup
 se noswapfile
 se dir=/tmp,/var/tmp
-se relativenumber
 se number
+se relativenumber
 se visualbell
 se ch=1
 se noshowmode
@@ -323,10 +330,19 @@ let g:rustfmt_autosave = 1
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  Prettier
+"  JS (PRETTIER)
 "
 let g:prettier#quickfix_enabled = 0
+let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 0
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  ELIXIR
+"
+let g:mix_format_on_save = 1
+let g:mix_format_silent_errors = 1
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -371,7 +387,7 @@ function! BindTerminalCommand()
         exec ':nmap <leader>t :split \| te ' . cmd . ' <cr>:startinsert<cr>'
     endif
 endfunction
-nmap <leader>tb :call BindTerminalCommand()<cr>
+nmap <leader>bt :call BindTerminalCommand()<cr>
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -408,9 +424,16 @@ augroup vimrc_autocmd
     au BufRead,BufNewFile *.json        setlocal filetype=javascript
     au BufRead,BufNewFile *.pp          setlocal filetype=ruby
 
-    " Autocalls
-    au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+    " FZF
+    au! FileType fzf
+    au  FileType fzf set laststatus=0 noshowmode noruler
+        \| au BufLeave <buffer> set laststatus=2 showmode ruler
+
+    " Functions
     au BufWritePost,BufEnter * Neomake
-    au BufWritePost *.elm ElmFormat
-    au BufWritePre *.js,*.jsx PrettierAsync
+    au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+
+    " File types
+    au BufWritePre *.elm ElmFormat
+    au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 augroup END
