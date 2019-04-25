@@ -55,4 +55,16 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[path]='bg=white,fg=black,bold'
 
-PROMPT='%(?.%{$fg[green]%}.%{$fg[red]%})$(print "■ ")%{$reset_color%}'
+function preexec() {
+  timer=${timer:-$SECONDS}
+}
+
+function precmd() {
+  if [ $timer ]; then
+    timer_show=$(($SECONDS - $timer))
+    export PROMPT=$'%(?.%{$fg[green]%}.%{$fg[red]%})${timer_show}s%{$reset_color%}\n\n-> '
+    unset timer
+  fi
+}
+
+export PROMPT='-> '
