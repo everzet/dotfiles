@@ -159,7 +159,7 @@
               "Green Component": 0.62999999523162842
             },
             "base: compression resistance": 1,
-            "format": "dd.MM.Y / hh:mm"
+            "format": "dd.MM.Y / HH:mm"
           },
           "layout advanced configuration dictionary value": {
             "font": ".AppleSystemUIFont 12",
