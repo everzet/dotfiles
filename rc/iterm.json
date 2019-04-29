@@ -141,6 +141,7 @@
             "base: compression resistance": 1
           },
           "layout advanced configuration dictionary value": {
+            "font": ".AppleSystemUIFont 12",
             "algorithm": 1
           }
         }
@@ -150,15 +151,15 @@
         "configuration": {
           "knobs": {
             "base: priority": 5,
-            "base: compression resistance": 1,
             "shared text color": {
-              "Red Component": 0.8460000000000002,
+              "Red Component": 0.84600001573562622,
               "Color Space": "sRGB",
-              "Blue Component": 0.90000000000000002,
+              "Blue Component": 0.89999997615814209,
               "Alpha Component": 1,
-              "Green Component": 0.63
+              "Green Component": 0.62999999523162842
             },
-            "format": "dd.M.Y / h:mm"
+            "base: compression resistance": 1,
+            "format": "dd.MM.Y / hh:mm"
           },
           "layout advanced configuration dictionary value": {
             "font": ".AppleSystemUIFont 12",
@@ -430,7 +431,7 @@
     "Alpha Component": 1,
     "Green Component": 0.36025434732437134
   },
-  "Name": "Default",
+  "Name": "everzet",
   "Blinking Cursor": true,
   "Guid": "94B2AEDD-912A-4BF0-92A1-4AE1B4E6E2C7",
   "Idle Code": 0,
