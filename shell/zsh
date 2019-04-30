@@ -63,7 +63,7 @@ function precmd() {
   export PROMPT='-> '
   if [ $timer ]; then
     timer_show=$(($SECONDS - $timer))
-    export PROMPT=$'%(?.%{$fg[green]%}✓.%{$fg[red]%}✗) ${timer_show}s%{$reset_color%}\n\n-> '
+    export RPROMPT=$'%(?.%{$fg[green]%}✓.%{$fg[red]%}✗) ${timer_show}s%{$reset_color%}'
     unset timer
   fi
 }
