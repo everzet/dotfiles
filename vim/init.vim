@@ -154,11 +154,11 @@ vnoremap <s-down> ]egv
 "
 "  FS NAVIGATION
 "
-nnoremap <leader>ep :e <c-r>=expand("%:p:h")."/"<cr>
-nnoremap <leader>es :vsp <c-r>=expand("%:p:h")."/"<cr>
+nnoremap <leader>ep :e <c-r>=fnamemodify(expand("%:p:h"), ":~:.")."/"<cr>
+nnoremap <leader>es :vsp <c-r>=fnamemodify(expand("%:p:h"), ":~:.")."/"<cr>
 nnoremap <leader>se :Vex<cr><c-w>=
-nnoremap <leader>mk :!mkdir <c-r>=expand("%:p:h")."/"<cr>
-nnoremap <leader>rm :!rm -rf <c-r>=expand("%:p:h")."/"<cr>
+nnoremap <leader>mk :!mkdir <c-r>=fnamemodify(expand("%:p:h"), ":~:.")."/"<cr>
+nnoremap <leader>rm :!rm -rf <c-r>=fnamemodify(expand("%:p:h"), ":~:.")."/"<cr>
 cnoremap w!!        w !sudo tee % >/dev/null
 
 "
