@@ -1,16 +1,17 @@
 # paths
 export PATH=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH=/usr/local/opt/go/bin:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/src/dotfiles/scripts:$PATH
-export PATH=~/.cargo/bin:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
+export PATH=~/.asdf/shims:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
+
+# asdf
+autoload -Uz compinit && compinit
+. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # direnv
 eval "$(direnv hook zsh)"
