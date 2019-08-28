@@ -73,7 +73,7 @@ se smartindent
 se nolist
 se stal=2
 se backspace=indent,eol,start
-se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,*/dist,.DS_Store
+se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,*/dist,*/build,*/_build,.DS_Store
 se path=**
 
 "
