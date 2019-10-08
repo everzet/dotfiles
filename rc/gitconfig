@@ -50,28 +50,8 @@
 
     review = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
 
-[web]
-    browser = open
-
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
-[difftool]
-    prompt = false
-
-[diff]
-    tool = Kaleidoscope
-    compactionHeuristic = true
-
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-
-[mergetool]
-    prompt = false
-
-[merge]
-    tool = Kaleidoscope
-
 [commit]
     gpgsign = true
+
+[pull]
+	rebase = true

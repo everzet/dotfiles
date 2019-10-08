@@ -10,19 +10,11 @@ ln -nfs $DOTFILESDIR/shell ~/.shell
 ln -nfs $DOTFILESDIR/vim ~/.vim
 ln -nfs $DOTFILESDIR/vim ~/.config/nvim
 
-ln -nfs $DOTFILESDIR/rc/hyper.js         ~/.hyper.js
-ln -nfs $DOTFILESDIR/rc/ideavimrc        ~/.ideavimrc
 ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/iex.exs          ~/.iex.exs
 ln -nfs $DOTFILESDIR/rc/tmux.conf        ~/.tmux.conf
-ln -nfs $DOTFILESDIR/rc/npmrc            ~/.npmrc
 ln -nfs $DOTFILESDIR/rc/editorconfig     ~/.editorconfig
 ln -nfs $DOTFILESDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTFILESDIR/rc/gitignore_global ~/.gitignore_global
 
-tic $DOTFILESDIR/rc/screen-256color-italic.terminfo
 tic $DOTFILESDIR/rc/xterm-256color-italic.terminfo
-
-if [ -d /usr/local/php5 ]; then
-    sudo ln -nfs $DOTFILESDIR/rc/php/*.ini /usr/local/php5/php.d/
-fi
