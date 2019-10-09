@@ -12,3 +12,5 @@ alias ta='tmux at -t'
 
 alias git='hub'
 alias g='git s'
+
+alias twex='fswatch -o {lib,test} | xargs -n1 -I{} mix test --stale'
