@@ -7,6 +7,10 @@ function take {
     cd $1
 }
 
+function base64 {
+    openssl base64 < $1 | tr -d '\n' | pbcopy
+}
+
 function tpwd {
     tmux rename-session ${PWD##*/}
 }
