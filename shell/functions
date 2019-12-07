@@ -1,16 +1,1 @@
-function manview {
-    man -t $1 | open -f -a /Applications/Preview.app
-}
 
-function take {
-    mkdir -p $1
-    cd $1
-}
-
-function base64 {
-    openssl base64 < $1 | tr -d '\n' | pbcopy
-}
-
-function tpwd {
-    tmux rename-session ${PWD##*/}
-}
