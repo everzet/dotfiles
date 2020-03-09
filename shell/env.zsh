@@ -31,3 +31,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # GPG
 GPG_TTY=$(tty)
+
+# SDKMan
+source "/Users/everzet/.sdkman/bin/sdkman-init.sh"
