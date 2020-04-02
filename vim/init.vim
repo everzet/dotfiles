@@ -4,38 +4,24 @@
 "
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
-Plug 'neomake/neomake'
-Plug 'godlygeek/tabular'
 Plug 'tommcdo/vim-exchange'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
-
-Plug 'prettier/vim-prettier', {
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'],
-    \ 'do': 'yarn install' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
-Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
-Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
-
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'editorconfig/editorconfig-vim'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
-
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 call plug#end()
 
@@ -85,7 +71,37 @@ se showmatch
 se ignorecase
 se smartcase
 se gdefault
-se tags+=vendor.tags
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  STATUS LINE
+"
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?' '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#WildMenu#
+set statusline+=\ %{mode()}\ "
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f "
+set statusline+=%m\ "
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ "
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -102,11 +118,6 @@ se scrolloff=3
 "
 se wildcharm=<tab>
 se wildmode=full
-inoremap <c-l> <c-x><c-l>
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
-inoremap <silent><expr><c-space> deoplete#mappings#manual_complete()
-let g:alchemist_tag_stack_map = '<C-Q>'
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -164,11 +175,31 @@ cnoremap w!!        w !sudo tee % >/dev/null
 "
 """"""""""""""""""""""""""""""""""""""""
 "
+"  FILE BROWSER
+"
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
 "  TABS MANAGEMENT
 "
 nnoremap <leader>df :tab split<cr>
 nnoremap <leader>dd :tabclose<cr>
 nnoremap <leader>do :tabonly<cr>
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  BUFFERS MANAGEMENT
+"
+nnoremap <leader>bl :ls<cr>
+nnoremap <leader>bc :bd<cr>
+nnoremap <leader>bo :ls<cr>:b<space>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -195,14 +226,6 @@ tnoremap <c-j> <c-\><c-n><c-w>j
 tnoremap <c-k> <c-\><c-n><c-w>k
 tnoremap <c-l> <c-\><c-n><c-w>l
 tnoremap <c-x> <c-\><c-n><c-w>x
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  BUFFERS MANAGEMENT
-"
-nnoremap <leader>bc :bd<cr>
-nnoremap <leader>bo :ls<cr>:b<space>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -252,13 +275,6 @@ nnoremap * *N
 "|
 """"""""""""""""""""""""""""""""""""""""
 "
-"  AIRLINE
-"
-let g:airline_theme='wombatish'
-let g:airline_powerline_fonts=0
-let g:airline#extensions#tabline#enabled=1
-
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  FUGITIVE
@@ -279,84 +295,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
 nnoremap <c-t> :Files<cr>
 nnoremap <c-f> :Find<space>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  TABULAR
-"
-nnoremap <leader><tab><tab> :Tab /
-nnoremap <leader><tab>= :Tab /=<cr>
-nnoremap <leader><tab>: :Tab /:\zs<cr>
-nnoremap <leader><tab>> :Tab /=><cr>
-vnoremap <leader><tab> :Tab /
-vnoremap <leader><tab>= :Tab /=<cr>
-vnoremap <leader><tab>: :Tab /:\zs<cr>
-vnoremap <leader><tab>> :Tab /=><cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  NEOMAKE
-"
-function! NeomakeCredoErrorType(entry)
-    if a:entry.type ==# 'W'
-        let a:entry.type = 'W'
-    else
-        let a:entry.type = 'I'
-    endif
-endfunction
-let g:neomake_elixir_credo_maker = {
-    \ 'exe': 'mix',
-    \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
-    \ 'errorformat': '[%t] %. %f:%l:%c %m',
-    \ 'postprocess': function('NeomakeCredoErrorType')
-    \ }
-
-let g:neomake_elixir_enabled_makers = ['mix', 'credo']
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  ELM
-"
-let g:elm_format_autosave = 0
-let g:elm_setup_keybindings = 0
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  RUST
-"
-let g:rustfmt_autosave = 1
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  JS (PRETTIER)
-"
-let g:prettier#quickfix_enabled = 0
-let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat = 0
-
-let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#arrow_parens = 'avoid'
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#parser = 'babylon'
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  ELIXIR
-"
-let g:mix_format_on_save = 1
-let g:mix_format_silent_errors = 1
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -444,10 +382,5 @@ augroup vimrc_autocmd
         \| au BufLeave <buffer> set laststatus=2 showmode ruler
 
     " Functions
-    au BufWritePost,BufEnter * Neomake
     au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
-
-    " File types
-    au BufWritePre *.elm ElmFormat
-    au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 augroup END
