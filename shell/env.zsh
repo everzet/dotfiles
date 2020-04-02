@@ -1,5 +1,6 @@
 # paths
 export PATH=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
+export PATH=/usr/local/share/flutter/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/src/dotfiles/scripts:$PATH
