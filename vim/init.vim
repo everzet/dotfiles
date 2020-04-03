@@ -79,16 +79,15 @@ se gdefault
 "
 set statusline=
 set statusline+=%#PmenuSel#
-set statusline+=\ \ %{mode()}\ \ "
-set statusline+=%#LineNr#
-set statusline+=\ %f\ "
-set statusline+=%m\ "
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
+set statusline+=%m
+set statusline+=\ \ %{mode()}
+set statusline+=\ \ %#LineNr#
+set statusline+=\ %.50f
+set statusline+=\%=
+set statusline+=%y
+set statusline+=\ %#CursorColumn#
 set statusline+=\ %p%%
+set statusline+=\/%L
 set statusline+=\ %l:%c
 set statusline+=\ "
 
