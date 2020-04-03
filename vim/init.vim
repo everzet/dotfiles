@@ -176,6 +176,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 "
 "  TABS MANAGEMENT
 "
+set showtabline=1
 nnoremap <leader>df :tab split<cr>
 nnoremap <leader>dd :tabclose<cr>
 nnoremap <leader>do :tabonly<cr>
