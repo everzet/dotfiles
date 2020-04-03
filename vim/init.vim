@@ -79,10 +79,9 @@ se gdefault
 "
 set statusline=
 set statusline+=%#PmenuSel#
-set statusline+=\ %f\ "
-set statusline+=%#StatusLine#
-set statusline+=\ %{mode()}\ "
+set statusline+=\ \ %{mode()}\ \ "
 set statusline+=%#LineNr#
+set statusline+=\ %f\ "
 set statusline+=%m\ "
 set statusline+=%=
 set statusline+=%#CursorColumn#
