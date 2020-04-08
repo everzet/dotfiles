@@ -154,4 +154,4 @@ ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=white,bold,bg=red')
 REPORTTIME=5
 
 # CLI prompt
-export PROMPT='-> '
+export PROMPT='%~ -> '
