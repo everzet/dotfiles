@@ -13,9 +13,11 @@ Plug 'tommcdo/vim-exchange'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -143,6 +145,8 @@ nnoremap <silent> <leader><space> :nohlsearch<cr>
 "
 nnoremap ∆        10j
 nnoremap ˚        10k
+nnoremap <c-e>    3<c-e>
+nnoremap <c-y>    3<c-y>
 nnoremap <s-up>   [e
 nnoremap <s-down> ]e
 vnoremap <s-up>   [egv
@@ -283,7 +287,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
 nnoremap <c-t> :Files<cr>
-nnoremap <c-f> :Find<space>
+nnoremap <c-p> :GFiles<cr>
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
