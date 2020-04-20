@@ -148,13 +148,15 @@ ZSH_HIGHLIGHT_PATTERNS+=('mv *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=white,bold,bg=red')
 
-# Last command timer
+# Last command timer if command took longer than 5 seconds
 function preexec() { timer=${timer:-$SECONDS} }
 function precmd() {
         if [ $timer ]; then
                 timer_show=$(($SECONDS - $timer))
                 unset timer
-                print -rP '%BTook ${timer_show}s%f'
+                if [ $timer_show -ge 5 ]; then
+                        print -rP '%BTook ${timer_show}s%f'
+                fi
         fi
 }
 
