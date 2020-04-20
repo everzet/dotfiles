@@ -148,10 +148,15 @@ ZSH_HIGHLIGHT_PATTERNS+=('mv *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=white,bold,bg=red')
 
-# report time details of the commands that took
-# longer than 5s to run
-# https://nuclearsquid.com/writings/reporttime-in-zsh/
-REPORTTIME=5
+# Last command timer
+function preexec() { timer=${timer:-$SECONDS} }
+function precmd() {
+        if [ $timer ]; then
+                timer_show=$(($SECONDS - $timer))
+                unset timer
+                print -rP '%BTook ${timer_show}s%f'
+        fi
+}
 
 # CLI prompt
-export PROMPT="%(?.%F{green}0.%F{red}%?)%f %B%1~%f%b%f %# "
+export PROMPT='%(?.%F{green}.%F{red})%?%f ${newline}%B%1~%f%b%f %# '
