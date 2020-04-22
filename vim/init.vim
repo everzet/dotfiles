@@ -258,7 +258,7 @@ vnoremap <s-l>   <nop>
 "
 nnoremap / /\v
 vnoremap / /\v
-nnoremap * *N
+nnoremap * *#
 nnoremap s :%s//
 
 
