@@ -193,7 +193,9 @@ nnoremap <leader>do :tabonly<cr>
 "
 nnoremap <leader>bl :ls<cr>
 nnoremap <leader>bc :bd<cr>
-nnoremap <leader>bo :ls<cr>:b<space>
+nnoremap <leader>bb :ls<cr>:b<space>
+nnoremap <leader>bo :%bd<cr><C-O>:bd#<cr>
+nnoremap <leader>bd :bufdo bd<cr>
 
 "
 """"""""""""""""""""""""""""""""""""""""
