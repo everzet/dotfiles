@@ -58,6 +58,7 @@ se noshowmode
 se mousehide
 se copyindent
 se smartindent
+se inccommand=nosplit
 se nolist
 se stal=2
 se backspace=indent,eol,start
@@ -258,6 +259,7 @@ vnoremap <s-l>   <nop>
 nnoremap / /\v
 vnoremap / /\v
 nnoremap * *N
+nnoremap s :%s//
 
 
 "
