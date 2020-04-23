@@ -27,7 +27,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
 # FZF
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!_build/" --glob "!build/"'
+export FZF_DEFAULT_COMMAND='rg --files --ignore --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # GPG
