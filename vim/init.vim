@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
 Plug 'tommcdo/vim-exchange'
+Plug 'nelstrom/vim-visual-star-search'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -171,10 +172,8 @@ cnoremap w!!        w !sudo tee % >/dev/null
 "  FILE BROWSER
 "
 let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=1
 let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_winsize=100
 
 "
 """"""""""""""""""""""""""""""""""""""""
