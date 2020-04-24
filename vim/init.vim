@@ -10,6 +10,7 @@ Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
 Plug 'tommcdo/vim-exchange'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'benmills/vimux'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -289,6 +290,16 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "  FZF
 "
 nnoremap <c-t> :Files<cr>
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  VIMUX
+"
+let g:VimuxHeight = "30"
+let g:VimuxOrientation = "h"
+nnoremap <leader>tr :VimuxPromptCommand<cr>
+nnoremap <leader>tt :VimuxRunLastCommand<cr>
 
 "
 "+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
