@@ -130,7 +130,6 @@ se colorcolumn=98
 let mapleader = ","
 let maplocalleader = "\\"
 inoremap jk <esc>
-inoremap <esc> <nop>
 nnoremap Y y$
 
 "
