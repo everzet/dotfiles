@@ -9,10 +9,34 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{css,scss,less,py,dart,yml,feature,ruby,js,jsx,ts,tsx,json,coffee,vue,ex,exs,graphql}]
+[*.html]
 indent_size = 2
 
-[*.{php,elm}]
+[*.{css,scss,less}]
+indent_size = 2
+
+[*.{yml,feature,graphql}]
+indent_size = 2
+
+[*.{js,jsx,ts,tsx,json,vue}]
+indent_size = 2
+
+[*.{ex,exs}]
+indent_size = 2
+
+[*.dart]
+indent_size = 2
+
+[*.py]
+indent_size = 2
+
+[*.ruby]
+indent_size = 2
+
+[*.php]
+indent_size = 4
+
+[*.elm]
 indent_size = 4
 
 [Makefile]

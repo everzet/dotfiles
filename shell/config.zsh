@@ -1,3 +1,6 @@
+autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
+
 # change to dirs without cd
 setopt autocd
 # push to home directory when no argument is given.
@@ -111,42 +114,6 @@ setopt HIST_EXPIRE_DUPS_FIRST
 # keybindings
 bindkey '^f' forward-word
 bindkey '^b' backward-word
-
-# Syntax highligthing
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
-# Aliases and functions
-ZSH_HIGHLIGHT_STYLES[alias]='fg=yellow,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=cyan,bold'
-
-# Commands and builtins
-ZSH_HIGHLIGHT_STYLES[command]="fg=green"
-ZSH_HIGHLIGHT_STYLES[hashed-command]="fg=green,bold"
-ZSH_HIGHLIGHT_STYLES[builtin]="fg=green,bold"
-ZSH_HIGHLIGHT_STYLES[precommand]="fg=green,underline"
-ZSH_HIGHLIGHT_STYLES[commandseparator]="none"
-
-# Paths
-ZSH_HIGHLIGHT_STYLES[path]='fg=white,underline'
-
-# Globbing
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow,bold'
-
-# Options
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=blue'
-
-# Arguments
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]="fg=green"
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=green"
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=green"
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]="fg=green"
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]="fg=green"
-
-# Patterns
-ZSH_HIGHLIGHT_PATTERNS+=('mv *' 'fg=white,bold,bg=red')
-ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
-ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=white,bold,bg=red')
 
 # Last command timer if command took longer than 5 seconds
 function preexec() { timer=${timer:-$SECONDS} }

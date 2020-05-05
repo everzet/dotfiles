@@ -1,23 +1,6 @@
-autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
-
-# iTerm2 shell integration
-[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
-
-# ZSH syntax highlighting
-[ -f /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Completion with FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# ASDF version manager
-[ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
-[ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] && . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
-# Direnv
-eval "$(direnv hook zsh)"
-
 . ~/.shell/config.zsh
-. ~/.shell/env.zsh
+. ~/.shell/envars.zsh
+. ~/.shell/paths.zsh
+. ~/.shell/syntax-highlighting.zsh
 . ~/.shell/aliases.zsh
-. ~/.shell/functions.zsh
+. ~/.shell/tools.zsh

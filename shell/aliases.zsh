@@ -14,3 +14,8 @@ alias git='hub'
 alias g='git s'
 
 alias twex='fswatch -o {lib,test} | xargs -n1 -I{} mix test --stale'
+
+function take {
+    mkdir -p $1
+    cd $1
+}

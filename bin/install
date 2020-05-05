@@ -18,5 +18,3 @@ ln -nfs $DOTFILESDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTFILESDIR/rc/gitignore_global ~/.gitignore_global
 
 touch ~/.hushlogin
-
-tic $DOTFILESDIR/iterm/xterm-256color-italic.terminfo
