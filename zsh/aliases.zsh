@@ -7,8 +7,10 @@ alias ln='ln -v'
 alias rm='rm -v'
 
 alias v='vim'
-alias tls='tmux list-sessions'
+
+alias tn='tmux new -s ${PWD##*/}'
 alias ta='tmux at -t'
+alias tls='tmux list-sessions'
 
 alias git='hub'
 alias g='git s'
