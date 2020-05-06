@@ -20,5 +20,7 @@ t.prefs_.set('color-palette-overrides', [
 ]);
 t.prefs_.set('foreground-color', "#bebebe");
 t.prefs_.set('background-color', "#101010");
+t.prefs_.set('cursor-color', "rgba(199, 199, 199, 0.8)");
+t.prefs_.set('cursor-blink', true);
 t.prefs_.set('enable-bold', true);
 t.prefs_.set('enable-bold-as-bright', true);
