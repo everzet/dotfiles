@@ -72,8 +72,8 @@ se path=**
 "
 "  SEARCH
 "
+"se ignorecase
 se showmatch
-se ignorecase
 se smartcase
 se gdefault
 
