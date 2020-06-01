@@ -1,37 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""
 "
-"  PLUGINS
-"
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'kana/vim-smartinput'
-Plug 'austintaylor/vim-commaobject'
-Plug 'tommcdo/vim-exchange'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'benmills/vimux'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-
-Plug 'editorconfig/editorconfig-vim'
-
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-
-call plug#end()
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  HIGHLIGHTING
 "
 syntax on
@@ -41,7 +9,6 @@ se listchars=tab:▸\ ,trail:□,eol:¬
 se t_ZH=[3m
 se t_ZR=[23m
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  ENVIRONMENT
@@ -67,7 +34,6 @@ se backspace=indent,eol,start
 se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,*/dist,*/build,*/_build,.DS_Store
 se path=**
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  SEARCH
@@ -77,7 +43,6 @@ se showmatch
 se smartcase
 se gdefault
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  STATUS LINE
@@ -96,7 +61,6 @@ set statusline+=\/%L
 set statusline+=\ %l:%c
 set statusline+=\ "
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  SCROLLING
@@ -104,7 +68,6 @@ set statusline+=\ "
 se scrolljump=3
 se scrolloff=3
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  AUTOCOMPLETION
@@ -112,7 +75,6 @@ se scrolloff=3
 se wildcharm=<tab>
 se wildmode=full
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  WRAPPING
@@ -122,7 +84,6 @@ se linebreak
 se textwidth=98
 se colorcolumn=98
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  GENERAL OVERRIDINGS
@@ -132,7 +93,6 @@ let maplocalleader = "\\"
 inoremap jk <esc>
 nnoremap Y y$
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  HIGHLIGHTING MAPPINGS
@@ -140,7 +100,6 @@ nnoremap Y y$
 nnoremap <leader>ll :set list!<cr>
 nnoremap <silent> <leader><space> :nohlsearch<cr>
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  LINES MOVEMENT
@@ -154,7 +113,6 @@ nnoremap <s-down> ]e
 vnoremap <s-up>   [egv
 vnoremap <s-down> ]egv
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  FS NAVIGATION
@@ -165,17 +123,10 @@ nnoremap <leader>se :Vex<cr><c-w>=
 nnoremap <leader>mk :!mkdir <c-r>=fnamemodify(expand("%:p:h"), ":~:.")."/"<cr>
 nnoremap <leader>rm :!rm -rf <c-r>=fnamemodify(expand("%:p:h"), ":~:.")."/"<cr>
 cnoremap w!!        w !sudo tee % >/dev/null
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  FILE BROWSER
-"
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:netrw_winsize=100
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  TABS MANAGEMENT
@@ -185,7 +136,6 @@ nnoremap <leader>df :tab split<cr>
 nnoremap <leader>dd :tabclose<cr>
 nnoremap <leader>do :tabonly<cr>
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  BUFFERS MANAGEMENT
@@ -196,7 +146,6 @@ nnoremap <leader>bb :ls<cr>:b<space>
 nnoremap <leader>bo :%bd<cr><C-O>:bd#<cr>
 nnoremap <leader>bd :bufdo bd<cr>
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  WINDOWS MANAGEMENT
@@ -222,7 +171,6 @@ tnoremap <c-k> <c-\><c-n><c-w>k
 tnoremap <c-l> <c-\><c-n><c-w>l
 tnoremap <c-x> <c-\><c-n><c-w>x
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  MOVEMENT TUNING
@@ -234,11 +182,7 @@ vnoremap <tab> %
 vnoremap <     <gv
 vnoremap >     >gv
 
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  MOVEMENT COMBINATIONS TUNING
-"
+"  DISABLE
 nnoremap <up>    <nop>
 nnoremap <down>  <nop>
 nnoremap <left>  <nop>
@@ -252,7 +196,6 @@ vnoremap <s-j>   <nop>
 vnoremap <s-k>   <nop>
 vnoremap <s-l>   <nop>
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  SEARCH TUNING
@@ -262,50 +205,6 @@ vnoremap / /\v
 nnoremap * *#
 nnoremap s :%s//
 
-
-"
-"+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"|
-"|  > PLUGINS CONFIGURATION
-"|
-"|
-""""""""""""""""""""""""""""""""""""""""
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  FUGITIVE
-"
-nnoremap <leader>gs  :Gstatus<cr>
-nnoremap <leader>ga  :Gwrite<cr>
-nnoremap <leader>gh  :Gbrowse!<cr>
-nnoremap <leader>gc  :Gcommit --verbose<cr>
-nnoremap <leader>grm :Gremove<cr>
-nnoremap <leader>gmv :Gmove<cr>
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  FZF
-"
-nnoremap <c-t> :Files<cr>
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  VIMUX
-"
-let g:VimuxHeight = "30"
-let g:VimuxOrientation = "h"
-nnoremap <leader>tr :VimuxPromptCommand<cr>
-nnoremap <leader>tt :VimuxRunLastCommand<cr>
-
-"
-"+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"|
-"|  > CUSTOM FUNCTIONS
-"|
-"|
 """"""""""""""""""""""""""""""""""""""""
 "
 "  RENAME CURRENT BUFFER FILE
@@ -321,7 +220,6 @@ function! RenameFile()
 endfunction
 nnoremap <leader>mv :call RenameFile()<cr>
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  CREATE DIRECTORY FOR CURRENT BUFFER
@@ -332,7 +230,6 @@ function! <sid>MkdirsIfNotExists(directory)
     endif
 endfunction
 
-"
 """"""""""""""""""""""""""""""""""""""""
 "
 "  CREATE TEST BINDING
@@ -345,16 +242,14 @@ function! BindTerminalCommand()
 endfunction
 nmap <leader>bt :call BindTerminalCommand()<cr>
 
-"
-"+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"|
-"|  > AUTOCMD
-"|
-"|
 filetype on
 filetype plugin on
 filetype indent on
 
+""""""""""""""""""""""""""""""""""""""""
+"
+"  AUTOCMD
+"
 augroup vimrc_autocmd
     if ! has('gui_running')
         set ttimeoutlen=10
@@ -365,20 +260,12 @@ augroup vimrc_autocmd
     autocmd!
 
     " General
-    au FocusLost silent! :wa
+    " au FocusLost silent! :wa
     au FileType helpfile setlocal nonumber
 
     " File types
-    au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$
-    au BufRead,BufNewFile *.php         inoremap <buffer> § $
-    au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
-    au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
-    au BufRead,BufNewFile *.js.twig     setlocal filetype=javascript
-    au BufRead,BufNewFile *.ejs         setlocal filetype=html
-    au BufRead,BufNewFile *.json        setlocal filetype=javascript
-    au BufRead,BufNewFile *.pp          setlocal filetype=ruby
 
     " FZF
     au! FileType fzf
@@ -388,3 +275,55 @@ augroup vimrc_autocmd
     " Functions
     au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""
+"
+"  PLUGINS
+"
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'tpope/vim-fugitive'
+nnoremap <leader>gs  :Gstatus<cr>
+nnoremap <leader>ga  :Gwrite<cr>
+nnoremap <leader>gh  :Gbrowse!<cr>
+nnoremap <leader>gc  :Gcommit --verbose<cr>
+nnoremap <leader>grm :Gremove<cr>
+nnoremap <leader>gmv :Gmove<cr>
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+Plug 'tpope/vim-surround'
+Plug 'kana/vim-smartinput'
+Plug 'austintaylor/vim-commaobject'
+Plug 'tommcdo/vim-exchange'
+Plug 'nelstrom/vim-visual-star-search'
+
+Plug 'benmills/vimux'
+let g:VimuxHeight = "30"
+let g:VimuxOrientation = "h"
+nnoremap <leader>tr :VimuxPromptCommand<cr>
+nnoremap <leader>tt :VimuxRunLastCommand<cr>
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nnoremap <c-t> :Files<cr>
+
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'chemzqm/vim-jsx-improve'
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+
+call plug#end()
