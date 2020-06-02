@@ -202,8 +202,9 @@ vnoremap <s-l>   <nop>
 "
 nnoremap / /\v
 vnoremap / /\v
-nnoremap * *#
-nnoremap s :%s//
+" commented the below as I'm testing multiple cursors plugin
+"nnoremap * *#
+"nnoremap s :%s//
 
 """"""""""""""""""""""""""""""""""""""""
 "
@@ -291,11 +292,23 @@ nnoremap <leader>grm :Gremove<cr>
 nnoremap <leader>gmv :Gmove<cr>
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-Plug 'tpope/vim-surround'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'chemzqm/vim-jsx-improve'
+
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
+Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
 Plug 'nelstrom/vim-visual-star-search'
+
+Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_select_all_word_key = '<C-a>'
+let g:multi_cursor_select_all_key = 'g<C-a>'
+
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'benmills/vimux'
 let g:VimuxHeight = "30"
@@ -307,20 +320,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <c-t> :Files<cr>
 
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'elmcast/elm-vim', { 'for': 'elm' }
-Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'chemzqm/vim-jsx-improve'
-
-Plug 'editorconfig/editorconfig-vim'
-
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
-let g:prettier#exec_cmd_async = 1
+let g:prettier#exec_cmd_async = 0
 
 function! DoRemote(arg)
   UpdateRemotePlugins
