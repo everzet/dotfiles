@@ -21,6 +21,9 @@ indent_size = 2
 [*.{js,jsx,ts,tsx,json,vue}]
 indent_size = 2
 
+[*.rs]
+indent_size = 4
+
 [*.{ex,exs}]
 indent_size = 2
 
