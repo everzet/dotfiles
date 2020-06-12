@@ -320,6 +320,9 @@ let g:multi_cursor_select_all_key = 'g<C-a>'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'sbdchd/neoformat'
+nnoremap <leader>f :Neoformat<cr>
+
 Plug 'benmills/vimux'
 let g:VimuxHeight = "30"
 let g:VimuxOrientation = "h"
