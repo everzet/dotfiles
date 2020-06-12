@@ -43,23 +43,32 @@ se showmatch
 se smartcase
 se gdefault
 
+
+""""""""""""""""""""""""""""""""""""""""
+"
+"  FOLDING
+"
+se foldmethod=indent
+se foldlevel=999
+
+
 """"""""""""""""""""""""""""""""""""""""
 "
 "  STATUS LINE
 "
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%m
-set statusline+=\ \ %{mode()}
-set statusline+=\ \ %#LineNr#
-set statusline+=\ %.50f
-set statusline+=\%=
-set statusline+=%y
-set statusline+=\ %#CursorColumn#
-set statusline+=\ %p%%
-set statusline+=\/%L
-set statusline+=\ %l:%c
-set statusline+=\ "
+se statusline=
+se statusline+=%#PmenuSel#
+se statusline+=%m
+se statusline+=\ \ %{mode()}
+se statusline+=\ \ %#LineNr#
+se statusline+=\ %.50f
+se statusline+=\%=
+se statusline+=%y
+se statusline+=\ %#CursorColumn#
+se statusline+=\ %p%%
+se statusline+=\/%L
+se statusline+=\ %l:%c
+se statusline+=\ "
 
 """"""""""""""""""""""""""""""""""""""""
 "
@@ -296,6 +305,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'jparise/vim-graphql'
 Plug 'chemzqm/vim-jsx-improve'
 
 Plug 'kana/vim-smartinput'
@@ -319,13 +329,6 @@ nnoremap <leader>tt :VimuxRunLastCommand<cr>
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <c-t> :Files<cr>
-
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#exec_cmd_async = 0
 
 function! DoRemote(arg)
   UpdateRemotePlugins
