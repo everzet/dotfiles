@@ -276,6 +276,7 @@ augroup vimrc_autocmd
     " File types
     au BufRead,BufNewFile *.twig        setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
+    au BufRead,BufNewFile *.tsx,*.jsx   setlocal filetype=typescript.tsx
 
     " FZF
     au! FileType fzf
@@ -306,7 +307,9 @@ Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'jparise/vim-graphql'
-Plug 'chemzqm/vim-jsx-improve'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'kana/vim-smartinput'
 Plug 'austintaylor/vim-commaobject'
@@ -322,6 +325,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'sbdchd/neoformat'
 nnoremap <leader>f :Neoformat<cr>
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'benmills/vimux'
 let g:VimuxHeight = "30"
