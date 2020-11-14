@@ -15,7 +15,7 @@ indent_size = 2
 [*.{css,scss,less}]
 indent_size = 2
 
-[*.{yml,feature,graphql}]
+[*.{yml,yaml,feature,graphql}]
 indent_size = 2
 
 [*.{js,jsx,ts,tsx,json,vue}]
