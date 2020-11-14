@@ -274,7 +274,7 @@ augroup vimrc_autocmd
     au FileType helpfile setlocal nonumber
 
     " File types
-    au BufRead,BufNewFile *.twig        setlocal filetype=jinja
+    au BufRead,BufNewFile *.twig,*.njk  setlocal filetype=jinja
     au BufRead,BufNewFile *.html.twig   setlocal filetype=htmljinja
     au BufRead,BufNewFile *.tsx,*.jsx   setlocal filetype=typescript.tsx
 
@@ -307,6 +307,7 @@ Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'jparise/vim-graphql'
+Plug 'lepture/vim-jinja'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
