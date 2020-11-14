@@ -137,15 +137,18 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Last command timer if command took longer than 5 seconds
-function preexec() { timer=${timer:-$SECONDS} }
-function precmd() {
-        if [ $timer ]; then
-                timer_show=$(($SECONDS - $timer))
-                unset timer
-                if [ $timer_show -ge 5 ]; then
-                        print -rP '%BTook ${timer_show}s%f'
+preexec() { timer=${timer:-$SECONDS} }
+precmd() {
+        precmd() {
+                if [ $timer ]; then
+                        timer_show=$(($SECONDS - $timer))
+                        unset timer
+                        if [ $timer_show -ge 5 ]; then
+                                print -rP '%B⁓ ${timer_show}s%f'
+                        fi
                 fi
-        fi
+                print ""
+        }
 }
 
 # CLI prompt
