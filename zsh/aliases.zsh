@@ -1,5 +1,5 @@
-alias l='ls -ohSF'
-alias ll='ls -ohSFa'
+alias l='exa -lSF'
+alias ll='exa -lSFa'
 
 alias cp='cp -v'
 alias mv='mv -v'

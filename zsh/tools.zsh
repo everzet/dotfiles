@@ -32,3 +32,6 @@ eval "$(direnv hook zsh)"
 
 # GPG
 export GPG_TTY=$(tty)
+
+# Starship prompt
+eval "$(starship init zsh)"

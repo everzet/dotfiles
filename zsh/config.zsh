@@ -133,23 +133,3 @@ zle-line-init() {
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# Last command timer if command took longer than 5 seconds
-preexec() { timer=${timer:-$SECONDS} }
-precmd() {
-        precmd() {
-                if [ $timer ]; then
-                        timer_show=$(($SECONDS - $timer))
-                        unset timer
-                        if [ $timer_show -ge 5 ]; then
-                                print -rP '%B⁓ ${timer_show}s%f'
-                        fi
-                fi
-                print ""
-        }
-}
-
-# CLI prompt
-export PROMPT='%(?.%F{green}.%F{red})%?%f ${newline}%B%1~%f%b%f %# '
