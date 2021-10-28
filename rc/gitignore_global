@@ -11,7 +11,6 @@ Icon\?
 Thumbs.db
 *.iml
 *.log
-*.sql
 *.sqlite
 *.7z
 *.dmg
@@ -31,3 +30,7 @@ tags
 vendor.tags
 _autoload.php
 .teamocil.yml
+
+# amplify resolvers
+amplify/backend/api/**/*.req.vtl
+amplify/backend/api/**/*.res.vtl
