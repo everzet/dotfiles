@@ -30,6 +30,9 @@ indent_size = 2
 [*.dart]
 indent_size = 2
 
+[*.sql]
+indent_size = 2
+
 [*.py]
 indent_size = 2
 
