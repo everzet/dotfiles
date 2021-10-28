@@ -11,11 +11,11 @@ if [ -f ~/.fzf.zsh ]; then
 fi
 
 # ASDF version manager
-if [ -f ~/.asdf/asdf.sh ]; then
-        source ~/.asdf/asdf.sh
-elif [ -f /usr/local/opt/asdf/asdf.sh ]; then
-        source /usr/local/opt/asdf/asdf.sh
-fi
+#if [ -f ~/.asdf/asdf.sh ]; then
+#        source ~/.asdf/asdf.sh
+#elif [ -f /usr/local/opt/asdf/asdf.sh ]; then
+#        source /usr/local/opt/asdf/asdf.sh
+#fi
 
 # SDKMan version manager
 if [ -f ~/.sdkman/bin/sdkman-init.sh ]; then
