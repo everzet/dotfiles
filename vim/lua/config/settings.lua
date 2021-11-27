@@ -19,3 +19,6 @@ opt.visualbell = true
 opt.mouse = 'a'
 opt.list = true
 opt.listchars = { tab = '▸ ', trail = '·' }
+opt.backup = false
+opt.swapfile = false
+opt.writebackup = false
