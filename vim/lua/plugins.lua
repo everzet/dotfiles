@@ -12,6 +12,10 @@ return require('packer').startup(function(use)
   -- Spacing
   use 'editorconfig/editorconfig-vim'
 
+  -- UNIX operations
+  use { 'tpope/vim-eunuch',
+        config = function() require('plugin-config.eunuch') end }
+
   -- Multiple cursors a-la Sublime
   use { 'terryma/vim-multiple-cursors',
         config = function() require('plugin-config.multiple-cursors') end }
