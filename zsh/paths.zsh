@@ -5,6 +5,7 @@ if [ -f /etc/profile ]; then
     source /etc/profile
 fi
 
+export PATH=~/Tools/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
