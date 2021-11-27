@@ -22,9 +22,6 @@ return require('packer').startup(function(use)
   -- Change quotes and parentheses
   use 'tpope/vim-surround'
 
-  -- Autoclose parentheses and quotes
-  use 'kana/vim-smartinput'
-
   -- Expand vim movement objects
   use 'austintaylor/vim-commaobject'
   use { 'whatyouhide/vim-textobj-xmlattr',
@@ -40,7 +37,6 @@ return require('packer').startup(function(use)
         requires = {
           {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-path'},
-          {'hrsh7th/cmp-cmdline'},
           {'dcampos/nvim-snippy'},
           {'dcampos/cmp-snippy'}
         },
