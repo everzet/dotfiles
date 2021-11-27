@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -8,6 +8,9 @@ return require('packer').startup(function()
         config = function() require('plugin-config.jsx-syntax') end }
   use { 'pangloss/vim-javascript', ft = {'javascript'} }
   use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
+
+  -- Spacing
+  use 'editorconfig/editorconfig-vim'
 
   -- Multiple cursors a-la Sublime
   use { 'terryma/vim-multiple-cursors',
@@ -27,15 +30,35 @@ return require('packer').startup(function()
   use { 'whatyouhide/vim-textobj-xmlattr',
         requires = {{'kana/vim-textobj-user'}} }
 
-  -- Git UI
-  use { 'tpope/vim-fugitive',
-        config = function() require('plugin-config.fugitive') end }
-
-  -- Language-dependent spacing
-  use 'editorconfig/editorconfig-vim'
-
   -- File and buffer nav
   use { 'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
         config = function() require('plugin-config.telescope') end }
+
+  -- Autocompletion and snippets
+  use { 'hrsh7th/nvim-cmp',
+        requires = {
+          {'hrsh7th/cmp-buffer'},
+          {'hrsh7th/cmp-path'},
+          {'hrsh7th/cmp-cmdline'},
+          {'dcampos/nvim-snippy'},
+          {'dcampos/cmp-snippy'}
+        },
+        config = function() require('plugin-config.cmp') end }
+
+  -- Language servers
+  use { 'neovim/nvim-lspconfig',
+        requires = {{'hrsh7th/cmp-nvim-lsp'}},
+        config = function() require('plugin-config.lspconfig') end }
+
+  -- Treesitter
+  use 'nvim-treesitter/nvim-treesitter'
+
+  -- Formatter
+  use { 'mhartington/formatter.nvim',
+        config = function() require('plugin-config.formatter') end }
+
+  -- Git UI
+  use { 'tpope/vim-fugitive',
+        config = function() require('plugin-config.fugitive') end }
 end)
