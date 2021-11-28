@@ -42,7 +42,9 @@ return require('packer').startup(function(use)
           {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-path'},
           {'dcampos/nvim-snippy'},
-          {'dcampos/cmp-snippy'}
+          {'dcampos/cmp-snippy'},
+          {'hrsh7th/cmp-nvim-lua'},
+          {'onsails/lspkind-nvim'},
         },
         config = function() require('plugin-config.cmp') end }
 
