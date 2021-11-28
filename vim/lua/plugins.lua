@@ -67,4 +67,8 @@ return require('packer').startup(function(use)
   -- Git UI
   use { 'tpope/vim-fugitive',
         config = function() require('plugin-config.fugitive') end }
+
+  -- File manager
+  use { 'vifm/vifm.vim',
+        config = function() require('plugin-config.vifm') end }
 end)

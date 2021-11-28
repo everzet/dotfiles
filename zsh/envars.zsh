@@ -1,7 +1,7 @@
 # editor
-export SHELL='zsh'
-export EDITOR='vim'
-export GIT_EDITOR='vim'
+export SHELL='/opt/homebrew/bin/zsh'
+export EDITOR='/opt/homebrew/bin/vim'
+export GIT_EDITOR='/opt/homebrew/bin/vim'
 
 # enable terminal colors
 export TERM='xterm-256color'

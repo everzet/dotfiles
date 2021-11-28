@@ -7,6 +7,7 @@ alias ln='ln -v'
 alias rm='rm -v'
 
 alias v='vim'
+alias fm='vifm'
 
 alias tn='tmux new -s ${PWD##*/}'
 alias ta='tmux at -t'
