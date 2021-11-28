@@ -33,7 +33,11 @@ return require('packer').startup(function(use)
 
   -- File and buffer nav
   use { 'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+        requires = {
+          {'nvim-lua/popup.nvim'},
+          {'nvim-lua/plenary.nvim'},
+          {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+        },
         config = function() require('plugin-config.telescope') end }
 
   -- Autocompletion and snippets
