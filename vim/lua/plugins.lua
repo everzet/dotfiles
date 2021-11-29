@@ -2,6 +2,9 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Devicons
+  use 'kyazdani42/nvim-web-devicons'
+
   -- Syntaxes
   use 'leafgarland/typescript-vim'
   use { 'peitalin/vim-jsx-typescript',
