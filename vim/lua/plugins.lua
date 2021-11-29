@@ -16,10 +16,6 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-eunuch',
         config = function() require('plugin-config.eunuch') end }
 
-  -- Multiple cursors a-la Sublime
-  use { 'terryma/vim-multiple-cursors',
-        config = function() require('plugin-config.multiple-cursors') end }
-
   -- Exchange two pieces of text
   use 'tommcdo/vim-exchange'
 
