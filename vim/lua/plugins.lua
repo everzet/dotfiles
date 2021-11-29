@@ -36,12 +36,15 @@ return require('packer').startup(function(use)
         },
         config = function() require('plugin-config.telescope') end }
 
+  -- Snippets
+  use { 'dcampos/nvim-snippy',
+        config = function() require('plugin-config.snippy') end }
+
   -- Autocompletion and snippets
   use { 'hrsh7th/nvim-cmp',
         requires = {
           {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-path'},
-          {'dcampos/nvim-snippy'},
           {'dcampos/cmp-snippy'},
           {'hrsh7th/cmp-nvim-lua'},
           {'onsails/lspkind-nvim'},
