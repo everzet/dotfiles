@@ -9,7 +9,7 @@
 [core]
     pager = delta
     quotepath = false
-    excludesfile = /Users/everzet/.gitignore_global
+    excludesfile = ~/.gitignore_global
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
@@ -41,15 +41,12 @@
     co = checkout
 
     d  = diff
-    ds = diff --stat
     dt = difftool
     dc = difftool --cached
     m  = mergetool
 
     l = log --oneline --graph
     t = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
-    review = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
 
 [commit]
     gpgsign = true
@@ -77,13 +74,13 @@
 
 [delta]
     features = decorations
+    line-numbers = true
 [delta "interactive"]
     keep-plus-minus-markers = false
 [delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
+    commit-decoration-style = bold yellow ul
+    file-style = bold yellow ul
+    hunk-header-decoration-style = yellow box
+    hunk-header-file-style = orange
+    hunk-header-line-number-style = blue
     hunk-header-style = file line-number syntax
