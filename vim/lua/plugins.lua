@@ -66,10 +66,6 @@ return require('packer').startup(function(use)
   use { 'mhartington/formatter.nvim',
         config = function() require('plugin-config.formatter') end }
 
-  -- Git UI
-  use { 'tpope/vim-fugitive',
-        config = function() require('plugin-config.fugitive') end }
-
   -- File manager
   use { 'vifm/vifm.vim',
         config = function() require('plugin-config.vifm') end }
