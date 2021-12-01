@@ -62,17 +62,3 @@ hi DiffDelete            guifg=#FFFFFF ctermfg=231  guibg=#610006 ctermbg=52   g
 hi PythonOperator        guifg=#7E8AA2 ctermfg=103  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi Question              guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi SpellBad              guifg=#FF2222 ctermfg=196  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=ITALIC
-hi EasyMotionTarget      guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi EasyMotionShade       guifg=#444444 ctermfg=238  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi LustySelected         guifg=#FF9800 ctermfg=208  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi LustyDir              guifg=#B1D631 ctermfg=149  guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
-hi NeomakeErrorSign      guifg=#D52116 ctermfg=160  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi NeomakeWarningSign    guifg=#FF9800 ctermfg=208  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi NeomakeInfoSign       guifg=#B1D631 ctermfg=149  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi NeomakeError          guifg=#E2E2E5 ctermfg=254  guibg=#D52116 ctermbg=160  gui=NONE cterm=NONE
-hi NeomakeWarning        guifg=#E2E2E5 ctermfg=254  guibg=#FF9800 ctermbg=208  gui=NONE cterm=NONE
-hi GitGutterAdd          guifg=#009900 ctermfg=28   guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi GitGutterChange       guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi GitGutterDelete       guifg=#FF2222 ctermfg=196  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-hi GitGutterChangeDelete guifg=#BBBB00 ctermfg=142  guibg=#262626 ctermbg=235  gui=NONE cterm=NONE
-

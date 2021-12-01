@@ -55,22 +55,4 @@ vim_colors "mustango" do
     PythonOperator "7e8aa2", "NONE"
     Question       "ff9800", "NONE"
     SpellBad       "ff2222", "NONE",  :gui => "italic", :cterm => "italic"
-
-    # PLUGINS
-
-    EasyMotionTarget "b1d631", "NONE"
-    EasyMotionShade  "444444", "NONE"
-    LustySelected    "ff9800", "NONE"
-    LustyDir         "b1d631", "NONE"
-
-    NeomakeErrorSign   "d52116", "262626"
-    NeomakeWarningSign "ff9800", "262626"
-    NeomakeInfoSign    "b1d631", "262626"
-    NeomakeError       "e2e2e5", "d52116"
-    NeomakeWarning     "e2e2e5", "ff9800"
-
-    GitGutterAdd          "009900", "262626"
-    GitGutterChange       "bbbb00", "262626"
-    GitGutterDelete       "ff2222", "262626"
-    GitGutterChangeDelete "bbbb00", "262626"
 end
