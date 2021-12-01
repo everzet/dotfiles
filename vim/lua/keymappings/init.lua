@@ -8,10 +8,6 @@ map('n', '<leader> ', ':nohlsearch<cr>', {noremap = true, silent = true})
 map('v', '<', '<gv', {noremap = true})
 map('v', '>', '>gv', {noremap = true})
 
--- Better search defaults
-map('n', '/', '/\\v', {noremap = true})
-map('v', '/', '/\\v', {noremap = true})
-
 require('keymappings.tabs')
 require('keymappings.splits')
 require('keymappings.buffers')
