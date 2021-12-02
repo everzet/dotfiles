@@ -19,18 +19,22 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-eunuch',
         config = function() require('plugin-config.eunuch') end }
 
+  -- File manager
+  use { 'vifm/vifm.vim',
+        config = function() require('plugin-config.vifm') end }
+
   -- Exchange two pieces of text
   use 'tommcdo/vim-exchange'
 
   -- Change quotes and parentheses
   use 'tpope/vim-surround'
 
-  -- Expand vim movement objects
+  -- Expand vim movement objects to support comma and tag attributes
   use 'austintaylor/vim-commaobject'
   use { 'whatyouhide/vim-textobj-xmlattr',
         requires = {{'kana/vim-textobj-user'}} }
 
-  -- File and buffer nav
+  -- Fuzzy finder for files and buffers
   use { 'nvim-telescope/telescope.nvim',
         requires = {
           {'nvim-lua/popup.nvim'},
@@ -43,7 +47,7 @@ return require('packer').startup(function(use)
   use { 'dcampos/nvim-snippy',
         config = function() require('plugin-config.snippy') end }
 
-  -- Autocompletion and snippets
+  -- Autocompletion
   use { 'hrsh7th/nvim-cmp',
         requires = {
           {'hrsh7th/cmp-buffer'},
@@ -59,14 +63,10 @@ return require('packer').startup(function(use)
         requires = {{'hrsh7th/cmp-nvim-lsp'}},
         config = function() require('plugin-config.lspconfig') end }
 
-  -- Treesitter
-  use 'nvim-treesitter/nvim-treesitter'
-
   -- Formatter
   use { 'mhartington/formatter.nvim',
         config = function() require('plugin-config.formatter') end }
 
-  -- File manager
-  use { 'vifm/vifm.vim',
-        config = function() require('plugin-config.vifm') end }
+  -- Treesitter
+  use 'nvim-treesitter/nvim-treesitter'
 end)
