@@ -8,6 +8,9 @@ map('n', '<leader> ', ':nohlsearch<cr>', {noremap = true, silent = true})
 map('v', '<', '<gv', {noremap = true})
 map('v', '>', '>gv', {noremap = true})
 
+-- (re)load currently opened config file
+map('n', '<leader>vr', ':luafile %<cr>', {noremap = true})
+
 require('keymappings.tabs')
 require('keymappings.splits')
 require('keymappings.buffers')
