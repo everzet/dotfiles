@@ -5,13 +5,6 @@ return require('packer').startup(function(use)
   -- Devicons
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Syntaxes
-  use 'leafgarland/typescript-vim'
-  use { 'peitalin/vim-jsx-typescript',
-        config = function() require('plugin-config.jsx-syntax') end }
-  use { 'pangloss/vim-javascript', ft = {'javascript'} }
-  use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
-
   -- Spacing
   use 'editorconfig/editorconfig-vim'
 
@@ -68,5 +61,9 @@ return require('packer').startup(function(use)
         config = function() require('plugin-config.formatter') end }
 
   -- Treesitter
-  use 'nvim-treesitter/nvim-treesitter'
+  use { 'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function() require('plugin-config.treesitter') end }
+  -- We use this instead of treesitter as treesitter's elixir parser is slow
+  use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
 end)
