@@ -1,14 +1,11 @@
 local opt = vim.opt
 
 local statusline = {
-  '%#IncSearch#',
-  '%m',
-  '  %{mode()}',
-  '  %#LineNr#',
-  ' %.50f',
+  '%#StatusLineNC#',
+  '%.50f',
   '%=',
   '%y',
-  ' %#PmenuSel#',
+  ' %#statusline#',
   ' %p%%',
   '/%L',
   ' %l:%c '
