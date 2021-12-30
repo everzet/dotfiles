@@ -12,10 +12,6 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-eunuch',
         config = function() require('plugin-config.eunuch') end }
 
-  -- File manager
-  use { 'vifm/vifm.vim',
-        config = function() require('plugin-config.vifm') end }
-
   -- Exchange two pieces of text
   use 'tommcdo/vim-exchange'
 
@@ -33,6 +29,7 @@ return require('packer').startup(function(use)
           {'nvim-lua/popup.nvim'},
           {'nvim-lua/plenary.nvim'},
           {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+          {'nvim-telescope/telescope-file-browser.nvim'},
         },
         config = function() require('plugin-config.telescope') end }
 
