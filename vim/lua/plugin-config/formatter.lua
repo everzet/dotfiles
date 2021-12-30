@@ -23,6 +23,7 @@ formatter.setup {
   filetype = {
     javascript = { prettier },
     typescript = { prettier },
+    json = { prettier },
     typescriptreact = { prettier },
     elixir = { mix },
   }
