@@ -33,6 +33,11 @@ return require('packer').startup(function(use)
         },
         config = function() require('plugin-config.telescope') end }
 
+  -- Git visualisation
+  use { 'tanvirtin/vgit.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function() require('plugin-config.vgit') end }
+
   -- Snippets
   use { 'dcampos/nvim-snippy',
         config = function() require('plugin-config.snippy') end }
