@@ -9,6 +9,9 @@ require('nvim-treesitter.configs').setup({
   },
   indent = {
     enable = true,
-    disable = {},
+    disable = {
+      -- We disable Elixir parser for now as it is very slow
+      "elixir"
+    },
   }
 })
