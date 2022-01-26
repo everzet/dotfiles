@@ -68,4 +68,7 @@ return require('packer').startup(function(use)
         config = function() require('plugin-config.treesitter') end }
   -- We use this instead of treesitter as treesitter's elixir parser is slow
   use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
+
+  -- There is not Earthly support in Treesitter yet
+  use { 'earthly/earthly.vim' }
 end)
