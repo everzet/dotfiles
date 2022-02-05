@@ -6,6 +6,7 @@ if [ -f /etc/profile ]; then
 fi
 
 export PATH=~/Dev/bin:$PATH
+export PATH=~/.mix/escripts:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
