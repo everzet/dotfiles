@@ -41,6 +41,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # RVM
 source ~/.rvm/scripts/rvm
 
+# Dotnet
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+
 # Direnv
 eval "$(direnv hook zsh)"
 
