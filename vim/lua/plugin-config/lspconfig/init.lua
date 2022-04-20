@@ -20,7 +20,7 @@ local on_attach = function(_, bufnr)
 
 end
 
-local servers = { 'sumneko_lua', 'tsserver', 'elixirls' }
+local servers = { 'sumneko_lua', 'tsserver', 'elixirls', 'fsautocomplete' }
 for _, ls in ipairs(servers) do
   require('plugin-config.lspconfig.' .. ls)(capabilities, on_attach)
 end

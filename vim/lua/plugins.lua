@@ -69,6 +69,12 @@ return require('packer').startup(function(use)
   -- We use this instead of treesitter as treesitter's elixir parser is slow
   use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
 
+  -- There is no FSharp Treesitter yet
+  use { 'PhilT/vim-fsharp' }
+
+  -- There is no Rescript Treesitter
+  use { 'rescript-lang/vim-rescript' }
+
   -- There is not Earthly support in Treesitter yet
   use { 'earthly/earthly.vim' }
 end)
