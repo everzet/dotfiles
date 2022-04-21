@@ -1,7 +1,5 @@
-[user]
-    name = everzet
-    email = ever.zet@gmail.com
-    signingkey = AB6E234A
+[include]
+    path = credentials
 
 [push]
     default = current
@@ -9,7 +7,6 @@
 [core]
     pager = delta
     quotepath = false
-    excludesfile = ~/.gitignore_global
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
