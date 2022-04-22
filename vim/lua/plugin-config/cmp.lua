@@ -16,6 +16,8 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-space>'] = cmp.mapping.complete(),
     ['<Tab>'] = cmp.config.disable,
     ['<S-Tab>'] = cmp.config.disable,
