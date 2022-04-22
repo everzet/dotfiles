@@ -2,4 +2,3 @@ vim/.netrwhist
 vim/plugged
 vim/autoload/plug.vim.old
 vim/plugin/packer_compiled.lua
-vifm/vifminfo.json

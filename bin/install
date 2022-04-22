@@ -9,7 +9,6 @@ ln -nfs $DOTFILESDIR/zsh ~/.config/zsh
 
 ln -nfs $DOTFILESDIR/vim ~/.vim
 ln -nfs $DOTFILESDIR/vim ~/.config/nvim
-ln -nfs $DOTFILESDIR/vifm ~/.vifm
 
 ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/iex.exs          ~/.iex.exs
@@ -18,5 +17,6 @@ ln -nfs $DOTFILESDIR/rc/editorconfig     ~/.editorconfig
 
 mkdir -p ~/.config
 ln -nfs $DOTFILESDIR/config/git ~/.config/git
+ln -nfs $DOTFILESDIR/config/vifm ~/.config/vifm
 
 touch ~/.hushlogin
