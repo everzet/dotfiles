@@ -7,8 +7,8 @@ return function(capabilities, on_attach)
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = {
-      '/opt/lsp/lua-ls/bin/macOS/lua-language-server',
-      '-E', '/opt/lsp/lua-ls/bin/macOS/main.lua'
+      '/opt/lsp/lua-ls/bin/lua-language-server',
+      '-E', '/opt/lsp/lua-ls/bin/main.lua'
     },
     settings = {
       Lua = {
