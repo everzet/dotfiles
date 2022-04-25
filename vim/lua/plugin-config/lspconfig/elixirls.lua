@@ -1,9 +1,7 @@
-local elixirls_root_path = '/Users/everzet/Dev/lsp/elixir-language-server'
-
 return function(capabilities, on_attach)
   require('lspconfig').elixirls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = { elixirls_root_path .. '/language_server.sh' }
+    cmd = { '/opt/lsp/elixir-ls/language_server.sh' }
   }
 end

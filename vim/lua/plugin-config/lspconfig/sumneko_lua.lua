@@ -1,4 +1,3 @@
-local sumneko_root_path = '/Users/everzet/Dev/lsp/lua-language-server/bin/macOS'
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
@@ -8,8 +7,8 @@ return function(capabilities, on_attach)
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = {
-      sumneko_root_path .. '/lua-language-server',
-      '-E', sumneko_root_path .. '/main.lua'
+      '/opt/lsp/lua-ls/bin/macOS/lua-language-server',
+      '-E', '/opt/lsp/lua-ls/bin/macOS/main.lua'
     },
     settings = {
       Lua = {
