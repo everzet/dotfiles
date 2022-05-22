@@ -5,10 +5,8 @@ if [ -f /etc/profile ]; then
     source /etc/profile
 fi
 
-export PATH=~/Dev/bin:$PATH
-export PATH=~/.mix/escripts:$PATH
-export PATH=~/.dotnet/tools:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=~/.mix/escripts:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
