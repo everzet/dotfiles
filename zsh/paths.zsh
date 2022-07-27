@@ -10,3 +10,4 @@ export PATH=~/.mix/escripts:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
