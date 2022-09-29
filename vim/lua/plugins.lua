@@ -53,6 +53,11 @@ return require('packer').startup(function(use)
         },
         config = function() require('plugin-config.cmp') end }
 
+  -- File navigation
+  use { 'ThePrimeagen/harpoon',
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function() require('plugin-config.harpoon') end }
+
   -- Language servers
   use { 'neovim/nvim-lspconfig',
         requires = {{'hrsh7th/cmp-nvim-lsp'}},
@@ -68,13 +73,6 @@ return require('packer').startup(function(use)
         config = function() require('plugin-config.treesitter') end }
   -- We use this instead of treesitter as treesitter's elixir parser is slow
   use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
-
-  -- There is no FSharp Treesitter yet
-  use { 'PhilT/vim-fsharp' }
-
-  -- There is no Rescript Treesitter
-  use { 'rescript-lang/vim-rescript' }
-
   -- There is not Earthly support in Treesitter yet
   use { 'earthly/earthly.vim' }
 end)
