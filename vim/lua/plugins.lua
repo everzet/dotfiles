@@ -63,10 +63,6 @@ return require('packer').startup(function(use)
         requires = {{'hrsh7th/cmp-nvim-lsp'}},
         config = function() require('plugin-config.lspconfig') end }
 
-  -- Formatter
-  use { 'mhartington/formatter.nvim',
-        config = function() require('plugin-config.formatter') end }
-
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
