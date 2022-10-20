@@ -12,3 +12,5 @@ local statusline = {
 }
 
 opt.statusline = table.concat(statusline, '')
+opt.ls = 3
+opt.ch = 0
