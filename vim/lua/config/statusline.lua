@@ -7,7 +7,7 @@ local modes = {
   ["no"] = "NORMAL",
   ["v"] = "VISUAL",
   ["V"] = "VISUAL LINE",
-  [""] = "VISUAL BLOCK",
+  [""] = "VISUAL BLOCK",
   ["s"] = "SELECT",
   ["S"] = "SELECT LINE",
   ["i"] = "INSERT",
@@ -81,7 +81,7 @@ local function lsp()
 end
 
 local function filetype()
-  return string.format(" %s ", vim.bo.filetype):upper()
+  return string.format(" %s", vim.bo.filetype):upper()
 end
 
 local function lineinfo()
@@ -110,8 +110,8 @@ end
 function WinBar()
   return table.concat {
     "%=",
+    "%m ",
     "%#Statusline#",
-    "%m",
     " ",
     filepath(),
     filename(),
