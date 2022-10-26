@@ -24,9 +24,16 @@ local modes = {
   ["t"] = "TERMINAL",
 }
 
+local colors = {
+  ["NORMAL"] = "%#StatusLine#",
+  ["HIGHLIGHT"] = "%#DraculaOrangeInverse#",
+}
+
 local function mode()
   local current_mode = vim.api.nvim_get_mode().mode
-  return string.format(" %s ", modes[current_mode]):upper()
+  local mode_label = modes[current_mode]
+  local mode_color = colors[mode_label] or colors["HIGHLIGHT"]
+  return string.format("%s %s ", mode_color, mode_label):upper()
 end
 
 local function filepath()
@@ -112,9 +119,7 @@ function WinBar()
     "%=",
     "%m ",
     "%#Statusline#",
-    " ",
-    filepath(),
-    filename(),
+    " %f ",
     "%#Normal#",
   }
 end
