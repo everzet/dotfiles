@@ -39,16 +39,16 @@ end
 local function filepath()
   local fpath = vim.fn.fnamemodify(vim.fn.expand "%", ":~:.:h")
   if fpath == "" or fpath == "." then
-    return ""
+    return " "
   end
 
-  return string.format("%%<%s/", fpath)
+  return string.format(" %%<%s/", fpath)
 end
 
 local function filename()
   local fname = vim.fn.expand "%:t"
   if fname == "" then
-    return ""
+    return " "
   end
   return fname .. " "
 end
@@ -102,7 +102,7 @@ function StatusLine()
   return table.concat {
     "%#Statusline#",
     mode(),
-    "%#Normal# ",
+    "%#Normal#",
     filepath(),
     filename(),
     "%#Normal#",
@@ -119,7 +119,8 @@ function WinBar()
     "%=",
     "%m ",
     "%#Statusline#",
-    " %f ",
+    filepath(),
+    filename(),
     "%#Normal#",
   }
 end
