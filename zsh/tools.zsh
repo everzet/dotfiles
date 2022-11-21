@@ -31,6 +31,7 @@ export PNPM_HOME="$HOME/Library/pnpm"
 
 # Dotnet
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+[ -s "${HOME}/.dotnet/tools" ] && export PATH="${HOME}/.dotnet/tools:$PATH"
 
 # GPG
 export GPG_TTY=$(tty)

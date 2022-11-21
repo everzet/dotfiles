@@ -84,6 +84,8 @@ return require('packer').startup(function(use)
   use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
   -- There is not Earthly support in Treesitter yet
   use { 'earthly/earthly.vim' }
+  -- There is no FSharp support in Treesitter yet
+  use { 'adelarsq/neofsharp.vim' }
 
   if packer_bootstrap then
     require('packer').sync()
