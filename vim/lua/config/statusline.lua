@@ -119,8 +119,7 @@ function WinBar()
     "%=",
     "%m ",
     "%#Statusline#",
-    filepath(),
-    filename(),
+    " %f ",
     "%#Normal#",
   }
 end
