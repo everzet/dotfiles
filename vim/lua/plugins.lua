@@ -1,93 +1,60 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
-
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Package manager
+    use 'wbthomason/packer.nvim'
 
-  -- Devicons
-  use 'kyazdani42/nvim-web-devicons'
+    -- Icons throughout the UI
+    use 'kyazdani42/nvim-web-devicons'
 
-  -- Spacing
-  use 'editorconfig/editorconfig-vim'
+    -- Automatically configure editor based on project settings
+    use 'editorconfig/editorconfig-vim'
 
-  -- UNIX operations
-  use { 'tpope/vim-eunuch',
-        config = function() require('plugin-config.eunuch') end }
+    -- Nicer jumping between actively worked upon files
+    use { 'ThePrimeagen/harpoon',
+        requires = { { 'nvim-lua/plenary.nvim' } } }
 
-  -- Exchange two pieces of text
-  use 'tommcdo/vim-exchange'
+    -- Visual undo for times when we really need to go back
+    use 'mbbill/undotree'
 
-  -- Change quotes and parentheses
-  use 'tpope/vim-surround'
+    -- Exchange two blocks of text
+    use 'tommcdo/vim-exchange'
 
-  -- Expand vim movement objects to support comma and tag attributes
-  use 'austintaylor/vim-commaobject'
-  use { 'whatyouhide/vim-textobj-xmlattr',
-        requires = {{'kana/vim-textobj-user'}} }
+    -- Manipulate quotes and parens
+    use 'tpope/vim-surround'
 
-  -- Fuzzy finder for files and buffers
-  use { 'nvim-telescope/telescope.nvim',
+    -- Expand vim movement to support comma and tag attributes
+    use 'austintaylor/vim-commaobject'
+    use { 'whatyouhide/vim-textobj-xmlattr',
+        requires = { { 'kana/vim-textobj-user' } } }
+
+    -- Fuzzy finder
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = {
-          {'nvim-lua/popup.nvim'},
-          {'nvim-lua/plenary.nvim'},
-          {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
-          {'nvim-telescope/telescope-file-browser.nvim'},
-        },
-        config = function() require('plugin-config.telescope') end }
+            { 'nvim-lua/plenary.nvim' },
+            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+            { 'nvim-telescope/telescope-file-browser.nvim' },
+        }
+    }
 
-  -- Git visualisation
-  use { 'tanvirtin/vgit.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function() require('plugin-config.vgit') end }
-
-  -- Snippets
-  use { 'dcampos/nvim-snippy',
-        config = function() require('plugin-config.snippy') end }
-
-  -- Autocompletion
-  use { 'hrsh7th/nvim-cmp',
+    -- Language servers
+    use { 'VonHeikemen/lsp-zero.nvim',
         requires = {
-          {'hrsh7th/cmp-buffer'},
-          {'hrsh7th/cmp-path'},
-          {'dcampos/cmp-snippy'},
-          {'hrsh7th/cmp-nvim-lua'},
-          {'onsails/lspkind-nvim'},
-        },
-        config = function() require('plugin-config.cmp') end }
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+        }
+    }
 
-  -- File navigation
-  use { 'ThePrimeagen/harpoon',
-        requires = {{'nvim-lua/plenary.nvim'}},
-        config = function() require('plugin-config.harpoon') end }
-
-  -- Language servers
-  use { 'neovim/nvim-lspconfig',
-        requires = {{'hrsh7th/cmp-nvim-lsp'}},
-        config = function() require('plugin-config.lspconfig') end }
-
-  -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function() require('plugin-config.treesitter') end }
-  -- We use this instead of treesitter as treesitter's elixir parser is slow
-  use { 'elixir-editors/vim-elixir', ft = {'elixir'} }
-  -- There is not Earthly support in Treesitter yet
-  use { 'earthly/earthly.vim' }
-  -- There is no FSharp support in Treesitter yet
-  use { 'ionide/Ionide-vim' }
-
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+    -- Syntax highlighting
+    use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
 end)

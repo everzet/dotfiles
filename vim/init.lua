@@ -1,3 +1,5 @@
-require('config')
+require('settings')
+require('remap')
+require('colors')
+require('statusline')
 require('plugins')
-require('keymappings')
