@@ -41,17 +41,39 @@ lsp.set_preferences({})
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set('n', '<leader>lws', function() vim.lsp.buf.workspace_symbol() end, opts)
-    vim.keymap.set('n', '<leader>sd', function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set('n', '[d', function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end, opts)
-    vim.keymap.set('n', '<leader>lca', function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set('n', '<leader>lrr', function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set('n', '<leader>lrn', function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
+    -- Go-tos
+    vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
+    vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
+    vim.keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, opts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, opts)
+
+    -- View symbols
+    vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, opts)
+    vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, opts)
+
+    -- Inline help
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
+
+    -- Code actions
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+
+    -- Navigate diagnostics
+    vim.keymap.set('n', '<leader>sd', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+
+    -- Formatting
+    vim.keymap.set('n', '<leader>f', function()
+        if vim.lsp.buf.format then
+            vim.lsp.buf.format()
+        elseif vim.lsp.buf.formatting then
+            vim.lsp.buf.formatting()
+        end
+    end, opts)
 end)
 
 lsp.setup()
