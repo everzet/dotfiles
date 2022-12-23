@@ -10,6 +10,8 @@ ln -nfs $DOTFILESDIR/zsh ~/.config/zsh
 ln -nfs $DOTFILESDIR/vim ~/.vim
 ln -nfs $DOTFILESDIR/vim ~/.config/nvim
 
+ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
+
 ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/iex.exs          ~/.iex.exs
 ln -nfs $DOTFILESDIR/rc/tmux.conf        ~/.tmux.conf
