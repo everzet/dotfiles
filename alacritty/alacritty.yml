@@ -121,7 +121,8 @@ font:
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
   offset:
-    x: 0
+    # horizontal offset (font looks smooshed with it being set to 0)
+    x: 1
     # vertical font offset (essentially a line-height)
     y: 14
 
@@ -130,7 +131,7 @@ font:
   # right, increasing `y` moves the glyph upward.
   glyph_offset:
     x: 0
-    # set this to half the vertical offset to center characters in line
+    # set to half the vertical offset in order to center characters within line
     y: 7
 
 selection:
