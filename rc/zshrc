@@ -1,6 +1,0 @@
-. ~/.config/zsh/config.zsh
-. ~/.config/zsh/envars.zsh
-. ~/.config/zsh/paths.zsh
-. ~/.config/zsh/syntax-highlighting.zsh
-. ~/.config/zsh/aliases.zsh
-. ~/.config/zsh/tools.zsh

@@ -5,14 +5,12 @@ DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 
 mkdir -p ~/.config
 
-ln -nfs $DOTFILESDIR/zsh ~/.config/zsh
-
-ln -nfs $DOTFILESDIR/vim ~/.vim
 ln -nfs $DOTFILESDIR/vim ~/.config/nvim
+ln -nfs $DOTFILESDIR/fish ~/.config/fish
 
 ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
 
-ln -nfs $DOTFILESDIR/rc/zshrc            ~/.zshrc
+ln -nfs $DOTFILESDIR/rc/asdfrc           ~/.asdfrc
 ln -nfs $DOTFILESDIR/rc/iex.exs          ~/.iex.exs
 ln -nfs $DOTFILESDIR/rc/tmux.conf        ~/.tmux.conf
 ln -nfs $DOTFILESDIR/rc/editorconfig     ~/.editorconfig
