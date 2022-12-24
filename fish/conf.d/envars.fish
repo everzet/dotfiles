@@ -1,7 +1,7 @@
 # editor
-set -gx SHELL "fish"
-set -gx EDITOR "vim"
-set -gx GIT_EDITOR "vim"
+set -gx SHELL "/opt/homebrew/bin/fish"
+set -gx EDITOR "/opt/homebrew/bin/vim"
+set -gx GIT_EDITOR "/opt/homebrew/bin/vim"
 
 # enable terminal colors
 set -gx CLICOLOR true
