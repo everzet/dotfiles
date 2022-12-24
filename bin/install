@@ -3,6 +3,8 @@
 SCRIPTPATH=$0:A
 DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 
+xargs brew install -q < $DOTFILESDIR/homebrews
+
 mkdir -p ~/.config
 
 ln -nfs $DOTFILESDIR/vim       ~/.config/nvim
