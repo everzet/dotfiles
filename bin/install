@@ -10,9 +10,9 @@ ln -nfs $DOTFILESDIR/fish      ~/.config/fish
 ln -nfs $DOTFILESDIR/git       ~/.config/git
 ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
 
-ln -nfs $DOTFILESDIR/rc/asdfrc        ~/.asdfrc
-ln -nfs $DOTFILESDIR/rc/iex.exs       ~/.iex.exs
-ln -nfs $DOTFILESDIR/rc/tmux.conf     ~/.tmux.conf
-ln -nfs $DOTFILESDIR/rc/editorconfig  ~/.editorconfig
+ln -nfs $DOTFILESDIR/asdfrc        ~/.asdfrc
+ln -nfs $DOTFILESDIR/iex.exs       ~/.iex.exs
+ln -nfs $DOTFILESDIR/tmux.conf     ~/.tmux.conf
+ln -nfs $DOTFILESDIR/editorconfig  ~/.editorconfig
 
 touch ~/.hushlogin
