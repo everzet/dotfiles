@@ -1,7 +1,7 @@
 # General
 abbr l ls
 abbr v vim
-abbr g hub
+abbr g git
 
 # TMUX
 abbr tn tmux new -s

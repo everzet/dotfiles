@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
-SETUVAR _fish_abbr_g:hub
+SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_l:ls
 SETUVAR _fish_abbr_ta:tmux\x20at\x20\x2dt
 SETUVAR _fish_abbr_tls:tmux\x20ls
