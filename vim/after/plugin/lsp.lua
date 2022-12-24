@@ -69,7 +69,6 @@ lsp.on_attach(function(_, bufnr)
 
     -- Inline help
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
 
     -- Code actions

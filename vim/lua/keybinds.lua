@@ -8,15 +8,15 @@ vim.keymap.set('i', 'jk', '<esc>', opts)
 vim.keymap.set('i', '<C-c>', '<esc>', opts)
 
 -- Remove highlight on leader-space
-vim.keymap.set('n', '<leader><space>', '<command>nohlsearch<cr>', { remap = false, silent = true })
+vim.keymap.set('n', '<leader><space>', '<cmd>nohlsearch<cr>', { remap = false, silent = true })
 
 -- Keep block's selection after (de-)indent
 vim.keymap.set('v', 'H', '<gv', opts)
 vim.keymap.set('v', 'L', '>gv', opts)
 
 -- Vertically move selected block and preserve its indentation
-vim.keymap.set('v', 'J', "<command>m '>+1<cr>gv=gv", opts)
-vim.keymap.set('v', 'K', "<command>m '<-2<cr>gv=gv", opts)
+vim.keymap.set('v', 'J', "<cmd>m '>+1<cr>gv=gv", opts)
+vim.keymap.set('v', 'K', "<cmd>m '<-2<cr>gv=gv", opts)
 
 -- Keep cursor where it is when merging lines with J
 vim.keymap.set('n', 'J', 'mzJ`z', opts)
@@ -43,18 +43,18 @@ vim.keymap.set('n', '<leader>Y', '"+Y', opts)
 vim.keymap.set('n', '<leader>p', '"+p', opts)
 
 -- Navigating quickfix lists
-vim.keymap.set('n', '[q', '<command>cprev<cr>', opts)
-vim.keymap.set('n', ']q', '<command>cnext<cr>', opts)
+vim.keymap.set('n', '[q', '<cmd>cprev<cr>', opts)
+vim.keymap.set('n', ']q', '<cmd>cnext<cr>', opts)
 
 -- Managing tabs
-vim.keymap.set('n', '<leader>df', '<command>tab split<cr>', opts)
-vim.keymap.set('n', '<leader>dd', '<command>tabclose<cr>', opts)
-vim.keymap.set('n', '<leader>do', '<command>tabonly<cr>', opts)
+vim.keymap.set('n', '<leader>df', '<cmd>tab split<cr>', opts)
+vim.keymap.set('n', '<leader>dd', '<cmd>tabclose<cr>', opts)
+vim.keymap.set('n', '<leader>do', '<cmd>tabonly<cr>', opts)
 
 -- Managing buffers
-vim.keymap.set('n', '<leader>bc', '<command>bd<cr>', opts)
-vim.keymap.set('n', '<leader>bo', '<command>%bd<cr><C-o><command>bd#<cr>', opts)
-vim.keymap.set('n', '<leader>bd', '<command>bufdo bd<cr>', opts)
+vim.keymap.set('n', '<leader>bc', '<cmd>bd<cr>', opts)
+vim.keymap.set('n', '<leader>bo', '<cmd>%bd<cr><C-o><cmd>bd#<cr>', opts)
+vim.keymap.set('n', '<leader>bd', '<cmd>bufdo bd<cr>', opts)
 
 -- Managing splits
 vim.keymap.set('n', '<leader>we', '<C-w>v<C-w>l', opts)
