@@ -51,16 +51,21 @@ lsp.set_preferences({})
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    -- Go-tos
+    -- Go *
     vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
     vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
     vim.keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, opts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
 
-    -- View symbols
-    vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, opts)
-    vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, opts)
+    -- Navigate diagnostics
+    vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+
+    -- Show * symbols
+    vim.keymap.set('n', '<leader>sds', require('telescope.builtin').lsp_document_symbols, opts)
+    vim.keymap.set('n', '<leader>sws', require('telescope.builtin').lsp_dynamic_workspace_symbols, opts)
 
     -- Inline help
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
@@ -70,11 +75,6 @@ lsp.on_attach(function(_, bufnr)
     -- Code actions
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-
-    -- Navigate diagnostics
-    vim.keymap.set('n', '<leader>sd', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
     -- Formatting
     vim.keymap.set('n', '<leader>f', function()
