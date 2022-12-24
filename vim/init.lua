@@ -1,5 +1,5 @@
 require('settings')
-require('remap')
+require('keybinds')
 require('colors')
 require('statusline')
 require('plugins')
