@@ -153,49 +153,13 @@ selection:
   save_to_clipboard: true
 
 cursor:
-  # Cursor style
-  style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
-    shape: Beam
-
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
-    blinking: On
-
-  # Vi mode cursor style
-  #
-  # If the vi mode cursor style is `None` or not specified, it will fall back to
-  # the style of the active value of the normal cursor.
-  #
-  # See `cursor.style` for available options.
-  vi_mode_style:
-    shape: Block
-
-  # Cursor blinking interval in milliseconds.
-  blink_interval: 750
-
-  # Time after which cursor stops blinking, in seconds.
-  #
-  # Specifying '0' will disable timeout for blinking.
-  blink_timeout: 5
-
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   unfocused_hollow: true
 
-# Live config reload (changes require restart)
-live_config_reload: true
-
 mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
+
+# Live config reload (changes require restart)
+live_config_reload: true
