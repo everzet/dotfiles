@@ -3,7 +3,7 @@
 SCRIPTPATH=$0:A
 DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 
-xargs brew install -q < $DOTFILESDIR/homebrews
+xargs brew install -q < $DOTFILESDIR/dependencies
 
 mkdir -p ~/.config
 
