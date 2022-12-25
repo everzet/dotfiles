@@ -1,3 +1,5 @@
 function fish_greeting
-    neofetch
+    if status is-login
+        neofetch
+    end
 end
