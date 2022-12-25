@@ -26,8 +26,8 @@ local colors = {
 }
 
 local function current_mode()
-    local current_mode = vim.api.nvim_get_mode().mode
-    local mode_label = modes[current_mode]
+    local mode = vim.api.nvim_get_mode().mode
+    local mode_label = modes[mode]
     local mode_color = colors[mode_label] or colors['HIGHLIGHT']
     return string.format('%s %s ', mode_color, mode_label):upper()
 end
