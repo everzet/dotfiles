@@ -25,6 +25,9 @@ return require('packer').startup(function(use)
     -- Visual undo for times when we really need to go back
     use 'mbbill/undotree'
 
+    -- Git management
+    use 'tpope/vim-fugitive'
+
     -- Exchange two blocks of text
     use 'tommcdo/vim-exchange'
 
