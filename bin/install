@@ -3,8 +3,13 @@
 SCRIPTPATH=$0:A
 DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 
+# install third party apps via homebrew
 xargs brew install -q < $DOTFILESDIR/dependencies
 
+# configure Alacritty to not use macOS font smoothing
+defaults write org.alacritty AppleFontSmoothing -int 0
+
+# symlink configs
 mkdir -p ~/.config
 
 ln -nfs $DOTFILESDIR/vim       ~/.config/nvim
