@@ -45,7 +45,9 @@ lsp.setup_nvim_cmp({
 })
 
 -- Override default preferences
-lsp.set_preferences({})
+lsp.set_preferences({
+    suggest_lsp_servers = false
+})
 
 -- Set keybinds on LSP attach to the buffer
 lsp.on_attach(function(_, bufnr)
@@ -86,3 +88,7 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true
+})
