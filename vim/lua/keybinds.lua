@@ -62,12 +62,16 @@ vim.keymap.set('n', '<leader>ws', '<C-w>s<C-w>j', opts)
 vim.keymap.set('n', '<leader>wq', '<C-w>v<C-w>h', opts)
 vim.keymap.set('n', '<leader>w2', '<C-w>s<C-w>k', opts)
 
--- Resizing splits
-vim.keymap.set('n', '<leader>w=', '<C-w>=', opts)
-vim.keymap.set('n', '<leader>w0', '<C-w>|', opts)
-
 -- Navigating splits
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
 vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
 vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
+
+-- Resizing splits
+vim.keymap.set('n', '˙', '<C-w>5<', opts)
+vim.keymap.set('n', '¬', '<C-w>5>', opts)
+vim.keymap.set('n', '∆', '<C-w>2+', opts)
+vim.keymap.set('n', '˚', '<C-w>2-', opts)
+vim.keymap.set('n', '<leader>w=', '<C-w>=', opts)
+vim.keymap.set('n', '<leader>w0', '<C-w>|', opts)
