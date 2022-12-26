@@ -71,7 +71,7 @@ M.get_git_status = function(self)
 
     for type, label in pairs(status) do
         local count = signs[type]
-        if count > 0 then
+        if count and count > 0 then
             local text = string.format('%s%d%s', label, count, reset)
             table.insert(result, text)
         end
