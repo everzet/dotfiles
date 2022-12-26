@@ -3,6 +3,7 @@ local M = {}
 M.trunc_width = setmetatable({
     mode       = 80,
     git_status = 90,
+    lsp_diag   = 120,
 }, {
     __index = function()
         return 80
@@ -43,7 +44,7 @@ M.modes = setmetatable({
 
 M.get_current_mode = function(self)
     local current_mode = vim.api.nvim_get_mode().mode
-    local current_color = current_mode == 'n' and '%#CursorLine#' or '%#WildMenu#'
+    local current_color = current_mode == 'n' and '' or '%#StatusLineMode#'
 
     if self:is_truncated(self.trunc_width.mode) then
         return string.format('%s %s ', current_color, self.modes[current_mode][2]):upper()
@@ -62,7 +63,7 @@ M.get_git_status = function(self)
     end
 
     return is_head_empty and string.format(
-        ' +%s ~%s -%s |  %s ',
+        ' %%#StatusLineAdd#+%s %%#StatusLineChange#~%s %%#StatusLineDelete#-%s %%#StatusLineBg2#|  %s ',
         signs.added, signs.changed, signs.removed, signs.head
     ) or ''
 end
@@ -74,44 +75,50 @@ M.get_filename = function()
 end
 
 M.get_line_col = function()
-    return ' LN %l, CL %c '
+    return ' %l:%c '
 end
 
 M.get_lsp_diag = function()
     local result = {}
     local levels = {
-        Error = '%#LspDiagnosticsError#',
-        Warn = '%#LspDiagnosticsWarning#',
-        Info = '%#LspDiagnosticsInformation#',
-        Hint = '%#LspDiagnosticsHint#',
+        Error = '%#StatusLineError#',
+        Warn = '%#StatusLineWarning#',
+        Info = '%#StatusLineInformation#',
+        Hint = '%#StatusLineHint#',
     }
+    local reset = '%#StatusLineBg2#'
 
     for level, label in pairs(levels) do
         local count = vim.tbl_count(vim.diagnostic.get(0, { severity = level }))
         if count > 0 then
-            local text = string.format('%s %d', label, count)
+            local text = string.format('%s %d%s', label, count, reset)
             table.insert(result, text)
         end
     end
 
     local diag_text = table.concat(result, ' ')
-    if diag_text == '' then return '' end
-    return string.format('%%#Normal# %s ', diag_text)
+
+    local bufnr = vim.api.nvim_get_current_buf()
+    local client = vim.lsp.get_active_clients({ bufnr = bufnr })[1]
+    local client_text = client and string.format('  %s ', client.name) or ''
+
+    if diag_text == '' then return client_text end
+    return string.format('%s| %s ', client_text, diag_text)
 end
 
 M.set_active = function(self)
     return table.concat({
-        self:get_current_mode(),
-        '%#StatusLineNC#', self:get_git_status(),
-        '%#StatusLine#', '%=', self:get_filename(), '%=',
-        '%#Normal#', self:get_lsp_diag(),
-        '%#StatusLineNC#', self:get_line_col(),
+        '%#StatusLineBg1#', self:get_current_mode(),
+        '%#StatusLineBg2#', self:get_git_status(),
+        '%#StatusLineBg3#', '%=', self:get_filename(), '%=',
+        '%#StatusLineBg2#', self:get_lsp_diag(),
+        '%#StatusLineBg1#', self:get_line_col(),
     })
 end
 
 M.set_inactive = function()
     return table.concat({
-        '%=', '%<%f %m', '%='
+        '%#StatusLineBg3#%=', '%<%f %m', '%='
     })
 end
 
