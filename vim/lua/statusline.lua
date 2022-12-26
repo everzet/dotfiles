@@ -140,10 +140,19 @@ M.set_inactive = function()
     })
 end
 
+M.set_gui_window = function(self, name)
+    return table.concat({
+        '%#StatusLineMode#', string.format(' %s ', name),
+        '%#StatusLineBg3#', '%=%=',
+        '%#StatusLineBg1#', self:get_line_col(),
+    })
+end
+
 StatusLine = setmetatable(M, {
     __call = function(statusline, mode)
-        if mode == 'active' then return statusline:set_active() end
         if mode == 'inactive' then return statusline:set_inactive() end
+        if vim.bo.filetype == 'fugitive' then return statusline:set_gui_window(' fugitive') end
+        if mode == 'active' then return statusline:set_active() end
     end
 })
 
