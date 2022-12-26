@@ -1,115 +1,127 @@
-local modes = {
-    ['n'] = 'NORMAL',
-    ['no'] = 'NORMAL',
-    ['v'] = 'VISUAL',
-    ['V'] = 'VISUAL LINE',
-    [''] = 'VISUAL BLOCK',
-    ['s'] = 'SELECT',
-    ['S'] = 'SELECT LINE',
-    ['i'] = 'INSERT',
-    ['ic'] = 'INSERT',
-    ['R'] = 'REPLACE',
-    ['Rv'] = 'VISUAL REPLACE',
-    ['c'] = 'COMMAND',
-    ['cv'] = 'VIM EX',
-    ['ce'] = 'EX',
-    ['r'] = 'PROMPT',
-    ['rm'] = 'MOAR',
-    ['r?'] = 'CONFIRM',
-    ['!'] = 'SHELL',
-    ['t'] = 'TERMINAL',
-}
+local M = {}
 
-local colors = {
-    ['NORMAL'] = '%#StatusLine#',
-    ['HIGHLIGHT'] = '%#DraculaOrangeInverse#',
-}
-
-local function current_mode()
-    local mode = vim.api.nvim_get_mode().mode
-    local mode_label = modes[mode]
-    local mode_color = colors[mode_label] or colors['HIGHLIGHT']
-    return string.format('%s %s ', mode_color, mode_label):upper()
-end
-
-local function current_filepath()
-    local filepath = vim.fn.fnamemodify(vim.fn.expand '%', ':~:.:h')
-    if filepath == '' or filepath == '.' then
-        return ' '
+M.trunc_width = setmetatable({
+    mode       = 80,
+    git_status = 90,
+}, {
+    __index = function()
+        return 80
     end
-    return string.format(' %%<%s/', filepath)
+})
+
+M.is_truncated = function(_, width)
+    local current_width = vim.api.nvim_win_get_width(0)
+    return current_width < width
 end
 
-local function current_filename()
-    local filename = vim.fn.expand '%:t'
-    if filename == '' then
-        return ' '
+M.modes = setmetatable({
+    ['n']  = { 'Normal', 'N' };
+    ['no'] = { 'N·Pending', 'N·P' };
+    ['v']  = { 'Visual', 'V' };
+    ['V']  = { 'V·Line', 'V·L' };
+    ['']  = { 'V·Block', 'V·B' }; -- this is not ^V, but it's , they're different
+    ['s']  = { 'Select', 'S' };
+    ['S']  = { 'S·Line', 'S·L' };
+    ['']  = { 'S·Block', 'S·B' }; -- same with this one, it's not ^S but it's 
+    ['i']  = { 'Insert', 'I' };
+    ['ic'] = { 'Insert', 'I' };
+    ['R']  = { 'Replace', 'R' };
+    ['Rv'] = { 'V·Replace', 'V·R' };
+    ['c']  = { 'Command', 'C' };
+    ['cv'] = { 'Vim·Ex ', 'V·E' };
+    ['ce'] = { 'Ex ', 'E' };
+    ['r']  = { 'Prompt ', 'P' };
+    ['rm'] = { 'More ', 'M' };
+    ['r?'] = { 'Confirm ', 'C' };
+    ['!']  = { 'Shell ', 'S' };
+    ['t']  = { 'Terminal ', 'T' };
+}, {
+    __index = function()
+        return { 'Unknown', 'U' } -- handle edge cases
     end
-    return filename .. ' '
+})
+
+M.get_current_mode = function(self)
+    local current_mode = vim.api.nvim_get_mode().mode
+    local current_color = current_mode == 'n' and '%#CursorLine#' or '%#WildMenu#'
+
+    if self:is_truncated(self.trunc_width.mode) then
+        return string.format('%s %s ', current_color, self.modes[current_mode][2]):upper()
+    end
+
+    return string.format('%s %s ', current_color, self.modes[current_mode][1]):upper()
 end
 
-local function current_diagnostics()
-    local count = {}
+M.get_git_status = function(self)
+    -- use fallback because it doesn't set this variable on the initial `BufEnter`
+    local signs = vim.b.gitsigns_status_dict or { head = '', added = 0, changed = 0, removed = 0 }
+    local is_head_empty = signs.head ~= ''
+
+    if self:is_truncated(self.trunc_width.git_status) then
+        return is_head_empty and string.format('  %s ', signs.head or '') or ''
+    end
+
+    return is_head_empty and string.format(
+        ' +%s ~%s -%s |  %s ',
+        signs.added, signs.changed, signs.removed, signs.head
+    ) or ''
+end
+
+M.get_filename = function()
+    local file_name, file_ext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
+    local icon = require 'nvim-web-devicons'.get_icon(file_name, file_ext, { default = true })
+    return string.format(' %s %%<%%f %%m ', icon)
+end
+
+M.get_line_col = function()
+    return ' LN %l, CL %c '
+end
+
+M.get_lsp_diag = function()
+    local result = {}
     local levels = {
-        errors = 'Error',
-        warnings = 'Warn',
-        info = 'Info',
-        hints = 'Hint',
+        Error = '%#LspDiagnosticsError#',
+        Warn = '%#LspDiagnosticsWarning#',
+        Info = '%#LspDiagnosticsInformation#',
+        Hint = '%#LspDiagnosticsHint#',
     }
 
-    for k, level in pairs(levels) do
-        count[k] = vim.tbl_count(vim.diagnostic.get(0, { severity = level }))
+    for level, label in pairs(levels) do
+        local count = vim.tbl_count(vim.diagnostic.get(0, { severity = level }))
+        if count > 0 then
+            local text = string.format('%s %d', label, count)
+            table.insert(result, text)
+        end
     end
 
-    local errors = ''
-    local warnings = ''
-    local hints = ''
-    local info = ''
-
-    if count['errors'] ~= 0 then
-        errors = ' %#LspDiagnosticsError# ' .. count['errors']
-    end
-    if count['warnings'] ~= 0 then
-        warnings = ' %#LspDiagnosticsWarning# ' .. count['warnings']
-    end
-    if count['hints'] ~= 0 then
-        hints = ' %#LspDiagnosticsHint# ' .. count['hints']
-    end
-    if count['info'] ~= 0 then
-        info = ' %#LspDiagnosticsInformation# ' .. count['info']
-    end
-
-    return errors .. warnings .. hints .. info .. ' %#Normal#'
+    local diag_text = table.concat(result, ' ')
+    if diag_text == '' then return '' end
+    return string.format('%%#Normal# %s ', diag_text)
 end
 
-local function current_filetype()
-    return string.format(' %s', vim.bo.filetype):upper()
+M.set_active = function(self)
+    return table.concat({
+        self:get_current_mode(),
+        '%#StatusLineNC#', self:get_git_status(),
+        '%#StatusLine#', '%=', self:get_filename(), '%=',
+        '%#Normal#', self:get_lsp_diag(),
+        '%#StatusLineNC#', self:get_line_col(),
+    })
 end
 
-local function current_lineinfo()
-    if vim.bo.filetype == 'alpha' then
-        return ''
+M.set_inactive = function()
+    return table.concat({
+        '%=', '%<%f %m', '%='
+    })
+end
+
+StatusLine = setmetatable(M, {
+    __call = function(statusline, mode)
+        if mode == 'active' then return statusline:set_active() end
+        if mode == 'inactive' then return statusline:set_inactive() end
     end
-    return ' %P %l:%c '
-end
+})
 
-function StatusLine()
-    return table.concat {
-        '%#Statusline#',
-        current_mode(),
-        '%#Normal#',
-        current_filepath(),
-        current_filename(),
-        '%#Normal#',
-        current_diagnostics(),
-        '%=%#StatusLineExtra#',
-        current_filetype(),
-        current_lineinfo(),
-        '%#Normal#',
-    }
-end
-
-vim.opt.cmdheight = 0
-vim.opt.laststatus = 3
-vim.opt.winbar = '%=%m %#Statusline# %f %#Normal#'
-vim.opt.statusline = "%!luaeval('StatusLine()')"
+local group = vim.api.nvim_create_augroup('StatusLine', { clear = true })
+vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, { command = "setlocal statusline=%!v:lua.StatusLine('active')", group = group })
+vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, { command = "setlocal statusline=%!v:lua.StatusLine('inactive')", group = group })

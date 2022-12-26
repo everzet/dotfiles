@@ -12,6 +12,9 @@ return require('packer').startup(function(use)
     -- Icons throughout the UI
     use 'kyazdani42/nvim-web-devicons'
 
+    -- Git integration
+    use 'lewis6991/gitsigns.nvim'
+
     -- Automatically configure editor based on project settings
     use 'editorconfig/editorconfig-vim'
 
