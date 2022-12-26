@@ -147,6 +147,25 @@ StatusLine = setmetatable(M, {
     end
 })
 
+-- Style statusline
+local colors = require('colors')
+
+colors.inherit_hl('CursorColumn', 'StatusLineBg1', {})
+colors.inherit_hl('DraculaBgLighter', 'StatusLineBg2', {})
+colors.inherit_hl('DraculaBgLight', 'StatusLineBg3', {})
+colors.inherit_hl('WarningMsg', 'StatusLineMode', {})
+local status_line_bg2 = colors.get_hl('StatusLineBg2')['background']
+
+colors.inherit_hl('DiffAdd', 'StatusLineAdd', { background = status_line_bg2 })
+colors.inherit_hl('DiffChange', 'StatusLineChange', { background = status_line_bg2 })
+colors.inherit_hl('DiffDelete', 'StatusLineDelete', { background = status_line_bg2 })
+
+colors.inherit_hl('LspDiagnosticsError', 'StatusLineError', { background = status_line_bg2 })
+colors.inherit_hl('LspDiagnosticsWarning', 'StatusLineWarning', { background = status_line_bg2 })
+colors.inherit_hl('LspDiagnosticsInformation', 'StatusLineInformation', { background = status_line_bg2 })
+colors.inherit_hl('LspDiagnosticsHint', 'StatusLineHint', { background = status_line_bg2 })
+
+-- Swap statusline on buffer change
 local group = vim.api.nvim_create_augroup('StatusLine', { clear = true })
 vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, { command = "setlocal statusline=%!v:lua.StatusLine('active')", group = group })
 vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, { command = "setlocal statusline=%!v:lua.StatusLine('inactive')", group = group })
