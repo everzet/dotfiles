@@ -57,14 +57,32 @@ M.get_git_status = function(self)
     -- use fallback because it doesn't set this variable on the initial `BufEnter`
     local signs = vim.b.gitsigns_status_dict or { head = '', added = 0, changed = 0, removed = 0 }
     local is_head_empty = signs.head ~= ''
+    local result = {}
+    local status = {
+        added = '%#StatusLineAdd#+',
+        changed = '%#StatusLineChange#~',
+        removed = '%#StatusLineDelete#-',
+    }
+    local reset = '%#StatusLineBg2#'
 
     if self:is_truncated(self.trunc_width.git_status) then
         return is_head_empty and string.format('  %s ', signs.head or '') or ''
     end
 
+    for type, label in pairs(status) do
+        local count = signs[type]
+        if count > 0 then
+            local text = string.format('%s%d%s', label, count, reset)
+            table.insert(result, text)
+        end
+    end
+
+    local status_text = table.concat(result, ' ')
+
     return is_head_empty and string.format(
-        ' %%#StatusLineAdd#+%s %%#StatusLineChange#~%s %%#StatusLineDelete#-%s %%#StatusLineBg2#|  %s ',
-        signs.added, signs.changed, signs.removed, signs.head
+        '%s  %s ',
+        status_text == '' and '' or string.format(' %s |', table.concat(result, ' ')),
+        signs.head
     ) or ''
 end
 
