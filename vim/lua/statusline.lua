@@ -175,6 +175,6 @@ colors.inherit_hl('LspDiagnosticsInformation', 'StatusLineInformation', { backgr
 colors.inherit_hl('LspDiagnosticsHint', 'StatusLineHint', { background = status_line_bg2 })
 
 -- Swap statusline on buffer change
-local group = vim.api.nvim_create_augroup('StatusLine', { clear = true })
-vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, { command = "setlocal statusline=%!v:lua.StatusLine('active')", group = group })
-vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, { command = "setlocal statusline=%!v:lua.StatusLine('inactive')", group = group })
+local augroup = vim.api.nvim_create_augroup('Everzet_StatusLine', { clear = true })
+vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, { command = "setlocal statusline=%!v:lua.StatusLine('active')", group = augroup })
+vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, { command = "setlocal statusline=%!v:lua.StatusLine('inactive')", group = augroup })
