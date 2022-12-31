@@ -93,7 +93,7 @@ M.get_filename = function()
 end
 
 M.get_line_col = function()
-    return ' %l:%c '
+    return ' ﴜ %03l:%03c '
 end
 
 M.get_lsp_diag = function()
