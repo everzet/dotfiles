@@ -3,7 +3,10 @@ local M = {}
 M.trunc_width = setmetatable({
     mode       = 80,
     git_status = 90,
-    lsp_diag   = 120,
+    git_branch = 15,
+    lsp_diag   = 90,
+    lsp_name   = 10,
+    line_col   = 90,
 }, {
     __index = function()
         return 80
@@ -13,6 +16,10 @@ M.trunc_width = setmetatable({
 M.is_truncated = function(_, width)
     local current_width = vim.api.nvim_win_get_width(0)
     return current_width < width
+end
+
+M.truncate_text = function(_, str, width)
+    return string.sub(str, 1, width) .. (string.len(str) > width and '…' or '') .. ''
 end
 
 M.modes = setmetatable({
@@ -56,7 +63,7 @@ end
 M.get_git_status = function(self)
     -- use fallback because it doesn't set this variable on the initial `BufEnter`
     local signs = vim.b.gitsigns_status_dict or { head = '', added = 0, changed = 0, removed = 0 }
-    local is_head_empty = signs.head ~= ''
+    local is_head_present = signs.head ~= ''
     local result = {}
     local status = {
         added = '%#StatusLineAdd#+',
@@ -64,10 +71,6 @@ M.get_git_status = function(self)
         removed = '%#StatusLineDelete#-',
     }
     local reset = '%#StatusLineBg2#'
-
-    if self:is_truncated(self.trunc_width.git_status) then
-        return is_head_empty and string.format('  %s ', signs.head or '') or ''
-    end
 
     for type, label in pairs(status) do
         local count = signs[type]
@@ -78,11 +81,16 @@ M.get_git_status = function(self)
     end
 
     local status_text = table.concat(result, ' ')
+    local branch_text = is_head_present and string.format(' %s', signs.head or '') or ''
 
-    return is_head_empty and string.format(
-        '%s  %s ',
-        status_text == '' and '' or string.format(' %s |', table.concat(result, ' ')),
-        signs.head
+    if self:is_truncated(self.trunc_width.git_status) then
+        return ' ' .. self:truncate_text(branch_text, self.trunc_width.git_branch) .. ' '
+    end
+
+    return is_head_present and string.format(
+        ' %s %s',
+        branch_text,
+        status_text ~= '' and string.format(' %s ', table.concat(result, ' ')) or ''
     ) or ''
 end
 
@@ -92,11 +100,7 @@ M.get_filename = function()
     return string.format(' %s %%<%%f %%m ', icon)
 end
 
-M.get_line_col = function()
-    return ' ﴜ %03l:%03c '
-end
-
-M.get_lsp_diag = function()
+M.get_lsp_diag = function(self)
     local result = {}
     local levels = {
         Error = '%#StatusLineError#',
@@ -118,10 +122,26 @@ M.get_lsp_diag = function()
 
     local bufnr = vim.api.nvim_get_current_buf()
     local client = vim.lsp.get_active_clients({ bufnr = bufnr })[1]
-    local client_text = client and string.format('  %s ', client.name) or ''
+    local client_text = client and string.format(' %s', client.name) or ''
 
-    if diag_text == '' then return client_text end
-    return string.format('%s| %s ', client_text, diag_text)
+    if client_text == '' then return '' end
+
+    if self:is_truncated(self.trunc_width.lsp_diag) then
+        return ' ' .. self:truncate_text(client_text, self.trunc_width.lsp_name) .. ' '
+    end
+
+    return string.format('%s %s ',
+        diag_text ~= '' and string.format(' %s ', diag_text) or '',
+        client_text
+    )
+end
+
+M.get_line_col = function(self)
+    if self:is_truncated(self.trunc_width.line_col) then
+        return ' %l:%c '
+    else
+        return ' ﴜ %03l:%03c '
+    end
 end
 
 M.set_active = function(self)
@@ -162,7 +182,7 @@ local colors = require('colors')
 colors.inherit_hl('CursorColumn', 'StatusLineBg1', {})
 colors.inherit_hl('DraculaBgLighter', 'StatusLineBg2', {})
 colors.inherit_hl('DraculaBgLight', 'StatusLineBg3', {})
-colors.inherit_hl('WarningMsg', 'StatusLineMode', {})
+colors.inherit_hl('WildMenu', 'StatusLineMode', {})
 local status_line_bg2 = colors.get_hl('StatusLineBg2')['background']
 
 colors.inherit_hl('DiffAdd', 'StatusLineAdd', { background = status_line_bg2 })
