@@ -6,8 +6,11 @@ DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 # install third party apps via homebrew
 xargs brew install -q < $DOTFILESDIR/dependencies
 
-# configure Alacritty to not use macOS font smoothing
+# disable font smoothing in Alacritty
 defaults write org.alacritty AppleFontSmoothing -int 0
+
+# disable press-and-hold keyboard behaviour in Alacritty
+defaults write org.alacritty ApplePressAndHoldEnabled -bool false
 
 # symlink configs
 mkdir -p ~/.config
