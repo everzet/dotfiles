@@ -21,6 +21,7 @@ mkdir -p ~/.config
 ln -nfs $DOTFILESDIR/vim       ~/.config/nvim
 ln -nfs $DOTFILESDIR/fish      ~/.config/fish
 ln -nfs $DOTFILESDIR/git       ~/.config/git
+ln -nfs $DOTFILESDIR/bat       ~/.config/bat
 ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
 
 ln -nfs $DOTFILESDIR/asdfrc        ~/.asdfrc
