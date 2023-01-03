@@ -12,6 +12,9 @@ defaults write org.alacritty AppleFontSmoothing -int 0
 # disable press-and-hold keyboard behaviour in Alacritty
 defaults write org.alacritty ApplePressAndHoldEnabled -bool false
 
+# make NeoVim our vim
+ln -s /opt/homebrew/bin/nvim /opt/homebrew/bin/vim
+
 # symlink configs
 mkdir -p ~/.config
 
