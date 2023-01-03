@@ -68,6 +68,8 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Syntax highlighting
+    -- Syntax highlighting with TreeSitter
     use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+    -- F# does not have TreeSitter (yet?), so we use normal vim plugin
+    use 'kongo2002/fsharp-vim'
 end)
