@@ -53,8 +53,8 @@ vim.keymap.set('n', '<leader>do', '<cmd>tabonly<cr>', opts)
 
 -- Managing buffers
 vim.keymap.set('n', '<leader>bc', '<cmd>bd<cr>', opts)
-vim.keymap.set('n', '<leader>bo', '<cmd>%bd<cr><C-o><cmd>bd#<cr>', opts)
-vim.keymap.set('n', '<leader>bd', '<cmd>bufdo bd<cr>', opts)
+vim.keymap.set('n', '<leader>bo', '<cmd>%bd!<cr><C-o><cmd>bd#<cr>zz', opts)
+vim.keymap.set('n', '<leader>bd', '<cmd>%bd!<cr>', opts)
 
 -- Managing splits
 vim.keymap.set('n', '<leader>we', '<C-w>v<C-w>l', opts)
