@@ -70,8 +70,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 -- Resizing splits
 vim.keymap.set('n', '˙', '<C-w>5<', opts)
-vim.keymap.set('n', '¬', '<C-w>5>', opts)
 vim.keymap.set('n', '∆', '<C-w>2+', opts)
 vim.keymap.set('n', '˚', '<C-w>2-', opts)
-vim.keymap.set('n', '<leader>w=', '<C-w>=', opts)
-vim.keymap.set('n', '<leader>w0', '<C-w>|', opts)
+vim.keymap.set('n', '¬', '<C-w>5>', opts)
+vim.keymap.set('n', '≠', '<C-w>=', opts)
