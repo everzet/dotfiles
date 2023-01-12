@@ -57,10 +57,10 @@ vim.keymap.set('n', '<leader>bo', '<cmd>%bd!<cr><C-o><cmd>bd#<cr>zz', opts)
 vim.keymap.set('n', '<leader>bd', '<cmd>%bd!<cr>', opts)
 
 -- Managing splits
-vim.keymap.set('n', '<leader>we', '<C-w>v<C-w>l', opts)
-vim.keymap.set('n', '<leader>ws', '<C-w>s<C-w>j', opts)
-vim.keymap.set('n', '<leader>wq', '<C-w>v<C-w>h', opts)
-vim.keymap.set('n', '<leader>w2', '<C-w>s<C-w>k', opts)
+vim.keymap.set('n', '<leader>L', '<C-w>v<C-w>l', opts)
+vim.keymap.set('n', '<leader>J', '<C-w>s<C-w>j', opts)
+vim.keymap.set('n', '<leader>H', '<C-w>v<C-w>h', opts)
+vim.keymap.set('n', '<leader>K', '<C-w>s<C-w>k', opts)
 
 -- Navigating splits
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
