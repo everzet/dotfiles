@@ -82,6 +82,7 @@ M.get_git_status = function(self)
 
     local status_text = table.concat(result, ' ')
     local branch_text = is_head_present and string.format(' %s', signs.head or '') or ''
+    if branch_text == '' then return '' end
 
     if self:is_truncated(self.trunc_width.git_status) then
         return ' ' .. self:truncate_text(branch_text, self.trunc_width.git_branch) .. ' '
