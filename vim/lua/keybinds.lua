@@ -1,7 +1,7 @@
 local opts = { remap = false }
 
 -- Map <leader> key to comma
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- Map extra escape sequences
 vim.keymap.set('i', 'jk', '<esc>', opts)
