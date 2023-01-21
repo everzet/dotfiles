@@ -1,4 +1,5 @@
 require('colors').setup()
 require('settings')
 require('keybinds')
-require('plugins')
+require('statusline')
+require('plugin-manager')
