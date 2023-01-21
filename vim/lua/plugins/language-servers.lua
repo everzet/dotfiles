@@ -103,7 +103,7 @@ return {
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, defaults)
 
                 -- Formatting
-                vim.keymap.set('n', '<leader>f', function()
+                vim.keymap.set('n', '<leader>bf', function()
                     if vim.lsp.buf.format then
                         vim.lsp.buf.format()
                     elseif vim.lsp.buf.formatting then
