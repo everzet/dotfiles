@@ -1,6 +1,6 @@
-local M = {}
+local status = {}
 
-M.trunc_width = setmetatable({
+status.trunc_width = setmetatable({
     mode       = 80,
     git_status = 90,
     git_branch = 15,
@@ -8,21 +8,19 @@ M.trunc_width = setmetatable({
     lsp_name   = 10,
     line_col   = 90,
 }, {
-    __index = function()
-        return 80
-    end
+    __index = function() return 80 end
 })
 
-M.is_truncated = function(_, width)
+status.is_truncated = function(_, width)
     local current_width = vim.api.nvim_win_get_width(0)
     return current_width < width
 end
 
-M.truncate_text = function(_, str, width)
+status.truncate_text = function(_, str, width)
     return string.sub(str, 1, width) .. (string.len(str) > width and '…' or '') .. ''
 end
 
-M.modes = setmetatable({
+status.modes = setmetatable({
     ['n']  = { 'Normal', 'N' };
     ['no'] = { 'N·Pending', 'N·P' };
     ['v']  = { 'Visual', 'V' };
@@ -49,7 +47,7 @@ M.modes = setmetatable({
     end
 })
 
-M.get_current_mode = function(self)
+status.get_current_mode = function(self)
     local current_mode = vim.api.nvim_get_mode().mode
     local current_color = current_mode == 'n' and '' or '%#StatusLineMode#'
 
@@ -60,7 +58,7 @@ M.get_current_mode = function(self)
     return string.format('%s %s ', current_color, self.modes[current_mode][1]):upper()
 end
 
-M.get_git_status = function(self)
+status.get_git_status = function(self)
     -- use fallback because it doesn't set this variable on the initial `BufEnter`
     local signs = vim.b.gitsigns_status_dict or { head = '', added = 0, changed = 0, removed = 0 }
     local is_head_present = signs.head ~= ''
@@ -95,13 +93,13 @@ M.get_git_status = function(self)
     ) or ''
 end
 
-M.get_filename = function()
+status.get_filename = function()
     local file_name, file_ext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
     local icon = require 'nvim-web-devicons'.get_icon(file_name, file_ext, { default = true })
     return string.format(' %s %%<%%f %%m ', icon)
 end
 
-M.get_lsp_diag = function(self)
+status.get_lsp_diag = function(self)
     local result = {}
     local levels = {
         Error = '%#StatusLineError#',
@@ -137,7 +135,7 @@ M.get_lsp_diag = function(self)
     )
 end
 
-M.get_line_col = function(self)
+status.get_line_col = function(self)
     if self:is_truncated(self.trunc_width.line_col) then
         return ' %l:%c '
     else
@@ -145,7 +143,7 @@ M.get_line_col = function(self)
     end
 end
 
-M.set_active = function(self)
+status.set_active = function(self)
     return table.concat({
         '%#StatusLineBg1#', self:get_current_mode(),
         '%#StatusLineBg2#', self:get_git_status(),
@@ -155,13 +153,13 @@ M.set_active = function(self)
     })
 end
 
-M.set_inactive = function()
+status.set_inactive = function()
     return table.concat({
         '%#StatusLineBg3#%=', '%<%f %m', '%='
     })
 end
 
-M.set_gui_window = function(self, name)
+status.set_gui_window = function(self, name)
     return table.concat({
         '%#StatusLineMode#', string.format(' %s ', name),
         '%#StatusLineBg3#', '%=%=',
@@ -169,13 +167,21 @@ M.set_gui_window = function(self, name)
     })
 end
 
-StatusLine = setmetatable(M, {
-    __call = function(statusline, mode)
-        if mode == 'inactive' then return statusline:set_inactive() end
-        if vim.bo.filetype == 'fugitive' then return statusline:set_gui_window(' fugitive') end
-        if mode == 'active' then return statusline:set_active() end
+-- Global callable object
+StatusLine = setmetatable(status, {
+    __call = function(self, mode)
+        if mode == 'inactive' then return self:set_inactive() end
+        if vim.bo.filetype == 'fugitive' then return self:set_gui_window(' fugitive') end
+        if mode == 'active' then return self:set_active() end
     end
 })
+
+-- Swap statusline on buffer change
+local augroup = vim.api.nvim_create_augroup('Everzet_StatusLine', { clear = true })
+vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter' },
+    { command = "setlocal statusline=%!v:lua.StatusLine('active')", group = augroup })
+vim.api.nvim_create_autocmd({ 'WinLeave', 'BufLeave' },
+    { command = "setlocal statusline=%!v:lua.StatusLine('inactive')", group = augroup })
 
 -- Style statusline
 local colors = require('colors')
@@ -194,8 +200,3 @@ colors.inherit_hl('LspDiagnosticsError', 'StatusLineError', { background = statu
 colors.inherit_hl('LspDiagnosticsWarning', 'StatusLineWarning', { background = status_line_bg2 })
 colors.inherit_hl('LspDiagnosticsInformation', 'StatusLineInformation', { background = status_line_bg2 })
 colors.inherit_hl('LspDiagnosticsHint', 'StatusLineHint', { background = status_line_bg2 })
-
--- Swap statusline on buffer change
-local augroup = vim.api.nvim_create_augroup('Everzet_StatusLine', { clear = true })
-vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, { command = "setlocal statusline=%!v:lua.StatusLine('active')", group = augroup })
-vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, { command = "setlocal statusline=%!v:lua.StatusLine('inactive')", group = augroup })

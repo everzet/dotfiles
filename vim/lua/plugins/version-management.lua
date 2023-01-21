@@ -11,12 +11,13 @@ return {
     -- Git management
     { 'tpope/vim-fugitive',
         config = function(_, _)
-            vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { remap = false })
-            vim.keymap.set('n', '<leader>ga', vim.cmd.Gwrite, { remap = false })
-            vim.keymap.set('n', '<leader>gd', vim.cmd.Gvdiffsplit, { remap = false })
-            vim.keymap.set('n', '<leader>gco', vim.cmd.Gread, { remap = false })
-            vim.keymap.set('n', '<leader>grn', vim.cmd.GRename, { remap = false })
-            vim.keymap.set('n', '<leader>grm', vim.cmd.GDelete, { remap = false })
+            local defaults = { remap = true }
+            vim.keymap.set('n', '<leader>gs', vim.cmd.Git, defaults)
+            vim.keymap.set('n', '<leader>ga', vim.cmd.Gwrite, defaults)
+            vim.keymap.set('n', '<leader>gd', vim.cmd.Gvdiffsplit, defaults)
+            vim.keymap.set('n', '<leader>gco', vim.cmd.Gread, defaults)
+            vim.keymap.set('n', '<leader>grn', vim.cmd.GRename, defaults)
+            vim.keymap.set('n', '<leader>grm', vim.cmd.GDelete, defaults)
 
             local augroup = vim.api.nvim_create_augroup('Everzet_Fugitive', { clear = true })
             vim.api.nvim_create_autocmd('BufWinEnter', {
