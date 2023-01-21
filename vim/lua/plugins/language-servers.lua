@@ -46,7 +46,10 @@ return {
                             path = runtime_path,
                         },
                         diagnostics = { globals = { 'vim' } },
-                        workspace = { library = vim.api.nvim_get_runtime_file('', true) },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file('', true),
+                            checkThirdParty = false, -- Do not pester us with Lua dependency prompts
+                        },
                         -- Do not send telemetry data containing a randomized but unique identifier
                         telemetry = { enable = false },
                     }
