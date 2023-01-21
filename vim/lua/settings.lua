@@ -10,6 +10,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- Indentation visuals
+vim.opt.list = true
 vim.opt.listchars = { tab = '▸ ', trail = '·' }
 
 -- Configure screen scroll jumps
