@@ -6,6 +6,20 @@ DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 # install third party apps via homebrew
 xargs brew install -q < $DOTFILESDIR/dependencies
 
+# symlink configs
+mkdir -p ~/.config
+ln -nfs $DOTFILESDIR/vim       ~/.config/nvim
+ln -nfs $DOTFILESDIR/fish      ~/.config/fish
+ln -nfs $DOTFILESDIR/git       ~/.config/git
+ln -nfs $DOTFILESDIR/bat       ~/.config/bat
+ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
+
+# symlink RCs
+ln -nfs $DOTFILESDIR/asdfrc        ~/.asdfrc
+ln -nfs $DOTFILESDIR/iex.exs       ~/.iex.exs
+ln -nfs $DOTFILESDIR/tmux.conf     ~/.tmux.conf
+ln -nfs $DOTFILESDIR/editorconfig  ~/.editorconfig
+
 # disable font smoothing in Alacritty
 defaults write org.alacritty AppleFontSmoothing -int 0
 
@@ -15,21 +29,11 @@ defaults write org.alacritty ApplePressAndHoldEnabled -bool false
 # install terminfo for alacritty
 sudo tic -xe alacritty,alacritty-direct $DOTFILESDIR/alacritty/alacritty.info
 
+# setup neovim
+nvim --headless "+Lazy! sync" +qa
+
 # make NeoVim our vim
-ln -s /opt/homebrew/bin/nvim /opt/homebrew/bin/vim
+ln -sf /opt/homebrew/bin/nvim /opt/homebrew/bin/vim
 
-# symlink configs
-mkdir -p ~/.config
-
-ln -nfs $DOTFILESDIR/vim       ~/.config/nvim
-ln -nfs $DOTFILESDIR/fish      ~/.config/fish
-ln -nfs $DOTFILESDIR/git       ~/.config/git
-ln -nfs $DOTFILESDIR/bat       ~/.config/bat
-ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
-
-ln -nfs $DOTFILESDIR/asdfrc        ~/.asdfrc
-ln -nfs $DOTFILESDIR/iex.exs       ~/.iex.exs
-ln -nfs $DOTFILESDIR/tmux.conf     ~/.tmux.conf
-ln -nfs $DOTFILESDIR/editorconfig  ~/.editorconfig
-
+# disable login prompt
 touch ~/.hushlogin
