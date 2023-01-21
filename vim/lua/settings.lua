@@ -37,7 +37,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 -- Enable cross-session undo
-vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+vim.opt.undodir = vim.fn.stdpath('data') .. '/undodir'
 vim.opt.undofile = true
 
 -- Set really short screen refresh
