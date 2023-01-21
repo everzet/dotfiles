@@ -1,11 +1,13 @@
 -- Version/history management plugins
 return {
+
     -- Visual undo for times when we really need to go back
     { 'mbbill/undotree',
         config = function(_, _)
             vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
         end
     },
+
     -- Git management
     { 'tpope/vim-fugitive',
         config = function(_, _)
@@ -32,4 +34,5 @@ return {
             })
         end
     },
+
 }

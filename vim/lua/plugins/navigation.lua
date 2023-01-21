@@ -1,7 +1,8 @@
 -- Navigation-related plugins
 return {
+
     -- Fuzzy finder
-    { 'nvim-telescope/telescope.nvim', version = '0.1.1',
+    { 'nvim-telescope/telescope.nvim', version = '*',
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-file-browser.nvim',
@@ -30,6 +31,7 @@ return {
                 function() builtin.find_files({ cwd = '~/.config/nvim', initial_mode = 'normal' }) end, {})
         end
     },
+
     -- Nicer jumping between actively worked upon files
     { 'ThePrimeagen/harpoon',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -43,5 +45,6 @@ return {
             vim.keymap.set('n', '<C-q>', function() ui.nav_file(1) end)
             vim.keymap.set('n', '<C-w>', function() ui.nav_file(2) end)
         end
-    }
+    },
+
 }

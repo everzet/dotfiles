@@ -1,5 +1,7 @@
 -- Language servers
 return {
+
+    -- LSP megaconfig
     { 'VonHeikemen/lsp-zero.nvim',
         dependencies = {
             -- LSP Support
@@ -116,5 +118,6 @@ return {
                 virtual_text = true
             })
         end
-    }
+    },
+
 }
