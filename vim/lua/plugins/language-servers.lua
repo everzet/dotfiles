@@ -71,7 +71,7 @@ return {
 
             -- Override default preferences
             lsp.set_preferences({
-                suggest_lsp_servers = true
+                suggest_lsp_servers = false
             })
 
             -- Set keybinds on LSP attach to the buffer
