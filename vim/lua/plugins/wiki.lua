@@ -3,6 +3,7 @@ return {
 
     -- zk
     { 'mickael-menu/zk-nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
         opts = {
             picker = 'telescope',
             lsp = {
