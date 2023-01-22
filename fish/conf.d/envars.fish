@@ -10,3 +10,6 @@ set -gx CLICOLOR_FORCE true
 # encoding
 set -gx LANG "en_GB.UTF-8"
 set -gx LC_CTYPE "en_GB.UTF-8"
+
+# zk wiki
+set -gx ZK_NOTEBOOK_DIR "$HOME/Dev/wiki"
