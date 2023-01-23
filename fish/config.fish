@@ -19,7 +19,4 @@ if status is-interactive
 
     # Neat and fully-fledged prompt
     starship init fish | source
-
-    # Docker Desktop
-    source ~/.docker/init-fish.sh || true
 end
