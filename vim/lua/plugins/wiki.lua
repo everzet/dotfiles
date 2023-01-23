@@ -10,6 +10,14 @@ return {
                 config = {
                     cmd = { 'zk', 'lsp' },
                     name = 'zk',
+                    on_attach = function(_, bufnr)
+                        local defaults = { buffer = bufnr, remap = false }
+                        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, defaults)
+                        vim.keymap.set('n', 'gl', vim.diagnostic.open_float, defaults)
+                        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, defaults)
+                        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, defaults)
+                        vim.keymap.set('n', 'K', vim.lsp.buf.hover, defaults)
+                    end
                 },
 
                 -- automatically attach buffers in a zk notebook that match the given filetypes
