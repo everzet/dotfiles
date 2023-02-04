@@ -30,7 +30,6 @@ return {
             lsp.ensure_installed({
                 'elixirls',
                 'tsserver',
-                'eslint',
                 'sumneko_lua',
             })
 
