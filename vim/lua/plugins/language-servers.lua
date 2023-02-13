@@ -30,14 +30,14 @@ return {
             lsp.ensure_installed({
                 'elixirls',
                 'tsserver',
-                'sumneko_lua',
+                'lua_ls',
             })
 
             -- Configure Lua LSP to support vim configs
             local runtime_path = vim.split(package.path, ';')
             table.insert(runtime_path, 'lua/?.lua')
             table.insert(runtime_path, 'lua/?/init.lua')
-            lsp.configure('sumneko_lua', {
+            lsp.configure('lua_ls', {
                 settings = {
                     Lua = {
                         runtime = {
