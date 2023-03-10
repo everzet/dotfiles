@@ -79,11 +79,11 @@ return {
                 local defaults = { buffer = bufnr, remap = false }
 
                 -- Go *
-                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, defaults)
-                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, defaults)
-                vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, defaults)
+                vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, defaults)
+                vim.keymap.set('n', 'go', require('telescope.builtin').lsp_type_definitions, defaults)
                 vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, defaults)
                 vim.keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, defaults)
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, defaults)
 
                 -- Navigate diagnostics
                 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, defaults)
