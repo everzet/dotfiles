@@ -157,9 +157,5 @@ cursor:
   # window is not focused.
   unfocused_hollow: true
 
-mouse:
-  # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: true
-
 # Live config reload (changes require restart)
 live_config_reload: true
