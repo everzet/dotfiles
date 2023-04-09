@@ -1,9 +1,6 @@
 -- Language syntax related plugins
 return {
 
-    -- Automatically configure editor based on project settings
-    { 'editorconfig/editorconfig-vim' },
-
     -- F# does not have TreeSitter (yet?), so we use normal vim plugin
     { 'kongo2002/fsharp-vim', ft = 'fsharp' },
 
