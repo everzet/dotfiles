@@ -101,15 +101,6 @@ return {
                 -- Code actions
                 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, defaults)
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, defaults)
-
-                -- Formatting
-                vim.keymap.set('n', '<leader>bf', function()
-                    if vim.lsp.buf.format then
-                        vim.lsp.buf.format()
-                    elseif vim.lsp.buf.formatting then
-                        vim.lsp.buf.formatting()
-                    end
-                end, defaults)
             end)
 
             lsp.setup()
