@@ -29,6 +29,7 @@ return {
             -- Always install following servers
             lsp.ensure_installed({
                 'elixirls',
+                'eslint',
                 'tsserver',
                 'lua_ls',
             })
@@ -65,6 +66,12 @@ return {
                     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                     ['<C-Space>'] = cmp.mapping.complete(),
+                }),
+                sources = cmp.config.sources({
+                  { name = 'nvim_lsp' },
+                  { name = 'luasnip' },
+                }, {
+                  { name = 'buffer' },
                 })
             })
 
@@ -75,7 +82,6 @@ return {
 
             -- Set keybinds on LSP attach to the buffer
             lsp.on_attach(function(_, bufnr)
-                print('test')
                 local defaults = { buffer = bufnr, remap = false }
 
                 -- Go *
