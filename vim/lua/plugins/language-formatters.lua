@@ -5,7 +5,7 @@ return {
         config = function(_, _)
             require('formatter').setup({
                 filetype = {
-                    typescript = {
+                    ['*'] = {
                         require('formatter.filetypes.javascript').prettier,
                     }
                 }
