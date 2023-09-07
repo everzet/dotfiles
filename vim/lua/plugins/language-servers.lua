@@ -107,6 +107,9 @@ return {
                 -- Code actions
                 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, defaults)
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, defaults)
+                vim.keymap.set('n', '<leader>oi', function()
+                    vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})
+                end, defaults)
             end)
 
             lsp.setup()
