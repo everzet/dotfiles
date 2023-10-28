@@ -3,7 +3,7 @@ fish
 tmux
 neovim
 git
-exa
+lsd
 bat
 fd
 sd

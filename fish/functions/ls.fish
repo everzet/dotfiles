@@ -1,3 +1,3 @@
 function ls --wraps exa --description "list directory contents"
-    exa -lSF $argv;
+    lsd -lSF $argv;
 end
