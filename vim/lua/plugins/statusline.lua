@@ -10,8 +10,8 @@ return {
         config = function(_, _)
             require("lualine").setup({
                 options = {
+                    theme = "horizon",
                     icons_enabled = true,
-                    theme = "dracula",
                     section_separators = "",
                     component_separators = "",
                     disabled_filetypes = {
@@ -31,16 +31,16 @@ return {
                     lualine_a = { "mode" },
                     lualine_b = { "branch", "diff" },
                     lualine_c = { "filename" },
-                    lualine_x = { "diagnostics", "filetype" },
-                    lualine_y = { "searchcount", "require'lsp-status'.status()" },
-                    lualine_z = { "location" },
+                    lualine_x = { "filetype" },
+                    lualine_y = { "require'lsp-status'.status()" },
+                    lualine_z = { "searchcount", "location" },
                 },
                 inactive_sections = {
                     lualine_a = {},
                     lualine_b = {},
                     lualine_c = { "filename" },
-                    lualine_x = { "diagnostics", "filetype" },
-                    lualine_y = {},
+                    lualine_x = { "filetype" },
+                    lualine_y = { "require'lsp-status'.status()" },
                     lualine_z = {},
                 },
                 tabline = {},
