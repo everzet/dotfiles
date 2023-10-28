@@ -11,12 +11,12 @@ vim.opt.smartindent = true
 
 -- Indentation visuals
 vim.opt.list = true
-vim.opt.listchars = { tab = '▸ ', trail = '·' }
+vim.opt.listchars = { tab = "▸ ", trail = "·" }
 
 -- Configure screen scroll jumps
 vim.opt.scrolloff = 4
-vim.opt.signcolumn = 'yes'
-vim.opt.isfname:append('@-@')
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
 
 -- Disable line wrapping
 vim.opt.wrap = false
@@ -37,7 +37,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 -- Enable cross-session undo
-vim.opt.undodir = vim.fn.stdpath('data') .. '/undodir'
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 vim.opt.undofile = true
 
 -- Set really short screen refresh

@@ -3,10 +3,10 @@ local colors = {}
 function colors.setup()
     -- Configure colorscheme
     vim.opt.termguicolors = true
-    vim.cmd 'colorscheme dracula_pro'
+    vim.cmd("colorscheme dracula_pro")
 
     -- Italicise comments
-    colors.update_hl('Comment', { italic = true })
+    colors.update_hl("Comment", { italic = true })
 end
 
 function colors.get_hl(name)
@@ -15,7 +15,9 @@ end
 
 function colors.inherit_hl(from_name, to_name, overrides)
     local hl = colors.get_hl(from_name)
-    for k, v in pairs(overrides) do hl[k] = v end
+    for k, v in pairs(overrides) do
+        hl[k] = v
+    end
     vim.api.nvim_set_hl(0, to_name, hl)
 end
 

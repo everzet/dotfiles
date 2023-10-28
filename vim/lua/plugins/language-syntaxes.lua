@@ -2,23 +2,24 @@
 return {
 
     -- F# does not have TreeSitter (yet?), so we use normal vim plugin
-    { 'kongo2002/fsharp-vim', ft = 'fsharp' },
+    { "kongo2002/fsharp-vim", ft = "fsharp" },
 
     -- TreeSitter
-    { 'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         opts = {
             -- A list of parser names, or "all"
             ensure_installed = {
-                'elixir',
-                'html',
-                'markdown',
-                'json',
-                'javascript',
-                'typescript',
-                'sql',
-                'lua',
-                'vim',
+                "elixir",
+                "html",
+                "markdown",
+                "json",
+                "javascript",
+                "typescript",
+                "sql",
+                "lua",
+                "vim",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -42,8 +43,7 @@ return {
             },
         },
         config = function(_, opts)
-            require('nvim-treesitter.configs').setup(opts)
-        end
+            require("nvim-treesitter.configs").setup(opts)
+        end,
     },
-
 }
