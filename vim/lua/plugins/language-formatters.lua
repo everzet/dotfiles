@@ -1,18 +1,21 @@
 -- Language formatters
 return {
 
-    { 'mhartington/formatter.nvim',
+    {
+        "mhartington/formatter.nvim",
         config = function(_, _)
-            require('formatter').setup({
+            require("formatter").setup({
                 filetype = {
-                    ['*'] = {
-                        require('formatter.filetypes.javascript').prettier,
-                    }
-                }
+                    lua = { require("formatter.filetypes.lua").stylua },
+                    elixir = { require("formatter.filetypes.elixir").mixformat },
+                    typescript = { require("formatter.filetypes.typescript").prettier },
+                    javascript = { require("formatter.filetypes.javascript").prettier },
+                    json = { require("formatter.filetypes.json").prettier },
+                    markdown = { require("formatter.filetypes.markdown").prettier },
+                },
             })
             local defaults = { remap = false }
-            vim.keymap.set('n', '<leader>bf', '<cmd>Format<cr>', defaults)
-        end
-    }
-
+            vim.keymap.set("n", "<leader>bf", "<cmd>Format<cr>", defaults)
+        end,
+    },
 }
