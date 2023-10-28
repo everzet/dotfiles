@@ -2,7 +2,7 @@
 return {
 
     -- Icons throughout the UI
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons",
 
     -- Git information throughout the UI
     {
