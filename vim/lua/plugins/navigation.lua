@@ -41,12 +41,20 @@ return {
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function(_, _)
-            require("oil").setup({
+            local oil = require("oil")
+
+            oil.setup({
                 columns = { "icon" },
                 float = { max_width = 80, max_height = 30 },
             })
 
-            vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+            vim.keymap.set("n", "<leader>fr", function()
+                oil.open()
+            end, { desc = "Open parent directory" })
+
+            vim.keymap.set("n", "<leader>ff", function()
+                oil.open(vim.fn.getcwd())
+            end, { desc = "Open root directory" })
         end,
     },
 
