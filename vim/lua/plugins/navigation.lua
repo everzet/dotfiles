@@ -48,9 +48,8 @@ return {
                 float = { max_width = 80, max_height = 30 },
             })
 
-            vim.keymap.set("n", "<leader>fr", function()
-                oil.open()
-            end, { desc = "Open parent directory" })
+            vim.keymap.set("n", "-", oil.open, { desc = "Open parent directory" })
+            vim.keymap.set("n", "<leader>fr", oil.open, { desc = "Open parent directory" })
 
             vim.keymap.set("n", "<leader>ff", function()
                 oil.open(vim.fn.getcwd())
