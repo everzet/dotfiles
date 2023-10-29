@@ -12,7 +12,6 @@ return {
         config = function(_, _)
             local telescope = require("telescope")
             telescope.load_extension("fzf")
-            telescope.load_extension("file_browser")
 
             telescope.setup({
                 pickers = {
