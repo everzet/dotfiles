@@ -30,10 +30,10 @@ return {
 
                     local bufnr = vim.api.nvim_get_current_buf()
 
-                    vim.keymap.set("n", "<leader>gP", function()
+                    vim.keymap.set("n", "gP", function()
                         vim.cmd.Git({ "pull", "--rebase" })
                     end, { buffer = bufnr, desc = "Git pull with rebase" })
-                    vim.keymap.set("n", "<leader>gp", function()
+                    vim.keymap.set("n", "gp", function()
                         vim.cmd.Git("push")
                     end, { buffer = bufnr, desc = "Git push" })
                 end,
