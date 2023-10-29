@@ -20,24 +20,13 @@ return {
             vim.keymap.set("n", "<leader>grn", vim.cmd.GRename, { desc = "Git rename current file" })
             vim.keymap.set("n", "<leader>grm", vim.cmd.GDelete, { desc = "Git delete current file" })
 
-            local augroup = vim.api.nvim_create_augroup("Everzet_Fugitive", { clear = true })
-            vim.api.nvim_create_autocmd("BufWinEnter", {
-                group = augroup,
-                callback = function()
-                    if vim.bo.filetype ~= "fugitive" then
-                        return
-                    end
+            vim.keymap.set("n", "<leader>gP", function()
+                vim.cmd.Git({ "pull", "--rebase" })
+            end, { desc = "Git pull with rebase" })
 
-                    local bufnr = vim.api.nvim_get_current_buf()
-
-                    vim.keymap.set("n", "gP", function()
-                        vim.cmd.Git({ "pull", "--rebase" })
-                    end, { buffer = bufnr, desc = "Git pull with rebase" })
-                    vim.keymap.set("n", "gp", function()
-                        vim.cmd.Git("push")
-                    end, { buffer = bufnr, desc = "Git push" })
-                end,
-            })
+            vim.keymap.set("n", "<leader>gp", function()
+                vim.cmd.Git("push")
+            end, { desc = "Git push" })
         end,
     },
 }
