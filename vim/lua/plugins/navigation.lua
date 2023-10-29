@@ -7,7 +7,6 @@ return {
         version = "*",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
         config = function(_, _)
@@ -23,25 +22,32 @@ return {
             })
 
             local builtin = require("telescope.builtin")
-            local fb = telescope.extensions.file_browser
 
-            vim.keymap.set("n", "<C-t>", builtin.find_files, {})
-            vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-            vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-            vim.keymap.set("n", "<leader>ff", function()
-                fb.file_browser({ grouped = true, select_buffer = true, initial_mode = "normal" })
-            end, {})
-            vim.keymap.set("n", "<leader>fr", function()
-                fb.file_browser({ grouped = true, path = "%:p:h", select_buffer = true, initial_mode = "normal" })
-            end, {})
+            vim.keymap.set("n", "<C-t>", builtin.find_files, { desc = "Search files" })
+            vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Search git files" })
+            vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search with grep" })
             vim.keymap.set("n", "<leader>fb", function()
                 builtin.buffers({ grouped = true, initial_mode = "normal" })
-            end, {})
+            end, { desc = "List buffers" })
 
             -- Lookup files under the neovim config folder
             vim.keymap.set("n", "<leader>ve", function()
-                builtin.find_files({ cwd = "~/.config/nvim", initial_mode = "normal" })
-            end, {})
+                builtin.find_files({ cwd = "~/.config", initial_mode = "normal" })
+            end, { desc = "List my configs" })
+        end,
+    },
+
+    -- Filesystem navigation
+    {
+        "stevearc/oil.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function(_, _)
+            require("oil").setup({
+                columns = { "icon" },
+                float = { max_width = 80, max_height = 30 },
+            })
+
+            vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
         end,
     },
 
@@ -53,15 +59,15 @@ return {
             local mark = require("harpoon.mark")
             local ui = require("harpoon.ui")
 
-            vim.keymap.set("n", "<leader>a", mark.add_file)
-            vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+            vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Harpoon current file" })
+            vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu, { desc = "List harpooned files" })
 
             vim.keymap.set("n", "<C-q>", function()
                 ui.nav_file(1)
-            end)
+            end, { desc = "Open 1st harpooned file" })
             vim.keymap.set("n", "<C-w>", function()
                 ui.nav_file(2)
-            end)
+            end, { desc = "Open 2nd harpooned file" })
         end,
     },
 }

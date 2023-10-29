@@ -1,9 +1,6 @@
 -- UI-related plugins
 return {
 
-    -- Icons throughout the UI
-    "nvim-tree/nvim-web-devicons",
-
     -- Git information throughout the UI
     {
         "lewis6991/gitsigns.nvim",
