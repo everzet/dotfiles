@@ -4,6 +4,9 @@ return {
     -- F# does not have TreeSitter (yet?), so we use normal vim plugin
     { "kongo2002/fsharp-vim", ft = "fsharp" },
 
+    -- Earthfile does not have TreeSitter
+    { "earthly/earthly.vim" },
+
     -- TreeSitter
     {
         "nvim-treesitter/nvim-treesitter",
