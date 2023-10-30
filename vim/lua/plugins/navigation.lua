@@ -17,6 +17,10 @@ return {
                 pickers = {
                     find_files = { theme = "dropdown" },
                     git_files = { theme = "dropdown" },
+                    lsp_definitions = { theme = "cursor" },
+                    lsp_references = { theme = "cursor" },
+                    lsp_implementations = { theme = "cursor" },
+                    lsp_type_definitions = { theme = "cursor" },
                 },
             })
 
