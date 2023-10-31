@@ -20,7 +20,7 @@ return {
         "nvim-lualine/lualine.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
-            "nvim-lua/lsp-status.nvim",
+            "arkav/lualine-lsp-progress",
         },
         config = function(_, _)
             require("lualine").setup({
@@ -46,16 +46,16 @@ return {
                     lualine_a = { "mode" },
                     lualine_b = { "branch", "diff" },
                     lualine_c = { { "filename", path = 1 } },
-                    lualine_x = { "filetype" },
-                    lualine_y = { "diagnostics", "require'lsp-status'.status()" },
+                    lualine_x = { "lsp_progress", "diagnostics" },
+                    lualine_y = { "filetype" },
                     lualine_z = { "searchcount", "location" },
                 },
                 inactive_sections = {
                     lualine_a = {},
                     lualine_b = {},
                     lualine_c = { "filename" },
-                    lualine_x = { { "filetype", colored = false, icon_only = true } },
-                    lualine_y = { "diagnostics" },
+                    lualine_x = { "diagnostics" },
+                    lualine_y = { { "filetype", colored = false, icon_only = true } },
                     lualine_z = {},
                 },
                 tabline = {},
