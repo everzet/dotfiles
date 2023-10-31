@@ -1,11 +1,10 @@
 -- Language servers
 return {
-
     -- LSP megaconfig
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            -- LSP Support
+            -- Package Manager
             { "williamboman/mason.nvim" },
             { "williamboman/mason-lspconfig.nvim" },
             -- Autocompletion
@@ -23,7 +22,11 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 -- Always install following servers
-                ensure_installed = { "elixirls", "tsserver", "eslint", "lua_ls" },
+                ensure_installed = {
+                    "elixirls",
+                    "tsserver",
+                    "lua_ls",
+                },
             })
 
             local lspconfig = require("lspconfig")
@@ -32,7 +35,6 @@ return {
             -- Configure LSPs
             lspconfig.elixirls.setup({ capabilities = capabilities })
             lspconfig.tsserver.setup({ capabilities = capabilities })
-            lspconfig.eslint.setup({ capabilities = capabilities })
 
             -- Configure Lua LSP to support vim configs
             local runtime_path = vim.split(package.path, ";")
@@ -86,7 +88,7 @@ return {
 
             -- Set keybinds on LSP attach to the buffer
             vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+                group = vim.api.nvim_create_augroup("HookLspKeybinds", {}),
                 callback = function(ev)
                     local defaults = { buffer = ev.buf, remap = false }
 

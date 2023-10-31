@@ -1,17 +1,20 @@
 -- Language formatters
 return {
-
     {
         "mhartington/formatter.nvim",
+        dependencies = {
+            -- Package Manager
+            { "williamboman/mason.nvim" },
+        },
         config = function(_, _)
             require("formatter").setup({
                 filetype = {
                     lua = { require("formatter.filetypes.lua").stylua },
                     elixir = { require("formatter.filetypes.elixir").mixformat },
-                    typescript = { require("formatter.filetypes.typescript").prettier },
-                    javascript = { require("formatter.filetypes.javascript").prettier },
-                    json = { require("formatter.filetypes.json").prettier },
-                    markdown = { require("formatter.filetypes.markdown").prettier },
+                    typescript = { require("formatter.filetypes.typescript").prettierd },
+                    javascript = { require("formatter.filetypes.javascript").prettierd },
+                    json = { require("formatter.filetypes.json").prettierd },
+                    markdown = { require("formatter.filetypes.markdown").prettierd },
                 },
             })
             local defaults = { remap = false }
