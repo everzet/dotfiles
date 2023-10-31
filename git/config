@@ -42,6 +42,10 @@
     dc = difftool --cached
     m  = mergetool
 
+    wa = worktree add
+    wl = worktree list
+    wr = worktree remove
+
     l = log --oneline --graph
     t = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
