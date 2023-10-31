@@ -19,8 +19,11 @@ return {
                 },
             })
 
-            -- Keybinds
-            vim.keymap.set("n", "<leader>bf", "<cmd>Format<cr>", { desc = "Format current buffer" })
+            -- Format buffers on write
+            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+                group = vim.api.nvim_create_augroup("FormatOnWrite", {}),
+                command = "FormatWrite",
+            })
         end,
     },
 }
