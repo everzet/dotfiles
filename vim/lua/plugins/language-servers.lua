@@ -1,6 +1,6 @@
 -- Language servers
 return {
-    -- LSP megaconfig
+
     {
         "neovim/nvim-lspconfig",
         dependencies = {
@@ -22,11 +22,7 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 -- Always install following servers
-                ensure_installed = {
-                    "elixirls",
-                    "tsserver",
-                    "lua_ls",
-                },
+                ensure_installed = { "elixirls", "tsserver", "lua_ls" },
             })
 
             local lspconfig = require("lspconfig")
@@ -90,42 +86,48 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("HookLspKeybinds", {}),
                 callback = function(ev)
-                    local defaults = { buffer = ev.buf, remap = false }
+                    local buf = ev.buf
+                    local tscope = require("telescope.builtin")
 
                     -- Go *
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, defaults)
-                    vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, defaults)
-                    vim.keymap.set("n", "go", require("telescope.builtin").lsp_type_definitions, defaults)
-                    vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, defaults)
-                    vim.keymap.set("n", "gi", require("telescope.builtin").lsp_implementations, defaults)
+                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = buf, desc = "Declaration" })
+                    vim.keymap.set("n", "gd", tscope.lsp_definitions, { buffer = buf, desc = "Definitions" })
+                    vim.keymap.set("n", "go", tscope.lsp_type_definitions, { buffer = buf, desc = "Type definitions" })
+                    vim.keymap.set("n", "gr", tscope.lsp_references, { buffer = buf, desc = "References" })
+                    vim.keymap.set("n", "gi", tscope.lsp_implementations, { buffer = buf, desc = "Implementations" })
 
                     -- Navigate diagnostics
-                    vim.keymap.set("n", "gl", vim.diagnostic.open_float, defaults)
-                    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, defaults)
-                    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, defaults)
+                    vim.keymap.set("n", "gl", vim.diagnostic.open_float, { buffer = buf, desc = "Show diagnostics" })
+                    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { buffer = buf, desc = "Previous deiagnostic" })
+                    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { buffer = buf, desc = "Next diagnostic" })
 
                     -- Show * symbols
-                    vim.keymap.set("n", "<leader>sds", require("telescope.builtin").lsp_document_symbols, defaults)
+                    vim.keymap.set(
+                        "n",
+                        "<leader>sds",
+                        tscope.lsp_document_symbols,
+                        { buffer = buf, desc = "Document symbols" }
+                    )
                     vim.keymap.set(
                         "n",
                         "<leader>sws",
-                        require("telescope.builtin").lsp_dynamic_workspace_symbols,
-                        defaults
+                        tscope.lsp_dynamic_workspace_symbols,
+                        { buffer = buf, desc = "Workspace symbols" }
                     )
 
                     -- Inline help
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, defaults)
-                    vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, defaults)
+                    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = buf, desc = "Symbol info" })
+                    vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { buffer = buf, desc = "Help" })
 
                     -- Code actions
-                    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, defaults)
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, defaults)
+                    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = buf, desc = "Code action" })
+                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = buf, desc = "Rename symbol" })
                     vim.keymap.set("n", "<leader>oi", function()
                         vim.lsp.buf.execute_command({
                             command = "_typescript.organizeImports",
                             arguments = { vim.fn.expand("%:p") },
                         })
-                    end, defaults)
+                    end, { buffer = buf, desc = "Organize imports" })
                 end,
             })
 

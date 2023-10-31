@@ -1,9 +1,10 @@
 -- Language linters
 return {
+
     {
         "mfussenegger/nvim-lint",
         dependencies = {
-            -- Package Manager
+            -- Linter Manager (used to install eslint_d, etc.)
             { "williamboman/mason.nvim" },
         },
         config = function(_, _)
@@ -12,7 +13,7 @@ return {
                 javascript = { "eslint_d" },
             }
 
-            -- lint on write
+            -- Lint buffers on write
             vim.api.nvim_create_autocmd({ "BufWritePost" }, {
                 group = vim.api.nvim_create_augroup("LintOnWrite", {}),
                 callback = function()

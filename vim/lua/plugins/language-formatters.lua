@@ -1,9 +1,10 @@
 -- Language formatters
 return {
+
     {
         "mhartington/formatter.nvim",
         dependencies = {
-            -- Package Manager
+            -- Formatter Manager (used to install stylua, prettierd, etc.)
             { "williamboman/mason.nvim" },
         },
         config = function(_, _)
@@ -17,8 +18,9 @@ return {
                     markdown = { require("formatter.filetypes.markdown").prettierd },
                 },
             })
-            local defaults = { remap = false }
-            vim.keymap.set("n", "<leader>bf", "<cmd>Format<cr>", defaults)
+
+            -- Keybinds
+            vim.keymap.set("n", "<leader>bf", "<cmd>Format<cr>", { desc = "Format current buffer" })
         end,
     },
 }
