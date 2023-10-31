@@ -5,7 +5,7 @@ return {
         "mhartington/formatter.nvim",
         dependencies = {
             -- Formatter Manager (used to install stylua, prettierd, etc.)
-            { "williamboman/mason.nvim" },
+            "williamboman/mason.nvim",
         },
         config = function(_, _)
             require("formatter").setup({

@@ -5,17 +5,17 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = {
             -- Package Manager
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
             -- Autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-path" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-nvim-lsp" },
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
             -- Snippets
-            { "L3MON4D3/LuaSnip" },
-            { "saadparwaiz1/cmp_luasnip" },
-            { "rafamadriz/friendly-snippets" },
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets",
         },
         config = function(_, _)
             -- Setup LSP management UI (Mason)

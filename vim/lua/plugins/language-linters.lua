@@ -5,7 +5,7 @@ return {
         "mfussenegger/nvim-lint",
         dependencies = {
             -- Linter Manager (used to install eslint_d, etc.)
-            { "williamboman/mason.nvim" },
+            "williamboman/mason.nvim",
         },
         config = function(_, _)
             require("lint").linters_by_ft = {
