@@ -14,6 +14,9 @@ return {
             telescope.load_extension("fzf")
 
             telescope.setup({
+                defaults = {
+                    path_display = { "smart" },
+                },
                 pickers = {
                     find_files = { theme = "dropdown" },
                     git_files = { theme = "dropdown" },
