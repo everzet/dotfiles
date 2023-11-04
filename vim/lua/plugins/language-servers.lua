@@ -25,8 +25,8 @@ return {
                 ensure_installed = { "elixirls", "tsserver", "lua_ls" },
             })
 
-            local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
 
             -- Configure LSPs
             lspconfig.elixirls.setup({ capabilities = capabilities })
@@ -68,8 +68,10 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                     ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+                    ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+                    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-d>"] = cmp.mapping.scroll_docs(4),
                     ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                     ["<C-Space>"] = cmp.mapping.complete(),
                 }),
@@ -86,48 +88,35 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("HookLspKeybinds", {}),
                 callback = function(ev)
-                    local buf = ev.buf
-                    local tscope = require("telescope.builtin")
+                    local nmap = function(keys, func, desc)
+                        vim.keymap.set("n", keys, func, { buffer = ev.buf, desc = desc })
+                    end
 
                     -- Go *
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = buf, desc = "Declaration" })
-                    vim.keymap.set("n", "gd", tscope.lsp_definitions, { buffer = buf, desc = "Definitions" })
-                    vim.keymap.set("n", "go", tscope.lsp_type_definitions, { buffer = buf, desc = "Type definitions" })
-                    vim.keymap.set("n", "gr", tscope.lsp_references, { buffer = buf, desc = "References" })
-                    vim.keymap.set("n", "gi", tscope.lsp_implementations, { buffer = buf, desc = "Implementations" })
+                    nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+                    nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+                    nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+                    nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                    nmap("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+                    nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+                    nmap(
+                        "<leader>ws",
+                        require("telescope.builtin").lsp_dynamic_workspace_symbols,
+                        "[W]orkspace [S]ymbols"
+                    )
 
                     -- Navigate diagnostics
-                    vim.keymap.set("n", "gl", vim.diagnostic.open_float, { buffer = buf, desc = "Show diagnostics" })
-                    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { buffer = buf, desc = "Previous deiagnostic" })
-                    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { buffer = buf, desc = "Next diagnostic" })
-
-                    -- Show * symbols
-                    vim.keymap.set(
-                        "n",
-                        "<leader>sds",
-                        tscope.lsp_document_symbols,
-                        { buffer = buf, desc = "Document symbols" }
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "<leader>sws",
-                        tscope.lsp_dynamic_workspace_symbols,
-                        { buffer = buf, desc = "Workspace symbols" }
-                    )
+                    nmap("<leader>e", vim.diagnostic.open_float, "See [E]rror")
+                    nmap("[d", vim.diagnostic.goto_prev, "Previous deiagnostic")
+                    nmap("]d", vim.diagnostic.goto_next, "Next diagnostic")
 
                     -- Inline help
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = buf, desc = "Symbol info" })
-                    vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { buffer = buf, desc = "Help" })
+                    nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+                    nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
                     -- Code actions
-                    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = buf, desc = "Code action" })
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = buf, desc = "Rename symbol" })
-                    vim.keymap.set("n", "<leader>oi", function()
-                        vim.lsp.buf.execute_command({
-                            command = "_typescript.organizeImports",
-                            arguments = { vim.fn.expand("%:p") },
-                        })
-                    end, { buffer = buf, desc = "Organize imports" })
+                    nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                    nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame Symbol")
                 end,
             })
 

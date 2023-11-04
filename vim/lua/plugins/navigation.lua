@@ -32,6 +32,7 @@ return {
             vim.keymap.set("n", "<C-t>", builtin.find_files, { desc = "Search files" })
             vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Search git files" })
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search with grep" })
+            vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnostics" })
             vim.keymap.set("n", "<leader>fb", function()
                 builtin.buffers({ grouped = true, initial_mode = "normal" })
             end, { desc = "List buffers" })
