@@ -46,7 +46,7 @@ return {
 
       -- Lookup files under the neovim config folder
       vim.keymap.set('n', '<leader>sc', function()
-        require('telescope.builtin').find_files { cwd = '~/.config', initial_mode = 'normal' }
+        require('telescope.builtin').find_files { cwd = '~/.config/nvim' }
       end, { desc = '[S]earch My [C]onfig' })
     end,
   },
