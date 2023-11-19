@@ -72,6 +72,12 @@ return {
         -- Code actions
         nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame Symbol')
+        nmap('<leader>oi', function()
+          vim.lsp.buf.execute_command {
+            command = '_typescript.organizeImports',
+            arguments = { vim.fn.expand '%:p' },
+          }
+        end, '[O]rganize [I]mports')
       end
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
