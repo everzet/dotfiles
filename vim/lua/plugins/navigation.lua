@@ -72,23 +72,4 @@ return {
     end,
   },
 
-  -- Nicer jumping between actively worked upon files
-  {
-    'ThePrimeagen/harpoon',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function(_, _)
-      local mark = require 'harpoon.mark'
-      local ui = require 'harpoon.ui'
-
-      vim.keymap.set('n', '<leader>a', mark.add_file, { desc = 'H[a]rpoon Current File' })
-      vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu, { desc = 'List Harpooned Files' })
-
-      vim.keymap.set('n', '<C-q>', function()
-        ui.nav_file(1)
-      end, { desc = 'Open 1st Harpooned File' })
-      vim.keymap.set('n', '<C-w>', function()
-        ui.nav_file(2)
-      end, { desc = 'Open 2nd Harpooned File' })
-    end,
-  },
 }
