@@ -2,18 +2,6 @@
 return {
 
   {
-    {
-      'folke/trouble.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      },
-    },
-  },
-
-  {
     'mfussenegger/nvim-lint',
     dependencies = {
       -- Linter Manager (used to install eslint_d, etc.)
@@ -25,7 +13,8 @@ return {
         javascript = { 'eslint_d' },
       }
 
-      -- Configure diagnostics icons
+      -- Configure diagnostics presentation
+      vim.diagnostic.config { virtual_text = true }
       local signs = { Error = ' ', Warn = ' ', Hint = '󰙎 ', Info = ' ' }
       for type, icon in pairs(signs) do
         local hl = 'DiagnosticSign' .. type

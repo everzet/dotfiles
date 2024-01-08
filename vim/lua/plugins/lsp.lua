@@ -18,9 +18,6 @@ return {
       require('mason-lspconfig').setup()
       require('neodev').setup {}
 
-      -- Enable virtual text
-      vim.diagnostic.config { virtual_text = true }
-
       -- Install and configure LSP servers
       local server_settings = {
         elixirls = {},
