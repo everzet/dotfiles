@@ -13,8 +13,8 @@ vim.keymap.set('v', '<', '<gv', { noremap = true, desc = 'Deindent without losin
 vim.keymap.set('v', '>', '>gv', { noremap = true, desc = 'Indent without losing selection' })
 
 -- Vertically move selected block and preserve its indentation
-vim.keymap.set('v', 'J', "<cmd>m '>+1<cr>gv=gv", { noremap = true, desc = 'Move down preserving indentation' })
-vim.keymap.set('v', 'K', "<cmd>m '<-2<cr>gv=gv", { noremap = true, desc = 'Move up preserving indentation' })
+vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { noremap = true, desc = 'Move down preserving indentation' })
+vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { noremap = true, desc = 'Move up preserving indentation' })
 
 -- Keep cursor where it is when merging lines with J
 vim.keymap.set('n', 'J', 'mzJ`z', { noremap = true, desc = 'Merge lines preserving cursor position' })
