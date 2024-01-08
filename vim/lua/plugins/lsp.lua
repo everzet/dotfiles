@@ -76,14 +76,9 @@ return {
             require('telescope.builtin').lsp_dynamic_workspace_symbols(require('telescope.themes').get_dropdown { previewer = true })
           end, '[W]orkspace [S]ymbols')
 
-          -- Navigate diagnostics
-          nmap('<leader>e', vim.diagnostic.open_float, 'See [E]rror')
-          nmap('[d', vim.diagnostic.goto_prev, 'Previous deiagnostic')
-          nmap(']d', vim.diagnostic.goto_next, 'Next diagnostic')
-
           -- Inline help
           nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-          nmap('<leader>s', vim.lsp.buf.signature_help, '[S]ignature Documentation')
+          nmap('<leader>pd', vim.lsp.buf.signature_help, '[P]arameters [D]ocumentation')
 
           -- Code actions
           nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')

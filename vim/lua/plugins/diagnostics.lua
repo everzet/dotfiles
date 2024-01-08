@@ -28,6 +28,11 @@ return {
           require('lint').try_lint()
         end,
       })
+
+      -- Keybinds
+      vim.keymap.set('n', '<leader>es', vim.diagnostic.open_float, { desc = '[E]rror [S]show' })
+      vim.keymap.set('n', '<leader>ep', vim.diagnostic.goto_prev, { desc = '[E]rror [P]revious' })
+      vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next, { desc = '[E]rror [N]ext' })
     end,
   },
 }

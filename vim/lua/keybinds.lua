@@ -40,8 +40,8 @@ vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, desc = 'Yank to global
 vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from global buffer' })
 
 -- Navigating quickfix lists
-vim.keymap.set('n', '[q', '<cmd>cprev<cr>', { desc = 'Previous quickfix item' })
-vim.keymap.set('n', ']q', '<cmd>cnext<cr>', { desc = 'Next quickfix item' })
+vim.keymap.set('n', '<leader>pq', '<cmd>cprev<cr>', { desc = 'Previous quickfix item' })
+vim.keymap.set('n', '<leader>nq', '<cmd>cnext<cr>', { desc = 'Next quickfix item' })
 
 -- Managing tabs
 vim.keymap.set('n', '<leader>df', '<cmd>tab split<cr>', { desc = 'Open new tab' })
