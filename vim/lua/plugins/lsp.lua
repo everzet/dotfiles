@@ -78,7 +78,7 @@ return {
 
           -- Inline help
           nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-          nmap('<leader>pd', vim.lsp.buf.signature_help, '[P]arameters [D]ocumentation')
+          nmap('<C-k>', vim.lsp.buf.signature_help, '[P]arameters [D]ocumentation')
 
           -- Code actions
           nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
