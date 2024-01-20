@@ -61,11 +61,5 @@ vim.keymap.set('n', '<leader>J', '<C-w>s<C-w>j', { desc = 'Split down' })
 vim.keymap.set('n', '<leader>H', '<C-w>v<C-w>h', { desc = 'Split left' })
 vim.keymap.set('n', '<leader>K', '<C-w>s<C-w>k', { desc = 'Split up' })
 
--- Navigating splits
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to split left' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to split below' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to split above' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to split right' })
-
 -- Resizing splits
 vim.keymap.set('n', '≠', '<C-w>=', { desc = 'Equalize all split sizes' })
