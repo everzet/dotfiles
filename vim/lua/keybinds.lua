@@ -40,10 +40,10 @@ vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, desc = 'Yank to global
 vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from global buffer' })
 
 -- Navigating quickfix lists
-vim.keymap.set('n', '<leader>qo', '<cmd>copen<cr>', { desc = '[Q]uickfix [O]pen' })
-vim.keymap.set('n', '<leader>qc', '<cmd>cclose<cr>', { desc = '[Q]uickfix [C]lose' })
-vim.keymap.set('n', '<leader>qp', '<cmd>cprev<cr>', { desc = '[Q]uickfix [P]revious' })
-vim.keymap.set('n', '<leader>qn', '<cmd>cnext<cr>', { desc = '[Q]uickfix [N]ext' })
+vim.keymap.set('n', '<leader>oq', '<cmd>copen<cr>', { desc = '[O]pen [Q]uickfix' })
+vim.keymap.set('n', '<leader>cq', '<cmd>cclose<cr>', { desc = '[C]lose [Q]uickfix ' })
+vim.keymap.set('n', '[q', '<cmd>cprev<cr>', { desc = 'Previous [Q]uickfix' })
+vim.keymap.set('n', ']q', '<cmd>cnext<cr>', { desc = 'Next [Q]uickfix' })
 
 -- Managing tabs
 vim.keymap.set('n', '<leader>df', '<cmd>tab split<cr>', { desc = 'Open new tab' })

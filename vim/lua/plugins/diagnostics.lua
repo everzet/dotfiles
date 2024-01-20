@@ -30,9 +30,9 @@ return {
       })
 
       -- Keybinds
-      vim.keymap.set('n', '<leader>es', vim.diagnostic.open_float, { desc = '[E]rror [S]show' })
-      vim.keymap.set('n', '<leader>ep', vim.diagnostic.goto_prev, { desc = '[E]rror [P]revious' })
-      vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next, { desc = '[E]rror [N]ext' })
+      vim.keymap.set('n', '<leader>od', vim.diagnostic.open_float, { desc = '[O]pen [D]iagnostics' })
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous [D]iagnostic' })
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic' })
     end,
   },
 }
