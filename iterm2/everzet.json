@@ -97,7 +97,7 @@
   },
   "Unlimited Scrollback" : false,
   "Custom Command" : "Yes",
-  "Title Components" : 576,
+  "Title Components" : 34,
   "Keyboard Map" : {
     "0xf700-0x260000" : {
       "Action" : 10,
@@ -356,8 +356,8 @@
     "Green Component" : 0.086274509803921595
   },
   "Blur" : true,
-  "Normal Font" : "MonoLisaNF-Regular 12",
-  "Vertical Spacing" : 1.25,
+  "Normal Font" : "MonoLisaNF-MediumRegular 12",
+  "Vertical Spacing" : 1.3,
   "Ansi 7 Color" : {
     "Red Component" : 0.66274509803921566,
     "Color Space" : "sRGB",
