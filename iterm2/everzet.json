@@ -1,5 +1,11 @@
 {
-  "Thin Strokes" : 4,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.73333333333333328,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.96862745098039216,
+    "Alpha Component" : 1,
+    "Green Component" : 0.60392156862745094
+  },
   "Working Directory" : "\/Users\/everzet",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -317,13 +323,7 @@
   "Name" : "everzet",
   "Blinking Cursor" : true,
   "Guid" : "C41B4B94-36E2-4F03-9075-EEC3F47D506D",
-  "Ansi 8 Color" : {
-    "Red Component" : 0.25490196078431371,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.40784313725490201,
-    "Alpha Component" : 1,
-    "Green Component" : 0.28235294117647058
-  },
+  "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.61960784313725492,
     "Color Space" : "sRGB",
@@ -331,7 +331,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0.80784313725490198
   },
-  "Idle Code" : 0,
+  "Ansi 8 Color" : {
+    "Red Component" : 0.25490196078431371,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.40784313725490201,
+    "Alpha Component" : 1,
+    "Green Component" : 0.28235294117647058
+  },
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -379,7 +385,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.81176470588235294
   },
-  "Transparency" : 0,
+  "Transparency" : 0.047373670212765957,
   "Initial Text" : "",
   "Background Color" : {
     "Red Component" : 0.1019607843137255,
@@ -389,7 +395,7 @@
     "Green Component" : 0.1058823529411765
   },
   "Screen" : -1,
-  "Initial Use Transparency" : false,
+  "Initial Use Transparency" : true,
   "Bound Hosts" : [
 
   ],
@@ -404,13 +410,7 @@
   "Columns" : 80,
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
-  "ASCII Ligatures" : true,
   "Custom Directory" : "No",
-  "Ansi 5 Color" : {
-    "Red Component" : 0.73333333333333328,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.96862745098039216,
-    "Alpha Component" : 1,
-    "Green Component" : 0.60392156862745094
-  }
+  "Thin Strokes" : 4,
+  "ASCII Ligatures" : true
 }
