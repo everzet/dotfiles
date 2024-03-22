@@ -449,6 +449,7 @@ require('lazy').setup {
 
         elixirls = {},
         tsserver = {},
+        gopls = {},
 
         lua_ls = {
           -- cmd = {...},
