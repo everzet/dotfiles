@@ -448,8 +448,13 @@ require('lazy').setup {
         --
 
         elixirls = {},
-        tsserver = {},
         gopls = {},
+
+        tsserver = {
+          capabilities = {
+            documentFormattingProvider = false,
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -560,12 +565,11 @@ require('lazy').setup {
       formatters_by_ft = {
         lua = { 'stylua' },
         sql = { 'pg_format' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
+        markdown = { { 'prettierd', 'prettier' } },
         javascript = { { 'prettierd', 'prettier' } },
+        typescript = { { 'prettierd', 'prettier' } },
+        javascriptreact = { { 'prettierd', 'prettier' } },
+        typescriptreact = { { 'prettierd', 'prettier' } },
       },
     },
   },
