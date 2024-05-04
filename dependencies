@@ -15,3 +15,5 @@ git-delta
 starship
 neofetch
 zk
+golangci-lint
+adr-tools

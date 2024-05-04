@@ -15,19 +15,17 @@ ln -nfs $DOTFILESDIR/bat       ~/.config/bat
 ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
 
 # symlink RCs
-ln -nfs $DOTFILESDIR/asdfrc        ~/.asdfrc
-ln -nfs $DOTFILESDIR/iex.exs       ~/.iex.exs
-ln -nfs $DOTFILESDIR/tmux.conf     ~/.tmux.conf
-ln -nfs $DOTFILESDIR/editorconfig  ~/.editorconfig
+ln -nfs $DOTFILESDIR/asdfrc               ~/.asdfrc
+ln -nfs $DOTFILESDIR/iex.exs              ~/.iex.exs
+ln -nfs $DOTFILESDIR/tmux.conf            ~/.tmux.conf
+ln -nfs $DOTFILESDIR/editorconfig         ~/.editorconfig
+ln -nfs $DOTFILESDIR/default-golang-pkgs  ~/.default-golang-pkgs
 
 # disable font smoothing in Alacritty
 defaults write org.alacritty AppleFontSmoothing -int 0
 
 # disable press-and-hold keyboard behaviour in Alacritty
 defaults write org.alacritty ApplePressAndHoldEnabled -bool false
-
-# install terminfo for alacritty
-sudo tic -xe alacritty,alacritty-direct $DOTFILESDIR/alacritty/alacritty.info
 
 # setup neovim
 nvim --headless "+Lazy! sync" +qa
