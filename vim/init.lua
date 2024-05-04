@@ -190,6 +190,7 @@ require('lazy').setup {
         ['<leader>t'] = { name = '[T]ab', _ = 'which_key_ignore' },
         ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+        ['<leader>cd'] = { name = '[C]ode [Debug]', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '[F]iles', _ = 'which_key_ignore' },
@@ -572,6 +573,47 @@ require('lazy').setup {
         typescriptreact = { { 'prettierd', 'prettier' } },
       },
     },
+  },
+
+  { -- Debugger
+    'leoluz/nvim-dap-go',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
+      -- Core DAP plugin
+      'mfussenegger/nvim-dap',
+      -- UI
+      { 'nvim-neotest/nvim-nio', opts = nil },
+      { 'rcarriga/nvim-dap-ui', opts = {} },
+      -- Show debugger info in virtual text
+      { 'theHamsta/nvim-dap-virtual-text', opts = {} },
+      -- Manage adapters with Mason
+      { 'jay-babu/mason-nvim-dap.nvim', opts = {} },
+    },
+    config = function()
+      local dap, dapui, dapgo = require 'dap', require 'dapui', require 'dap-go'
+
+      -- Setup Go extension
+      dapgo.setup()
+
+      -- Open and close UI automatically
+      dap.listeners.before.attach.dapui_config = dapui.open
+      dap.listeners.before.launch.dapui_config = dapui.open
+      dap.listeners.before.event_terminated.dapui_config = dapui.close
+      dap.listeners.before.event_exited.dapui_config = dapui.close
+
+      -- Core keybinds
+      vim.keymap.set('n', '<leader>cdb', dap.toggle_breakpoint, { desc = '[C]ode [D]ebug [B]reakpoint' })
+      vim.keymap.set('n', '<leader>cdc', dap.continue, { desc = '[C]ode [D]ebug [C]ontinue' })
+      vim.keymap.set('n', '<leader>cds', dap.close, { desc = '[C]ode [D]ebug [S]top' })
+
+      -- Step in and over
+      vim.keymap.set('n', '<leader>cdo', dap.step_over, { desc = '[C]ode [D]ebug Step [O]ver' })
+      vim.keymap.set('n', '<leader>cdi', dap.step_into, { desc = '[C]ode [D]ebug Step [I]nto' })
+
+      -- Extensions
+      vim.keymap.set('n', '<leader>cdv', dapui.toggle, { desc = '[C]ode [D]ebug [V]iew' })
+      vim.keymap.set('n', '<leader>cdt', dapgo.debug_test, { desc = '[C]ode [D]ebug Closest [T]est' })
+    end,
   },
 
   { -- Autocompletion
