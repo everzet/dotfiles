@@ -154,6 +154,13 @@ vim.diagnostic.config {
   },
 }
 
+-- [[ Configure Signs ]]
+vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError', numhl = 'DiagnosticSignError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn', linehl = 'DiagnosticSignWarn', numhl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo', linehl = 'DiagnosticSignInfo', numhl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint', linehl = 'DiagnosticSignHint', numhl = 'DiagnosticSignHint' })
+vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DebugBreakpoint', linehl = 'DebugBreakpoint', numhl = 'DebugBreakpoint' })
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
