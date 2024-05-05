@@ -181,7 +181,7 @@ require('lazy').setup {
     'mbbill/undotree',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function(_, _)
-      vim.keymap.set('n', '<leader>du', vim.cmd.UndotreeToggle, { desc = '[D]ocument [U]ndo' })
+      vim.keymap.set('n', '<leader>cu', vim.cmd.UndotreeToggle, { desc = '[C]code [U]ndo' })
     end,
   },
 
@@ -197,7 +197,7 @@ require('lazy').setup {
         ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>cd'] = { name = '[C]ode [Debug]', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+        ['<leader>d'] = { name = '[D]ebug', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '[F]iles', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
@@ -382,7 +382,7 @@ require('lazy').setup {
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>bs', require('telescope.builtin').lsp_document_symbols, '[B]uffer [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace
           --  Similar to document symbols, except searches over your whole project.
@@ -593,7 +593,7 @@ require('lazy').setup {
       -- Show debugger info in virtual text
       { 'theHamsta/nvim-dap-virtual-text', opts = {} },
       -- Go adapter
-      { 'leoluz/nvim-dap-go', opts = nil },
+      { 'leoluz/nvim-dap-go', opts = {} },
     },
     config = function()
       local dap, dapui, dapgo = require 'dap', require 'dapui', require 'dap-go'
@@ -608,17 +608,17 @@ require('lazy').setup {
       vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DebugBreakpoint', linehl = '', numhl = 'DebugBreakpoint' })
 
       -- Core keybinds
-      vim.keymap.set('n', '<leader>cdb', dap.toggle_breakpoint, { desc = '[C]ode [D]ebug [B]reakpoint' })
-      vim.keymap.set('n', '<leader>cdc', dap.continue, { desc = '[C]ode [D]ebug [C]ontinue' })
-      vim.keymap.set('n', '<leader>cds', dap.close, { desc = '[C]ode [D]ebug [S]top' })
+      vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = '[D]ebug [B]reakpoint' })
+      vim.keymap.set('n', '<leader>dc', dap.continue, { desc = '[D]ebug [C]ontinue' })
+      vim.keymap.set('n', '<leader>ds', dap.close, { desc = '[D]ebug [S]top' })
 
       -- Step in and over
-      vim.keymap.set('n', '<leader>cdo', dap.step_over, { desc = '[C]ode [D]ebug Step [O]ver' })
-      vim.keymap.set('n', '<leader>cdi', dap.step_into, { desc = '[C]ode [D]ebug Step [I]nto' })
+      vim.keymap.set('n', '<leader>do', dap.step_over, { desc = '[D]ebug Step [O]ver' })
+      vim.keymap.set('n', '<leader>di', dap.step_into, { desc = '[D]ebug Step [I]nto' })
 
       -- Extensions
-      vim.keymap.set('n', '<leader>cdv', dapui.toggle, { desc = '[C]ode [D]ebug [V]iew' })
-      vim.keymap.set('n', '<leader>cdt', dapgo.debug_test, { desc = '[C]ode [D]ebug Closest [T]est' })
+      vim.keymap.set('n', '<leader>dv', dapui.toggle, { desc = '[D]ebug [V]iew' })
+      vim.keymap.set('n', '<leader>dt', dapgo.debug_test, { desc = '[D]ebug Closest [T]est' })
     end,
   },
 
