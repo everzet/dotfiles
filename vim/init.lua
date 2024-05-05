@@ -113,15 +113,6 @@ vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [C]close'
 vim.keymap.set('n', '<leader>bo', '<cmd>%bd!<CR><C-o><cmd>bd#<CR>zz', { desc = '[B]uffer [O]nly' })
 vim.keymap.set('n', '<leader>bc', '<cmd>bd<CR>', { desc = '[B]uffer [C]lose' })
 
--- Managing splits
-vim.keymap.set('n', '<leader>L', '<C-w>v<C-w>l', { desc = 'Split right' })
-vim.keymap.set('n', '<leader>J', '<C-w>s<C-w>j', { desc = 'Split down' })
-vim.keymap.set('n', '<leader>H', '<C-w>v<C-w>h', { desc = 'Split left' })
-vim.keymap.set('n', '<leader>K', '<C-w>s<C-w>k', { desc = 'Split up' })
-
--- Resizing splits
-vim.keymap.set('n', '≠', '<C-w>=', { desc = 'Equalize all split sizes' })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
