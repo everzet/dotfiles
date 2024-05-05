@@ -432,7 +432,6 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -444,15 +443,33 @@ require('lazy').setup {
         -- tsserver = {},
         --
 
+        -- Elixir
         elixirls = {},
-        gopls = {},
 
+        -- Go
+        gopls = {
+          filetypes = { 'go', 'gomod' },
+          root_dir = require('lspconfig').util.root_pattern('go.mod', '.git'),
+          settings = {
+            gopls = {
+              experimentalPostfixCompletions = true,
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+              },
+              staticcheck = true,
+            },
+          },
+        },
+
+        -- Javascript and Typescript
         tsserver = {
           capabilities = {
             documentFormattingProvider = false,
           },
         },
 
+        -- Lua (mostly NeoVim config)
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
