@@ -499,6 +499,7 @@ require('lazy').setup {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
+        'sql-formatter', -- Used to format SQL code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -600,7 +601,7 @@ require('lazy').setup {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        sql = { 'pg_format' },
+        sql = { 'sql_formatter' },
         markdown = { { 'prettierd', 'prettier' } },
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
