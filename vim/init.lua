@@ -604,6 +604,7 @@ require('lazy').setup {
         lua = { 'stylua' },
         sql = { 'sql_formatter' },
         markdown = { { 'prettierd', 'prettier' } },
+        json = { { 'prettierd', 'prettier' } },
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
         javascriptreact = { { 'prettierd', 'prettier' } },
