@@ -535,6 +535,13 @@ require('lazy').setup {
     end,
   },
 
+  { -- Git management
+    'tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
+    end,
+  },
+
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
