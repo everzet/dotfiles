@@ -505,6 +505,19 @@ require('lazy').setup {
     end,
   },
 
+  { -- Diagnostics viewer
+    'folke/trouble.nvim',
+    branch = 'dev', -- using v3 which is currently in beta
+    keys = {
+      {
+        '<leader>wd',
+        '<cmd>Trouble diagnostics toggle<cr>',
+        desc = '[W]orkspace [D]iagnostics',
+      },
+    },
+    opts = {},
+  },
+
   { -- Filesystem navigation
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -804,7 +817,19 @@ require('lazy').setup {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'elixir', 'javascript', 'typescript' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'html',
+        'lua',
+        'markdown',
+        'markdown_inline',
+        'vim',
+        'vimdoc',
+        'elixir',
+        'javascript',
+        'typescript',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
