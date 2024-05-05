@@ -90,10 +90,6 @@ vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to previous search result and r
 -- Replace selected text without yanking it first
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Replace selected text without yanking it' })
 
--- Delete without yanking first
-vim.keymap.set('n', '<leader>d', '"_d', { desc = 'Delete without yanking' })
-vim.keymap.set('v', '<leader>d', '"_d', { desc = 'Delete without yanking' })
-
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
