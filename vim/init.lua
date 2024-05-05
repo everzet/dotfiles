@@ -154,12 +154,11 @@ vim.diagnostic.config {
   },
 }
 
--- [[ Configure Signs ]]
-vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError', numhl = 'DiagnosticSignError' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn', linehl = 'DiagnosticSignWarn', numhl = 'DiagnosticSignWarn' })
-vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo', linehl = 'DiagnosticSignInfo', numhl = 'DiagnosticSignInfo' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint', linehl = 'DiagnosticSignHint', numhl = 'DiagnosticSignHint' })
-vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DebugBreakpoint', linehl = 'DebugBreakpoint', numhl = 'DebugBreakpoint' })
+-- Use icons as diagnostic signs
+vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError', linehl = '', numhl = '' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn', linehl = '', numhl = '' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo', linehl = '', numhl = '' })
+vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint', linehl = '', numhl = '' })
 
 -- [[ Configure and install plugins ]]
 --
@@ -391,7 +390,7 @@ require('lazy').setup {
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -583,30 +582,30 @@ require('lazy').setup {
   },
 
   { -- Debugger
-    'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      -- Core DAP plugin
-      'mfussenegger/nvim-dap',
+      -- Manage adapters with Mason
+      { 'jay-babu/mason-nvim-dap.nvim', opts = {} },
       -- UI
       { 'nvim-neotest/nvim-nio', opts = nil },
       { 'rcarriga/nvim-dap-ui', opts = {} },
       -- Show debugger info in virtual text
       { 'theHamsta/nvim-dap-virtual-text', opts = {} },
-      -- Manage adapters with Mason
-      { 'jay-babu/mason-nvim-dap.nvim', opts = {} },
+      -- Go adapter
+      { 'leoluz/nvim-dap-go', opts = nil },
     },
     config = function()
       local dap, dapui, dapgo = require 'dap', require 'dapui', require 'dap-go'
-
-      -- Setup Go extension
-      dapgo.setup()
 
       -- Open and close UI automatically
       dap.listeners.before.attach.dapui_config = dapui.open
       dap.listeners.before.launch.dapui_config = dapui.open
       dap.listeners.before.event_terminated.dapui_config = dapui.close
       dap.listeners.before.event_exited.dapui_config = dapui.close
+
+      -- Style breakpoint sign
+      vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DebugBreakpoint', linehl = '', numhl = 'DebugBreakpoint' })
 
       -- Core keybinds
       vim.keymap.set('n', '<leader>cdb', dap.toggle_breakpoint, { desc = '[C]ode [D]ebug [B]reakpoint' })
