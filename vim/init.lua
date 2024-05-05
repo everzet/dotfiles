@@ -87,6 +87,10 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move up and recenter screen' }
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next search result and recenter screen' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to previous search result and recenter screen' })
 
+-- Copy selected text to/from system clipboard
+vim.keymap.set('x', '<leader>Y', '"+y', { desc = 'Copy selected text into system clipboard' })
+vim.keymap.set('x', '<leader>P', '"+p', { desc = 'Paste selected text from system clipboard' })
+
 -- Replace selected text without yanking it first
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Replace selected text without yanking it' })
 
