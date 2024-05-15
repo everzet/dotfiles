@@ -104,6 +104,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous [Q]uickfix' })
 vim.keymap.set('n', ']q', '<cmd>cnext<CR>', { desc = 'Next [Q]uickfix' })
 
+-- Navigating windows
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move window down' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move window left' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move window up' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move window right' })
+
 -- Managing tabs
 vim.keymap.set('n', '<leader>tn', '<cmd>tab split<CR>', { desc = '[T]ab [N]ew' })
 vim.keymap.set('n', '<leader>to', '<cmd>tabonly<CR>', { desc = '[T]ab [O]nly' })
@@ -627,7 +633,12 @@ require('lazy').setup {
 
       oil.setup {
         columns = { 'icon' },
-        float = { max_width = 80, max_height = 30 },
+        keymaps = {
+          ['<C-h>'] = false,
+        },
+        view_options = {
+          show_hidden = true,
+        },
       }
 
       vim.keymap.set('n', '-', oil.open, { desc = '[-] Open Parent Directory' })
