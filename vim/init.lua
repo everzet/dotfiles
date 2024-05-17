@@ -168,8 +168,6 @@ vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSig
 require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
-
   { 'lewis6991/gitsigns.nvim', opts = {} }, -- Adds git related signs to the gutter
 
   { -- Visual undo for times when we really need to go back
