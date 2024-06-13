@@ -606,7 +606,6 @@ require('lazy').setup {
 
   { -- Diagnostics viewer
     'folke/trouble.nvim',
-    branch = 'dev', -- using v3 which is currently in beta
     keys = {
       {
         '<leader>wd',
