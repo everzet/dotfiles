@@ -13,7 +13,7 @@ asdf
 direnv
 git-delta
 starship
-neofetch
+fastfetch
 zk
 golangci-lint
 adr-tools
