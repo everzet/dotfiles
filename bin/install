@@ -8,18 +8,19 @@ xargs brew install -q < $DOTFILESDIR/dependencies
 
 # symlink configs
 mkdir -p ~/.config
-ln -nfs $DOTFILESDIR/vim       ~/.config/nvim
-ln -nfs $DOTFILESDIR/fish      ~/.config/fish
-ln -nfs $DOTFILESDIR/git       ~/.config/git
-ln -nfs $DOTFILESDIR/bat       ~/.config/bat
-ln -nfs $DOTFILESDIR/alacritty ~/.config/alacritty
+ln -nfs $DOTFILESDIR/vim                ~/.config/nvim
+ln -nfs $DOTFILESDIR/fish               ~/.config/fish
+ln -nfs $DOTFILESDIR/git                ~/.config/git
+ln -nfs $DOTFILESDIR/bat                ~/.config/bat
+ln -nfs $DOTFILESDIR/alacritty          ~/.config/alacritty
+ln -nfs $DOTFILESDIR/wezterm            ~/.config/wezterm
 
 # symlink RCs
-ln -nfs $DOTFILESDIR/asdfrc               ~/.asdfrc
-ln -nfs $DOTFILESDIR/iex.exs              ~/.iex.exs
-ln -nfs $DOTFILESDIR/tmux.conf            ~/.tmux.conf
-ln -nfs $DOTFILESDIR/editorconfig         ~/.editorconfig
-ln -nfs $DOTFILESDIR/default-golang-pkgs  ~/.default-golang-pkgs
+ln -nfs $DOTFILESDIR/asdfrc                     ~/.asdfrc
+ln -nfs $DOTFILESDIR/iex.exs                    ~/.iex.exs
+ln -nfs $DOTFILESDIR/tmux.conf                  ~/.tmux.conf
+ln -nfs $DOTFILESDIR/editorconfig               ~/.editorconfig
+ln -nfs $DOTFILESDIR/default-golang-pkgs        ~/.default-golang-pkgs
 
 # disable font smoothing in Alacritty
 defaults write org.alacritty AppleFontSmoothing -int 0
