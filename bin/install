@@ -14,12 +14,11 @@ ln -nfs $DOTFILESDIR/git                        ~/.config/git
 ln -nfs $DOTFILESDIR/bat                        ~/.config/bat
 ln -nfs $DOTFILESDIR/aerospace                  ~/.config/aerospace
 ln -nfs $DOTFILESDIR/wezterm                    ~/.config/wezterm
-ln -nfs $DOTFILESDIR/starship.toml              ~/.config/starship.toml
-ln -nfs $DOTFILESDIR/asdfrc                     ~/.asdfrc
-ln -nfs $DOTFILESDIR/iex.exs                    ~/.iex.exs
-ln -nfs $DOTFILESDIR/tmux.conf                  ~/.tmux.conf
+ln -nfs $DOTFILESDIR/starship/starship.toml     ~/.config/starship.toml
 ln -nfs $DOTFILESDIR/editorconfig               ~/.editorconfig
-ln -nfs $DOTFILESDIR/default-golang-pkgs        ~/.default-golang-pkgs
+ln -nfs $DOTFILESDIR/elixir/iex.exs             ~/.iex.exs
+ln -nfs $DOTFILESDIR/asdf/asdfrc                ~/.asdfrc
+ln -nfs $DOTFILESDIR/asdf/default-golang-pkgs   ~/.default-golang-pkgs
 
 # setup neovim
 nvim --headless "+Lazy! sync" +qa
