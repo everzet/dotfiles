@@ -8,26 +8,18 @@ xargs brew install -q < $DOTFILESDIR/dependencies
 
 # symlink configs
 mkdir -p ~/.config
-ln -nfs $DOTFILESDIR/vim                ~/.config/nvim
-ln -nfs $DOTFILESDIR/fish               ~/.config/fish
-ln -nfs $DOTFILESDIR/git                ~/.config/git
-ln -nfs $DOTFILESDIR/bat                ~/.config/bat
-ln -nfs $DOTFILESDIR/aerospace          ~/.config/aerospace
-ln -nfs $DOTFILESDIR/wezterm            ~/.config/wezterm
-ln -nfs $DOTFILESDIR/starship.toml      ~/.config/starship.toml
-
-# symlink RCs
+ln -nfs $DOTFILESDIR/vim                        ~/.config/nvim
+ln -nfs $DOTFILESDIR/fish                       ~/.config/fish
+ln -nfs $DOTFILESDIR/git                        ~/.config/git
+ln -nfs $DOTFILESDIR/bat                        ~/.config/bat
+ln -nfs $DOTFILESDIR/aerospace                  ~/.config/aerospace
+ln -nfs $DOTFILESDIR/wezterm                    ~/.config/wezterm
+ln -nfs $DOTFILESDIR/starship.toml              ~/.config/starship.toml
 ln -nfs $DOTFILESDIR/asdfrc                     ~/.asdfrc
 ln -nfs $DOTFILESDIR/iex.exs                    ~/.iex.exs
 ln -nfs $DOTFILESDIR/tmux.conf                  ~/.tmux.conf
 ln -nfs $DOTFILESDIR/editorconfig               ~/.editorconfig
 ln -nfs $DOTFILESDIR/default-golang-pkgs        ~/.default-golang-pkgs
-
-# disable font smoothing in Alacritty
-defaults write org.alacritty AppleFontSmoothing -int 0
-
-# disable press-and-hold keyboard behaviour in Alacritty
-defaults write org.alacritty ApplePressAndHoldEnabled -bool false
 
 # setup neovim
 nvim --headless "+Lazy! sync" +qa
@@ -37,3 +29,15 @@ ln -sf /opt/homebrew/bin/nvim /opt/homebrew/bin/vim
 
 # disable login prompt
 touch ~/.hushlogin
+
+# drag windows anywhere by holding ctrl + cmd
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
+# group windows by application in Mission Control
+defaults write com.apple.dock expose-group-apps -bool true
+
+# disable displays having separate spaces
+defaults write com.apple.spaces spans-displays -bool true
+
+# restart UI server for above changes to take hold
+killall SystemUIServer
