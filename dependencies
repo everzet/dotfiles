@@ -1,5 +1,6 @@
 fish
-tmux
+starship
+zellij
 wezterm
 neovim
 git
@@ -12,8 +13,6 @@ ripgrep
 asdf
 direnv
 git-delta
-starship
-fastfetch
 zk
 adr-tools
 nikitabobko/tap/aerospace
