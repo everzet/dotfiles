@@ -4,11 +4,8 @@ default_layout "compact"
 scroll_buffer_size 10000
 scrollback_editor "/opt/homebrew/bin/vim"
 
-copy_command "pbcopy"
 copy_on_select true
-
-theme "tokyo-night"
-simplified_ui true
+copy_command "pbcopy"
 
 ui {
     pane_frames {
@@ -16,6 +13,9 @@ ui {
         rounded_corners true
     }
 }
+
+theme "tokyo-night-storm"
+simplified_ui true
 
 keybinds clear-defaults=true {
     normal {
@@ -25,7 +25,7 @@ keybinds clear-defaults=true {
         // session
         bind "d" { Detach; }
         bind "q" { Quit; }
-        bind "s" {
+        bind "m" {
             LaunchOrFocusPlugin "session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -35,8 +35,8 @@ keybinds clear-defaults=true {
 
         // manage panes
         bind "n" { NewPane; }
-        bind "d" { NewPane "Down"; }
-        bind "r" { NewPane "Right"; }
+        bind "s" { NewPane "Down"; }
+        bind "v" { NewPane "Right"; }
         bind "x" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
 
