@@ -8,6 +8,7 @@ copy_command "pbcopy"
 copy_on_select true
 
 theme "tokyo-night"
+simplified_ui true
 
 ui {
     pane_frames {
@@ -24,7 +25,7 @@ keybinds clear-defaults=true {
         // session
         bind "d" { Detach; }
         bind "q" { Quit; }
-        bind "m" {
+        bind "s" {
             LaunchOrFocusPlugin "session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -34,8 +35,10 @@ keybinds clear-defaults=true {
 
         // manage panes
         bind "n" { NewPane; }
+        bind "d" { NewPane "Down"; }
+        bind "r" { NewPane "Right"; }
         bind "x" { CloseFocus; }
-        bind "f" { ToggleFocusFullscreen; }
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
 
         // move between panes
         bind "h" { MoveFocus "Left"; }
@@ -53,27 +56,30 @@ keybinds clear-defaults=true {
         bind "=" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
 
-        // manage tabs
-        bind "Ctrl n" { NewTab; }
-        bind "Ctrl r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "Ctrl x" { CloseTab; }
-
-        // switch tab
-        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
-        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
-        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
-        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
-        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
-        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
-        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
-        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
-        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-
         // scroll
         bind "Ctrl u" { HalfPageScrollUp; }
         bind "Ctrl d" { HalfPageScrollDown; }
-        bind "Ctrl g" { ScrollToBottom; }
-        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "Ctrl e" { EditScrollback; SwitchToMode "Normal"; }
+
+        // manage tabs
+        bind "Alt n" { NewTab; }
+        bind "Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "Alt x" { CloseTab; }
+
+        // move between tab
+        bind "1" { GoToTab 1; }
+        bind "2" { GoToTab 2; }
+        bind "3" { GoToTab 3; }
+        bind "4" { GoToTab 4; }
+        bind "5" { GoToTab 5; }
+        bind "6" { GoToTab 6; }
+        bind "7" { GoToTab 7; }
+        bind "8" { GoToTab 8; }
+        bind "9" { GoToTab 9; }
+
+        // move tabs
+        bind "Alt h" { MoveTab "Left"; }
+        bind "Alt l" { MoveTab "Right"; }
     }
     shared_except "normal" {
         bind "Enter" { SwitchToMode "Normal"; }
