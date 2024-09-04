@@ -36,8 +36,5 @@ defaults write -g NSWindowShouldDragOnGesture -bool true
 # group windows by application in Mission Control
 defaults write com.apple.dock expose-group-apps -bool true
 
-# disable displays having separate spaces
-defaults write com.apple.spaces spans-displays -bool true
-
 # restart UI server for above changes to take hold
 killall SystemUIServer
