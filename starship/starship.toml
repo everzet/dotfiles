@@ -1,22 +1,17 @@
 format = """
 [░▒▓](#a3aed2)\
 [  ](bg:#a3aed2 fg:#090c0c)\
-[](bg:#6999EF fg:#a3aed2)\
 $directory\
-[](fg:#6999EF bg:#394260)\
 $git_branch\
 $git_status\
-[](fg:#394260)\
 $fill\
-[](fg:#212736)\
 $nodejs\
 $rust\
 $golang\
 $lua\
 $elixir\
-[](fg:#1d2230 bg:#212736)\
 $time\
-[ ](fg:#1d2230)\
+[ ](fg:#1d2230)\
 \n$character"""
 
 [fill]
