@@ -61,9 +61,9 @@ outer.right =      10
 # Lock displays to fixed workspaces
 # https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-1 = 'built-in'
+1 = ['lg ultrawide', 'built-in']
 2 = 'studio display'
-3 = 'lg ultrawide'
+3 = ['built-in', 'lg ultrawide']
 
 # Float CleanMyMac
 [[on-window-detected]]
