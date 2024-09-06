@@ -5,7 +5,7 @@ abbr v vim
 abbr g git
 
 # Zellij
-abbr z zellij
+abbr zj zellij
 
 # k8s
 abbr kube kubectl

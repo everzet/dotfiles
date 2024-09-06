@@ -3,6 +3,7 @@ starship
 zellij
 wezterm
 neovim
+zoxide
 git
 eza
 bat

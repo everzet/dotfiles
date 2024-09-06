@@ -19,4 +19,7 @@ if status is-interactive
 
     # Neat and fully-fledged prompt
     starship init fish | source
+
+    # Better CD
+    zoxide init fish | source
 end
