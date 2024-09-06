@@ -1,0 +1,11 @@
+session_serialization false
+layout {
+    cwd "Dev"
+    pane {
+        command "/opt/homebrew/bin/fish"
+        args "--login"
+    }
+    pane size=1 borderless=true {
+        plugin location="compact-bar"
+    }
+}

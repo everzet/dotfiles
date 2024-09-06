@@ -8,7 +8,7 @@ copy_on_select true
 
 ui {
     pane_frames {
-        hide_session_name true
+        hide_session_name false
         rounded_corners true
     }
 }
@@ -91,4 +91,9 @@ keybinds clear-defaults=true {
 plugins {
     tab-bar location="zellij:tab-bar"
     session-manager location="zellij:session-manager"
+    compact-bar location="zellij:compact-bar"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    configuration locatio="zellij:configuration"
 }

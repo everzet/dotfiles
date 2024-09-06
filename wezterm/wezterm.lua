@@ -2,7 +2,14 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Set default shell to Fish
-config.default_prog = { "/opt/homebrew/bin/fish", "--login" }
+config.default_prog = {
+  "/opt/homebrew/bin/zellij",
+  "--layout",
+  ".config/zellij/layouts/scratch.kdl",
+  "attach",
+  "--create",
+  "scratch",
+}
 
 -- Configure font
 config.font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" })
@@ -14,7 +21,7 @@ config.line_height = 1.4
 config.color_scheme = "Tokyo Night"
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
-config.window_padding = { left = "2cell", right = "2cell", top = "1cell", bottom = "1cell" }
+config.window_padding = { left = 30, right = 30, top = 25, bottom = 25 }
 config.window_close_confirmation = "NeverPrompt"
 
 return config
