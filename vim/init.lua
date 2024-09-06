@@ -807,8 +807,8 @@ require('lazy').setup {
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-night'
 
-      -- You can configure highlights by doing something like
-      -- vim.cmd.hi 'Comment gui=none'
+      -- Customise the scheme a bit
+      vim.cmd.hi 'WinSeparator guifg=#282E44'
     end,
   },
 
