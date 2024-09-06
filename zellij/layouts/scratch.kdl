@@ -1,4 +1,7 @@
+// do not serialize scratch sessions
 session_serialization false
+
+// basic layout with ~/Dev as cwd and fastfetch on init
 layout {
     cwd "Dev"
     pane {
