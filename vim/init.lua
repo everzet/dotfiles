@@ -439,11 +439,14 @@ require('lazy').setup {
         },
 
         -- Javascript and Typescript
-        tsserver = {
-          capabilities = {
-            documentFormattingProvider = false,
-          },
-        },
+        --
+        -- TODO: uncomment when `ts_ls` is adopted by Mason
+        --
+        -- tsserver = {
+        --   capabilities = {
+        --     documentFormattingProvider = false,
+        --   },
+        -- },
 
         -- Lua (mostly NeoVim config)
         lua_ls = {
