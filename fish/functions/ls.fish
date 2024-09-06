@@ -1,3 +1,3 @@
-function ls --wraps exa --description "list directory contents"
-    lsd -lSF --date relative $argv;
+function ls --wraps eza --description "list directory contents"
+    eza --long --group-directories-first --time-style 'relative' $argv;
 end

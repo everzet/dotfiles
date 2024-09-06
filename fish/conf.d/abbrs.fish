@@ -1,5 +1,6 @@
 # General
 abbr l ls
+abbr lt ls -T
 abbr v vim
 abbr g git
 
