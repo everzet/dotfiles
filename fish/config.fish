@@ -11,15 +11,15 @@ if status is-interactive
     set -gx FZF_DEFAULT_COMMAND 'rg --files --ignore --hidden --follow --glob "!.git/*"'
     set -gx FZF_CTRL_T_COMMAND 'rg --files --ignore --hidden --follow --glob "!.git/*"'
 
-    # Per-project version manager for Erlang, Elixir, Node, etc.
-    source (brew --prefix asdf)/libexec/asdf.fish
-
-    # Per-project envars management
-    direnv hook fish | source
-
     # Neat and fully-fledged prompt
     starship init fish | source
 
     # Better CD
     zoxide init fish | source
+
+    # Per-project envars management
+    direnv hook fish | source
+
+    # Per-project version manager
+    mise activate fish | source
 end

@@ -18,8 +18,8 @@ ln -nfs $DOTFILESDIR/zellij                     ~/.config/zellij
 ln -nfs $DOTFILESDIR/starship/starship.toml     ~/.config/starship.toml
 ln -nfs $DOTFILESDIR/editorconfig               ~/.editorconfig
 ln -nfs $DOTFILESDIR/elixir/iex.exs             ~/.iex.exs
-ln -nfs $DOTFILESDIR/asdf/asdfrc                ~/.asdfrc
-ln -nfs $DOTFILESDIR/asdf/default-golang-pkgs   ~/.default-golang-pkgs
+ln -nfs $DOTFILESDIR/mise/default-golang-pkgs   ~/.default-golang-pkgs
+ln -nfs $DOTFILESDIR/mise/default-mix-commands  ~/.default-mix-commands
 
 # setup neovim
 nvim --headless "+Lazy! sync" +qa
