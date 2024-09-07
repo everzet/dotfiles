@@ -15,7 +15,7 @@ if status is-interactive
     starship init fish | source
 
     # Better CD
-    zoxide init fish | source
+    zoxide init --cmd cd fish | source
 
     # Per-project envars management
     direnv hook fish | source
