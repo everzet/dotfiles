@@ -20,7 +20,25 @@ ui {
 
 keybinds clear-defaults=true {
     normal {
+        // go into session mode
         bind "Ctrl s" { SwitchToMode "Session"; }
+
+        // move between panes
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+
+        // move between tabs
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
     }
     session {
         // session
@@ -42,10 +60,10 @@ keybinds clear-defaults=true {
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
 
         // move between panes
-        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
-        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "h" { MoveFocus "Left"; }
+        bind "l" { MoveFocus "Right"; }
+        bind "j" { MoveFocus "Down"; }
+        bind "k" { MoveFocus "Up"; }
 
         // move panes
         bind "Ctrl h" { MovePane "Left"; }
@@ -67,16 +85,16 @@ keybinds clear-defaults=true {
         bind "Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "Alt x" { CloseTab; }
 
-        // move between tab
-        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
-        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
-        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
-        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
-        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
-        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
-        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
-        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
-        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+        // move between tabs
+        bind "1" { GoToTab 1; }
+        bind "2" { GoToTab 2; }
+        bind "3" { GoToTab 3; }
+        bind "4" { GoToTab 4; }
+        bind "5" { GoToTab 5; }
+        bind "6" { GoToTab 6; }
+        bind "7" { GoToTab 7; }
+        bind "8" { GoToTab 8; }
+        bind "9" { GoToTab 9; }
 
         // move tabs
         bind "Alt h" { MoveTab "Left"; }
