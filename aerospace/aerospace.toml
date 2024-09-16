@@ -62,7 +62,7 @@ outer.right =      10
 # https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
 1 = ['lg ultrawide', 'built-in']
-2 = 'studio display'
+2 = ['studio display', 'lg hdr']
 3 = ['built-in', 'lg ultrawide']
 
 # Float CleanMyMac
