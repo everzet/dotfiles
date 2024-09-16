@@ -11,6 +11,7 @@ eza
 bat
 fd
 sd
+jq
 fzf
 ripgrep
 mise
