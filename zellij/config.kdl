@@ -53,7 +53,7 @@ keybinds clear-defaults=true {
         }
 
         // manage panes
-        bind "n" { NewPane; }
+        bind "c" { NewPane; }
         bind "s" { NewPane "Down"; }
         bind "v" { NewPane "Right"; }
         bind "x" { CloseFocus; }
@@ -81,7 +81,7 @@ keybinds clear-defaults=true {
         bind "Ctrl e" { EditScrollback; SwitchToMode "Normal"; }
 
         // manage tabs
-        bind "Alt n" { NewTab; }
+        bind "Alt c" { NewTab; }
         bind "Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "Alt x" { CloseTab; }
 
