@@ -130,11 +130,11 @@ ctrl-alt-9 = 'workspace 9'
 
 # Base shortcuts
 enter = 'mode main'
-c = ['reload-config', 'mode main']
+a = ['reload-config', 'mode main']
 f = ['fullscreen', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 w = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
+#backspace = ['close-all-windows-but-current', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 slash = 'layout tiles horizontal vertical'
