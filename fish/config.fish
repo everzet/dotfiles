@@ -17,9 +17,6 @@ if status is-interactive
     # Better CD
     zoxide init --cmd cd fish | source
 
-    # Per-project envars management
-    direnv hook fish | source
-
-    # Per-project version manager
+    # Per-project version and environment manager
     mise activate fish | source
 end
