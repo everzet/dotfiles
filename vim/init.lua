@@ -115,7 +115,7 @@ vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab [X]ill' }
 
 -- Managing buffers
 vim.keymap.set('n', '<leader>bo', '<cmd>%bd!<CR><C-o><cmd>bd#<CR>zz', { desc = '[B]uffer [O]nly' })
-vim.keymap.set('n', '<leader>bc', '<cmd>bd<CR>', { desc = '[B]uffer [C]lose' })
+vim.keymap.set('n', '<leader>bx', '<cmd>bd<CR>', { desc = '[B]uffer [X]ill' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
