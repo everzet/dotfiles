@@ -109,9 +109,9 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move window up' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move window right' })
 
 -- Managing tabs
-vim.keymap.set('n', '<leader>tn', '<cmd>tab split<CR>', { desc = '[T]ab [N]ew' })
+vim.keymap.set('n', '<leader>tc', '<cmd>tab split<CR>', { desc = '[T]ab [C]reate' })
 vim.keymap.set('n', '<leader>to', '<cmd>tabonly<CR>', { desc = '[T]ab [O]nly' })
-vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [C]close' })
+vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab [X]ill' })
 
 -- Managing buffers
 vim.keymap.set('n', '<leader>bo', '<cmd>%bd!<CR><C-o><cmd>bd#<CR>zz', { desc = '[B]uffer [O]nly' })
