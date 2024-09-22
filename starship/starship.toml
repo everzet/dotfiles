@@ -20,7 +20,8 @@ symbol = "·"
 [directory]
 style = "fg:#15161F bg:#6999EF bold"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncate_to_repo = true
+truncation_length = 2
 truncation_symbol = "…/"
 
 [directory.substitutions]
