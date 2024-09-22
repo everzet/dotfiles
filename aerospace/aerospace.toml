@@ -128,12 +128,13 @@ ctrl-alt-9 = 'workspace 9'
 # end tell'
 # '''
 
-# Base shortcuts
+# Exit mode
 enter = 'mode main'
-a = ['reload-config', 'mode main']
-f = ['fullscreen', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-#backspace = ['close-all-windows-but-current', 'mode main']
+
+# Base shortcuts
+a = 'reload-config'
+f = 'fullscreen'
+r = 'flatten-workspace-tree' # reset layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 period = 'layout floating tiling' # Toggle between floating and tiling layout
@@ -183,6 +184,3 @@ ctrl-6 = 'move-node-to-workspace 6'
 ctrl-7 = 'move-node-to-workspace 7'
 ctrl-8 = 'move-node-to-workspace 8'
 ctrl-9 = 'move-node-to-workspace 9'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-tab = ['workspace-back-and-forth', 'mode main']

@@ -57,7 +57,7 @@ keybinds clear-defaults=true {
         bind "s" { NewPane "Down"; }
         bind "v" { NewPane "Right"; }
         bind "x" { CloseFocus; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "f" { ToggleFocusFullscreen; }
 
         // move between panes
         bind "h" { MoveFocus "Left"; }
