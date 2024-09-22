@@ -23,6 +23,14 @@ keybinds clear-defaults=true {
         // go into session mode
         bind "Ctrl s" { SwitchToMode "Session"; }
 
+        // open session manager
+        bind "Ctrl p" {
+            LaunchOrFocusPlugin "session-manager" {
+                move_to_focused_tab true
+                floating true
+            };
+        }
+
         // move between panes
         bind "Alt h" { MoveFocus "Left"; }
         bind "Alt l" { MoveFocus "Right"; }
@@ -44,13 +52,6 @@ keybinds clear-defaults=true {
         // session
         bind "d" { Detach; }
         bind "q" { Quit; }
-        bind "m" {
-            LaunchOrFocusPlugin "session-manager" {
-                floating true
-                move_to_focused_tab true
-            };
-            SwitchToMode "Normal"
-        }
 
         // manage panes
         bind "c" { NewPane; }
@@ -78,7 +79,6 @@ keybinds clear-defaults=true {
         // scroll
         bind "Ctrl u" { HalfPageScrollUp; }
         bind "Ctrl d" { HalfPageScrollDown; }
-        bind "Ctrl e" { EditScrollback; SwitchToMode "Normal"; }
 
         // manage tabs
         bind "Alt c" { NewTab; }
