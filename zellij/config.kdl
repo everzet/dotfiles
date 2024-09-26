@@ -51,6 +51,7 @@ keybinds clear-defaults=true {
                 move_to_focused_tab true
                 floating true
             };
+            SwitchToMode "Normal"
         }
 
         // manage panes
