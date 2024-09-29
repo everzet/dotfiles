@@ -130,16 +130,17 @@ ctrl-alt-9 = 'workspace 9'
 
 # Exit mode
 enter = 'mode main'
+esc = 'mode main'
 
 # Base shortcuts
-a = 'reload-config'
-f = 'fullscreen'
-r = 'flatten-workspace-tree' # reset layout
+r = ['reload-config', 'mode main']
+f = ['fullscreen', 'mode main']
+t = ['flatten-workspace-tree', 'mode main'] # reset layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-period = 'layout floating tiling' # Toggle between floating and tiling layout
+period = 'layout accordion horizontal vertical' # Toggle between horizontal and vertical accordion
 slash = 'layout tiles horizontal vertical' # Toggle between horizontal and vertical tiles
-comma = 'layout accordion horizontal vertical' # Toggle between horizontal and vertical accordion
+comma = 'layout floating tiling' # Toggle between floating and tiling layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
