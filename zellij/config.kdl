@@ -9,7 +9,7 @@ scroll_buffer_size 10000
 copy_on_select true
 
 default_layout "compact"
-theme "tokyo-night-storm"
+theme "one-half-dark"
 simplified_ui true
 ui {
     pane_frames {
@@ -46,7 +46,7 @@ keybinds clear-defaults=true {
         bind "q" { Quit; }
 
         // session manager
-        bind "m" {
+        bind "o" {
             LaunchOrFocusPlugin "session-manager" {
                 move_to_focused_tab true
                 floating true
@@ -54,12 +54,13 @@ keybinds clear-defaults=true {
             SwitchToMode "Normal"
         }
 
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+
         // manage panes
         bind "c" { NewPane; }
         bind "s" { NewPane "Down"; }
         bind "v" { NewPane "Right"; }
         bind "x" { CloseFocus; }
-        bind "f" { ToggleFocusFullscreen; }
 
         // move between panes
         bind "h" { MoveFocus "Left"; }
@@ -86,6 +87,10 @@ keybinds clear-defaults=true {
         bind "Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "Alt x" { CloseTab; }
 
+        // move tabs
+        bind "Alt h" { MoveTab "Left"; }
+        bind "Alt l" { MoveTab "Right"; }
+
         // move between tabs
         bind "1" { GoToTab 1; }
         bind "2" { GoToTab 2; }
@@ -96,10 +101,6 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; }
         bind "8" { GoToTab 8; }
         bind "9" { GoToTab 9; }
-
-        // move tabs
-        bind "Alt h" { MoveTab "Left"; }
-        bind "Alt l" { MoveTab "Right"; }
     }
     shared_except "normal" {
         bind "Enter" { SwitchToMode "Normal"; }
