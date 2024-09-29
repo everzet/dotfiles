@@ -130,7 +130,6 @@ ctrl-alt-9 = 'workspace 9'
 
 # Exit mode
 enter = 'mode main'
-esc = 'mode main'
 
 # Base shortcuts
 r = ['reload-config', 'mode main']
