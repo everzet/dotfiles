@@ -104,6 +104,7 @@ keybinds clear-defaults=true {
     }
     shared_except "normal" {
         bind "Enter" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
     }
     renametab {
         bind "Esc" { UndoRenameTab; SwitchToMode "Normal"; }
