@@ -70,9 +70,9 @@ outer.right =      10
 if.app-id = 'com.macpaw.CleanMyMac4'
 run = ['layout floating']
 
-# Float Things
+# Float Keymapp
 [[on-window-detected]]
-if.app-id = 'com.culturedcode.ThingsMac'
+if.app-id = 'io.zsa.keymapp'
 run = ['layout floating']
 
 # 'main' binding mode declaration
