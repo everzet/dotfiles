@@ -65,8 +65,8 @@ vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('i', '<C-c>', '<Esc>', { desc = 'Exit insert mode' })
 
 -- Keep block's selection after (de-)indent
-vim.keymap.set('v', '<', '<gv', { desc = 'Deindent without losing selection' })
-vim.keymap.set('v', '>', '>gv', { desc = 'Indent without losing selection' })
+vim.keymap.set('v', 'H', '<gv', { desc = 'Deindent without losing selection' })
+vim.keymap.set('v', 'L', '>gv', { desc = 'Indent without losing selection' })
 
 -- Vertically move selected block and preserve its indentation
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move down preserving indentation' })
