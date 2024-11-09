@@ -67,102 +67,55 @@ outer.right =      10
 
 # Float CleanMyMac
 [[on-window-detected]]
-if.app-id = 'com.macpaw.CleanMyMac4'
-run = ['layout floating']
-
-# Float Keymapp
-[[on-window-detected]]
-if.app-id = 'io.zsa.keymapp'
+if.app-id = 'com.macpaw.CleanMyMac5'
 run = ['layout floating']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.main.binding]
 
-# Switch mode to service
+# Switch mode to unlocked
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-ctrl-a = 'mode service'
+ctrl-a = 'mode unlocked'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
+ctrl-alt-minus = 'resize smart -50'
+ctrl-alt-equal = 'resize smart +50'
+
+ctrl-alt-f = 'layout floating tiling'
+
 ctrl-alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
 ctrl-alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
 ctrl-alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
 ctrl-alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-alt-1 = 'workspace 1'
-ctrl-alt-2 = 'workspace 2'
-ctrl-alt-3 = 'workspace 3'
-ctrl-alt-4 = 'workspace 4'
-ctrl-alt-5 = 'workspace 5'
-ctrl-alt-6 = 'workspace 6'
-ctrl-alt-7 = 'workspace 7'
-ctrl-alt-8 = 'workspace 8'
-ctrl-alt-9 = 'workspace 9'
+ctrl-alt-tab = 'focus-back-and-forth'
 
-# 'service' binding mode declaration.
+# 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-[mode.service.binding]
-
-# All possible keys:
-# - Letters.        a, b, c, ..., z
-# - Numbers.        0, 1, 2, ..., 9
-# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
-# - F-keys.         f1, f2, ..., f20
-# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
-#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
-# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
-#                   keypadMinus, keypadMultiply, keypadPlus
-# - Arrows.         left, down, up, right
-
-# All possible modifiers: cmd, alt, ctrl, shift
-
-# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-# alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
-#     do script
-#     activate
-# end tell'
-# '''
-
-# Exit mode
+[mode.unlocked.binding]
+ctrl-a = 'mode main'
 enter = 'mode main'
 esc = 'mode main'
 
-# Base shortcuts
-r = ['reload-config', 'mode main']
-f = ['fullscreen', 'mode main']
-t = ['flatten-workspace-tree', 'mode main'] # reset layout
+w = 'mode window'
+m = 'mode move'
+r = 'mode resize'
+g = 'mode group'
+o = 'mode options'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-period = 'layout accordion horizontal vertical' # Toggle between horizontal and vertical accordion
-slash = 'layout tiles horizontal vertical' # Toggle between horizontal and vertical tiles
-comma = 'layout floating tiling' # Toggle between floating and tiling layout
+# 'window' binding mode declaration.
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.window.binding]
+w = 'mode unlocked'
+ctrl-a = 'mode main'
+enter = 'mode main'
+esc = 'mode main'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-ctrl-h = 'move left'
-ctrl-j = 'move down'
-ctrl-k = 'move up'
-ctrl-l = 'move right'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-shift-h = 'join-with left'
-shift-j = 'join-with down'
-shift-k = 'join-with up'
-shift-l = 'join-with right'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-minus = 'resize smart -50'
-equal = 'resize smart +50'
+h = 'focus --boundaries-action wrap-around-the-workspace left'
+j = 'focus --boundaries-action wrap-around-the-workspace down'
+k = 'focus --boundaries-action wrap-around-the-workspace up'
+l = 'focus --boundaries-action wrap-around-the-workspace right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 1 = 'workspace 1'
@@ -175,13 +128,81 @@ equal = 'resize smart +50'
 8 = 'workspace 8'
 9 = 'workspace 9'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+f = ['fullscreen', 'mode main']
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+d = ['layout floating tiling', 'mode main']
+
+# 'move' binding mode declaration.
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.move.binding]
+m = 'mode unlocked'
+ctrl-a = 'mode main'
+enter = 'mode main'
+esc = 'mode main'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
+h = 'move left'
+j = 'move down'
+k = 'move up'
+l = 'move right'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-1 = ['move-node-to-workspace 1', 'workspace 1']
-ctrl-2 = ['move-node-to-workspace 2', 'workspace 2']
-ctrl-3 = ['move-node-to-workspace 3', 'workspace 3']
-ctrl-4 = ['move-node-to-workspace 4', 'workspace 4']
-ctrl-5 = ['move-node-to-workspace 5', 'workspace 5']
-ctrl-6 = ['move-node-to-workspace 6', 'workspace 6']
-ctrl-7 = ['move-node-to-workspace 7', 'workspace 7']
-ctrl-8 = ['move-node-to-workspace 8', 'workspace 8']
-ctrl-9 = ['move-node-to-workspace 9', 'workspace 9']
+1 = ['move-node-to-workspace 1', 'workspace 1']
+2 = ['move-node-to-workspace 2', 'workspace 2']
+3 = ['move-node-to-workspace 3', 'workspace 3']
+4 = ['move-node-to-workspace 4', 'workspace 4']
+5 = ['move-node-to-workspace 5', 'workspace 5']
+6 = ['move-node-to-workspace 6', 'workspace 6']
+7 = ['move-node-to-workspace 7', 'workspace 7']
+8 = ['move-node-to-workspace 8', 'workspace 8']
+9 = ['move-node-to-workspace 9', 'workspace 9']
+
+# 'resize' binding mode declaration.
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.resize.binding]
+r = 'mode unlocked'
+ctrl-a = 'mode main'
+enter = 'mode main'
+esc = 'mode main'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+minus = 'resize smart -50'
+equal = 'resize smart +50'
+h = 'resize width -50'
+l = 'resize width +50'
+j = 'resize height -50'
+k = 'resize height +50'
+
+# 'group' binding mode declaration.
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.group.binding]
+g = 'mode unlocked'
+ctrl-a = 'mode main'
+enter = 'mode main'
+esc = 'mode main'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
+h = 'join-with left'
+j = 'join-with down'
+k = 'join-with up'
+l = 'join-with right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+s = 'layout accordion horizontal vertical'
+t = 'layout tiles horizontal vertical'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#flatten-workspace-tree
+r = 'flatten-workspace-tree'
+
+# 'options' binding mode declaration.
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.options.binding]
+o = 'mode unlocked'
+ctrl-a = 'mode main'
+enter = 'mode main'
+esc = 'mode main'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#reload-config
+r = ['reload-config', 'mode main']

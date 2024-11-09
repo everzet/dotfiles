@@ -1,5 +1,5 @@
 // do not serialize scratch sessions
-session_serialization false
+ session_serialization false
 
 // basic layout with ~/Dev as cwd and fastfetch on init
 layout {
@@ -9,6 +9,6 @@ layout {
         args "--login"
     }
     pane size=1 borderless=true {
-        plugin location="compact-bar"
+        plugin location="status-bar"
     }
 }
