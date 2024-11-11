@@ -93,7 +93,7 @@ ctrl-alt-tab = 'focus-back-and-forth'
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.unlocked.binding]
-ctrl-a = 'mode main'
+ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -107,7 +107,7 @@ o = 'mode options'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.window.binding]
 w = 'mode unlocked'
-ctrl-a = 'mode main'
+ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -138,7 +138,7 @@ d = ['layout floating tiling', 'mode main']
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.move.binding]
 m = 'mode unlocked'
-ctrl-a = 'mode main'
+ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -163,7 +163,7 @@ l = 'move right'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.resize.binding]
 r = 'mode unlocked'
-ctrl-a = 'mode main'
+ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -179,7 +179,7 @@ k = 'resize height +50'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.group.binding]
 g = 'mode unlocked'
-ctrl-a = 'mode main'
+ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -200,7 +200,7 @@ r = 'flatten-workspace-tree'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.options.binding]
 o = 'mode unlocked'
-ctrl-a = 'mode main'
+ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
