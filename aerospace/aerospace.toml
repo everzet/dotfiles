@@ -76,7 +76,7 @@ run = ['layout floating']
 
 # Switch mode to unlocked
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-ctrl-a = 'mode unlocked'
+cmd-esc = 'mode unlocked'
 
 ctrl-alt-minus = 'resize smart -50'
 ctrl-alt-equal = 'resize smart +50'
@@ -93,7 +93,8 @@ ctrl-alt-tab = 'focus-back-and-forth'
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.unlocked.binding]
-ctrl-a = 'mode unlocked'
+cmd-esc = 'mode unlocked'
+u = 'mode main'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -106,8 +107,8 @@ o = 'mode options'
 # 'window' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.window.binding]
+cmd-esc = 'mode unlocked'
 w = 'mode unlocked'
-ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -137,8 +138,8 @@ d = ['layout floating tiling', 'mode main']
 # 'move' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.move.binding]
+cmd-esc = 'mode unlocked'
 m = 'mode unlocked'
-ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -162,8 +163,8 @@ l = 'move right'
 # 'resize' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.resize.binding]
+cmd-esc = 'mode unlocked'
 r = 'mode unlocked'
-ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -178,8 +179,8 @@ k = 'resize height +50'
 # 'group' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.group.binding]
+cmd-esc = 'mode unlocked'
 g = 'mode unlocked'
-ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
@@ -199,8 +200,8 @@ r = 'flatten-workspace-tree'
 # 'options' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.options.binding]
+cmd-esc = 'mode unlocked'
 o = 'mode unlocked'
-ctrl-a = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 

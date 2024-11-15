@@ -43,6 +43,11 @@ config.keys = {
     mods = "CTRL|SHIFT",
     action = wezterm.action.ActivateCopyMode,
   },
+  {
+    key = "g",
+    mods = "CMD",
+    action = wezterm.action.SendKey({ key = "g", mods = "CTRL" }),
+  },
 }
 
 return config
