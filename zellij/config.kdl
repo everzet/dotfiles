@@ -1,3 +1,9 @@
+// Use a simplified UI without special fonts (arrow glyphs)
+// Options:
+//   - true
+//   - false (Default)
+//
+simplified_ui true
 ui {
     pane_frames {
         hide_session_name false
@@ -5,17 +11,25 @@ ui {
     }
 }
 
-// Use a simplified UI without special fonts (arrow glyphs)
-// Options:
-//   - true
-//   - false (Default)
-//
-simplified_ui true
-
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "one-half-dark"
+theme "tokyo-night-gogh"
+themes {
+    tokyo-night-gogh {
+        fg "#C0CAF5" // Inactive BG
+        bg "#282E44" // Selection BG
+        black "#1A1B26" // Top / Bottom Bar BG
+        red "#414868" // Keymap Text
+        green "#7AA2F7" // Active BG
+        yellow "#ffba00" // ??UNKNOWN
+        blue "#45b1e8" // ??UNKNOWN
+        magenta "#F7768E" // Modifier Highlights
+        cyan "#6eb0ff" // Tab Text
+        white "#9ECE6A" // Session Name
+        orange "#E0AF68" // Option Text
+    }
+}
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
