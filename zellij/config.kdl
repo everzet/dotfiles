@@ -26,7 +26,7 @@ themes {
         blue "#45b1e8" // ??UNKNOWN
         magenta "#F7768E" // Modifier Highlights
         cyan "#6eb0ff" // Tab Text
-        white "#9ECE6A" // Session Name
+        white "#BB9AF7" // Session Name
         orange "#E0AF68" // Option Text
     }
 }
