@@ -6,9 +6,6 @@ DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 # install third party apps via homebrew
 xargs brew install -q < $DOTFILESDIR/dependencies
 
-# install revup (git branch management)
-/usr/bin/python3 -m pip install revup
-
 # symlink configs
 mkdir -p ~/.config
 ln -nfs $DOTFILESDIR/vim                        ~/.config/nvim
