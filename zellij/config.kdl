@@ -24,9 +24,9 @@ themes {
         green "#7AA2F7" // Active BG
         yellow "#ffba00" // ??UNKNOWN
         blue "#45b1e8" // ??UNKNOWN
-        magenta "#F7768E" // Modifier Highlights
+        magenta "#9ECE6A" // Modifier Highlights
         cyan "#6eb0ff" // Tab Text
-        white "#BB9AF7" // Session Name
+        white "#A1AED5" // Session Name & Odd Tab BG
         orange "#E0AF68" // Option Text
     }
 }
