@@ -202,19 +202,19 @@ keybinds clear-defaults=true {
     }
     pane {
         bind "p" { SwitchToMode "normal"; }
-        bind "n" { NewPane; SwitchToMode "locked"; }
-        bind "s" { NewPane "down"; SwitchToMode "locked"; }
-        bind "v" { NewPane "right"; SwitchToMode "locked"; }
-        bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "d" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+        bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
+        bind "n" { NewPane; }
+        bind "s" { NewPane "down"; }
+        bind "v" { NewPane "right"; }
+        bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "h" { MoveFocus "left"; }
         bind "j" { MoveFocus "down"; }
         bind "k" { MoveFocus "up"; }
         bind "l" { MoveFocus "right"; }
-        bind "x" { CloseFocus; SwitchToMode "locked"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
+        bind "x" { CloseFocus; }
         bind "tab" { SwitchFocus; }
     }
     tab {
@@ -228,17 +228,17 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "locked"; }
         bind "8" { GoToTab 8; SwitchToMode "locked"; }
         bind "9" { GoToTab 9; SwitchToMode "locked"; }
-        bind "[" { BreakPaneLeft; SwitchToMode "locked"; }
-        bind "]" { BreakPaneRight; SwitchToMode "locked"; }
-        bind "b" { BreakPane; SwitchToMode "locked"; }
+        bind "b" { BreakPane; }
+        bind "[" { BreakPaneLeft; }
+        bind "]" { BreakPaneRight; }
         bind "h" { GoToPreviousTab; }
         bind "j" { GoToNextTab; }
         bind "k" { GoToPreviousTab; }
         bind "l" { GoToNextTab; }
-        bind "n" { NewTab; SwitchToMode "locked"; }
+        bind "n" { NewTab; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
-        bind "s" { ToggleActiveSyncTab; SwitchToMode "locked"; }
-        bind "x" { CloseTab; SwitchToMode "locked"; }
+        bind "s" { ToggleActiveSyncTab; }
+        bind "x" { CloseTab; }
         bind "tab" { ToggleTab; }
     }
     resize {
