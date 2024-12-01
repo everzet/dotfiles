@@ -78,26 +78,22 @@ run = ['layout floating']
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-a = 'mode unlocked'
 
-ctrl-alt-minus = 'resize smart -50'
-ctrl-alt-equal = 'resize smart +50'
-
-ctrl-alt-f = 'layout floating tiling'
-
 ctrl-alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
 ctrl-alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
 ctrl-alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
 ctrl-alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
 
+ctrl-alt-d = 'layout floating tiling'
 ctrl-alt-tab = 'focus-back-and-forth'
 
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.unlocked.binding]
 ctrl-a = 'mode unlocked'
-u = 'mode main'
 enter = 'mode main'
 esc = 'mode main'
 
+# Modes
 w = 'mode window'
 m = 'mode move'
 r = 'mode resize'
@@ -108,9 +104,15 @@ o = 'mode options'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.window.binding]
 ctrl-a = 'mode unlocked'
-w = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
+
+# Modes
+w = 'mode window'
+m = 'mode move'
+r = 'mode resize'
+g = 'mode group'
+o = 'mode options'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 h = 'focus --boundaries-action wrap-around-the-workspace left'
@@ -139,9 +141,15 @@ d = ['layout floating tiling', 'mode main']
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.move.binding]
 ctrl-a = 'mode unlocked'
-m = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
+
+# Modes
+w = 'mode window'
+m = 'mode move'
+r = 'mode resize'
+g = 'mode group'
+o = 'mode options'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 h = 'move left'
@@ -164,9 +172,15 @@ l = 'move right'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.resize.binding]
 ctrl-a = 'mode unlocked'
-r = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
+
+# Modes
+w = 'mode window'
+m = 'mode move'
+r = 'mode resize'
+g = 'mode group'
+o = 'mode options'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 minus = 'resize smart -50'
@@ -180,9 +194,15 @@ k = 'resize height +50'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.group.binding]
 ctrl-a = 'mode unlocked'
-g = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
+
+# Modes
+w = 'mode window'
+m = 'mode move'
+r = 'mode resize'
+g = 'mode group'
+o = 'mode options'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
 h = 'join-with left'
@@ -195,15 +215,21 @@ s = 'layout accordion horizontal vertical'
 t = 'layout tiles horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#flatten-workspace-tree
-r = 'flatten-workspace-tree'
+x = 'flatten-workspace-tree'
 
 # 'options' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.options.binding]
 ctrl-a = 'mode unlocked'
-o = 'mode unlocked'
 enter = 'mode main'
 esc = 'mode main'
 
+# Modes
+w = 'mode window'
+m = 'mode move'
+r = 'mode resize'
+g = 'mode group'
+o = 'mode options'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#reload-config
-r = ['reload-config', 'mode main']
+c = ['reload-config', 'mode main']
