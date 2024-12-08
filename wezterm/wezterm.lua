@@ -12,7 +12,7 @@ config.default_prog = {
 }
 
 -- Configure font
-config.font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" })
+config.font = wezterm.font("MonoLisa", { weight = "Medium" })
 config.freetype_load_target = "Light"
 config.font_size = 12.0
 config.line_height = 1.5
