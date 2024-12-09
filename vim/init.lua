@@ -19,7 +19,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
--- vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -82,10 +82,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move up and recenter screen' }
 -- Recenter screen when jumping between search results
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next search result and recenter screen' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to previous search result and recenter screen' })
-
--- Copy selected text to/from system clipboard
-vim.keymap.set('x', '<leader>cy', '"+y', { desc = '[C]lipboard [Y]ank' })
-vim.keymap.set('x', '<leader>cp', '"+p', { desc = '[C]lipboard [P]aste' })
 
 -- Replace selected text without yanking it first
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Replace selected text without yanking it' })
