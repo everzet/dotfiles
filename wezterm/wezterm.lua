@@ -28,7 +28,7 @@ config.colors = {
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_padding = { left = 30, right = 30, top = 25, bottom = 25 }
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.97
 config.window_close_confirmation = "NeverPrompt"
 
 -- Configure keybinds
