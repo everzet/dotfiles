@@ -53,22 +53,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
-
-# Lock displays to fixed workspaces
-# https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
-[workspace-to-monitor-force-assignment]
-e = ['lg ultrawide']
-t = ['studio display', 'built-in']
-a = ['lg hdr', 'built-in']
-
-# Float CleanMyMac
-[[on-window-detected]]
-if.app-id = 'com.macpaw.CleanMyMac5'
-run = ['layout floating']
+outer.top =        8
+outer.left =       8
+outer.right =      8
+outer.bottom =     8
 
 # Terminal always goes to the terminal workspace
 [[on-window-detected]]
@@ -85,15 +73,62 @@ run = ['move-node-to-workspace b']
 if.app-id = 'com.apple.mail'
 run = ['move-node-to-workspace c']
 
-# Notes goes to additional
+# Messages goes to chats
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['move-node-to-workspace c']
+
+# Slack goes to chats
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace c']
+
+# Zoom goes to zooms
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = ['move-node-to-workspace z']
+
+# Notes go to extra
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
-run = ['move-node-to-workspace a']
+run = ['move-node-to-workspace e']
 
-# Reminders go to additional
+# Reminders go to extra
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
-run = ['move-node-to-workspace a']
+run = ['move-node-to-workspace e']
+
+# Postico goes to extra
+[[on-window-detected]]
+if.app-id = 'at.eggerapps.Postico'
+run = ['move-node-to-workspace e']
+
+# RapidAPI goes to extra
+[[on-window-detected]]
+if.app-id = 'com.luckymarmot.Paw'
+run = ['move-node-to-workspace e']
+
+# OrbStack goes to extra
+[[on-window-detected]]
+if.app-id = 'dev.kdrag0n.MacVirt'
+run = ['move-node-to-workspace e']
+
+# Music goes to extra
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = ['move-node-to-workspace e']
+
+# CleanMyMac floats to extra
+[[on-window-detected]]
+if.app-id = 'com.macpaw.CleanMyMac5'
+run = ['layout floating', 'move-node-to-workspace e']
+
+# Lock displays to fixed workspaces
+# https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
+[workspace-to-monitor-force-assignment]
+t = ['studio display', 'built-in']
+e = ['lg ultrawide', 'lg hdr']
+c = ['built-in']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -110,11 +145,11 @@ ctrl-alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wr
 ctrl-alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-alt-e = 'workspace e' # [e]xtended display
-ctrl-alt-a = 'workspace a' # [a]dditional display
 ctrl-alt-t = 'workspace t' # [t]erminal
 ctrl-alt-b = 'workspace b' # [b]rowser
 ctrl-alt-c = 'workspace c' # [c]hats
+ctrl-alt-z = 'workspace z' # [z]ooms
+ctrl-alt-e = 'workspace e' # [e]xtra
 
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -151,11 +186,11 @@ k = 'focus --boundaries-action wrap-around-the-workspace up'
 l = 'focus --boundaries-action wrap-around-the-workspace right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-e = 'workspace e' # [e]xtended display
-a = 'workspace a' # [a]dditional display
 t = 'workspace t' # [t]erminal
 b = 'workspace b' # [b]rowser
 c = 'workspace c' # [c]hats
+z = 'workspace z' # [z]ooms
+e = 'workspace e' # [e]xtra
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
 f = ['fullscreen', 'mode main']
@@ -184,11 +219,11 @@ k = 'move up'
 l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-e = ['move-node-to-workspace e', 'workspace e'] # [e]xtended display
-a = ['move-node-to-workspace a', 'workspace a'] # [a]dditional display
 t = ['move-node-to-workspace t', 'workspace t'] # [t]erminal
 b = ['move-node-to-workspace b', 'workspace b'] # [b]rowser
 c = ['move-node-to-workspace c', 'workspace c'] # [c]hats
+z = ['move-node-to-workspace z', 'workspace z'] # [z]ooms
+e = ['move-node-to-workspace e', 'workspace e'] # [e]xtra
 
 # 'resize' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
