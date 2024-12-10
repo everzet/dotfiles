@@ -61,14 +61,39 @@ outer.right =      10
 # Lock displays to fixed workspaces
 # https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-1 = ['lg ultrawide', 'built-in']
-2 = ['studio display', 'lg hdr']
-3 = ['built-in', 'lg ultrawide']
+e = ['lg ultrawide']
+t = ['studio display', 'built-in']
+a = ['lg hdr', 'built-in']
 
 # Float CleanMyMac
 [[on-window-detected]]
 if.app-id = 'com.macpaw.CleanMyMac5'
 run = ['layout floating']
+
+# Terminal always goes to the terminal workspace
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = ['move-node-to-workspace t']
+
+# Browsers always go to the browser workspace
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = ['move-node-to-workspace b']
+
+# Mail goes to chats
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['move-node-to-workspace c']
+
+# Notes goes to additional
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = ['move-node-to-workspace a']
+
+# Reminders go to additional
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = ['move-node-to-workspace a']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -78,10 +103,18 @@ run = ['layout floating']
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-a = 'mode unlocked'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#focus
 ctrl-alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
 ctrl-alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
 ctrl-alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
 ctrl-alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+ctrl-alt-e = 'workspace e' # [e]xtended display
+ctrl-alt-a = 'workspace a' # [a]dditional display
+ctrl-alt-t = 'workspace t' # [t]erminal
+ctrl-alt-b = 'workspace b' # [b]rowser
+ctrl-alt-c = 'workspace c' # [c]hats
 
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -118,15 +151,11 @@ k = 'focus --boundaries-action wrap-around-the-workspace up'
 l = 'focus --boundaries-action wrap-around-the-workspace right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-1 = 'workspace 1'
-2 = 'workspace 2'
-3 = 'workspace 3'
-4 = 'workspace 4'
-5 = 'workspace 5'
-6 = 'workspace 6'
-7 = 'workspace 7'
-8 = 'workspace 8'
-9 = 'workspace 9'
+e = 'workspace e' # [e]xtended display
+a = 'workspace a' # [a]dditional display
+t = 'workspace t' # [t]erminal
+b = 'workspace b' # [b]rowser
+c = 'workspace c' # [c]hats
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
 f = ['fullscreen', 'mode main']
@@ -155,15 +184,11 @@ k = 'move up'
 l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-1 = ['move-node-to-workspace 1', 'workspace 1']
-2 = ['move-node-to-workspace 2', 'workspace 2']
-3 = ['move-node-to-workspace 3', 'workspace 3']
-4 = ['move-node-to-workspace 4', 'workspace 4']
-5 = ['move-node-to-workspace 5', 'workspace 5']
-6 = ['move-node-to-workspace 6', 'workspace 6']
-7 = ['move-node-to-workspace 7', 'workspace 7']
-8 = ['move-node-to-workspace 8', 'workspace 8']
-9 = ['move-node-to-workspace 9', 'workspace 9']
+e = ['move-node-to-workspace e', 'workspace e'] # [e]xtended display
+a = ['move-node-to-workspace a', 'workspace a'] # [a]dditional display
+t = ['move-node-to-workspace t', 'workspace t'] # [t]erminal
+b = ['move-node-to-workspace b', 'workspace b'] # [b]rowser
+c = ['move-node-to-workspace c', 'workspace c'] # [c]hats
 
 # 'resize' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
