@@ -83,52 +83,57 @@ run = ['move-node-to-workspace c']
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['move-node-to-workspace c']
 
+# Finder goes to explore
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['move-node-to-workspace e']
+
+# Notes go to explore
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = ['move-node-to-workspace e']
+
+# Reminders go to explore
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = ['move-node-to-workspace e']
+
+# Postico goes to explore
+[[on-window-detected]]
+if.app-id = 'at.eggerapps.Postico'
+run = ['move-node-to-workspace e']
+
+# RapidAPI goes to explore
+[[on-window-detected]]
+if.app-id = 'com.luckymarmot.Paw'
+run = ['move-node-to-workspace e']
+
+# OrbStack goes to explore
+[[on-window-detected]]
+if.app-id = 'dev.kdrag0n.MacVirt'
+run = ['move-node-to-workspace e']
+
+# CleanMyMac floats to explore
+[[on-window-detected]]
+if.app-id = 'com.macpaw.CleanMyMac5'
+run = ['layout floating', 'move-node-to-workspace e']
+
+# Music goes to audio-video
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = ['move-node-to-workspace a']
+
 # Zoom goes to zooms
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
 run = ['move-node-to-workspace z']
 
-# Notes go to extra
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'
-run = ['move-node-to-workspace e']
-
-# Reminders go to extra
-[[on-window-detected]]
-if.app-id = 'com.apple.reminders'
-run = ['move-node-to-workspace e']
-
-# Postico goes to extra
-[[on-window-detected]]
-if.app-id = 'at.eggerapps.Postico'
-run = ['move-node-to-workspace e']
-
-# RapidAPI goes to extra
-[[on-window-detected]]
-if.app-id = 'com.luckymarmot.Paw'
-run = ['move-node-to-workspace e']
-
-# OrbStack goes to extra
-[[on-window-detected]]
-if.app-id = 'dev.kdrag0n.MacVirt'
-run = ['move-node-to-workspace e']
-
-# Music goes to extra
-[[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = ['move-node-to-workspace e']
-
-# CleanMyMac floats to extra
-[[on-window-detected]]
-if.app-id = 'com.macpaw.CleanMyMac5'
-run = ['layout floating', 'move-node-to-workspace e']
-
 # Lock displays to fixed workspaces
 # https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-t = ['studio display', 'built-in']
-e = ['lg ultrawide', 'lg hdr']
-c = ['built-in']
+t = ['studio display', 'built-in'] # show terminal on Studio Display if connected, built-in if not
+e = ['lg ultrawide', 'lg hdr'] # do exploration on an external display
+c = ['built-in'] # show chats on built-in if Studio Display took the terminal
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -149,7 +154,8 @@ ctrl-alt-t = 'workspace t' # [t]erminal
 ctrl-alt-b = 'workspace b' # [b]rowser
 ctrl-alt-c = 'workspace c' # [c]hats
 ctrl-alt-z = 'workspace z' # [z]ooms
-ctrl-alt-e = 'workspace e' # [e]xtra
+ctrl-alt-e = 'workspace e' # [e]xplore
+ctrl-alt-a = 'workspace a' # [a]udio-video
 
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -190,7 +196,8 @@ t = 'workspace t' # [t]erminal
 b = 'workspace b' # [b]rowser
 c = 'workspace c' # [c]hats
 z = 'workspace z' # [z]ooms
-e = 'workspace e' # [e]xtra
+e = 'workspace e' # [e]xplore
+a = 'workspace a' # [a]udio-video
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
 f = ['fullscreen', 'mode main']
@@ -223,7 +230,8 @@ t = ['move-node-to-workspace t', 'workspace t'] # [t]erminal
 b = ['move-node-to-workspace b', 'workspace b'] # [b]rowser
 c = ['move-node-to-workspace c', 'workspace c'] # [c]hats
 z = ['move-node-to-workspace z', 'workspace z'] # [z]ooms
-e = ['move-node-to-workspace e', 'workspace e'] # [e]xtra
+e = ['move-node-to-workspace e', 'workspace e'] # [e]xplore
+a = ['move-node-to-workspace a', 'workspace a'] # [a]udio-video
 
 # 'resize' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
