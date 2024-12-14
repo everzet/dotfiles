@@ -133,9 +133,41 @@ return {
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+
+        -- Lua (mostly NeoVim config)
+        lua_ls = {
+          -- cmd = {...},
+          -- filetypes { ...},
+          -- capabilities = {},
+          settings = {
+            Lua = {
+              completion = {
+                callSnippet = 'Replace',
+              },
+              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+              -- diagnostics = { disable = { 'missing-fields' } },
+            },
+          },
+        },
+
+        -- Javascript and Typescript
+        ts_ls = {
+          capabilities = {
+            documentFormattingProvider = false,
+          },
+        },
+
+        -- Swift
+        sourcekit = {
+          do_not_autoinstall = true,
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
 
         -- Elixir
         elixirls = {},
@@ -155,37 +187,11 @@ return {
             },
           },
         },
-
-        -- Javascript and Typescript
-        --
-        -- TODO: uncomment when `ts_ls` is adopted by Mason
-        --
-        -- tsserver = {
-        --   capabilities = {
-        --     documentFormattingProvider = false,
-        --   },
-        -- },
-
-        -- Lua (mostly NeoVim config)
-        lua_ls = {
-          -- cmd = {...},
-          -- filetypes { ...},
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
       }
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local extra_tools = {
+      local non_server_tools = {
         'stylua', -- Used to format lua code
         'prettierd', -- Used to format TS/JS/JSON/MD code
         'sql-formatter', -- Used to format SQL code
@@ -198,32 +204,31 @@ return {
       --
       --  You can press `g?` for help in this menu
       require('mason').setup()
+      require('mason-tool-installer').setup { ensure_installed = non_server_tools }
 
-      -- Setup all tools with Mason
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, extra_tools)
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      -- Select servers that should be autoinstalled
+      local ensure_installed = {}
+      for name, server in pairs(servers) do
+        if not server.do_not_autoinstall then
+          table.insert(ensure_installed, name)
+        end
+      end
 
-      -- Setup LSP servers
+      -- Install LSP servers
       require('mason-lspconfig').setup {
         automatic_installation = true,
-        ensure_installed = {},
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            -- Configure floating windows
-            server.handlers = {
-              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
-              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
-            }
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        ensure_installed = ensure_installed,
       }
+
+      -- Setup LSP servers
+      for name, server in pairs(servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        server.handlers = {
+          ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
+          ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
+        }
+        require('lspconfig')[name].setup(server)
+      end
     end,
   },
 }
