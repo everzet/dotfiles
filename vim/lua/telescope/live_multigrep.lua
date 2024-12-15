@@ -16,7 +16,7 @@ M.grep = function(opts)
         return nil
       end
 
-      local parts = vim.split(prompt, ' in ')
+      local parts = vim.split(prompt, ' <- ')
       local args = { 'rg' }
 
       if parts[1] then
