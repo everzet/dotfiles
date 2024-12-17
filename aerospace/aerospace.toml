@@ -67,6 +67,9 @@ run = ['move-node-to-workspace t']
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
 run = ['move-node-to-workspace b']
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['move-node-to-workspace b']
 
 # Mail goes to chats
 [[on-window-detected]]
