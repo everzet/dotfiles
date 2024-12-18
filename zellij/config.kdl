@@ -198,7 +198,7 @@ default_mode "locked"
 
 keybinds clear-defaults=true {
     locked {
-        bind "Ctrl t" { SwitchToMode "normal"; }
+        bind "Ctrl g" { SwitchToMode "normal"; }
     }
     pane {
         bind "d" { ToggleFloatingPanes; SwitchToMode "locked"; }
@@ -300,7 +300,7 @@ keybinds clear-defaults=true {
         bind "Alt tab" { ToggleTab; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Ctrl t" { SwitchToMode "normal"; }
+        bind "Ctrl g" { SwitchToMode "normal"; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "entersearch" {
