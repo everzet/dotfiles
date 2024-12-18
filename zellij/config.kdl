@@ -17,19 +17,17 @@ ui {
 theme "tokyo-night-night"
 themes {
     tokyo-night-night {
-        fg "#c0caf5"
-        bg "#292e42"
-        // Black should match the terminal background color
-        // This ensures the top and bottom bars are transparent
-        black "#1a1b26"
-        red "#f7768e"
-        green "#9ece6a"
-        yellow "#e0af68"
-        blue "#7aa2f7"
-        magenta "#bb9af7"
-        cyan "#7dcfff"
-        white "#a9b1d6"
-        orange "#ff9e64"
+        fg "#A1AED5" // Inactive BG
+        bg "#282E44" // Selection BG
+        black "#1A1B26" // Top / Bottom Bar BG
+        red "#414868" // Keymap Text
+        green "#7AA2F7" // Active BG
+        yellow "#ffba00" // ??UNKNOWN
+        blue "#45b1e8" // ??UNKNOWN
+        magenta "#9ECE6A" // Modifier Highlights
+        cyan "#6eb0ff" // Tab Text
+        white "#A1AED5" // Session Name & Odd Tab BG
+        orange "#E0AF68" // Option Text
     }
 }
 
