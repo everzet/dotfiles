@@ -12,6 +12,13 @@ return {
       },
 
       signature = { enabled = true },
+
+      completion = {
+        documentation = {
+          auto_show = true,
+          window = { border = 'rounded' },
+        },
+      },
     },
   },
 }
