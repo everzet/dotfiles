@@ -1,5 +1,6 @@
 # Listing
 abbr l ls
+abbr ll ls -l
 abbr la ls -a
 abbr lt ls -T
 

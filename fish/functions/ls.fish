@@ -1,3 +1,3 @@
 function ls --wraps eza --description "list directory contents"
-    eza --long --group-directories-first --icons=always --time-style 'relative' $argv;
+    eza --grid --width=90 --group-directories-first --icons=always --time-style 'relative' $argv;
 end
