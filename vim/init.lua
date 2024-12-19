@@ -91,8 +91,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Navigating quickfix lists
-vim.keymap.set('n', '<leader>qp', '<cmd>cprev<CR>', { desc = '[Q]uickfix [P]revious' })
-vim.keymap.set('n', '<leader>qn', '<cmd>cnext<CR>', { desc = '[Q]uickfix [N]ext' })
+vim.keymap.set('n', '<leader>[q', '<cmd>cprev<CR>', { desc = '[Previous [Q]uickfix' })
+vim.keymap.set('n', '<leader>]q', '<cmd>cnext<CR>', { desc = ']Next [Q]uickfix' })
 
 -- Navigating windows
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move window down' })
