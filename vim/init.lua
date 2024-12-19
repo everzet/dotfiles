@@ -64,7 +64,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('i', '<C-c>', '<Esc>', { desc = 'Exit insert mode' })
 
--- Keep block's selection after (de-)indent
+-- Horizontally move selected block, while keeping selection
 vim.keymap.set('v', 'H', '<gv', { desc = 'Deindent without losing selection' })
 vim.keymap.set('v', 'L', '>gv', { desc = 'Indent without losing selection' })
 
