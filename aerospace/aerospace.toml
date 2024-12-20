@@ -147,18 +147,28 @@ c = ['built-in'] # show chats on built-in if Studio Display took the terminal
 ctrl-a = 'mode unlocked'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-ctrl-alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
-ctrl-alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
-ctrl-alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
-ctrl-alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
+alt-shift-ctrl-cmd-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
+alt-shift-ctrl-cmd-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
+alt-shift-ctrl-cmd-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
+alt-shift-ctrl-cmd-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-alt-t = 'workspace t' # [t]erminal
-ctrl-alt-b = 'workspace b' # [b]rowser
-ctrl-alt-c = 'workspace c' # [c]hats
-ctrl-alt-z = 'workspace z' # [z]ooms
-ctrl-alt-e = 'workspace e' # [e]xplore
-ctrl-alt-a = 'workspace a' # [a]udio-video
+alt-shift-ctrl-cmd-t = 'workspace t' # [t]erminal
+alt-shift-ctrl-cmd-b = 'workspace b' # [b]rowser
+alt-shift-ctrl-cmd-c = 'workspace c' # [c]hats
+alt-shift-ctrl-cmd-z = 'workspace z' # [z]ooms
+alt-shift-ctrl-cmd-e = 'workspace e' # [e]xplore
+alt-shift-ctrl-cmd-a = 'workspace a' # [a]udio-video
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+alt-shift-ctrl-cmd-f = 'fullscreen'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+alt-shift-ctrl-cmd-d = 'layout floating tiling'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+alt-shift-ctrl-cmd-minus = 'resize smart -50'
+alt-shift-ctrl-cmd-equal = 'resize smart +50'
 
 # 'unlocked' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -168,45 +178,10 @@ enter = 'mode main'
 esc = 'mode main'
 
 # Modes
-w = 'mode window'
 m = 'mode move'
-r = 'mode resize'
 g = 'mode group'
-o = 'mode service'
-
-# 'window' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-[mode.window.binding]
-ctrl-a = 'mode unlocked'
-enter = 'mode main'
-esc = 'mode main'
-
-# Modes
-w = 'mode window'
-m = 'mode move'
 r = 'mode resize'
-g = 'mode group'
 o = 'mode service'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = 'focus --boundaries-action wrap-around-the-workspace left'
-j = 'focus --boundaries-action wrap-around-the-workspace down'
-k = 'focus --boundaries-action wrap-around-the-workspace up'
-l = 'focus --boundaries-action wrap-around-the-workspace right'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-t = 'workspace t' # [t]erminal
-b = 'workspace b' # [b]rowser
-c = 'workspace c' # [c]hats
-z = 'workspace z' # [z]ooms
-e = 'workspace e' # [e]xplore
-a = 'workspace a' # [a]udio-video
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
-f = ['fullscreen', 'mode main']
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-d = ['layout floating tiling', 'mode main']
 
 # 'move' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -216,10 +191,9 @@ enter = 'mode main'
 esc = 'mode main'
 
 # Modes
-w = 'mode window'
 m = 'mode move'
-r = 'mode resize'
 g = 'mode group'
+r = 'mode resize'
 o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
@@ -244,10 +218,9 @@ enter = 'mode main'
 esc = 'mode main'
 
 # Modes
-w = 'mode window'
 m = 'mode move'
-r = 'mode resize'
 g = 'mode group'
+r = 'mode resize'
 o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
@@ -266,10 +239,9 @@ enter = 'mode main'
 esc = 'mode main'
 
 # Modes
-w = 'mode window'
 m = 'mode move'
-r = 'mode resize'
 g = 'mode group'
+r = 'mode resize'
 o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
@@ -293,10 +265,9 @@ enter = 'mode main'
 esc = 'mode main'
 
 # Modes
-w = 'mode window'
 m = 'mode move'
-r = 'mode resize'
 g = 'mode group'
+r = 'mode resize'
 o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#reload-config
