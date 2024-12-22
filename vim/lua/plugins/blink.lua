@@ -1,5 +1,5 @@
 return {
-  {
+  { -- Autocompleter
     'saghen/blink.cmp',
     dependencies = 'rafamadriz/friendly-snippets',
     version = 'v0.*',
