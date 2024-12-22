@@ -88,7 +88,6 @@ vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Replace selected text without
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Navigating quickfix lists
 vim.keymap.set('n', '<leader>[q', '<cmd>cprev<CR>', { desc = '[Previous [Q]uickfix' })
