@@ -201,10 +201,10 @@ keybinds clear-defaults=true {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
     pane {
-        bind "d" { ToggleFloatingPanes; SwitchToMode "locked"; }
-        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
+        bind "d" { ToggleFloatingPanes; }
+        bind "e" { TogglePaneEmbedOrFloating; }
+        bind "f" { ToggleFocusFullscreen; }
+        bind "z" { TogglePaneFrames; }
         bind "n" { NewPane; }
         bind "s" { NewPane "down"; }
         bind "v" { NewPane "right"; }
@@ -264,10 +264,10 @@ keybinds clear-defaults=true {
     scroll {
         bind "e" { EditScrollback; SwitchToMode "locked"; }
         bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "Alt h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
-        bind "Alt j" { MoveFocus "down"; SwitchToMode "locked"; }
-        bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
-        bind "Alt l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+        bind "Alt h" { MoveFocusOrTab "left"; }
+        bind "Alt j" { MoveFocus "down"; }
+        bind "Alt k" { MoveFocus "up"; }
+        bind "Alt l" { MoveFocusOrTab "right"; }
     }
     search {
         bind "n" { Search "down"; }
@@ -320,7 +320,7 @@ keybinds clear-defaults=true {
     shared_among "scroll" "search" {
         bind "Ctrl f" { PageScrollDown; }
         bind "Ctrl b" { PageScrollUp; }
-        bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
+        bind "Ctrl c" { ScrollToBottom; }
         bind "d" { HalfPageScrollDown; }
         bind "h" { PageScrollUp; }
         bind "j" { ScrollDown; }
@@ -334,13 +334,14 @@ keybinds clear-defaults=true {
         bind "enter" { SwitchToMode "search"; }
     }
     renametab {
+        bind "Ctrl c" { SwitchToMode "tab"; }
         bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
-    }
-    shared_among "renametab" "renamepane" {
-        bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "enter" { SwitchToMode "tab"; }
     }
     renamepane {
+        bind "Ctrl c" { SwitchToMode "pane"; }
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
+        bind "enter" { SwitchToMode "pane"; }
     }
 }
 
