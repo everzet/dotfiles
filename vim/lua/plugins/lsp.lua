@@ -90,24 +90,6 @@ return {
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-          -- The following two autocommands are used to highlight references of the
-          -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
-          --
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.server_capabilities.documentHighlightProvider then
-            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-              buffer = event.buf,
-              callback = vim.lsp.buf.document_highlight,
-            })
-
-            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-              buffer = event.buf,
-              callback = vim.lsp.buf.clear_references,
-            })
-          end
         end,
       })
 
@@ -193,32 +175,30 @@ return {
         },
       }
 
-      -- You can add other tools here that you want Mason to install
-      -- for you, so that they are available from within Neovim.
-      local non_server_tools = {
-        'stylua', -- Used to format lua code
-        'prettierd', -- Used to format TS/JS/JSON/MD code
-        'sql-formatter', -- Used to format SQL code
-      }
-
-      -- Ensure the servers and tools above are installed
+      --  Setup Mason
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
       --    :Mason
       --
       --  You can press `g?` for help in this menu
       require('mason').setup()
-      require('mason-tool-installer').setup { ensure_installed = non_server_tools }
 
-      -- Select servers that should be autoinstalled
+      -- Install non-LSP tools (DAP adapters, formatters, linters, etc.)
+      require('mason-tool-installer').setup {
+        ensure_installed = {
+          'stylua', -- Used to format lua code
+          'prettierd', -- Used to format TS/JS/JSON/MD code
+          'sql-formatter', -- Used to format SQL code
+        },
+      }
+
+      -- Install LSP servers that are not marked with `do_not_autoinstall`
       local ensure_installed = {}
       for name, server in pairs(servers) do
         if not server.do_not_autoinstall then
           table.insert(ensure_installed, name)
         end
       end
-
-      -- Install LSP servers
       require('mason-lspconfig').setup {
         automatic_installation = true,
         ensure_installed = ensure_installed,
