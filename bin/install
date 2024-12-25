@@ -8,7 +8,7 @@ xargs brew install -q < $DOTFILESDIR/dependencies
 
 # symlink configs
 mkdir -p ~/.config
-ln -nfs $DOTFILESDIR/vim                        ~/.config/nvim
+ln -nfs $DOTFILESDIR/nvim                       ~/.config/nvim
 ln -nfs $DOTFILESDIR/fish                       ~/.config/fish
 ln -nfs $DOTFILESDIR/git                        ~/.config/git
 ln -nfs $DOTFILESDIR/bat                        ~/.config/bat
@@ -23,7 +23,7 @@ ln -nfs $DOTFILESDIR/mise/default-golang-pkgs   ~/.default-golang-pkgs
 ln -nfs $DOTFILESDIR/mise/default-mix-commands  ~/.default-mix-commands
 
 # setup neovim
-nvim --headless "+Lazy! sync" +qa
+nvim --headless "+Lazy! restore" +qa
 
 # make NeoVim our vim
 ln -sf /opt/homebrew/bin/nvim /opt/homebrew/bin/vim
