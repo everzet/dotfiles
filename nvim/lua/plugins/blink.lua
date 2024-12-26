@@ -7,6 +7,10 @@ return {
       keymap = {
         preset = 'default',
         ['<C-n>'] = { 'show', 'select_next', 'fallback' },
+        ['<C-v>'] = { 'snippet_forward', 'fallback' },
+        ['<C-c>'] = { 'snippet_backward', 'fallback' },
+        ['<Tab>'] = {},
+        ['<S-Tab>'] = {},
       },
 
       appearance = {
