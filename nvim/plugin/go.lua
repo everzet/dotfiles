@@ -1,5 +1,6 @@
 local lsp = require 'language-servers'
 local fmt = require 'conform'
+local lnt = require 'lint'
 
 -- Language Server
 lsp.setup('gopls', {
@@ -19,3 +20,6 @@ lsp.setup('gopls', {
 
 -- Formatter
 fmt.formatters_by_ft.go = { 'gofmt' }
+
+-- Linter
+lnt.linters_by_ft.go = { 'golangcilint' }

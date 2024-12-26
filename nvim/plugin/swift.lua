@@ -1,6 +1,7 @@
 local reg = require 'mason-registry'
 local lsp = require 'language-servers'
 local fmt = require 'conform'
+local lnt = require 'lint'
 local dap = require 'dap'
 
 -- Helper functions
@@ -44,7 +45,15 @@ lsp.setup('sourcekit', {
 })
 
 -- Formatter
-fmt.formatters_by_ft.swift = { 'swift_format' }
+fmt.formatters['swift format'] = {
+  command = 'swift',
+  args = { 'format', '$FILENAME', '--in-place' },
+  stdin = false,
+}
+fmt.formatters_by_ft.swift = { 'swift format' }
+
+-- Linter
+lnt.linters_by_ft.swift = { 'swiftlint' }
 
 -- Debugger
 if reg.is_installed 'codelldb' then

@@ -9,7 +9,7 @@ lsp.setup('ts_ls', {
 })
 
 -- Formatters
-fmt.formatters_by_ft.javascript = { 'prettier', 'prettierd', stop_after_first = true }
-fmt.formatters_by_ft.typescript = { 'prettier', 'prettierd', stop_after_first = true }
-fmt.formatters_by_ft.javascriptreact = { 'prettier', 'prettierd', stop_after_first = true }
-fmt.formatters_by_ft.typescriptreact = { 'prettier', 'prettierd', stop_after_first = true }
+fmt.formatters_by_ft.javascript = { 'prettierd' }
+fmt.formatters_by_ft.typescript = { 'prettierd' }
+fmt.formatters_by_ft.javascriptreact = { 'prettierd' }
+fmt.formatters_by_ft.typescriptreact = { 'prettierd' }
