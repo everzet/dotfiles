@@ -8,7 +8,6 @@ return {
       -- Automatically install LSPs and related tools to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
@@ -48,7 +47,7 @@ return {
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('default-lsp-attach', { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -66,7 +65,7 @@ return {
           --  Useful when your language has ways of declaring types without an actual implementation.
           map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
+          -- Jump to the declaration of the word under your cusros.
           --  For example, in C this would take you to the header
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
@@ -93,14 +92,7 @@ return {
         end,
       })
 
-      -- LSP servers and clients are able to communicate to each other what features they support.
-      --  By default, Neovim doesn't support everything that is in the LSP Specification.
-      --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
-
-      -- Enable the following language servers
+      -- Enable the following language servers by default
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
       --  Add any additional override configuration in the following tables. Available keys are:
@@ -109,7 +101,7 @@ return {
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      local servers = {
+      local default_servers = {
         -- clangd = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -126,50 +118,8 @@ return {
           -- capabilities = {},
           settings = {
             Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              diagnostics = {
-                disable = { 'missing-fields' },
-              },
-            },
-          },
-        },
-
-        -- Javascript and Typescript
-        ts_ls = {
-          capabilities = {
-            documentFormattingProvider = false,
-          },
-        },
-
-        -- Swift
-        sourcekit = {
-          do_not_autoinstall = true,
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
-            },
-          },
-        },
-
-        -- Elixir
-        elixirls = {},
-
-        -- Go
-        gopls = {
-          filetypes = { 'go', 'gomod' },
-          root_dir = require('lspconfig').util.root_pattern('go.mod', '.git'),
-          settings = {
-            gopls = {
-              experimentalPostfixCompletions = true,
-              analyses = {
-                unusedparams = true,
-                shadow = true,
-              },
-              staticcheck = true,
+              completion = { callSnippet = 'Replace' },
+              diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
@@ -183,35 +133,22 @@ return {
       --  You can press `g?` for help in this menu
       require('mason').setup()
 
-      -- Install non-LSP tools (DAP adapters, formatters, linters, etc.)
-      require('mason-tool-installer').setup {
-        ensure_installed = {
-          'stylua', -- Used to format lua code
-          'prettierd', -- Used to format TS/JS/JSON/MD code
-          'sql-formatter', -- Used to format SQL code
-        },
-      }
-
-      -- Install LSP servers that are not marked with `do_not_autoinstall`
-      local ensure_installed = {}
-      for name, server in pairs(servers) do
-        if not server.do_not_autoinstall then
-          table.insert(ensure_installed, name)
-        end
-      end
+      -- Hook up Mason into lspconfig
       require('mason-lspconfig').setup {
-        automatic_installation = true,
-        ensure_installed = ensure_installed,
+        -- Do not auto-install any configured LSP servers...
+        automatic_installation = false,
+        -- ... except the ones defiend above
+        ensure_installed = vim
+          .iter(pairs(default_servers))
+          :map(function(name, _)
+            return name
+          end)
+          :totable(),
       }
 
-      -- Setup LSP servers
-      for name, server in pairs(servers) do
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-        server.handlers = {
-          ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
-          ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
-        }
-        require('lspconfig')[name].setup(server)
+      -- Setup default LSP servers
+      for name, server in pairs(default_servers) do
+        require('language-servers').setup(name, server)
       end
     end,
   },
