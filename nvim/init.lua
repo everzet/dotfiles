@@ -108,6 +108,16 @@ vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab [X]ill' }
 vim.keymap.set('n', '<leader>bo', '<cmd>%bd!<CR><C-o><cmd>bd#<CR>zz', { desc = '[B]uffer [O]nly' })
 vim.keymap.set('n', '<leader>bx', '<cmd>bd<CR>', { desc = '[B]uffer [X]ill' })
 
+-- [[ Configure Diagnostic ]]
+--
+vim.diagnostic.config { virtual_text = true, float = { border = 'rounded' } }
+
+-- Use icons as diagnostic signs
+vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = '󰀦', texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -130,19 +140,6 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
-
--- [[ Configure Diagnostic ]]
---
-vim.diagnostic.config {
-  virtual_text = true,
-  float = { border = 'rounded' },
-}
-
--- Use icons as diagnostic signs
-vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError', linehl = '', numhl = '' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = '󰀦', texthl = 'DiagnosticSignWarn', linehl = '', numhl = '' })
-vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo', linehl = '', numhl = '' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint', linehl = '', numhl = '' })
 
 -- [[ Configure and install plugins ]]
 --
