@@ -93,7 +93,7 @@ return {
 
       -- Multi-grep
       vim.keymap.set('n', '<leader>sg', function()
-        require('telescope.live_multigrep').grep(require('telescope.themes').get_ivy())
+        require('telescope.live-multigrep').grep(require('telescope.themes').get_ivy())
       end, { desc = '[S]earch by [G]rep' })
 
       -- Shortcut for searching your neovim configuration files
