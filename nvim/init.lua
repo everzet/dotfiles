@@ -154,9 +154,13 @@ vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSig
 --  To update plugins, you can run
 --    :Lazy update
 --
-require('lazy').setup {
+require('lazy').setup({
   { import = 'plugins' },
-}
+}, {
+  change_detection = {
+    notify = false,
+  },
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
