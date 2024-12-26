@@ -121,6 +121,11 @@ run = ['move-node-to-workspace e']
 if.app-id = 'com.macpaw.CleanMyMac5'
 run = ['layout floating', 'move-node-to-workspace e']
 
+# Alfred settings float
+[[on-window-detected]]
+if.app-id = 'com.runningwithcrayons.Alfred-Preferences'
+run = ['layout floating']
+
 # Music goes to audio-video
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
