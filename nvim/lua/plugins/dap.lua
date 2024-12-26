@@ -47,7 +47,12 @@ return {
       end, { desc = '[D]ebug [C]conditional Breakpoint' })
 
       -- Starting and continuing
-      vim.keymap.set('n', '<leader>dd', dap.continue, { desc = '[D]ebug [D]debug' })
+      vim.keymap.set('n', '<leader>dd', function()
+        dap.continue()
+      end, { desc = '[D]ebug [D]debug' })
+      vim.keymap.set('n', '<leader>dq', function()
+        dap.terminate()
+      end, { desc = '[D]ebug [D]debug' })
 
       -- Stepping over, in and out
       vim.keymap.set('n', '<leader>do', dap.step_over, { desc = '[D]ebug Step [O]ver' })
