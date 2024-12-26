@@ -9,7 +9,7 @@ return {
         go = { 'golangcilint' },
       }
 
-      local augroup = vim.api.nvim_create_augroup('kickstart-nvim-lint', { clear = true })
+      local augroup = vim.api.nvim_create_augroup('default-nvim-lint', { clear = true })
       vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
         group = augroup,
         callback = function()
