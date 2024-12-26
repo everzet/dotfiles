@@ -11,6 +11,7 @@ mkdir -p ~/.config
 ln -nfs $DOTFILESDIR/nvim                       ~/.config/nvim
 ln -nfs $DOTFILESDIR/fish                       ~/.config/fish
 ln -nfs $DOTFILESDIR/git                        ~/.config/git
+ln -nfs $DOTFILESDIR/jj                         ~/Library/Application\ Support/jj
 ln -nfs $DOTFILESDIR/bat                        ~/.config/bat
 ln -nfs $DOTFILESDIR/eza                        ~/Library/Application\ Support/eza
 ln -nfs $DOTFILESDIR/aerospace                  ~/.config/aerospace
