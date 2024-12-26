@@ -22,6 +22,7 @@ ln -nfs $DOTFILESDIR/editorconfig               ~/.editorconfig
 ln -nfs $DOTFILESDIR/elixir/iex.exs             ~/.iex.exs
 ln -nfs $DOTFILESDIR/mise/default-golang-pkgs   ~/.default-golang-pkgs
 ln -nfs $DOTFILESDIR/mise/default-mix-commands  ~/.default-mix-commands
+ln -nfs $DOTFILESDIR/sourcekit-lsp              ~/.sourcekit-lsp
 
 # setup neovim
 nvim --headless "+Lazy! restore" +qa
