@@ -4,11 +4,9 @@ return {
     dependencies = 'rafamadriz/friendly-snippets',
     version = 'v0.*',
     opts = {
-      keymap = { preset = 'default' },
-
-      sources = {
-        -- Disable cmdline completions
-        cmdline = {},
+      keymap = {
+        preset = 'default',
+        ['<C-n>'] = { 'show', 'select_next', 'fallback' },
       },
 
       appearance = {
@@ -17,13 +15,22 @@ return {
       },
 
       completion = {
+        menu = {
+          auto_show = function(ctx)
+            -- Do not ato-show autocompletion in cmdline
+            return ctx.mode ~= 'cmdline'
+          end,
+        },
         documentation = {
           auto_show = true,
           window = { border = 'rounded' },
         },
       },
 
-      signature = { enabled = true },
+      signature = {
+        enabled = true,
+        window = { border = 'rounded' },
+      },
     },
   },
 }
