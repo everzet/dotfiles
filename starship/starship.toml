@@ -2,20 +2,20 @@ format = """
 [░▒▓](#a3aed2)\
 [  ](bg:#a3aed2 fg:#090c0c)\
 $directory\
-$git_branch\
-$git_status\
 $fill\
-$nodejs\
+$swift\
 $rust\
 $golang\
 $lua\
 $elixir\
+$nodejs\
 $time\
-[ ](fg:#1d2230)\
+[ ](fg:#a3aed2)\
 \n$character"""
 
 [fill]
-symbol = "·"
+style = "fg:#6999EF"
+symbol = "─"
 
 [directory]
 style = "fg:#15161F bg:#6999EF bold"
@@ -29,15 +29,6 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-
-[git_branch]
-symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
-
-[git_status]
-style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
 [nodejs]
 symbol = ""
@@ -64,8 +55,12 @@ symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
+[swift]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
