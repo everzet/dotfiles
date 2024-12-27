@@ -15,7 +15,7 @@ ln -nfs $DOTFILESDIR/jj                         ~/Library/Application\ Support/j
 ln -nfs $DOTFILESDIR/bat                        ~/.config/bat
 ln -nfs $DOTFILESDIR/eza                        ~/Library/Application\ Support/eza
 ln -nfs $DOTFILESDIR/aerospace                  ~/.config/aerospace
-ln -nfs $DOTFILESDIR/wezterm                    ~/.config/wezterm
+ln -nfs $DOTFILESDIR/ghostty                    ~/.config/ghostty
 ln -nfs $DOTFILESDIR/zellij                     ~/.config/zellij
 ln -nfs $DOTFILESDIR/starship/starship.toml     ~/.config/starship.toml
 ln -nfs $DOTFILESDIR/editorconfig               ~/.editorconfig

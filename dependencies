@@ -2,7 +2,7 @@ fish
 starship
 fastfetch
 zellij
-wezterm
+ghostty
 neovim
 zoxide
 git
