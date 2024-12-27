@@ -3,14 +3,15 @@ command = "/opt/homebrew/bin/zellij --layout .config/zellij/layouts/scratch.kdl 
 font-family = "MonoLisa"
 font-style = "Medium"
 font-size = 12
-adjust-cell-height = 35%
+adjust-cell-height = 40%
 
 theme = "tokyonight"
-
 background = "#1A1B26"
-background-opacity = 0.95
+background-opacity = 0.90
 background-blur-radius = 20
-
 window-padding-x = 15
 window-padding-y = 15
 macos-titlebar-style = hidden
+
+mouse-hide-while-typing = true
+confirm-close-surface = false
