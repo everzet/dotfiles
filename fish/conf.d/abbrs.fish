@@ -1,7 +1,7 @@
 # Listing
-abbr l ls
+abbr l ls -w90
 abbr ll ls -l
-abbr la ls -a
+abbr la ls -la
 abbr lt ls -T
 
 # Vim
