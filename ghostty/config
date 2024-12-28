@@ -16,9 +16,6 @@ macos-titlebar-style = hidden
 mouse-hide-while-typing = true
 confirm-close-surface = false
 
-keybind = cmd+m=unbind
 keybind = cmd+t=unbind
 keybind = cmd+d=unbind
 keybind = shift+cmd+d=unbind
-keybind = cmd+]=unbind
-keybind = cmd+[=unbind
