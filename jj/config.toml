@@ -9,3 +9,8 @@ key = "~/.ssh/id_ed25519"
 
 [ui]
 default-command = "log"
+
+[colors]
+# Highlight hunks with background instead of underline
+"diff removed token" = { bg = "#221111", underline = false }
+"diff added token" = { bg = "#002200", underline = false }
