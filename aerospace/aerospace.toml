@@ -148,10 +148,10 @@ c = ['built-in'] # show chats on built-in if Studio Display took the terminal
 [mode.main.binding]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-ctrl-cmd-m = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
-alt-shift-ctrl-cmd-s = 'mode service'
+alt-shift-ctrl-cmd-o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-ctrl-cmd-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
@@ -170,9 +170,6 @@ alt-shift-ctrl-cmd-a = 'workspace a' # [a]udio-video
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
 alt-shift-ctrl-cmd-f = 'fullscreen'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-shift-ctrl-cmd-d = 'layout floating tiling'
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-ctrl-cmd-minus = 'resize smart -50'
 alt-shift-ctrl-cmd-equal = 'resize smart +50'
@@ -183,10 +180,10 @@ alt-shift-ctrl-cmd-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-m = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
-alt-shift-ctrl-cmd-s = 'mode service'
+alt-shift-ctrl-cmd-o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 h = 'move left'
@@ -208,10 +205,10 @@ a = ['move-node-to-workspace a', 'workspace a'] # [a]udio-video
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-m = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
-alt-shift-ctrl-cmd-s = 'mode service'
+alt-shift-ctrl-cmd-o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 minus = 'resize smart -50'
@@ -227,10 +224,10 @@ k = 'resize height +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-m = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
-alt-shift-ctrl-cmd-s = 'mode service'
+alt-shift-ctrl-cmd-o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
 h = 'join-with left'
@@ -242,19 +239,19 @@ l = 'join-with right'
 s = 'layout accordion horizontal vertical'
 t = 'layout tiles horizontal vertical'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#flatten-workspace-tree
-x = 'flatten-workspace-tree'
-
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-m = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
-alt-shift-ctrl-cmd-s = 'mode service'
+alt-shift-ctrl-cmd-o = 'mode service'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#reload-config
 c = ['reload-config', 'mode main']
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#flatten-workspace-tree
+x = 'flatten-workspace-tree'
