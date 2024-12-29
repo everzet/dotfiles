@@ -19,7 +19,7 @@ themes {
     tokyo-night-night {
         fg "#c0caf5" // Options BG
         bg "#292e42" // Selection BG
-        black "#22232e" // Top / Bottom Bars BG
+        black "#20212c" // Top / Bottom Bars BG
         red "#f7768e" // Keybind
         green "#7aa2f7" // Active BG
         yellow "#e0af68" // ??
@@ -43,7 +43,7 @@ default_shell "/opt/homebrew/bin/fish"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // The folder in which Zellij will look for layouts
 // (Requires restart)
