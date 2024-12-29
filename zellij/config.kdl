@@ -204,9 +204,9 @@ keybinds clear-defaults=true {
     pane {
         bind "Super p" { SwitchToMode "normal"; }
 
-        bind "n" { NewPane; }
-        bind "s" { NewPane "down"; }
-        bind "v" { NewPane "right"; }
+        bind "n" { NewPane; SwitchToMode "normal"; }
+        bind "s" { NewPane "down"; SwitchToMode "normal"; }
+        bind "v" { NewPane "right"; SwitchToMode "normal"; }
         bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
 
         bind "h" { MoveFocus "left"; }
@@ -215,7 +215,7 @@ keybinds clear-defaults=true {
         bind "l" { MoveFocus "right"; }
 
         bind "tab" { SwitchFocus; }
-        bind "x" { CloseFocus; }
+        bind "x" { CloseFocus; SwitchToMode "normal"; }
 
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
@@ -223,24 +223,24 @@ keybinds clear-defaults=true {
         bind "z" { TogglePaneFrames; SwitchToMode "normal"; }
     }
     renamepane {
-        bind "Ctrl c" { SwitchToMode "pane"; }
-        bind "enter" { SwitchToMode "pane"; }
+        bind "Ctrl c" { SwitchToMode "normal"; }
+        bind "enter" { SwitchToMode "normal"; }
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
     }
     tab {
         bind "Super t" { SwitchToMode "normal"; }
 
-        bind "n" { NewTab; }
-        bind "b" { BreakPane; }
-        bind "," { BreakPaneLeft; }
-        bind "." { BreakPaneRight; }
+        bind "n" { NewTab; SwitchToMode "normal"; }
+        bind "b" { BreakPane; SwitchToMode "normal"; }
+        bind "," { BreakPaneLeft; SwitchToMode "normal"; }
+        bind "." { BreakPaneRight; SwitchToMode "normal"; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
 
         bind "h" { GoToPreviousTab; }
         bind "l" { GoToNextTab; }
 
         bind "tab" { ToggleTab; }
-        bind "x" { CloseTab; }
+        bind "x" { CloseTab; SwitchToMode "normal"; }
 
         bind "1" { GoToTab 1; SwitchToMode "normal"; }
         bind "2" { GoToTab 2; SwitchToMode "normal"; }
@@ -255,8 +255,8 @@ keybinds clear-defaults=true {
         bind "s" { ToggleActiveSyncTab; SwitchToMode "normal"; }
     }
     renametab {
-        bind "Ctrl c" { SwitchToMode "tab"; }
-        bind "enter" { SwitchToMode "tab"; }
+        bind "Ctrl c" { SwitchToMode "normal"; }
+        bind "enter" { SwitchToMode "normal"; }
         bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
     }
     resize {
