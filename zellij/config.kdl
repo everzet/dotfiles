@@ -225,11 +225,11 @@ keybinds clear-defaults=true {
         bind "Super t" { SwitchToMode "normal"; }
 
         bind "n" { NewTab; SwitchToMode "normal"; }
+        bind "," { BreakPaneLeft; }
+        bind "." { BreakPaneRight; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
 
         bind "b" { BreakPane; SwitchToMode "normal"; }
-        bind "[" { BreakPaneLeft; SwitchToMode "normal"; }
-        bind "]" { BreakPaneRight; SwitchToMode "normal"; }
 
         bind "h" { GoToPreviousTab; }
         bind "l" { GoToNextTab; }
@@ -321,8 +321,8 @@ keybinds clear-defaults=true {
         bind "Alt k" { MoveFocus "up"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
 
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
+        bind "Alt ," { PreviousSwapLayout; }
+        bind "Alt ." { NextSwapLayout; }
 
         bind "Alt f" { ToggleFloatingPanes; }
 
