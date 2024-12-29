@@ -6,12 +6,15 @@ font-size = 12
 adjust-cell-height = 40%
 
 theme = "tokyonight"
+macos-titlebar-style = hidden
+
 background = "#1A1B26"
 background-opacity = 0.90
 background-blur-radius = 35
+
 window-padding-x = 15
 window-padding-y = 15
-macos-titlebar-style = hidden
+window-padding-balance = true
 
 mouse-hide-while-typing = true
 confirm-close-surface = false
