@@ -19,7 +19,7 @@ themes {
     tokyo-night-night {
         fg "#c0caf5" // Options BG
         bg "#292e42" // Selection BG
-        black "#1a1b26" // Top / Bottom Bars BG
+        black "#22232e" // Top / Bottom Bars BG
         red "#f7768e" // Keybind
         green "#7aa2f7" // Active BG
         yellow "#e0af68" // ??
