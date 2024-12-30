@@ -5,32 +5,33 @@ command = /opt/homebrew/bin/zellij --layout .config/zellij/layouts/scratch.kdl a
 font-family = MonoLisa
 font-style = Medium
 font-size = 12
-# Feature: Slashed zero
+# Slashed zero
 font-feature = zero
-# Feature: More pronounced curly brackets
+# More pronounced curly brackets
 font-feature = ss07
-# Feature: Ligaturized hexadecimal x
+# Ligaturized hexadecimal x
 font-feature = ss11
-# Feature: Less noisy dollar sign
+# Less noisy dollar sign
 font-feature = ss13
 
 # Line height
 adjust-cell-height = 35%
 
+# UI decorations
 theme = tokyonight
 macos-titlebar-style = hidden
-
+window-padding-x = 15
+window-padding-y = 15
+window-padding-balance = true
 background = 1A1B26
 background-opacity = 0.90
 background-blur-radius = 35
 
-window-padding-x = 15
-window-padding-y = 15
-window-padding-balance = true
-
+# App behaviour
 mouse-hide-while-typing = true
 confirm-close-surface = false
 
+# Unbind keys that conflict with Zellij
 keybind = cmd+n=unbind
 keybind = cmd+t=unbind
 keybind = cmd+d=unbind
