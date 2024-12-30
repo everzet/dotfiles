@@ -1,5 +1,5 @@
 # Listing
-abbr l ls -w90
+abbr l ls
 abbr ll ls -l
 abbr la ls -la
 abbr lt ls -T
