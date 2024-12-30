@@ -12,6 +12,7 @@ bat
 fd
 sd
 jq
+sq
 fzf
 ripgrep
 mise
