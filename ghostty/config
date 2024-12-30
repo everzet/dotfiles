@@ -36,4 +36,5 @@ confirm-close-surface = false
 keybind = cmd+n=unbind
 keybind = cmd+t=unbind
 keybind = cmd+d=unbind
+keybind = cmd+w=unbind
 keybind = shift+cmd+d=unbind
