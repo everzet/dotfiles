@@ -1,4 +1,5 @@
-command = "/opt/homebrew/bin/zellij --layout .config/zellij/layouts/scratch.kdl attach --create scratch"
+# Run reused Zellij scratch layout
+command = /opt/homebrew/bin/zellij --layout .config/zellij/layouts/scratch.kdl attach --create scratch
 
 font-family = MonoLisa
 font-style = Medium
@@ -6,7 +7,6 @@ font-size = 12
 adjust-cell-height = 40%
 
 theme = tokyonight
-
 macos-titlebar-style = hidden
 
 background = 1A1B26
