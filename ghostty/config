@@ -1,10 +1,23 @@
 # Run reused Zellij scratch layout
 command = /opt/homebrew/bin/zellij --layout .config/zellij/layouts/scratch.kdl attach --create scratch
 
+# Font settings
 font-family = MonoLisa
 font-style = Medium
 font-size = 12
-adjust-cell-height = 40%
+# Feature: Slashed zero
+font-feature = zero
+# Feature: More pronounced curly brackets
+font-feature = ss07
+# Feature: More pronounced parens
+font-feature = ss08
+# Feature: Ligaturized hexadecimal x
+font-feature = ss11
+# Feature: Less noisy dollar sign
+font-feature = ss13
+
+# Line height
+adjust-cell-height = 35%
 
 theme = tokyonight
 macos-titlebar-style = hidden
