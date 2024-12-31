@@ -14,20 +14,23 @@ ui {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "tokyo-night-night"
+theme "match-terminal"
 themes {
-    tokyo-night-night {
-        fg "#c0caf5" // Options BG
-        bg "#292e42" // Selection BG
-        black "#20212c" // Top / Bottom Bars BG
-        red "#f7768e" // Keybind
-        green "#7aa2f7" // Active BG
-        yellow "#e0af68" // ??
-        blue "#7aa2f7" // ??
-        magenta "#9ece6a" // Modifier Highlights
-        cyan "#6eb0ff" // Tab Text
-        white "#c0caf5" // Session Name & Odd Tab BG
-        orange "#e0af68" // Option Text
+    // Mostly just match the terminal scheme, but swap green with blue and
+    // magenta with green so that active frames do not put as much eye
+    // strain:
+    match-terminal {
+        fg 15 // Even Tabs BG
+        bg 8 // Selected Option BG
+        black "#20212c" // Top and Bottom Panels BG
+        red 9 // Keybind Highlight
+        green 12 // Active Frame, Pane BG & Active Tab BG
+        yellow 0 // UNUSED in Zellij
+        blue 0 // UNUSED in Zellij
+        magenta 10 // Matched Text, Modifier Highlights
+        cyan 14 // Tab Count Highlight
+        white 15 // Inactive Frame, Session Name & Odd Tabs BG
+        orange 11 // Option Text
     }
 }
 
