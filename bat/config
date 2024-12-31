@@ -3,7 +3,7 @@
 # run `bat --help` to get a list of all possible configuration options.
 
 # Change default color theme
---theme="base16"
+--theme="tokyonight_night"
 
 # Use italic text on the terminal.
 --italic-text=always
