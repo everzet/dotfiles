@@ -89,8 +89,8 @@ vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Replace selected text without
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 
 -- Navigating quickfix lists
-vim.keymap.set('n', '<leader>[q', '<cmd>cprev<CR>', { desc = '[Previous [Q]uickfix' })
-vim.keymap.set('n', '<leader>]q', '<cmd>cnext<CR>', { desc = ']Next [Q]uickfix' })
+vim.keymap.set('n', '<leader>q,', '<cmd>cprev<CR>', { desc = '[Q]uickfix Previous' })
+vim.keymap.set('n', '<leader>q.', '<cmd>cnext<CR>', { desc = '[Q]uickfix Next' })
 
 -- Navigating windows
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move window down' })
