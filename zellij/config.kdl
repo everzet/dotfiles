@@ -276,7 +276,7 @@ keybinds clear-defaults=true {
         bind "l" { Resize "Increase right"; }
     }
     move {
-        bind "Super p" { SwitchToMode "normal"; }
+        bind "Super d" { SwitchToMode "normal"; }
 
         bind "h" { MovePane "left"; }
         bind "j" { MovePane "down"; }
@@ -342,7 +342,7 @@ keybinds clear-defaults=true {
         bind "Super r" { SwitchToMode "resize"; }
     }
     shared_except "locked" "move" {
-        bind "Super p" { SwitchToMode "move"; }
+        bind "Super d" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
         bind "Super o" { SwitchToMode "session"; }

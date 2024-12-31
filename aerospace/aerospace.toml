@@ -148,7 +148,7 @@ c = ['built-in'] # show chats on built-in if Studio Display took the terminal
 [mode.main.binding]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-ctrl-cmd-p = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
 alt-shift-ctrl-cmd-o = 'mode service'
@@ -180,7 +180,7 @@ alt-shift-ctrl-cmd-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-p = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
 alt-shift-ctrl-cmd-o = 'mode service'
@@ -205,7 +205,7 @@ a = ['move-node-to-workspace a', 'workspace a'] # [a]udio-video
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-p = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
 alt-shift-ctrl-cmd-o = 'mode service'
@@ -224,7 +224,7 @@ k = 'resize height +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-p = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
 alt-shift-ctrl-cmd-o = 'mode service'
@@ -245,7 +245,7 @@ t = 'layout tiles horizontal vertical'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 esc = 'mode main'
 enter = 'mode main'
-alt-shift-ctrl-cmd-p = 'mode move'
+alt-shift-ctrl-cmd-d = 'mode move'
 alt-shift-ctrl-cmd-g = 'mode group'
 alt-shift-ctrl-cmd-r = 'mode resize'
 alt-shift-ctrl-cmd-o = 'mode service'
