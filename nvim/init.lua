@@ -89,8 +89,8 @@ vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Replace selected text without
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 
 -- Navigating quickfix lists
-vim.keymap.set('n', '<leader>q,', '<cmd>cprev<CR>', { desc = '[Q]uickfix Previous' })
-vim.keymap.set('n', '<leader>q.', '<cmd>cnext<CR>', { desc = '[Q]uickfix Next' })
+vim.keymap.set('n', 'q,', '<cmd>cprev<CR>', { desc = '[Q]uickfix Previous' })
+vim.keymap.set('n', 'q.', '<cmd>cnext<CR>', { desc = '[Q]uickfix Next' })
 
 -- Navigating windows
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move window down' })
@@ -109,6 +109,9 @@ vim.keymap.set('n', '<leader>bx', '<cmd>bd<CR>', { desc = '[B]uffer [X]ill' })
 
 -- [[ Configure Diagnostic ]]
 --
+vim.keymap.set('n', 'd,', vim.diagnostic.goto_prev, { desc = '[D]iagnostic Previous' })
+vim.keymap.set('n', 'd.', vim.diagnostic.goto_next, { desc = '[D]iagnostic Next' })
+
 vim.diagnostic.config { virtual_text = true, float = { border = 'rounded' } }
 
 -- Use icons as diagnostic signs
