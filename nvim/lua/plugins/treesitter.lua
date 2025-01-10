@@ -3,21 +3,12 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = {
-        'bash',
-        'c',
-        'html',
-        'lua',
-        'markdown',
-        'markdown_inline',
-        'vim',
-        'vimdoc',
-        'elixir',
-        'javascript',
-        'typescript',
-      },
+      ensure_installed = { 'bash', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
+      incremental_selection = {
+        enable = true,
+      },
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
@@ -30,7 +21,6 @@ return {
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
-      ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
 
       -- There are additional nvim-treesitter modules that you can use to interact
