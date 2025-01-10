@@ -111,6 +111,11 @@ run = ['move-node-to-workspace e']
 if.app-id = 'com.luckymarmot.Paw'
 run = ['move-node-to-workspace e']
 
+# Proxyman goes to explore
+[[on-window-detected]]
+if.app-id = 'com.proxyman.NSProxy'
+run = ['move-node-to-workspace e']
+
 # OrbStack goes to explore
 [[on-window-detected]]
 if.app-id = 'dev.kdrag0n.MacVirt'
