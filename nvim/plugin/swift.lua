@@ -1,6 +1,5 @@
 local reg = require 'mason-registry'
 local lsp = require 'language-servers'
-local fmt = require 'conform'
 local lnt = require 'lint'
 local dap = require 'dap'
 
@@ -43,14 +42,6 @@ lsp.setup('sourcekit', {
     },
   },
 })
-
--- Formatter
-fmt.formatters['swift format'] = {
-  command = 'swift',
-  args = { 'format', '$FILENAME', '--in-place' },
-  stdin = false,
-}
-fmt.formatters_by_ft.swift = { 'swift format' }
 
 -- Linter
 lnt.linters_by_ft.swift = { 'swiftlint' }
