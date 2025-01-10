@@ -136,6 +136,16 @@ run = ['move-node-to-workspace a']
 if.app-id = 'us.zoom.xos'
 run = ['move-node-to-workspace z']
 
+# WebEx goes to zooms
+[[on-window-detected]]
+if.app-id = 'Cisco-Systems.Spark'
+run = ['move-node-to-workspace z']
+
+# Calendar goes to zooms
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = ['move-node-to-workspace z']
+
 # Lock displays to fixed workspaces
 # https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
