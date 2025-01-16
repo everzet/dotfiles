@@ -24,6 +24,14 @@ return {
             -- Do not ato-show autocompletion in cmdline
             return ctx.mode ~= 'cmdline'
           end,
+
+          draw = {
+            -- Use cmp-style menu
+            columns = {
+              { 'label' },
+              { 'kind_icon', 'kind', gap = 1 },
+            },
+          },
         },
         documentation = {
           auto_show = true,
